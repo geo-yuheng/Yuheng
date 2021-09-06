@@ -24,6 +24,21 @@ class BaseOsmModel:
         self.version: Optional[int] = int(attrib.get('version')) if attrib.get('version') is not None else None
         self.changeset: Optional[int] = int(attrib.get('changeset')) if attrib.get('changeset') is not None else None
         self.tags: Dict[str, str] = dict(tag_dict)
+        self.tags_backup: Dict[str, str] = dict(tag_dict)
+
+    def has_diff(self) -> bool:
+        return self.tags != self.tags_backup
+
+    def print_diff(self):
+        print(self.tags['name'])
+        print('变更：')
+        for key, new_value in self.tags.items():
+            old_value = self.tags_backup[key] if key in self.tags_backup else ''
+            if new_value != old_value:
+                print('%s=%s -> %s=%s' % (key, old_value, key, new_value))
+        for deleted_keys in self.tags_backup.keys() - self.tags.keys():
+            print('%s=%s > %s=%s' % (deleted_keys, self.tags_backup[deleted_keys], deleted_keys, ''))
+        print('==========================================')
 
 
 class Node(BaseOsmModel):
