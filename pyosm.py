@@ -20,7 +20,7 @@ class BaseOsmModel:
         self.timestamp: Optional[str] = attrib.get('timestamp')
         self.uid: Optional[int] = int(attrib.get('uid')) if attrib.get('uid') is not None else None
         self.user: Optional[str] = attrib.get('user')
-        self.visible: bool = bool(attrib['visible'])
+        self.visible: bool = bool(attrib.get('visible', 'True'))
         self.version: Optional[int] = int(attrib.get('version')) if attrib.get('version') is not None else None
         self.changeset: Optional[int] = int(attrib.get('changeset')) if attrib.get('changeset') is not None else None
         self.tags: Dict[str, str] = dict(tag_dict)
@@ -135,7 +135,8 @@ class PyOsm:
             elif element.tag == 'bounds':
                 self.bounds_list.append(Bounds(element.attrib))
             else:
-                raise TypeError('Unexpected element tag type: ' + element.tag)
+                #raise TypeError('Unexpected element tag type: ' + element.tag)
+                pass
 
     def write(self, file_path: str):
         root: Element = Element("osm")
