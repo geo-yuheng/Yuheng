@@ -1,9 +1,11 @@
-# Keqing_sword
+# OSMChina-Keqing_sword
 
-一个批量编辑OSM数据的工具。
+基于Python的对`.osm`文件的访问库
 
-彻底重写原来的屎山，目前只实现了osm文件的读写，在某人强烈安利下先建个仓库_(:з」∠)_
+## kqs_class.py
 
-## PyOsm
+OSM数据对象库
 
-osm数据对象。
+## kqs_crud.py
+
+模拟数据库操作行为，不过只有查是可以批量的，增删只能单id，改是增删组合 ~~省事~~
