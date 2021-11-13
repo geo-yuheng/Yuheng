@@ -1,6 +1,10 @@
 # OSMChina-Keqing_sword
 
-基于Python的对`.osm`文件的访问库
+A non-database Python base OSM data parser, with SQL operation simulated 
+
+----------
+
+本项目是一个基于Python的对`.osm`文件的访问库
 
 ## 技术细节和文件
 

@@ -4,16 +4,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="keqing_sword-LaoshuBaby",
-    version="0.1.0",
+    name="keqing_Sword",
+    version="0.2.0",
     author="LaoshuBaby",
     author_email="keaitianxinmail@qq.com",
-    description="A small example package",
+    description="A non-database Python base OSM data parser, with SQL operation simulated",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/osmchina/osmchina-keqing_sword",
+    url="https://github.com/OSMChina/OSMChina-keqing_Sword",
     project_urls={
-        "Bug Tracker": "https://github.com/osmchina/osmchina-keqing_sword/issues",
+        "Bug Tracker": "https://github.com/OSMChina/OSMChina-keqing_Sword/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
