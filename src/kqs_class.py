@@ -3,14 +3,8 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import ElementTree, Element
 
-
-class Bounds:
-    def __init__(self, attrib: Dict[str, str]):
-        self.min_lat: float = float(attrib['minlat'])
-        self.min_lon: float = float(attrib['minlon'])
-        self.max_lat: float = float(attrib['maxlat'])
-        self.max_lon: float = float(attrib['maxlon'])
-        self.origin: str = attrib['origin']
+KQS_VERSION = "0.2.0"
+KQS_GENERATOR = "Keqing_Sword"
 
 
 class BaseOsmModel:
@@ -41,6 +35,22 @@ class BaseOsmModel:
         print('==========================================')
 
 
+class Bounds:
+    def __init__(self, attrib: Dict[str, str]):
+        self.min_lat: float = float(attrib['minlat'])
+        self.min_lon: float = float(attrib['minlon'])
+        self.max_lat: float = float(attrib['maxlat'])
+        self.max_lon: float = float(attrib['maxlon'])
+        self.origin: str = attrib['origin']
+
+
+class Member:
+    def __init__(self, type: str, ref: int, role: str):
+        self.type: str = type
+        self.ref: int = ref
+        self.role: str = role
+
+
 class Node(BaseOsmModel):
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
         super().__init__(attrib, tag_dict)
@@ -54,23 +64,16 @@ class Way(BaseOsmModel):
         self.nds: List[int] = nd_list.copy()
 
 
-class Member:
-    def __init__(self, type: str, ref: int, role: str):
-        self.type: str = type
-        self.ref: int = ref
-        self.role: str = role
-
-
 class Relation(BaseOsmModel):
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str], member_list: List[Member]):
         super().__init__(attrib, tag_dict)
         self.members: List[Member] = member_list.copy()
 
 
-class PyOsm:
+class Waifu:
     def __init__(self):
-        self.version: str = '0.6'
-        self.generator: str = 'PyOsm'
+        self.version: str = KQS_VERSION
+        self.generator: str = KQS_GENERATOR
         self.bounds_list: List[Bounds] = []
         self.node_dict: Dict[int, Node] = {}
         self.way_dict: Dict[int, Way] = {}
