@@ -138,7 +138,22 @@ class Waifu:
             elif element.tag == 'bounds':
                 self.bounds_list.append(Bounds(element.attrib))
             else:
-                #raise TypeError('Unexpected element tag type: ' + element.tag)
+                # raise TypeError('Unexpected element tag type: ' + element.tag)
+                pass
+
+    def from_text(self, text: str):
+        root: Element = ET.fromstring(text)
+        for element in root:
+            if element.tag == 'node':
+                self.__parse_node(element)
+            elif element.tag == 'way':
+                self.__parse_way(element)
+            elif element.tag == 'relation':
+                self.__parse_relation(element)
+            elif element.tag == 'bounds':
+                self.bounds_list.append(Bounds(element.attrib))
+            else:
+                # raise TypeError('Unexpected element tag type: ' + element.tag)
                 pass
 
     def write(self, file_path: str):
