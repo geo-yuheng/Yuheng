@@ -163,23 +163,23 @@ class Waifu:
 
         for i in self.bounds_list:
             element: Element = Element("bounds")
-            PyOsm.__set_attrib(element.attrib, 'minlat', i.min_lat)
-            PyOsm.__set_attrib(element.attrib, 'minlon', i.min_lon)
-            PyOsm.__set_attrib(element.attrib, 'maxlat', i.max_lat)
-            PyOsm.__set_attrib(element.attrib, 'maxlon', i.max_lon)
-            PyOsm.__set_attrib(element.attrib, 'origin', i.origin)
+            Waifu.__set_attrib(element.attrib, 'minlat', i.min_lat)
+            Waifu.__set_attrib(element.attrib, 'minlon', i.min_lon)
+            Waifu.__set_attrib(element.attrib, 'maxlat', i.max_lat)
+            Waifu.__set_attrib(element.attrib, 'maxlon', i.max_lon)
+            Waifu.__set_attrib(element.attrib, 'origin', i.origin)
             root.append(element)
 
         def base_osm_model_to_xml(tag_name: str, model: BaseOsmModel) -> Element:
             tag: Element = Element(tag_name)
             tag.attrib['id'] = str(model.id)
-            PyOsm.__set_attrib(tag.attrib, 'action', model.action)
-            PyOsm.__set_attrib(tag.attrib, 'timestamp', model.timestamp)
-            PyOsm.__set_attrib(tag.attrib, 'uid', model.uid)
-            PyOsm.__set_attrib(tag.attrib, 'user', model.user)
+            Waifu.__set_attrib(tag.attrib, 'action', model.action)
+            Waifu.__set_attrib(tag.attrib, 'timestamp', model.timestamp)
+            Waifu.__set_attrib(tag.attrib, 'uid', model.uid)
+            Waifu.__set_attrib(tag.attrib, 'user', model.user)
             tag.attrib['visible'] = 'true' if model.visible else 'false'
-            PyOsm.__set_attrib(tag.attrib, 'version', model.version)
-            PyOsm.__set_attrib(tag.attrib, 'changeset', model.changeset)
+            Waifu.__set_attrib(tag.attrib, 'version', model.version)
+            Waifu.__set_attrib(tag.attrib, 'changeset', model.changeset)
             for k, v in model.tags.items():
                 sub_element: Element = Element("tag")
                 sub_element.attrib['k'] = k
