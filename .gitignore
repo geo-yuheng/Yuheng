@@ -1,5 +1,10 @@
+## IDE config
+
 .idea/
 *__pycache__
+
+## testdata changes
+
 Styles*
 *.osm
 *.osc
@@ -9,4 +14,7 @@ Styles*
 *.zip
 *.rar
 
+## python -m build
+
 *dist
+src/keqing_Sword.egg-info/
