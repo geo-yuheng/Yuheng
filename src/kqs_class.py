@@ -72,8 +72,8 @@ class Relation(BaseOsmModel):
 
 class Waifu:
     def __init__(self):
-        self.version: str = KQS_VERSION
-        self.generator: str = KQS_GENERATOR
+        self.version: str = "0.6"
+        self.generator: str = KQS_GENERATOR+"/"+KQS_VERSION
         self.bounds_list: List[Bounds] = []
         self.node_dict: Dict[int, Node] = {}
         self.way_dict: Dict[int, Way] = {}
