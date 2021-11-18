@@ -41,7 +41,7 @@ class Bounds:
         self.min_lon: float = float(attrib['minlon'])
         self.max_lat: float = float(attrib['maxlat'])
         self.max_lon: float = float(attrib['maxlon'])
-        self.origin: str = attrib['origin']
+        self.origin: str = attrib.get('origin', '')
 
 
 class Member:
