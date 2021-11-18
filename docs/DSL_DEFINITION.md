@@ -5,7 +5,7 @@
 该语言是为了**查询**本地`.osm`数据，
 根据 [Overpass QL](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL) 修改而成的玩具语言。
 
-本语言是一个过程化，指令式的查询语言， 可以查询 Keqing_Sword 中一个 `Waife` 对象中的 节点，路径和关系数据。
+本语言是一个过程化，指令式的查询语言， 可以查询 Keqing_Sword 中一个 `Waifu` 对象中的 节点，路径和关系数据。
 
 ## 词法定义
 
@@ -13,7 +13,7 @@
 对语法进行定义：
 
 ```
-query = ????;
+statement = (out | query), `;` ;
 ```
 
 ### 基础常量
@@ -27,89 +27,107 @@ lower_case = `a` | `b` | `c` | `d` | `e` | `f` | `g`
               | `h` | `i` | `j` | `k` | `l` | `m` | `n`
               | `o` | `p` | `q` | `r` | `s` | `t` | `u`
               | `v` | `w` | `x` | `y` | `z` ;
-char = upper_case | lower_case
+char = upper_case | lower_case ;
 digit = `0` | `1` | `2` | `3` | `4` | `5` | `6` | `7` | `8` | `9` ;
 ```
 
-### 变量名
+### 变量 (Item)
+
+#### 变量名
 
 变量名可以使用大小写英文字母，数字或下划线，但不得以数字开头。
 
 ```
-var_name = (char | `_`), {char | digit | `_`};
+item_name = (char | `_`), {char | digit | `_`} ;
 ```
 
-### 赋值
+#### 调用
 
-`[->.变量名]`
+全局变量 `._`
 
-```
-assignment = `[`, `->`, `.`, var_name, `]`;
-```
-
-### 条件查询
+变量a `.a`
 
 ```
-entity_type = `node` | `way` | `rel`;
-query = type, {`[`, condition, `]`};
+item = `.`, item_name ;
+```
 
+#### 赋值
+
+`->.变量名`
+
+```
+assignment = `->`, item ;
+```
+
+### 输出语句 (Out)
+
+将查询结果以 `List[BaseOsmModel]` 的形式返回
+
+```
+out = [`.`, var_name] out ;
+```
+
+### 查询 (Query)
+可以是三种查询中的任意一种，结尾处可进行变量赋值
+```
+query = (tag_query | id_query | time_query), [assignment] ;
+```
+
+#### 标签查询
+
+```
+tag_query = entity_type, {`[`, condition, `]`} ;
+
+entity_type = `node` | `way` | `rel` | `nwr` | `nw` | `wr` | `nr` ;
 condition = cond_key_eq | cond_val_eq | cond_re
 
-re = `"`, ?? any regular expression ??, `"`;
+q_key = [`"`], key, [`"`] ;
+q_value = `"`, val, `"` ;
+re_key = `~`, re ;
+re_val = `~`, re ;
 
-q_key = [`"`], key, [`"`];
-q_value = `"`, val, `"`;
-re_key = `~`, re;
-re_val = `~`, re;
+key = (char | `_`), {char | digit | `_`} ;
+val = ?? any valid unicode string ?? ;
+re = `"`, ?? any regular expression ??, `"` ;
 ```
 
-["key"]            /* filter objects tagged with this key and any value */
+键（不）存在：
 
-[!"key"]           /* filter objects not tagged with this key and any value */
-
-```
-cond_key_eq = [`!`], q_key;
-```
-
-["key"="value"]    /* filter objects tagged with this key and this value */
-
-["key"!="value"]   /* filter objects tagged with this key but not this value, or not tagged with this key */
+`["key"]`
+`[!"key"]`
 
 ```
-cond_val_eq = q_key, [`!`], `=`, q_val;
+cond_key_eq = [`!`], q_key ;
 ```
 
-["key"~"value"]    /* filter objects tagged with this key and a value matching a regular expression */
+按值（不）匹配：
 
-["key"!~"value"]   /* filter objects tagged with this key but a value not matching a regular expression */
-
-[~"key"~"value"]   /* filter objects tagged with a key and a value matching regular expressions */
-
-[~"key"~"value",i] /* filter objects tagged with a key and a case-insensitive value matching regular expressions */
+`["key"="value"]`
+`["key"!="value"]`
 
 ```
-cond_re = (q_key | re_key), [`!`], (q_val | re_val), [`i`];
+cond_val_eq = q_key, [`!`], `=`, q_val ;
+```
+
+按正则（不）匹配：
+
+`["key"~"value"]`
+`["key"!~"value"]`
+`[~"key"~"value"]`
+`[~"key"~"value",i]`
+
+```
+cond_re = (q_key | re_key), [`!`], (q_val | re_val), [`i`] ;
 ```
 
 ### ID查询
 
-### BBOX
-```
-bbox = `(`, box_south, `,`, box_west, `,`, box_north, `,`, box_east, `)`
-box_south = ?? decimal, -90.0 ~ 90.0 ??
-box_west  = ?? decimal, -180.0 ~ 180.0 ??
-box_north = ?? decimal, -90.0 ~ 90.0 ??
-box_east  = ?? decimal, -180.0 ~ 180.0 ??
-```
+`WAY[{{ID}}=="114514"];`
 
-### 块查询
+// todo
 
-```
-block = union
+### 时间戳查询
 
-union = 
-```
+`NODE[{{TIME}}>=2021-10-01T11:11:11];`
 
-### 时间语法
-
-###
+// todo
