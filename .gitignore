@@ -18,3 +18,5 @@ Styles*
 
 *dist
 src/Keqing_Sword.egg-info/
+
+!*/test_data/*

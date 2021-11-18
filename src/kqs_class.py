@@ -29,9 +29,9 @@ class BaseOsmModel:
         for key, new_value in self.tags.items():
             old_value = self.tags_backup[key] if key in self.tags_backup else ''
             if new_value != old_value:
-                print('%s=%s -> %s=%s' % (key, old_value, key, new_value))
+                print(f'{key}=f{old_value} -> {key}={new_value}')
         for deleted_keys in self.tags_backup.keys() - self.tags.keys():
-            print('%s=%s > %s=%s' % (deleted_keys, self.tags_backup[deleted_keys], deleted_keys, ''))
+            print(f'{deleted_keys}={self.tags_backup[deleted_keys]} > {deleted_keys}= ')
         print('==========================================')
 
 
@@ -102,7 +102,7 @@ class Waifu:
             elif sub_element.tag == 'tag':
                 tag_dict[sub_element.attrib['k']] = sub_element.attrib['v']
             else:
-                raise TypeError('Unexpected element tag type: ' + sub_element.tag + ' in Way')
+                raise TypeError(f'Unexpected element tag type: {sub_element.tag} in Way')
         self.way_dict[int(attrib['id'])] = Way(attrib, tag_dict, nd_list)
 
     def __parse_relation(self, element: Element):
@@ -122,7 +122,7 @@ class Waifu:
             elif sub_element.tag == 'tag':
                 tag_dict[sub_element.attrib['k']] = sub_element.attrib['v']
             else:
-                raise TypeError('Unexpected element tag type: ' + sub_element.tag + ' in Relation')
+                raise TypeError(f'Unexpected element tag type: {sub_element.tag} in Relation')
         self.relation_dict[int(attrib['id'])] = Relation(attrib, tag_dict, member_list)
 
     def from_file(self, file_path: str):
