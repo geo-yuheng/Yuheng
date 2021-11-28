@@ -1,0 +1,1779 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <bounds minlat='36.6833569' minlon='118.4723568' maxlat='36.6848712' maxlon='118.4751892' origin='CGImap 0.8.6 (3920334 spike-08.openstreetmap.org)' />
+  <node id='244081544' timestamp='2021-10-27T16:35:24Z' uid='9560399' user='Lepuse' visible='true' version='27' changeset='113046212' lat='36.6841879' lon='118.4738162'>
+    <tag k='capital' v='6' />
+    <tag k='gns:ADM1' v='25' />
+    <tag k='gns:DSG' v='ADM3' />
+    <tag k='gns:UFI' v='-1922602' />
+    <tag k='gns:UNI' v='6731135' />
+    <tag k='name' v='青州市' />
+    <tag k='name:de' v='Qingzhou' />
+    <tag k='name:en' v='Qingzhou' />
+    <tag k='name:fr' v='Qingzhou' />
+    <tag k='name:ja' v='青州市' />
+    <tag k='name:ru' v='Цинчжоу' />
+    <tag k='name:vi' v='Thanh Châu' />
+    <tag k='name:zh' v='青州市' />
+    <tag k='name:zh-Hant' v='青州市' />
+    <tag k='name:zh_pinyin' v='Qīngzhōu Shì' />
+    <tag k='note' v='人口为城区人口' />
+    <tag k='place' v='city' />
+    <tag k='place:CN' v='county-level_city' />
+    <tag k='population' v='376400' />
+    <tag k='population:date' v='2020' />
+    <tag k='wikidata' v='Q1360781' />
+    <tag k='wikipedia' v='zh:青州市' />
+  </node>
+  <node id='4004945451' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='6' changeset='106399782' lat='36.6839757' lon='118.4704328'>
+    <tag k='highway' v='traffic_signals' />
+    <tag k='traffic_signals' v='signal' />
+    <tag k='traffic_signals:direction' v='forward' />
+  </node>
+  <node id='4004945459' timestamp='2021-01-18T10:46:30Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='4' changeset='97691869' lat='36.6839715' lon='118.4726402' />
+  <node id='4264707556' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='8' changeset='106399782' lat='36.6842325' lon='118.479299'>
+    <tag k='highway' v='traffic_signals' />
+    <tag k='traffic_signals' v='signal' />
+    <tag k='traffic_signals:direction' v='forward' />
+  </node>
+  <node id='4745599598' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='88986980' lat='36.687724' lon='118.472871' />
+  <node id='4745601076' timestamp='2021-01-18T10:46:30Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='4' changeset='97691869' lat='36.6840144' lon='118.4726443' />
+  <node id='4745601101' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='4' changeset='95464219' lat='36.682079' lon='118.4720036' />
+  <node id='4745601378' timestamp='2019-02-27T10:09:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='67611988' lat='36.6820174' lon='118.4723515' />
+  <node id='4745601550' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='5' changeset='88986980' lat='36.6882813' lon='118.4727409' />
+  <node id='4745602083' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='5' changeset='106399782' lat='36.6839696' lon='118.4688514'>
+    <tag k='highway' v='traffic_signals' />
+    <tag k='traffic_signals' v='signal' />
+    <tag k='traffic_signals:direction' v='forward' />
+  </node>
+  <node id='4745602120' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='75209284' lat='36.6869608' lon='118.4729176' />
+  <node id='4746679133' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='4' changeset='88150672' lat='36.6840702' lon='118.4766251' />
+  <node id='5614527984' timestamp='2019-02-27T10:02:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='67611772' lat='36.6819747' lon='118.4728539' />
+  <node id='5614527987' timestamp='2020-07-06T05:34:45Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='4' changeset='87577385' lat='36.6812655' lon='118.4781526' />
+  <node id='5614527988' timestamp='2019-02-27T10:02:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='67611772' lat='36.6744999' lon='118.475237' />
+  <node id='5614527989' timestamp='2018-05-13T05:02:37Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='58915677' lat='36.6735378' lon='118.4748747' />
+  <node id='5614527990' timestamp='2021-03-02T05:05:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='100244409' lat='36.6719057' lon='118.4741897' />
+  <node id='5614527991' timestamp='2019-02-27T10:02:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='67611772' lat='36.6714317' lon='118.4736698' />
+  <node id='5614527992' timestamp='2019-02-27T10:02:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='67611772' lat='36.6714841' lon='118.4688616' />
+  <node id='5614527993' timestamp='2019-02-27T10:02:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='67611772' lat='36.6732407' lon='118.4690263' />
+  <node id='6305362272' timestamp='2019-02-27T10:02:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67611772' lat='36.671361' lon='118.4712363' />
+  <node id='6305362273' timestamp='2021-01-18T11:10:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='97693707' lat='36.6714599' lon='118.4739324' />
+  <node id='6305362274' timestamp='2019-10-04T01:42:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='75256795' lat='36.681747' lon='118.4762585' />
+  <node id='6305362275' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='95464219' lat='36.6835957' lon='118.4724781' />
+  <node id='6305362281' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='78706940' lat='36.6798319' lon='118.4691156' />
+  <node id='6305362282' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='86766061' lat='36.6797525' lon='118.4701732' />
+  <node id='6305362283' timestamp='2019-02-27T10:02:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67611772' lat='36.6799225' lon='118.4714987' />
+  <node id='6305362284' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='95464219' lat='36.6835922' lon='118.4726357' />
+  <node id='6305363967' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6782568' lon='118.476856' />
+  <node id='6305363968' timestamp='2021-03-15T13:00:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='101053425' lat='36.6775663' lon='118.4765555' />
+  <node id='6305364097' timestamp='2021-03-03T04:38:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100316140' lat='36.6882583' lon='118.4730979' />
+  <node id='6305364098' timestamp='2021-03-03T04:38:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100316140' lat='36.6880265' lon='118.4730976' />
+  <node id='6305364100' timestamp='2021-03-03T04:48:26Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='100316627' lat='36.6867209' lon='118.4730225' />
+  <node id='6305364115' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='107411692' lat='36.6860122' lon='118.4749912' />
+  <node id='6305364116' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='107411692' lat='36.6860122' lon='118.4757048' />
+  <node id='6305371160' timestamp='2019-02-27T10:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67611988' lat='36.6818053' lon='118.4754088' />
+  <node id='6305371161' timestamp='2019-10-04T01:42:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='75256795' lat='36.6817599' lon='118.4760767' />
+  <node id='6305371170' timestamp='2019-02-27T10:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67611988' lat='36.6838814' lon='118.4733522' />
+  <node id='6305371171' timestamp='2019-02-27T10:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67611988' lat='36.6836195' lon='118.4733636' />
+  <node id='6305371172' timestamp='2019-02-27T10:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67611988' lat='36.6836195' lon='118.4741313' />
+  <node id='6305371173' timestamp='2019-02-27T10:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67611988' lat='36.6838952' lon='118.4741256' />
+  <node id='6307305022' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.685255' lon='118.4705877' />
+  <node id='6307305023' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.685191' lon='118.4708341' />
+  <node id='6307305024' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.685162' lon='118.4713343' />
+  <node id='6307305025' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.685162' lon='118.4717619' />
+  <node id='6307305026' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6848539' lon='118.4718562' />
+  <node id='6307305027' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6845981' lon='118.4718417' />
+  <node id='6307305028' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6844412' lon='118.4718272' />
+  <node id='6307305029' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6844005' lon='118.4722766' />
+  <node id='6307305030' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6845109' lon='118.472494' />
+  <node id='6307305031' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6846214' lon='118.4724868' />
+  <node id='6307305032' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6855747' lon='118.4726172' />
+  <node id='6307305033' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6858595' lon='118.4727115' />
+  <node id='6307305034' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6864465' lon='118.4727622' />
+  <node id='6307305035' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6877776' lon='118.4728202' />
+  <node id='6307305036' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6878241' lon='118.4727839' />
+  <node id='6307305038' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6878357' lon='118.4723346' />
+  <node id='6307305039' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6876381' lon='118.4719939' />
+  <node id='6307305040' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.6873533' lon='118.4713705' />
+  <node id='6307305041' timestamp='2019-02-28T01:43:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='67636274' lat='36.687022' lon='118.4708341' />
+  <node id='6846126710' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6843347' lon='118.4726834'>
+    <tag k='historic' v='ruins' />
+    <tag k='name' v='北门里牌坊' />
+  </node>
+  <node id='6846126743' timestamp='2021-03-03T04:38:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100316140' lat='36.6869097' lon='118.4730389' />
+  <node id='6846126744' timestamp='2021-03-03T04:38:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100316140' lat='36.6868148' lon='118.4730314' />
+  <node id='6846126748' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6854966' lon='118.4728059' />
+  <node id='6846126768' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88986980' lat='36.6883345' lon='118.4732361' />
+  <node id='6846126769' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88986980' lat='36.6881348' lon='118.4737031' />
+  <node id='6846126770' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.688078' lon='118.4738836' />
+  <node id='6846126771' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6880201' lon='118.4741209' />
+  <node id='6846126772' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6877499' lon='118.4746058' />
+  <node id='6846126773' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6875982' lon='118.4748534' />
+  <node id='6846126774' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6874934' lon='118.4750288' />
+  <node id='6846126775' timestamp='2019-12-27T08:18:39Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='78914729' lat='36.6871735' lon='118.4749901' />
+  <node id='6846126776' timestamp='2019-12-27T08:18:39Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='78914729' lat='36.686724' lon='118.4749592' />
+  <node id='6846126777' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.686098' lon='118.4749394' />
+  <node id='6846126778' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='78913495' lat='36.685996' lon='118.4749341' />
+  <node id='6846126779' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6852182' lon='118.4749153' />
+  <node id='6846126780' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840527' lon='118.4749074' />
+  <node id='6846134045' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722' lat='36.6848289' lon='118.4724738' />
+  <node id='6846134046' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722' lat='36.6847473' lon='118.4724707' />
+  <node id='6846134047' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722' lat='36.6847615' lon='118.4718919' />
+  <node id='6846134048' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722' lat='36.6848432' lon='118.471895' />
+  <node id='6846134053' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6848386' lon='118.4755268' />
+  <node id='6846134054' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6847373' lon='118.4755326' />
+  <node id='6846134055' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6847171' lon='118.4749976' />
+  <node id='6846134056' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.684822' lon='118.4749963' />
+  <node id='6846134057' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6846088' lon='118.4755445' />
+  <node id='6846134058' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6845075' lon='118.4755502' />
+  <node id='6846134059' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6844873' lon='118.4750153' />
+  <node id='6846134060' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6845922' lon='118.4750139' />
+  <node id='6846134061' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6843825' lon='118.4755577' />
+  <node id='6846134062' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6842599' lon='118.4755679' />
+  <node id='6846134063' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6842362' lon='118.4750373' />
+  <node id='6846134064' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6843659' lon='118.4750272' />
+  <node id='6846134075' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6842398' lon='118.476409' />
+  <node id='6846134076' timestamp='2019-10-03T04:05:22Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75209284' lat='36.6844346' lon='118.4764123' />
+  <node id='6846314742' timestamp='2021-03-20T02:40:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='101373841' lat='36.6819396' lon='118.4733977' />
+  <node id='6846314750' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6818188' lon='118.4752053' />
+  <node id='6846314761' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.683313' lon='118.4754284' />
+  <node id='6846314762' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6832239' lon='118.476575' />
+  <node id='6846314763' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6832162' lon='118.4765421' />
+  <node id='6846314764' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6832381' lon='118.4761215' />
+  <node id='6846314765' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6833505' lon='118.4751597' />
+  <node id='6846314766' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6833974' lon='118.4748482' />
+  <node id='6846314767' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6834348' lon='118.4745756' />
+  <node id='6846314768' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6834598' lon='118.4742719' />
+  <node id='6846314769' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6834661' lon='118.4742174' />
+  <node id='6846314770' timestamp='2021-03-20T02:40:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='101373841' lat='36.6835021' lon='118.4737624' />
+  <node id='6846314771' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6835285' lon='118.4733685' />
+  <node id='6846314772' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6835223' lon='118.4732711' />
+  <node id='6846314773' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6835316' lon='118.4730686' />
+  <node id='6846314774' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6835441' lon='118.472944' />
+  <node id='6846314775' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6835438' lon='118.4725856' />
+  <node id='6846314776' timestamp='2019-10-03T06:44:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75212566' lat='36.6832989' lon='118.4755979' />
+  <node id='6846314779' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='95464219' lat='36.6840391' lon='118.4756597' />
+  <node id='6846314780' timestamp='2021-03-20T02:40:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='101373841' lat='36.6829688' lon='118.4742036' />
+  <node id='6847223699' timestamp='2019-10-03T11:27:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75227844' lat='36.6779723' lon='118.4705317' />
+  <node id='6847223700' timestamp='2019-10-03T11:27:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75227844' lat='36.6779115' lon='118.4705317' />
+  <node id='6847223701' timestamp='2019-10-03T11:27:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75227844' lat='36.677818' lon='118.4703277' />
+  <node id='6847223702' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='86766061' lat='36.6751414' lon='118.4713187' />
+  <node id='6847223703' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='86766061' lat='36.6752732' lon='118.4690211' />
+  <node id='6849014926' timestamp='2019-10-04T01:42:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75256795' lat='36.6816525' lon='118.4772178' />
+  <node id='6849014927' timestamp='2019-10-04T01:42:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='75256795' lat='36.6813981' lon='118.4777485' />
+  <node id='7074306925' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6782226' lon='118.4705815' />
+  <node id='7074306926' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6793264' lon='118.4705155' />
+  <node id='7074306932' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.677964' lon='118.4705795' />
+  <node id='7074306940' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6783065' lon='118.4706635' />
+  <node id='7074306942' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6790395' lon='118.4706556' />
+  <node id='7074306943' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6782691' lon='118.4705769' />
+  <node id='7074306944' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6782681' lon='118.4706421' />
+  <node id='7074306945' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6792155' lon='118.4706275' />
+  <node id='7074306946' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6793372' lon='118.4706256' />
+  <node id='7074306949' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6794758' lon='118.4695197' />
+  <node id='7074306950' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6794706' lon='118.4691017' />
+  <node id='7074306951' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.679232' lon='118.4695248' />
+  <node id='7074306954' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='86766061' lat='36.6792896' lon='118.4704159' />
+  <node id='7074306960' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.679769' lon='118.4703184' />
+  <node id='7074306961' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6798024' lon='118.4704986' />
+  <node id='7074306962' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6798328' lon='118.4706257' />
+  <node id='7074306963' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6798936' lon='118.4708544' />
+  <node id='7074306964' timestamp='2019-12-21T07:56:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78706940' lat='36.6798738' lon='118.4714299' />
+  <node id='7074306979' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='86766061' lat='36.6792598' lon='118.4702323' />
+  <node id='7087733703' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840814' lon='118.4756576' />
+  <node id='7087733707' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846882' lon='118.4756216' />
+  <node id='7087733708' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846527' lon='118.4750212' />
+  <node id='7087733709' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6844541' lon='118.475633' />
+  <node id='7087733710' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6844307' lon='118.4750176' />
+  <node id='7087733711' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6841075' lon='118.4764528' />
+  <node id='7087733715' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6844517' lon='118.4756777' />
+  <node id='7087733717' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6852346' lon='118.4756348' />
+  <node id='7087733750' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93766564' lat='36.6855264' lon='118.4728569' />
+  <node id='7087733751' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93766564' lat='36.6854377' lon='118.4748657' />
+  <node id='7087733752' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='93855581' lat='36.6841145' lon='118.4747879' />
+  <node id='7087733753' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='93855581' lat='36.6841149' lon='118.472797' />
+  <node id='7087733754' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93766564' lat='36.6841917' lon='118.472738' />
+  <node id='7087733763' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846851' lon='118.4728627' />
+  <node id='7087733764' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846602' lon='118.4732891' />
+  <node id='7087733765' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6847236' lon='118.4733004' />
+  <node id='7087733766' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6847145' lon='118.4733739' />
+  <node id='7087733767' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846873' lon='118.4734049' />
+  <node id='7087733768' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6841688' lon='118.4733654' />
+  <node id='7087733769' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='93855581' lat='36.6841047' lon='118.4733626' />
+  <node id='7087733770' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93766564' lat='36.6852276' lon='118.4728302' />
+  <node id='7087733771' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6852218' lon='118.4729107' />
+  <node id='7087733772' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6851923' lon='118.4729333' />
+  <node id='7087733773' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6851086' lon='118.4729333' />
+  <node id='7087733774' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6851131' lon='118.4728769' />
+  <node id='7087733775' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6850723' lon='118.4728684' />
+  <node id='7087733776' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6850655' lon='118.472891' />
+  <node id='7087733777' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846307' lon='118.4735179' />
+  <node id='7087733778' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6845922' lon='118.4741194' />
+  <node id='7087733779' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6842571' lon='118.4740601' />
+  <node id='7087733780' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6842707' lon='118.4735489' />
+  <node id='7087733781' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6843137' lon='118.4734896' />
+  <node id='7087733782' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6842957' lon='118.4741044' />
+  <node id='7087733783' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846181' lon='118.4737298' />
+  <node id='7087733784' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846052' lon='118.4739175' />
+  <node id='7087733785' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6844939' lon='118.4737206' />
+  <node id='7087733786' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6844845' lon='118.473907' />
+  <node id='7087733787' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='93855581' lat='36.6841034' lon='118.4741507' />
+  <node id='7087733788' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6841597' lon='118.4742125' />
+  <node id='7087733789' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846353' lon='118.4742295' />
+  <node id='7087733790' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846556' lon='118.4742549' />
+  <node id='7087733791' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846375' lon='118.4744808' />
+  <node id='7087733792' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6845945' lon='118.474478' />
+  <node id='7087733793' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6845787' lon='118.4747688' />
+  <node id='7087733794' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6851289' lon='118.4747914' />
+  <node id='7087733795' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93766564' lat='36.6851504' lon='118.474863' />
+  <node id='7087733796' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='93855581' lat='36.6841627' lon='118.4748498' />
+  <node id='7087733797' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846851' lon='118.4735235' />
+  <node id='7087733798' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846534' lon='118.4741165' />
+  <node id='7087733799' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6847414' lon='118.472954' />
+  <node id='7087733800' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6851034' lon='118.4729562' />
+  <node id='7087733801' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6852306' lon='118.4730994' />
+  <node id='7087733802' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6852288' lon='118.4730245' />
+  <node id='7087733803' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6848773' lon='118.4730135' />
+  <node id='7087733804' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.684865' lon='118.4730751' />
+  <node id='7087733805' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6851511' lon='118.4746279' />
+  <node id='7087733806' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6851458' lon='118.4746873' />
+  <node id='7087733807' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6847837' lon='118.4746477' />
+  <node id='7087733808' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6847837' lon='118.4746014' />
+  <node id='7087733809' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6851299' lon='118.4747336' />
+  <node id='7087733810' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846601' lon='118.4746984' />
+  <node id='7087733811' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495' lat='36.6846672' lon='118.4744847' />
+  <node id='7087733853' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93766564' lat='36.6854953' lon='118.4735617' />
+  <node id='7087777732' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93766564' lat='36.6850839' lon='118.4728174' />
+  <node id='7087777733' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93766564' lat='36.6845732' lon='118.472772' />
+  <node id='7087801124' timestamp='2019-12-27T08:18:39Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78914729' lat='36.687927' lon='118.474288' />
+  <node id='7087801132' timestamp='2021-03-03T04:38:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100316140' lat='36.6870042' lon='118.4730318' />
+  <node id='7087811304' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6837022' lon='118.4749873' />
+  <node id='7087811305' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6836195' lon='118.4749899' />
+  <node id='7087811306' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6836314' lon='118.4755693' />
+  <node id='7087811307' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.683714' lon='118.4755667' />
+  <node id='7087811308' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6838813' lon='118.4727194' />
+  <node id='7087811309' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6835765' lon='118.4726756' />
+  <node id='7087811310' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6835765' lon='118.4729533' />
+  <node id='7087811311' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6835589' lon='118.4730848' />
+  <node id='7087811312' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6835472' lon='118.4732529' />
+  <node id='7087811313' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.683556' lon='118.4733625' />
+  <node id='7087811314' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6835296' lon='118.4736804' />
+  <node id='7087811315' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6834886' lon='118.4743016' />
+  <node id='7087811316' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011' lat='36.6839047' lon='118.4743308' />
+  <node id='7097823707' timestamp='2021-03-20T02:13:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='101372766' lat='36.6818836' lon='118.4741888' />
+  <node id='7097829354' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6833848' lon='118.4727553' />
+  <node id='7097829356' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6831273' lon='118.4728135' />
+  <node id='7097829357' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6831349' lon='118.4727125' />
+  <node id='7097829358' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6834774' lon='118.4727602' />
+  <node id='7097829359' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6833774' lon='118.4728486' />
+  <node id='7097829360' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6833944' lon='118.4728455' />
+  <node id='7097829361' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6833906' lon='118.4729702' />
+  <node id='7097829362' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6834708' lon='118.472974' />
+  <node id='7097856142' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6833817' lon='118.47294' />
+  <node id='7097856143' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6832731' lon='118.4729344' />
+  <node id='7097856144' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6832616' lon='118.4732848' />
+  <node id='7097856145' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6833701' lon='118.4732903' />
+  <node id='7097856146' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6833679' lon='118.4733513' />
+  <node id='7097856147' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6832637' lon='118.4733449' />
+  <node id='7097856148' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6832487' lon='118.4737205' />
+  <node id='7097856149' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6833529' lon='118.473727' />
+  <node id='7097856150' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6833588' lon='118.4737945' />
+  <node id='7097856151' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6832545' lon='118.4737889' />
+  <node id='7097856152' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6832438' lon='118.4741016' />
+  <node id='7097856153' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.683348' lon='118.4741072' />
+  <node id='7097856170' timestamp='2019-12-31T09:13:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='79048563' lat='36.6827942' lon='118.4724706' />
+  <node id='7097856174' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555' lat='36.6819722' lon='118.4728918' />
+  <node id='7137262134' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.6847836' lon='118.473085' />
+  <node id='7137262135' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.6847105' lon='118.4746514' />
+  <node id='7137262136' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.6847656' lon='118.4734715' />
+  <node id='7137262137' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.6843578' lon='118.473439' />
+  <node id='7137262138' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.6842416' lon='118.4734605' />
+  <node id='7137262139' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.6841943' lon='118.4735517' />
+  <node id='7137262140' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.6841814' lon='118.4740237' />
+  <node id='7137262141' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.6842072' lon='118.4741149' />
+  <node id='7137262142' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.6842717' lon='118.4741525' />
+  <node id='7137262143' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.684733' lon='118.4741699' />
+  <node id='7137262144' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915' lat='36.6841874' lon='118.4738046' />
+  <node id='7137262145' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840161' lon='118.4738023' />
+  <node id='7619889571' timestamp='2020-06-14T14:31:09Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='86626225' lat='36.6842131' lon='118.4600323' />
+  <node id='7619889667' timestamp='2020-08-24T13:27:43Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='4' changeset='89861060' lat='36.6840696' lon='118.468776' />
+  <node id='7619889683' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840191' lon='118.4695012' />
+  <node id='7628783547' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='106399782' lat='36.684015' lon='118.4701398'>
+    <tag k='highway' v='traffic_signals' />
+    <tag k='traffic_signals' v='signal' />
+    <tag k='traffic_signals:direction' v='forward' />
+  </node>
+  <node id='7628783548' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='88150672' lat='36.6840564' lon='118.4702712' />
+  <node id='7628783560' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='88150672' lat='36.6839107' lon='118.4703345' />
+  <node id='7628783583' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='86766061' lat='36.679842' lon='118.4701676' />
+  <node id='7628783584' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='86766061' lat='36.6779329' lon='118.4705317' />
+  <node id='7628810885' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='86766061' lat='36.6751885' lon='118.4704808' />
+  <node id='7628810886' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='86766061' lat='36.6752449' lon='118.4697116' />
+  <node id='7628810887' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='86766061' lat='36.6752202' lon='118.4700974' />
+  <node id='7628810888' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='86766061' lat='36.6768347' lon='118.4703042' />
+  <node id='7628810889' timestamp='2020-06-17T09:55:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='86766061' lat='36.6768407' lon='118.4715552' />
+  <node id='7686786078' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6767977' lon='118.4762272' />
+  <node id='7686789643' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6819117' lon='118.4738272' />
+  <node id='7686789653' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6818738' lon='118.4743756' />
+  <node id='7686789655' timestamp='2021-03-20T02:40:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='101373841' lat='36.683177' lon='118.4742094' />
+  <node id='7686789656' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6835256' lon='118.4733224' />
+  <node id='7686789657' timestamp='2021-03-20T02:40:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='101373841' lat='36.6831937' lon='118.4733128' />
+  <node id='7686789659' timestamp='2021-03-20T02:40:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='101373841' lat='36.6831878' lon='118.4737623' />
+  <node id='7686789664' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6829918' lon='118.4725009' />
+  <node id='7686789668' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6837588' lon='118.4744594' />
+  <node id='7686789669' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6836976' lon='118.4743902' />
+  <node id='7686789670' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6835679' lon='118.4743931' />
+  <node id='7686789671' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6835745' lon='118.4748422' />
+  <node id='7686789672' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6837071' lon='118.4748392' />
+  <node id='7686789673' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6837646' lon='118.4747675' />
+  <node id='7686789726' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6799582' lon='118.4775892' />
+  <node id='7686789727' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555' lat='36.6795053' lon='118.477394' />
+  <node id='7713359149' timestamp='2020-07-14T10:11:57Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87970014' lat='36.6839482' lon='118.460251' />
+  <node id='7713359152' timestamp='2020-07-17T15:56:59Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88151232' lat='36.6841246' lon='118.4792806' />
+  <node id='7713359153' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840155' lon='118.47663' />
+  <node id='7713359154' timestamp='2020-07-14T10:11:57Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87970014' lat='36.6843093' lon='118.4793725' />
+  <node id='7713359155' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840568' lon='118.4700982' />
+  <node id='7713359156' timestamp='2020-07-14T10:11:57Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87970014' lat='36.6839143' lon='118.4700932' />
+  <node id='7713359157' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6839224' lon='118.4653578' />
+  <node id='7713359158' timestamp='2020-08-24T13:27:43Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='89861060' lat='36.683908' lon='118.4686973' />
+  <node id='7713359159' timestamp='2020-08-24T13:27:43Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='89861060' lat='36.6839123' lon='118.4687811' />
+  <node id='7713359160' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6839123' lon='118.4702448' />
+  <node id='7713359161' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6839764' lon='118.4721658' />
+  <node id='7713359162' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6839044' lon='118.4726294' />
+  <node id='7713359163' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6839162' lon='118.4734003' />
+  <node id='7713359164' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6839788' lon='118.4756735' />
+  <node id='7713359165' timestamp='2021-03-03T02:48:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='100311876' lat='36.6841182' lon='118.4793895' />
+  <node id='7713359166' timestamp='2021-03-03T02:48:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='4' changeset='100311876' lat='36.6841091' lon='118.4795144' />
+  <node id='7713359167' timestamp='2020-07-14T10:11:57Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87970014' lat='36.6840948' lon='118.4796961' />
+  <node id='7713359169' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840766' lon='118.4653459' />
+  <node id='7713359170' timestamp='2020-08-24T13:27:43Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='89861060' lat='36.684065' lon='118.4686976' />
+  <node id='7713359171' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840636' lon='118.4695035' />
+  <node id='7713359172' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840556' lon='118.4703439' />
+  <node id='7713359173' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840547' lon='118.4726547' />
+  <node id='7713359174' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840507' lon='118.4736508' />
+  <node id='7713359175' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6840847' lon='118.47475' />
+  <node id='7713359176' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6841009' lon='118.4749052' />
+  <node id='7713359177' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6841314' lon='118.4756549'>
+    <tag k='highway' v='crossing' />
+  </node>
+  <node id='7713359178' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88150672' lat='36.6841653' lon='118.4764525' />
+  <node id='7713359179' timestamp='2021-03-03T02:48:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100311876' lat='36.6843131' lon='118.479466' />
+  <node id='7713359180' timestamp='2021-03-03T02:48:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100311876' lat='36.6843193' lon='118.479596' />
+  <node id='7713359181' timestamp='2021-03-03T02:48:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='100311876' lat='36.6843239' lon='118.4797665' />
+  <node id='7724746400' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6841301' lon='118.4603092' />
+  <node id='7724746401' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.683975' lon='118.4734083' />
+  <node id='7724746402' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6841891' lon='118.4737413' />
+  <node id='7724746403' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6841963' lon='118.4740763' />
+  <node id='7724746404' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.684214' lon='118.4749058' />
+  <node id='7724746415' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6842916' lon='118.4790308' />
+  <node id='7724746416' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6842271' lon='118.4772288' />
+  <node id='7724746417' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6841111' lon='118.4766197' />
+  <node id='7724746418' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6841686' lon='118.4791158' />
+  <node id='7724746419' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6842229' lon='118.479123' />
+  <node id='7724746420' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6840668' lon='118.4738032' />
+  <node id='7724746421' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6840148' lon='118.4730134' />
+  <node id='7724746422' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.684018' lon='118.471476' />
+  <node id='7724746423' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6839777' lon='118.4714789' />
+  <node id='7724746424' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6839449' lon='118.4746791' />
+  <node id='7724746425' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6842603' lon='118.4781479' />
+  <node id='7724746426' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6841928' lon='118.477144' />
+  <node id='7724746427' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6840234' lon='118.4690214' />
+  <node id='7724746428' timestamp='2020-08-24T13:27:43Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='89861060' lat='36.6839776' lon='118.4690489' />
+  <node id='7724746429' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6840655' lon='118.4690265' />
+  <node id='7724746432' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6840681' lon='118.4685763' />
+  <node id='7724746433' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.684112' lon='118.4603909' />
+  <node id='7724746434' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6839134' lon='118.4685172' />
+  <node id='7724746435' timestamp='2020-07-17T15:42:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88150672' lat='36.6839159' lon='118.4690227' />
+  <node id='7724746436' timestamp='2020-07-17T15:56:59Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='88151232' lat='36.6841167' lon='118.4790617' />
+  <node id='7724782635' timestamp='2020-07-17T15:56:59Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88151232' lat='36.6840942' lon='118.4796169' />
+  <node id='7724782649' timestamp='2020-07-17T15:56:59Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88151232' lat='36.6840946' lon='118.4796649' />
+  <node id='7724782650' timestamp='2020-07-17T15:56:59Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88151232' lat='36.6843267' lon='118.4797327' />
+  <node id='7787629644' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88986980' lat='36.6883748' lon='118.4730968' />
+  <node id='7787629645' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88986980' lat='36.6883908' lon='118.4728642' />
+  <node id='7787629646' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88986980' lat='36.6884675' lon='118.4725797' />
+  <node id='7787629647' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88986980' lat='36.6884504' lon='118.4726003' />
+  <node id='7787629650' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88986980' lat='36.6883917' lon='118.4726647' />
+  <node id='7787629651' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88986980' lat='36.6883523' lon='118.4726967' />
+  <node id='7787629652' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88986980' lat='36.6880858' lon='118.4728471' />
+  <node id='7787629653' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88986980' lat='36.6881884' lon='118.4728062' />
+  <node id='7787629654' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88986980' lat='36.6879526' lon='118.4728662' />
+  <node id='7787629660' timestamp='2020-08-05T14:09:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='88986980' lat='36.6885665' lon='118.4724616' />
+  <node id='8095522165' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6841753' lon='118.4742679' />
+  <node id='8095522166' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6842474' lon='118.4742156' />
+  <node id='8095522167' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6842915' lon='118.4742638' />
+  <node id='8095522168' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6843216' lon='118.4742826' />
+  <node id='8095522169' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93855581' lat='36.6843646' lon='118.4742967' />
+  <node id='8095522170' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6843969' lon='118.474296' />
+  <node id='8095522171' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6844291' lon='118.4742933' />
+  <node id='8095522172' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.68447' lon='118.4742598' />
+  <node id='8095522173' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6844959' lon='118.4742245' />
+  <node id='8095522174' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6845862' lon='118.4743242' />
+  <node id='8095522176' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6841807' lon='118.4732969' />
+  <node id='8095522177' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6842786' lon='118.4733738' />
+  <node id='8095522178' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6843302' lon='118.4733318' />
+  <node id='8095522179' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6843678' lon='118.4733157' />
+  <node id='8095522180' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6844098' lon='118.473313' />
+  <node id='8095522181' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6844593' lon='118.4733224' />
+  <node id='8095522182' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6844904' lon='118.4733425' />
+  <node id='8095522183' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6845357' lon='118.4733934' />
+  <node id='8095522184' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93766564' lat='36.6846389' lon='118.4733224' />
+  <node id='8095522186' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93855581' lat='36.6841173' lon='118.4738025'>
+    <tag k='barrier' v='gate' />
+  </node>
+  <node id='8100512566' timestamp='2021-11-06T15:20:43Z' uid='10360149' user='Thregren' visible='true' version='3' changeset='113450665' lat='36.684561' lon='118.4738086'>
+    <tag k='country' v='CN' />
+    <tag k='flag:name' v='China' />
+    <tag k='flag:type' v='national' />
+    <tag k='flag:wikidata' v='Q131147' />
+    <tag k='lit' v='yes' />
+    <tag k='man_made' v='flagpole' />
+    <tag k='subject' v='People&apos;s Republic of China' />
+    <tag k='subject:wikidata' v='Q148' />
+  </node>
+  <node id='8100512567' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93855581' lat='36.6844071' lon='118.473194' />
+  <node id='8100512568' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93855581' lat='36.6843977' lon='118.4734422' />
+  <node id='8100512569' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93855581' lat='36.6844026' lon='118.4733135' />
+  <node id='8100512570' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93855581' lat='36.6843691' lon='118.4741562' />
+  <node id='8100512571' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93855581' lat='36.6843598' lon='118.4744433' />
+  <node id='8204504264' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6841394' lon='118.4772532' />
+  <node id='8204504268' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835379' lon='118.4747043' />
+  <node id='8204504269' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6834634' lon='118.4747043' />
+  <node id='8204504270' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.683469' lon='118.4750345' />
+  <node id='8204504271' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835544' lon='118.475031' />
+  <node id='8204504272' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.683582' lon='118.4743467' />
+  <node id='8204504273' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6834855' lon='118.4743329' />
+  <node id='8204504274' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6834331' lon='118.4748109' />
+  <node id='8204504275' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6833697' lon='118.4752202' />
+  <node id='8204504276' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6833366' lon='118.4755538' />
+  <node id='8204504277' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836151' lon='118.4756122' />
+  <node id='8204504278' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835931' lon='118.4749794' />
+  <node id='8204504279' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.683742' lon='118.4749863' />
+  <node id='8204504280' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.683731' lon='118.4748591' />
+  <node id='8204504281' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835655' lon='118.4748694' />
+  <node id='8204504282' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835544' lon='118.4743742' />
+  <node id='8204504283' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836786' lon='118.4743604' />
+  <node id='8204504284' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838514' lon='118.4737562'>
+    <tag k='amenity' v='police' />
+  </node>
+  <node id='8204504285' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838531' lon='118.4735972'>
+    <tag k='denotation' v='single' />
+    <tag k='diameter' v='100 cm' />
+    <tag k='height' v='10' />
+    <tag k='leaf_cycle' v='deciduous' />
+    <tag k='leaf_type' v='broadleaved' />
+    <tag k='natural' v='tree' />
+  </node>
+  <node id='8204504286' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838582' lon='118.4739026'>
+    <tag k='denotation' v='single' />
+    <tag k='diameter' v='100 cm' />
+    <tag k='height' v='10' />
+    <tag k='leaf_cycle' v='deciduous' />
+    <tag k='leaf_type' v='broadleaved' />
+    <tag k='natural' v='tree' />
+  </node>
+  <node id='8204504287' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838614' lon='118.4741618' />
+  <node id='8204504288' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838722' lon='118.4742959' />
+  <node id='8204504289' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835086' lon='118.474245' />
+  <node id='8204504290' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835689' lon='118.4733142' />
+  <node id='8204504291' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836033' lon='118.4733277' />
+  <node id='8204504292' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836076' lon='118.4741484' />
+  <node id='8204504293' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6837237' lon='118.4730407' />
+  <node id='8204504294' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835861' lon='118.4730487' />
+  <node id='8204504295' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835904' lon='118.4727027' />
+  <node id='8204504296' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6837345' lon='118.4727322' />
+  <node id='8204504297' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836872' lon='118.4730983' />
+  <node id='8204504298' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835743' lon='118.4732908' />
+  <node id='8204504299' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836651' lon='118.4733045' />
+  <node id='8204504300' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838507' lon='118.4730997' />
+  <node id='8204504301' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838507' lon='118.4733303' />
+  <node id='8204504302' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836936' lon='118.473325' />
+  <node id='8204504303' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836915' lon='118.4732472' />
+  <node id='8204504304' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.683713' lon='118.4731855' />
+  <node id='8204504305' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6837582' lon='118.4731319' />
+  <node id='8204504306' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838528' lon='118.473038' />
+  <node id='8204504307' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6837496' lon='118.4730514' />
+  <node id='8204504308' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6837603' lon='118.4727483' />
+  <node id='8204504309' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838485' lon='118.4727644' />
+  <node id='8204504310' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6837539' lon='118.4726111' />
+  <node id='8204504311' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.683741' lon='118.4731023' />
+  <node id='8204504312' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6837496' lon='118.4733893' />
+  <node id='8204504313' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838836' lon='118.4726269' />
+  <node id='8204504314' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838901' lon='118.4726797' />
+  <node id='8204504315' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6839002' lon='118.4733554' />
+  <node id='8204504316' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6839169' lon='118.4743428' />
+  <node id='8204509317' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6839558' lon='118.4756714' />
+  <node id='8204509318' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6839022' lon='118.4733972' />
+  <node id='8204509319' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836653' lon='118.4733889' />
+  <node id='8204509320' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836552' lon='118.473414' />
+  <node id='8204509321' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6836737' lon='118.474052' />
+  <node id='8204509322' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.683714' lon='118.4740604' />
+  <node id='8204509323' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6839929' lon='118.4740376' />
+  <node id='8204509324' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6839306' lon='118.4740427'>
+    <tag k='highway' v='crossing' />
+  </node>
+  <node id='8204509325' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6839123' lon='118.4740442'>
+    <tag k='highway' v='crossing' />
+  </node>
+  <node id='8204509326' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6838536' lon='118.4727154' />
+  <node id='8204509327' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6837744' lon='118.472704' />
+  <node id='8204509328' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.683724' lon='118.4726968' />
+  <node id='8204509329' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.683479' lon='118.4726428' />
+  <node id='8204509330' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835013' lon='118.4729392' />
+  <node id='8204509331' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722' lat='36.683507' lon='118.4725052' />
+  <node id='8204509332' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722' lat='36.6834924' lon='118.4725025' />
+  <node id='8204509333' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722' lat='36.6834771' lon='118.4726347' />
+  <node id='8204509334' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722' lat='36.6834917' lon='118.4726373' />
+  <node id='8204509335' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835058' lon='118.4724123' />
+  <node id='8204509336' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6835144' lon='118.4722215' />
+  <node id='8204509337' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6826786' lon='118.4722312' />
+  <node id='8204509338' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6833932' lon='118.4722886' />
+  <node id='8204509341' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6826127' lon='118.4720067' />
+  <node id='8204509342' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219' lat='36.6821146' lon='118.4719854' />
+  <node id='8333823710' timestamp='2021-01-18T10:46:30Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97691869' lat='36.6841137' lon='118.4736768' />
+  <node id='8333823711' timestamp='2021-01-18T10:46:30Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97691869' lat='36.6841129' lon='118.4739138' />
+  <node id='8333823713' timestamp='2021-01-18T10:46:30Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97691869' lat='36.6852432' lon='118.4748639' />
+  <node id='8333898350' timestamp='2021-01-18T11:10:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97693707' lat='36.6837914' lon='118.4720368' />
+  <node id='8333898351' timestamp='2021-01-18T11:10:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97693707' lat='36.6836952' lon='118.4720368' />
+  <node id='8333898352' timestamp='2021-01-18T11:10:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97693707' lat='36.683695' lon='118.4724575' />
+  <node id='8333898353' timestamp='2021-01-18T11:10:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97693707' lat='36.6837911' lon='118.4724576' />
+  <node id='8333898366' timestamp='2021-01-18T11:10:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97693707' lat='36.6716448' lon='118.4740754' />
+  <node id='8333898367' timestamp='2021-01-18T11:10:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97693707' lat='36.6715085' lon='118.474014' />
+  <node id='8382466040' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6837626' lon='118.4734165' />
+  <node id='8382466041' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6837123' lon='118.4734191' />
+  <node id='8382466042' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6837207' lon='118.4739987' />
+  <node id='8382466043' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6837751' lon='118.4740013' />
+  <node id='8382466044' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6836746' lon='118.4734321' />
+  <node id='8382466045' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6836244' lon='118.4734347' />
+  <node id='8382466046' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6836328' lon='118.4740143' />
+  <node id='8382466047' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6836872' lon='118.4740169' />
+  <node id='8382466048' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6838568' lon='118.4734295' />
+  <node id='8382466049' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6838065' lon='118.4734321' />
+  <node id='8382466050' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6838149' lon='118.4740117' />
+  <node id='8382466051' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898' lat='36.6838694' lon='118.4740143' />
+  <node id='8460011537' timestamp='2021-02-26T05:47:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100020913' lat='36.6878624' lon='118.4728106' />
+  <node id='8460011538' timestamp='2021-02-26T05:47:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100020913' lat='36.6880341' lon='118.4728106' />
+  <node id='8477571950' timestamp='2021-03-02T02:12:46Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100237604' lat='36.6837787' lon='118.4735373'>
+    <tag k='amenity' v='bicycle_rental' />
+    <tag k='capacity' v='10' />
+    <tag k='network' v='青州市公共自行车' />
+    <tag k='operator' v='青州市人民政府' />
+    <tag k='operator:type' v='government' />
+  </node>
+  <node id='8477602274' timestamp='2021-03-02T05:05:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100244409' lat='36.6714034' lon='118.4726959' />
+  <node id='8477624326' timestamp='2021-03-02T02:54:40Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100238557' lat='36.6728958' lon='118.4745967' />
+  <node id='8477624327' timestamp='2021-03-02T05:05:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100244409' lat='36.6720106' lon='118.4742357' />
+  <node id='8477646226' timestamp='2021-03-02T03:20:46Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100239216' lat='36.6863439' lon='118.4707395'>
+    <tag k='barrier' v='gate' />
+  </node>
+  <node id='8477801735' timestamp='2021-03-02T05:05:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100244409' lat='36.6729791' lon='118.4746374' />
+  <node id='8477801738' timestamp='2021-03-02T05:05:12Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100244409' lat='36.6714392' lon='118.4737398' />
+  <node id='8477805206' timestamp='2021-03-02T05:13:31Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100244982' lat='36.6713613' lon='118.4707888' />
+  <node id='8477805207' timestamp='2021-03-02T05:13:31Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100244982' lat='36.6713666' lon='118.4705385' />
+  <node id='8477805211' timestamp='2021-03-02T10:19:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100269865' lat='36.6713801' lon='118.4703455' />
+  <node id='8481406423' timestamp='2021-03-03T02:48:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100311876' lat='36.6842362' lon='118.4794396' />
+  <node id='8481406424' timestamp='2021-03-03T02:48:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100311876' lat='36.6842432' lon='118.479568' />
+  <node id='8481406426' timestamp='2021-03-03T02:48:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100311876' lat='36.6841786' lon='118.4794127' />
+  <node id='8481406430' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='106399782' lat='36.6841754' lon='118.4792823'>
+    <tag k='direction' v='forward' />
+    <tag k='highway' v='speed_camera' />
+  </node>
+  <node id='8481581726' timestamp='2021-03-03T04:48:26Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100316627' lat='36.6867888' lon='118.4730275' />
+  <node id='8481581730' timestamp='2021-03-03T04:38:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100316140' lat='36.6843691' lon='118.4725656' />
+  <node id='8481581731' timestamp='2021-03-03T04:38:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100316140' lat='36.6843949' lon='118.4727373' />
+  <node id='8481581732' timestamp='2021-03-03T04:38:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100316140' lat='36.6855349' lon='118.4728419' />
+  <node id='8481581733' timestamp='2021-03-03T04:38:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100316140' lat='36.6856748' lon='118.4729143' />
+  <node id='8481581734' timestamp='2021-03-03T04:38:24Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100316140' lat='36.6883195' lon='118.4727816' />
+  <node id='8481695359' timestamp='2021-03-03T05:40:52Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100319628' lat='36.6877101' lon='118.4721013'>
+    <tag k='barrier' v='gate' />
+  </node>
+  <node id='8481695364' timestamp='2021-03-03T05:40:52Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100319628' lat='36.6881859' lon='118.472783' />
+  <node id='8481695371' timestamp='2021-03-03T05:40:52Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100319628' lat='36.6877517' lon='118.4721399' />
+  <node id='8481695372' timestamp='2021-03-03T05:40:52Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100319628' lat='36.6876829' lon='118.4722117' />
+  <node id='8481695373' timestamp='2021-03-03T05:40:52Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100319628' lat='36.6877593' lon='118.472355' />
+  <node id='8513028066' timestamp='2021-03-13T10:57:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='100948547' lat='36.6780684' lon='118.4767748' />
+  <node id='8539641902' timestamp='2021-03-20T02:50:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='101373919' lat='36.6834834' lon='118.4730184' />
+  <node id='8539641903' timestamp='2021-03-20T02:50:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='101373919' lat='36.6834058' lon='118.4730057' />
+  <node id='8539641904' timestamp='2021-03-20T02:50:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='101373919' lat='36.6833609' lon='118.4728886' />
+  <node id='8539641905' timestamp='2021-03-20T02:50:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='101373919' lat='36.6830017' lon='118.4728835' />
+  <node id='8539641906' timestamp='2021-03-20T02:50:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='101373919' lat='36.6827955' lon='118.4728734' />
+  <node id='8539641907' timestamp='2021-03-20T02:50:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='101373919' lat='36.682767' lon='118.4736089' />
+  <node id='8539641908' timestamp='2021-03-20T02:50:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='101373919' lat='36.6829364' lon='118.4735885' />
+  <node id='8539641909' timestamp='2021-03-20T02:50:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='101373919' lat='36.6829323' lon='118.4742274' />
+  <node id='8539641910' timestamp='2021-03-20T02:50:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='101373919' lat='36.6834262' lon='118.4742477' />
+  <node id='8835836546' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='106399782' lat='36.6840143' lon='118.4702513' />
+  <node id='8835836547' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='106399782' lat='36.683973' lon='118.4702491' />
+  <node id='8835836548' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='106399782' lat='36.6839755' lon='118.4703326' />
+  <node id='8835836549' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='106399782' lat='36.6840134' lon='118.4703291' />
+  <node id='8835836550' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='106399782' lat='36.6840158' lon='118.4687733' />
+  <node id='8835836551' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='106399782' lat='36.6839666' lon='118.4687783' />
+  <node id='8835836552' timestamp='2021-06-15T12:03:33Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='106399782' lat='36.6839629' lon='118.4686996' />
+  <node id='8893732518' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6858146' lon='118.4758248' />
+  <node id='8893732519' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6857886' lon='118.476574' />
+  <node id='8893732520' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6852866' lon='118.476574' />
+  <node id='8893732521' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6852558' lon='118.4762777' />
+  <node id='8893732522' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6842072' lon='118.4763891' />
+  <node id='8893732523' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6841758' lon='118.4756519'>
+    <tag k='barrier' v='gate' />
+  </node>
+  <node id='8893732524' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6841551' lon='118.4749782' />
+  <node id='8893732525' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6843866' lon='118.4749798' />
+  <node id='8893732526' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6843717' lon='118.4749855' />
+  <node id='8893732527' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6843717' lon='118.4750129' />
+  <node id='8893732528' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6842044' lon='118.4750125' />
+  <node id='8893732529' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.6842049' lon='118.4755994' />
+  <node id='8893732530' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.684183' lon='118.4756' />
+  <node id='8893732531' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692' lat='36.684182' lon='118.4749828' />
+  <node id='8926769810' timestamp='2021-07-16T14:04:22Z' uid='10444379' user='沈澄心' visible='true' version='1' changeset='108122828' lat='36.684087' lon='118.4638946'>
+    <tag k='highway' v='crossing' />
+  </node>
+  <node id='8973071252' timestamp='2021-08-02T01:30:31Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='108991301' lat='36.6840985' lon='118.4622879'>
+    <tag k='highway' v='crossing' />
+  </node>
+  <node id='9007749597' timestamp='2021-08-15T10:02:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='109694863' lat='36.6820364' lon='118.4719936'>
+    <tag k='barrier' v='block' />
+  </node>
+  <node id='9084201048' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='111101531' lat='36.6841506' lon='118.4738035' />
+  <node id='9179593091' timestamp='2021-10-18T08:15:01Z' uid='10360149' user='Thregren' visible='true' version='1' changeset='112640876' lat='36.6840815' lon='118.4646616' />
+  <node id='9179593096' timestamp='2021-10-18T08:15:01Z' uid='10360149' user='Thregren' visible='true' version='1' changeset='112640876' lat='36.684093' lon='118.4630559' />
+  <node id='9179593099' timestamp='2021-10-18T08:15:01Z' uid='10360149' user='Thregren' visible='true' version='1' changeset='112640876' lat='36.6840888' lon='118.4636367' />
+  <way id='481647990' timestamp='2021-10-18T08:29:54Z' uid='10360149' user='Thregren' visible='true' version='9' changeset='112641465'>
+    <nd ref='7787629660' />
+    <nd ref='7787629646' />
+    <nd ref='7787629647' />
+    <nd ref='7787629650' />
+    <nd ref='7787629651' />
+    <nd ref='4745601550' />
+    <nd ref='7787629653' />
+    <nd ref='7787629652' />
+    <nd ref='7787629654' />
+    <nd ref='4745599598' />
+    <nd ref='4745602120' />
+    <nd ref='6846126748' />
+    <nd ref='7713359173' />
+    <nd ref='4745601076' />
+    <tag k='highway' v='tertiary' />
+    <tag k='name' v='北门街' />
+    <tag k='paving_stones:material' v='stone' />
+    <tag k='surface' v='stone' />
+  </way>
+  <way id='587796130' timestamp='2021-08-15T10:02:41Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='17' changeset='109694863'>
+    <nd ref='6847223703' />
+    <nd ref='7628810886' />
+    <nd ref='7628810887' />
+    <nd ref='7628810885' />
+    <nd ref='6847223702' />
+    <nd ref='7628810889' />
+    <nd ref='7628810888' />
+    <nd ref='6847223701' />
+    <nd ref='6847223700' />
+    <nd ref='7628783584' />
+    <nd ref='6847223699' />
+    <nd ref='7074306932' />
+    <nd ref='7074306925' />
+    <nd ref='7074306943' />
+    <nd ref='7074306944' />
+    <nd ref='7074306940' />
+    <nd ref='7074306942' />
+    <nd ref='7074306945' />
+    <nd ref='7074306946' />
+    <nd ref='7074306926' />
+    <nd ref='7074306954' />
+    <nd ref='7074306979' />
+    <nd ref='7074306951' />
+    <nd ref='7074306949' />
+    <nd ref='7074306950' />
+    <nd ref='6305362281' />
+    <nd ref='7628783583' />
+    <nd ref='6305362282' />
+    <nd ref='7074306960' />
+    <nd ref='7074306961' />
+    <nd ref='7074306962' />
+    <nd ref='7074306963' />
+    <nd ref='7074306964' />
+    <nd ref='6305362283' />
+    <nd ref='9007749597' />
+    <nd ref='4745601101' />
+    <nd ref='8204509342' />
+    <nd ref='8204509341' />
+    <nd ref='8204509337' />
+    <nd ref='8204509338' />
+    <nd ref='8204509336' />
+    <nd ref='8204509335' />
+    <nd ref='6305362275' />
+    <nd ref='6305362284' />
+    <nd ref='8204509329' />
+    <nd ref='8204509330' />
+    <nd ref='5614527984' />
+    <nd ref='7097856174' />
+    <nd ref='6846314742' />
+    <nd ref='7686789643' />
+    <nd ref='7097823707' />
+    <nd ref='7686789653' />
+    <nd ref='6846314750' />
+    <nd ref='6305371160' />
+    <nd ref='6305371161' />
+    <nd ref='6305362274' />
+    <nd ref='6849014926' />
+    <nd ref='6849014927' />
+    <nd ref='5614527987' />
+    <nd ref='7686789726' />
+    <nd ref='7686789727' />
+    <nd ref='6305363967' />
+    <nd ref='8513028066' />
+    <nd ref='6305363968' />
+    <nd ref='7686786078' />
+    <nd ref='5614527988' />
+    <nd ref='5614527989' />
+    <nd ref='8477801735' />
+    <nd ref='8477624326' />
+    <nd ref='8477624327' />
+    <nd ref='5614527990' />
+    <nd ref='8333898366' />
+    <nd ref='8333898367' />
+    <nd ref='6305362273' />
+    <nd ref='8477801738' />
+    <nd ref='5614527991' />
+    <nd ref='8477602274' />
+    <nd ref='6305362272' />
+    <nd ref='8477805206' />
+    <nd ref='8477805207' />
+    <nd ref='8477805211' />
+    <nd ref='5614527992' />
+    <nd ref='5614527993' />
+    <nd ref='6847223703' />
+    <tag k='historic' v='ruins' />
+    <tag k='name' v='青州古城' />
+  </way>
+  <way id='673293107' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='8' changeset='111101531'>
+    <nd ref='8835836552' />
+    <nd ref='8835836551' />
+    <nd ref='4745602083' />
+    <nd ref='7724746428' />
+    <nd ref='8835836547' />
+    <nd ref='8835836548' />
+    <nd ref='4004945451' />
+    <nd ref='7724746423' />
+    <nd ref='7713359161' />
+    <nd ref='4004945459' />
+    <nd ref='7724746401' />
+    <nd ref='8204509323' />
+    <nd ref='6846314779' />
+    <nd ref='4746679133' />
+    <nd ref='7724746418' />
+    <nd ref='8481406430' />
+    <nd ref='8481406426' />
+    <tag k='highway' v='primary' />
+    <tag k='name' v='范公亭西路' />
+    <tag k='oneway' v='yes' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='673293108' timestamp='2021-01-18T10:46:30Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='7' changeset='97691869'>
+    <nd ref='4004945459' />
+    <nd ref='7713359162' />
+    <nd ref='8204504313' />
+    <nd ref='8204504310' />
+    <nd ref='6846314775' />
+    <nd ref='7686789664' />
+    <nd ref='7097856170' />
+    <nd ref='4745601378' />
+    <tag k='highway' v='tertiary' />
+    <tag k='name' v='偶园街' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='673303281' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='111101531'>
+    <nd ref='6305371170' />
+    <nd ref='6305371171' />
+    <nd ref='6305371172' />
+    <nd ref='6305371173' />
+    <nd ref='6305371170' />
+    <tag k='area' v='yes' />
+    <tag k='highway' v='pedestrian' />
+    <tag k='name' v='市府广场' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='673516174' timestamp='2021-03-03T05:40:52Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='4' changeset='100319628'>
+    <nd ref='6307305022' />
+    <nd ref='6307305023' />
+    <nd ref='6307305024' />
+    <nd ref='6307305025' />
+    <nd ref='6307305026' />
+    <nd ref='6307305027' />
+    <nd ref='6307305028' />
+    <nd ref='6307305029' />
+    <nd ref='6307305030' />
+    <nd ref='6307305031' />
+    <nd ref='6307305032' />
+    <nd ref='6307305033' />
+    <nd ref='6307305034' />
+    <nd ref='6307305035' />
+    <nd ref='6307305036' />
+    <nd ref='6307305038' />
+    <nd ref='8481695373' />
+    <nd ref='8481695372' />
+    <nd ref='8481695371' />
+    <nd ref='8481695359' />
+    <nd ref='6307305039' />
+    <nd ref='6307305040' />
+    <nd ref='6307305041' />
+    <nd ref='8477646226' />
+    <nd ref='6307305022' />
+    <tag k='landuse' v='residential' />
+    <tag k='name' v='北门组团' />
+    <tag k='residential' v='apartments' />
+  </way>
+  <way id='730953744' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='6' changeset='111101531'>
+    <nd ref='7787629646' />
+    <nd ref='7787629645' />
+    <nd ref='7787629644' />
+    <nd ref='6846126768' />
+    <nd ref='6846126769' />
+    <nd ref='6846126770' />
+    <nd ref='6846126771' />
+    <nd ref='7087801124' />
+    <nd ref='6846126772' />
+    <nd ref='6846126773' />
+    <nd ref='6846126774' />
+    <nd ref='6846126775' />
+    <nd ref='6846126776' />
+    <nd ref='6846126777' />
+    <nd ref='6846126778' />
+    <nd ref='6846126779' />
+    <nd ref='7724746404' />
+    <nd ref='7713359176' />
+    <nd ref='6846126780' />
+    <tag k='highway' v='unclassified' />
+    <tag k='name' v='市府东巷' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='730953759' timestamp='2021-02-02T16:20:54Z' uid='1940323' user='SekeRob' visible='true' version='3' changeset='98589799'>
+    <nd ref='6846134045' />
+    <nd ref='6846134046' />
+    <nd ref='6846134047' />
+    <nd ref='6846134048' />
+    <nd ref='6846134045' />
+    <tag k='building' v='apartments' />
+    <tag k='building:colour' v='#FBFADD' />
+    <tag k='building:flats' v='2' />
+    <tag k='building:levels' v='6' />
+    <tag k='building:material' v='concrete' />
+    <tag k='roof:colour' v='#BE3E2C' />
+    <tag k='roof:height' v='1' />
+    <tag k='roof:material' v='roof_tiles' />
+    <tag k='roof:shape' v='hipped' />
+  </way>
+  <way id='730953761' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722'>
+    <nd ref='6846134053' />
+    <nd ref='6846134054' />
+    <nd ref='6846134055' />
+    <nd ref='6846134056' />
+    <nd ref='6846134053' />
+    <tag k='building' v='industrial' />
+    <tag k='building:levels' v='4' />
+  </way>
+  <way id='730953762' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='107411692'>
+    <nd ref='6846134057' />
+    <nd ref='6846134058' />
+    <nd ref='6846134059' />
+    <nd ref='6846134060' />
+    <nd ref='6846134057' />
+    <tag k='amenity' v='hospital' />
+    <tag k='building:levels' v='4' />
+    <tag k='healthcare' v='hospital' />
+    <tag k='name' v='广通医院' />
+  </way>
+  <way id='730953763' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='98490722'>
+    <nd ref='6846134061' />
+    <nd ref='6846134062' />
+    <nd ref='6846134063' />
+    <nd ref='6846134064' />
+    <nd ref='6846134061' />
+    <tag k='building' v='yes' />
+    <tag k='building:levels' v='6' />
+    <tag k='name' v='山东广通蚕种集团有限公司' />
+    <tag k='office' v='yes' />
+  </way>
+  <way id='730971974' timestamp='2020-07-17T07:18:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='88126315'>
+    <nd ref='6846314762' />
+    <nd ref='6846314763' />
+    <nd ref='6846314764' />
+    <nd ref='6846314776' />
+    <nd ref='6846314761' />
+    <nd ref='6846314765' />
+    <nd ref='6846314766' />
+    <nd ref='6846314767' />
+    <nd ref='6846314768' />
+    <nd ref='6846314769' />
+    <nd ref='6846314770' />
+    <nd ref='6846314771' />
+    <nd ref='7686789656' />
+    <nd ref='6846314772' />
+    <nd ref='6846314773' />
+    <nd ref='6846314774' />
+    <nd ref='6846314775' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='县前街' />
+  </way>
+  <way id='730971977' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='87582555'>
+    <nd ref='6846314769' />
+    <nd ref='7686789655' />
+    <nd ref='6846314780' />
+    <tag k='highway' v='residential' />
+  </way>
+  <way id='758873017' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='111101531'>
+    <nd ref='7087733707' />
+    <nd ref='7087733708' />
+    <tag k='highway' v='unclassified' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='758873018' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='111101531'>
+    <nd ref='7087733709' />
+    <nd ref='7087733710' />
+    <tag k='highway' v='unclassified' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='758873025' timestamp='2021-01-18T10:46:30Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='7' changeset='97691869'>
+    <nd ref='7087733750' />
+    <nd ref='7087733853' />
+    <nd ref='7087733751' />
+    <nd ref='8333823713' />
+    <nd ref='7087733795' />
+    <nd ref='7087733796' />
+    <nd ref='7087733752' />
+    <nd ref='7087733787' />
+    <nd ref='8333823711' />
+    <nd ref='8095522186' />
+    <nd ref='8333823710' />
+    <nd ref='7087733769' />
+    <nd ref='7087733753' />
+    <nd ref='7087733754' />
+    <nd ref='7087777733' />
+    <nd ref='7087777732' />
+    <nd ref='7087733770' />
+    <nd ref='7087733750' />
+    <tag k='landuse' v='commercial' />
+    <tag k='layer' v='-2' />
+    <tag k='name' v='青州市人民政府' />
+  </way>
+  <way id='758873028' timestamp='2020-11-09T04:31:19Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='93766564'>
+    <nd ref='7087733763' />
+    <nd ref='7087733764' />
+    <nd ref='7087733765' />
+    <nd ref='7087733766' />
+    <nd ref='7087733767' />
+    <nd ref='8095522183' />
+    <nd ref='8095522177' />
+    <nd ref='7087733768' />
+    <nd ref='7087733769' />
+    <nd ref='7087733753' />
+    <nd ref='7087733754' />
+    <nd ref='7087777733' />
+    <nd ref='7087777732' />
+    <nd ref='7087733770' />
+    <nd ref='7087733771' />
+    <nd ref='7087733772' />
+    <nd ref='7087733773' />
+    <nd ref='7087733774' />
+    <nd ref='7087733775' />
+    <nd ref='7087733776' />
+    <nd ref='7087733763' />
+    <tag k='landuse' v='recreation_ground' />
+  </way>
+  <way id='758873029' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495'>
+    <nd ref='7087733777' />
+    <nd ref='7087733783' />
+    <nd ref='7087733785' />
+    <nd ref='7087733786' />
+    <nd ref='7087733784' />
+    <nd ref='7087733778' />
+    <nd ref='7087733782' />
+    <nd ref='7087733779' />
+    <nd ref='7087733780' />
+    <nd ref='7087733781' />
+    <nd ref='7087733777' />
+    <tag k='landuse' v='recreation_ground' />
+  </way>
+  <way id='758873030' timestamp='2021-04-01T15:46:28Z' uid='665748' user='sebastic' visible='true' version='4' changeset='102137328'>
+    <nd ref='7087733787' />
+    <nd ref='7087733788' />
+    <nd ref='8095522166' />
+    <nd ref='8095522173' />
+    <nd ref='7087733789' />
+    <nd ref='7087733790' />
+    <nd ref='7087733791' />
+    <nd ref='7087733792' />
+    <nd ref='7087733793' />
+    <nd ref='7087733794' />
+    <nd ref='7087733795' />
+    <nd ref='7087733796' />
+    <nd ref='7087733752' />
+    <nd ref='7087733787' />
+    <tag k='landuse' v='recreation_ground' />
+  </way>
+  <way id='758873031' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495'>
+    <nd ref='7087733777' />
+    <nd ref='7087733797' />
+    <nd ref='7087733798' />
+    <nd ref='7087733778' />
+    <nd ref='7087733777' />
+    <tag k='amenity' v='parking' />
+  </way>
+  <way id='758873032' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495'>
+    <nd ref='7087733765' />
+    <nd ref='7087733799' />
+    <nd ref='7087733800' />
+    <nd ref='7087733773' />
+    <nd ref='7087733774' />
+    <nd ref='7087733775' />
+    <nd ref='7087733776' />
+    <nd ref='7087733763' />
+    <nd ref='7087733764' />
+    <nd ref='7087733765' />
+    <tag k='amenity' v='parking' />
+  </way>
+  <way id='758873033' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495'>
+    <nd ref='7087733801' />
+    <nd ref='7087733802' />
+    <nd ref='7087733803' />
+    <nd ref='7087733804' />
+    <nd ref='7087733801' />
+    <tag k='amenity' v='parking' />
+  </way>
+  <way id='758873034' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495'>
+    <nd ref='7087733805' />
+    <nd ref='7087733806' />
+    <nd ref='7087733807' />
+    <nd ref='7087733808' />
+    <nd ref='7087733805' />
+    <tag k='amenity' v='parking' />
+  </way>
+  <way id='758873035' timestamp='2019-12-27T07:43:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78913495'>
+    <nd ref='7087733794' />
+    <nd ref='7087733809' />
+    <nd ref='7087733810' />
+    <nd ref='7087733811' />
+    <nd ref='7087733791' />
+    <nd ref='7087733792' />
+    <nd ref='7087733793' />
+    <nd ref='7087733794' />
+    <tag k='amenity' v='parking' />
+  </way>
+  <way id='758880751' timestamp='2019-12-27T08:26:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='78915011'>
+    <nd ref='7087811304' />
+    <nd ref='7087811305' />
+    <nd ref='7087811306' />
+    <nd ref='7087811307' />
+    <nd ref='7087811304' />
+    <tag k='building' v='commercial' />
+    <tag k='name' v='八喜旅游网' />
+  </way>
+  <way id='758880752' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='95464219'>
+    <nd ref='6305371170' />
+    <nd ref='7087811308' />
+    <nd ref='8204509326' />
+    <nd ref='8204509327' />
+    <nd ref='8204509328' />
+    <nd ref='7087811309' />
+    <nd ref='7087811310' />
+    <nd ref='7087811311' />
+    <nd ref='7087811312' />
+    <nd ref='7087811313' />
+    <nd ref='7087811314' />
+    <nd ref='7087811315' />
+    <nd ref='7087811316' />
+    <nd ref='6305371173' />
+    <nd ref='6305371172' />
+    <nd ref='6305371171' />
+    <nd ref='6305371170' />
+    <tag k='leisure' v='park' />
+  </way>
+  <way id='759800836' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='3' changeset='98490722'>
+    <nd ref='7097829354' />
+    <nd ref='7097829359' />
+    <nd ref='7097829356' />
+    <nd ref='7097829357' />
+    <nd ref='7097829354' />
+    <tag k='building' v='commercial' />
+    <tag k='building:levels' v='2' />
+    <tag k='height' v='6.5' />
+  </way>
+  <way id='759800837' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722'>
+    <nd ref='7097829358' />
+    <nd ref='7097829354' />
+    <nd ref='7097829359' />
+    <nd ref='7097829360' />
+    <nd ref='7097829361' />
+    <nd ref='7097829362' />
+    <nd ref='7097829358' />
+    <tag k='building' v='commercial' />
+    <tag k='building:levels' v='3' />
+  </way>
+  <way id='759803758' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722'>
+    <nd ref='7097856142' />
+    <nd ref='7097856143' />
+    <nd ref='7097856144' />
+    <nd ref='7097856145' />
+    <nd ref='7097856142' />
+    <tag k='building' v='apartments' />
+    <tag k='building:colour' v='#D0C9B7' />
+    <tag k='building:flats' v='2' />
+    <tag k='building:levels' v='4' />
+    <tag k='height' v='13' />
+    <tag k='roof:colour' v='#D0C9B7' />
+    <tag k='roof:shape' v='flat' />
+  </way>
+  <way id='759803759' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722'>
+    <nd ref='7097856146' />
+    <nd ref='7097856147' />
+    <nd ref='7097856148' />
+    <nd ref='7097856149' />
+    <nd ref='7097856146' />
+    <tag k='building' v='apartments' />
+    <tag k='building:colour' v='#D0C9B7' />
+    <tag k='building:flats' v='2' />
+    <tag k='building:levels' v='4' />
+    <tag k='height' v='13' />
+    <tag k='roof:colour' v='#D0C9B7' />
+    <tag k='roof:shape' v='flat' />
+  </way>
+  <way id='759803760' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722'>
+    <nd ref='7097856150' />
+    <nd ref='7097856151' />
+    <nd ref='7097856152' />
+    <nd ref='7097856153' />
+    <nd ref='7097856150' />
+    <tag k='building' v='apartments' />
+    <tag k='building:colour' v='#D0C9B7' />
+    <tag k='building:flats' v='2' />
+    <tag k='building:levels' v='4' />
+    <tag k='height' v='13' />
+    <tag k='roof:colour' v='#D0C9B7' />
+    <tag k='roof:shape' v='flat' />
+  </way>
+  <way id='763965390' timestamp='2020-01-16T17:32:31Z' uid='2507347' user='ParadoX_ZLWC' visible='true' version='1' changeset='79659915'>
+    <nd ref='7137262134' />
+    <nd ref='7137262136' />
+    <nd ref='7137262143' />
+    <nd ref='7137262135' />
+    <tag k='highway' v='residential' />
+  </way>
+  <way id='763965391' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='5' changeset='111101531'>
+    <nd ref='7137262136' />
+    <nd ref='8100512568' />
+    <nd ref='7137262137' />
+    <nd ref='7137262138' />
+    <nd ref='7137262139' />
+    <nd ref='7724746402' />
+    <nd ref='7137262144' />
+    <nd ref='7137262140' />
+    <nd ref='7724746403' />
+    <nd ref='7137262141' />
+    <nd ref='7137262142' />
+    <nd ref='8100512570' />
+    <nd ref='7137262143' />
+    <tag k='highway' v='unclassified' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='763965392' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='5' changeset='111101531'>
+    <nd ref='7137262144' />
+    <nd ref='9084201048' />
+    <nd ref='8095522186' />
+    <nd ref='7724746420' />
+    <nd ref='7137262145' />
+    <tag k='highway' v='unclassified' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='823340882' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555'>
+    <nd ref='7686789656' />
+    <nd ref='7686789657' />
+    <tag k='highway' v='residential' />
+  </way>
+  <way id='823340883' timestamp='2021-03-20T02:40:27Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='101373841'>
+    <nd ref='6846314770' />
+    <nd ref='7686789659' />
+    <tag k='highway' v='residential' />
+  </way>
+  <way id='823340886' timestamp='2020-07-06T07:11:05Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='87582555'>
+    <nd ref='7686789668' />
+    <nd ref='7686789669' />
+    <nd ref='7686789670' />
+    <nd ref='7686789671' />
+    <nd ref='7686789672' />
+    <nd ref='7686789673' />
+    <nd ref='7686789668' />
+    <tag k='building' v='hotel' />
+    <tag k='building:levels' v='5' />
+    <tag k='height' v='20' />
+    <tag k='name' v='云住民宿' />
+  </way>
+  <way id='826121670' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='7' changeset='111101531'>
+    <nd ref='7713359149' />
+    <nd ref='7713359157' />
+    <nd ref='7724746434' />
+    <nd ref='7713359158' />
+    <nd ref='7713359159' />
+    <nd ref='7724746435' />
+    <nd ref='7713359156' />
+    <nd ref='7713359160' />
+    <nd ref='7628783560' />
+    <nd ref='7713359162' />
+    <nd ref='7713359163' />
+    <nd ref='8204509324' />
+    <nd ref='7724746424' />
+    <nd ref='7713359164' />
+    <nd ref='7713359153' />
+    <nd ref='7724746436' />
+    <nd ref='7713359152' />
+    <nd ref='7713359165' />
+    <nd ref='7713359166' />
+    <nd ref='7724782635' />
+    <nd ref='7724782649' />
+    <nd ref='7713359167' />
+    <tag k='highway' v='cycleway' />
+    <tag k='layer' v='1' />
+    <tag k='oneway' v='yes' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='826121672' timestamp='2021-10-18T08:15:01Z' uid='10360149' user='Thregren' visible='true' version='8' changeset='112640876'>
+    <nd ref='7713359181' />
+    <nd ref='7724782650' />
+    <nd ref='7713359180' />
+    <nd ref='7713359179' />
+    <nd ref='7713359154' />
+    <nd ref='7724746415' />
+    <nd ref='7724746425' />
+    <nd ref='7724746416' />
+    <nd ref='7724746426' />
+    <nd ref='7713359178' />
+    <nd ref='7713359177' />
+    <nd ref='7713359176' />
+    <nd ref='7713359175' />
+    <nd ref='7724746420' />
+    <nd ref='7713359174' />
+    <nd ref='7713359173' />
+    <nd ref='7713359172' />
+    <nd ref='7628783548' />
+    <nd ref='7713359155' />
+    <nd ref='7713359171' />
+    <nd ref='7724746429' />
+    <nd ref='7619889667' />
+    <nd ref='7713359170' />
+    <nd ref='7724746432' />
+    <nd ref='7713359169' />
+    <nd ref='9179593091' />
+    <nd ref='8926769810' />
+    <nd ref='9179593099' />
+    <nd ref='9179593096' />
+    <nd ref='8973071252' />
+    <nd ref='7724746433' />
+    <nd ref='7724746400' />
+    <nd ref='7619889571' />
+    <tag k='highway' v='cycleway' />
+    <tag k='layer' v='2' />
+    <tag k='oneway' v='yes' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='868511131' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93855581'>
+    <nd ref='8095522174' />
+    <nd ref='8095522173' />
+    <nd ref='8095522172' />
+    <nd ref='8095522171' />
+    <nd ref='8095522170' />
+    <nd ref='8095522169' />
+    <nd ref='8095522168' />
+    <nd ref='8095522167' />
+    <nd ref='8095522166' />
+    <nd ref='8095522165' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='868511132' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='93855581'>
+    <nd ref='8095522184' />
+    <nd ref='8095522183' />
+    <nd ref='8095522182' />
+    <nd ref='8095522181' />
+    <nd ref='8095522180' />
+    <nd ref='8100512569' />
+    <nd ref='8095522179' />
+    <nd ref='8095522178' />
+    <nd ref='8095522177' />
+    <nd ref='8095522176' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='869076959' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93855581'>
+    <nd ref='8100512567' />
+    <nd ref='8100512569' />
+    <nd ref='8100512568' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='869076960' timestamp='2020-11-10T10:52:55Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='93855581'>
+    <nd ref='8100512570' />
+    <nd ref='8095522169' />
+    <nd ref='8100512571' />
+    <tag k='highway' v='path' />
+  </way>
+  <way id='882228198' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219'>
+    <nd ref='8204504268' />
+    <nd ref='8204504269' />
+    <nd ref='8204504270' />
+    <nd ref='8204504271' />
+    <nd ref='8204504268' />
+    <tag k='amenity' v='marketplace' />
+    <tag k='name' v='八喜大集' />
+  </way>
+  <way id='882228199' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219'>
+    <nd ref='8204504272' />
+    <nd ref='8204504273' />
+    <nd ref='8204504274' />
+    <nd ref='8204504275' />
+    <nd ref='8204504276' />
+    <nd ref='8204504277' />
+    <nd ref='8204504278' />
+    <nd ref='8204504279' />
+    <nd ref='8204504280' />
+    <nd ref='8204504281' />
+    <nd ref='8204504282' />
+    <nd ref='8204504283' />
+    <nd ref='8204504272' />
+    <tag k='landuse' v='construction' />
+    <tag k='name' v='八喜大集' />
+  </way>
+  <way id='882228200' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219'>
+    <nd ref='8204504287' />
+    <nd ref='8204504288' />
+    <nd ref='8204504289' />
+    <nd ref='8204504290' />
+    <nd ref='8204504291' />
+    <nd ref='8204504292' />
+    <nd ref='8204504287' />
+    <tag k='landuse' v='forest' />
+  </way>
+  <way id='882228201' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219'>
+    <nd ref='8204504293' />
+    <nd ref='8204504297' />
+    <nd ref='8204504299' />
+    <nd ref='8204504298' />
+    <nd ref='8204504294' />
+    <nd ref='8204504295' />
+    <nd ref='8204504296' />
+    <nd ref='8204504293' />
+    <tag k='landuse' v='forest' />
+  </way>
+  <way id='882228202' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219'>
+    <nd ref='8204504300' />
+    <nd ref='8204504301' />
+    <nd ref='8204504302' />
+    <nd ref='8204504303' />
+    <nd ref='8204504304' />
+    <nd ref='8204504305' />
+    <nd ref='8204504300' />
+    <tag k='landuse' v='forest' />
+  </way>
+  <way id='882228203' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219'>
+    <nd ref='8204504306' />
+    <nd ref='8204504307' />
+    <nd ref='8204504308' />
+    <nd ref='8204504309' />
+    <nd ref='8204504306' />
+    <tag k='landuse' v='forest' />
+  </way>
+  <way id='882228204' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='111101531'>
+    <nd ref='8204504310' />
+    <nd ref='8204504311' />
+    <nd ref='8204504312' />
+    <tag k='highway' v='path' />
+    <tag k='surface' v='paving_stones' />
+  </way>
+  <way id='882228205' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219'>
+    <nd ref='8204504313' />
+    <nd ref='8204504314' />
+    <nd ref='8204504315' />
+    <nd ref='8204509318' />
+    <nd ref='8204509325' />
+    <nd ref='8204504316' />
+    <nd ref='8204509317' />
+    <tag k='footway' v='sidewalk' />
+    <tag k='highway' v='footway' />
+  </way>
+  <way id='882228206' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219'>
+    <nd ref='7724746401' />
+    <nd ref='7713359163' />
+    <nd ref='8204509318' />
+    <nd ref='8204504312' />
+    <nd ref='8204509319' />
+    <nd ref='8204509320' />
+    <nd ref='8204509321' />
+    <nd ref='8204509322' />
+    <nd ref='8204509325' />
+    <nd ref='8204509324' />
+    <nd ref='8204509323' />
+    <tag k='highway' v='unclassified' />
+  </way>
+  <way id='882228207' timestamp='2020-12-08T06:39:08Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='95464219'>
+    <nd ref='8204509326' />
+    <nd ref='8204509327' />
+    <nd ref='8204509328' />
+    <nd ref='7087811309' />
+    <nd ref='7087811310' />
+    <nd ref='7087811311' />
+    <nd ref='7087811312' />
+    <nd ref='7087811313' />
+    <nd ref='7087811314' />
+    <nd ref='7087811315' />
+    <tag k='barrier' v='fence' />
+    <tag k='material' v='steel' />
+  </way>
+  <way id='882228208' timestamp='2021-02-01T07:52:53Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='98490722'>
+    <nd ref='8204509331' />
+    <nd ref='8204509332' />
+    <nd ref='8204509333' />
+    <nd ref='8204509334' />
+    <nd ref='8204509331' />
+    <tag k='building' v='ruins' />
+    <tag k='height' v='7.5' />
+    <tag k='layer' v='2' />
+    <tag k='material' v='stone' />
+    <tag k='name' v='偶园街牌坊' />
+  </way>
+  <way id='896515556' timestamp='2021-01-18T10:46:30Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97691869'>
+    <nd ref='4745601076' />
+    <nd ref='4004945459' />
+    <tag k='highway' v='tertiary' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='896515557' timestamp='2021-01-18T10:46:30Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97691869'>
+    <nd ref='7087733770' />
+    <nd ref='7087777732' />
+    <nd ref='7087733754' />
+    <nd ref='7087733753' />
+    <nd ref='7087733769' />
+    <nd ref='8333823710' />
+    <tag k='barrier' v='fence' />
+    <tag k='fence_type' v='metal' />
+    <tag k='height' v='1.5' />
+    <tag k='material' v='steel' />
+  </way>
+  <way id='896515558' timestamp='2021-04-01T15:46:31Z' uid='665748' user='sebastic' visible='true' version='2' changeset='102137328'>
+    <nd ref='8333823711' />
+    <nd ref='7087733787' />
+    <nd ref='7087733752' />
+    <nd ref='7087733796' />
+    <nd ref='7087733795' />
+    <tag k='barrier' v='fence' />
+    <tag k='fence_type' v='metal' />
+    <tag k='height' v='2' />
+    <tag k='material' v='steel' />
+  </way>
+  <way id='896525874' timestamp='2021-01-18T11:10:58Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='97693707'>
+    <nd ref='8333898350' />
+    <nd ref='8333898351' />
+    <nd ref='8333898352' />
+    <nd ref='8333898353' />
+    <nd ref='8333898350' />
+    <tag k='building' v='retail' />
+  </way>
+  <way id='902499345' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898'>
+    <nd ref='8382466040' />
+    <nd ref='8382466041' />
+    <nd ref='8382466042' />
+    <nd ref='8382466043' />
+    <nd ref='8382466040' />
+    <tag k='amenity' v='parking' />
+  </way>
+  <way id='902499346' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898'>
+    <nd ref='8382466044' />
+    <nd ref='8382466045' />
+    <nd ref='8382466046' />
+    <nd ref='8382466047' />
+    <nd ref='8382466044' />
+    <tag k='amenity' v='parking' />
+  </way>
+  <way id='902499347' timestamp='2021-02-01T02:03:51Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='98472898'>
+    <nd ref='8382466048' />
+    <nd ref='8382466049' />
+    <nd ref='8382466050' />
+    <nd ref='8382466051' />
+    <nd ref='8382466048' />
+    <tag k='amenity' v='parking' />
+  </way>
+  <way id='913022651' timestamp='2021-03-03T05:40:52Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='100319628'>
+    <nd ref='6305364097' />
+    <nd ref='8481581734' />
+    <nd ref='8481695364' />
+    <nd ref='8460011538' />
+    <nd ref='8460011537' />
+    <nd ref='6307305035' />
+    <nd ref='6307305034' />
+    <nd ref='6307305033' />
+    <nd ref='6307305032' />
+    <nd ref='6307305031' />
+    <nd ref='6307305030' />
+    <nd ref='8481581730' />
+    <nd ref='8481581731' />
+    <nd ref='8481581732' />
+    <nd ref='7087733750' />
+    <nd ref='8481581733' />
+    <nd ref='6305364100' />
+    <nd ref='8481581726' />
+    <nd ref='6846126744' />
+    <nd ref='6846126743' />
+    <nd ref='7087801132' />
+    <nd ref='6305364098' />
+    <nd ref='6305364097' />
+    <tag k='landuse' v='retail' />
+    <tag k='name' v='北门街古玩市场' />
+  </way>
+  <way id='919608673' timestamp='2021-03-20T02:50:16Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='101373919'>
+    <nd ref='8539641902' />
+    <nd ref='8539641903' />
+    <nd ref='8539641904' />
+    <nd ref='8539641905' />
+    <nd ref='8539641906' />
+    <nd ref='8539641907' />
+    <nd ref='8539641908' />
+    <nd ref='8539641909' />
+    <nd ref='8539641910' />
+    <nd ref='8539641902' />
+    <tag k='landuse' v='residential' />
+    <tag k='residential' v='apartments' />
+  </way>
+  <way id='961460383' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692'>
+    <nd ref='6305364115' />
+    <nd ref='6305364116' />
+    <nd ref='8893732518' />
+    <nd ref='8893732519' />
+    <nd ref='8893732520' />
+    <nd ref='8893732521' />
+    <nd ref='7087733717' />
+    <nd ref='7087733715' />
+    <nd ref='6846134076' />
+    <nd ref='6846134075' />
+    <nd ref='8893732522' />
+    <nd ref='8893732523' />
+    <nd ref='8893732524' />
+    <nd ref='8893732525' />
+    <nd ref='6305364115' />
+    <tag k='landuse' v='industrial' />
+    <tag k='name' v='山东广通蚕种集团有限公司' />
+  </way>
+  <way id='961460386' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692'>
+    <nd ref='8893732525' />
+    <nd ref='6305364115' />
+    <tag k='barrier' v='wall' />
+  </way>
+  <way id='961460387' timestamp='2021-07-05T02:50:25Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='1' changeset='107411692'>
+    <nd ref='8893732526' />
+    <nd ref='8893732527' />
+    <nd ref='8893732528' />
+    <nd ref='8893732529' />
+    <nd ref='8893732530' />
+    <nd ref='8893732531' />
+    <nd ref='8893732526' />
+    <tag k='natural' v='scrub' />
+  </way>
+  <way id='981963460' timestamp='2021-09-12T15:37:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='111101531'>
+    <nd ref='8481406424' />
+    <nd ref='8481406423' />
+    <nd ref='4264707556' />
+    <nd ref='7724746419' />
+    <nd ref='8204504264' />
+    <nd ref='7724746417' />
+    <nd ref='7087733711' />
+    <nd ref='7087733703' />
+    <nd ref='6846126780' />
+    <nd ref='7137262145' />
+    <nd ref='7724746421' />
+    <nd ref='4745601076' />
+    <nd ref='7724746422' />
+    <nd ref='8835836549' />
+    <nd ref='8835836546' />
+    <nd ref='7628783547' />
+    <nd ref='7619889683' />
+    <nd ref='7724746427' />
+    <nd ref='8835836550' />
+    <tag k='highway' v='primary' />
+    <tag k='name' v='范公亭西路' />
+    <tag k='oneway' v='yes' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <relation id='3468564' timestamp='2021-06-08T06:16:27Z' uid='9560399' user='Lepuse' visible='true' version='27' changeset='106010142'>
+    <member type='node' ref='4792682022' role='admin_centre' />
+    <member type='node' ref='4792682021' role='label' />
+    <member type='way' ref='404937990' role='outer' />
+    <member type='way' ref='404909988' role='outer' />
+    <member type='way' ref='889598406' role='outer' />
+    <member type='way' ref='404719769' role='outer' />
+    <member type='way' ref='404719713' role='outer' />
+    <member type='way' ref='404718974' role='outer' />
+    <member type='way' ref='404718975' role='outer' />
+    <member type='way' ref='404717249' role='outer' />
+    <member type='way' ref='258448801' role='outer' />
+    <member type='way' ref='913729376' role='outer' />
+    <member type='way' ref='913746027' role='outer' />
+    <member type='way' ref='913759961' role='outer' />
+    <member type='way' ref='258441760' role='outer' />
+    <member type='way' ref='913702866' role='outer' />
+    <member type='way' ref='259700837' role='outer' />
+    <member type='way' ref='259700838' role='outer' />
+    <member type='way' ref='259700839' role='outer' />
+    <member type='way' ref='379765395' role='outer' />
+    <member type='way' ref='258497688' role='outer' />
+    <member type='way' ref='379724783' role='outer' />
+    <member type='way' ref='258448799' role='outer' />
+    <member type='way' ref='258448818' role='outer' />
+    <member type='way' ref='404937991' role='outer' />
+    <member type='relation' ref='3468758' role='subarea' />
+    <member type='relation' ref='3468759' role='subarea' />
+    <member type='relation' ref='3468760' role='subarea' />
+    <member type='relation' ref='3468761' role='subarea' />
+    <member type='relation' ref='3468762' role='subarea' />
+    <member type='relation' ref='3468763' role='subarea' />
+    <member type='relation' ref='3468764' role='subarea' />
+    <member type='relation' ref='3468765' role='subarea' />
+    <member type='relation' ref='3468766' role='subarea' />
+    <member type='relation' ref='3468767' role='subarea' />
+    <member type='relation' ref='3468768' role='subarea' />
+    <member type='relation' ref='3468769' role='subarea' />
+    <tag k='admin_level' v='5' />
+    <tag k='alt_name' v='Weifang;潍坊' />
+    <tag k='boundary' v='administrative' />
+    <tag k='name' v='潍坊市' />
+    <tag k='name:en' v='Weifang City' />
+    <tag k='name:ja' v='イ坊市' />
+    <tag k='name:ru' v='Вэйфан' />
+    <tag k='name:zh' v='潍坊市' />
+    <tag k='name:zh-Hant' v='濰坊市' />
+    <tag k='type' v='boundary' />
+    <tag k='wikidata' v='Q217698' />
+    <tag k='wikipedia' v='en:Weifang' />
+  </relation>
+  <relation id='3468766' timestamp='2021-11-06T15:34:42Z' uid='10360149' user='Thregren' visible='true' version='18' changeset='113451158'>
+    <member type='way' ref='913718897' role='outer' />
+    <member type='way' ref='913723315' role='outer' />
+    <member type='way' ref='913725922' role='outer' />
+    <member type='way' ref='913729376' role='outer' />
+    <member type='way' ref='913746027' role='outer' />
+    <member type='way' ref='913759961' role='outer' />
+    <member type='node' ref='244081544' role='admin_center' />
+    <member type='relation' ref='13412044' role='subarea' />
+    <member type='relation' ref='13412045' role='subarea' />
+    <member type='relation' ref='13412046' role='subarea' />
+    <member type='relation' ref='13412047' role='subarea' />
+    <tag k='admin_level' v='6' />
+    <tag k='alt_name' v='Qingzhou;青州' />
+    <tag k='boundary' v='administrative' />
+    <tag k='name' v='青州市' />
+    <tag k='name:en' v='Qingzhou City' />
+    <tag k='name:zh' v='青州市' />
+    <tag k='type' v='boundary' />
+    <tag k='wikidata' v='Q1360781' />
+    <tag k='wikipedia' v='en:Qingzhou' />
+  </relation>
+  <relation id='10107858' timestamp='2021-09-11T14:23:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='8' changeset='111064578'>
+    <member type='node' ref='6843779878' role='platform' />
+    <member type='node' ref='6843779880' role='' />
+    <member type='node' ref='6843779884' role='' />
+    <member type='node' ref='6843861815' role='' />
+    <member type='node' ref='6843779864' role='' />
+    <member type='node' ref='6843779867' role='' />
+    <member type='node' ref='6843861966' role='' />
+    <member type='node' ref='7840169891' role='' />
+    <member type='node' ref='6865896941' role='' />
+    <member type='node' ref='6843779876' role='' />
+    <member type='node' ref='7840169895' role='' />
+    <member type='node' ref='6865896944' role='' />
+    <member type='node' ref='6865896946' role='' />
+    <member type='node' ref='7565359570' role='' />
+    <member type='node' ref='7840169917' role='' />
+    <member type='way' ref='840200346' role='' />
+    <member type='way' ref='840200389' role='' />
+    <member type='way' ref='840200388' role='' />
+    <member type='way' ref='763002271' role='' />
+    <member type='way' ref='763002274' role='' />
+    <member type='way' ref='458263351' role='' />
+    <member type='way' ref='840200353' role='' />
+    <member type='way' ref='981963461' role='' />
+    <member type='way' ref='981963460' role='' />
+    <member type='way' ref='915410086' role='' />
+    <member type='way' ref='673302464' role='' />
+    <member type='way' ref='915410087' role='' />
+    <member type='way' ref='673302456' role='' />
+    <member type='way' ref='840200365' role='' />
+    <member type='way' ref='840200369' role='' />
+    <member type='way' ref='915410089' role='' />
+    <member type='way' ref='673293139' role='' />
+    <member type='way' ref='673293140' role='' />
+    <member type='way' ref='331230596' role='' />
+    <member type='way' ref='840200374' role='' />
+    <member type='way' ref='840200377' role='' />
+    <member type='way' ref='840200379' role='' />
+    <member type='way' ref='840200382' role='' />
+    <member type='way' ref='840200386' role='' />
+    <member type='way' ref='840200384' role='' />
+    <tag k='from' v='朱阁村' />
+    <tag k='name' v='Bus 9: 朱阁村 =&gt; 青州火车站' />
+    <tag k='network' v='青州公交' />
+    <tag k='operator' v='青州凯程公交' />
+    <tag k='ref' v='9' />
+    <tag k='route' v='bus' />
+    <tag k='to' v='青州火车站' />
+    <tag k='type' v='route' />
+  </relation>
+  <relation id='10107859' timestamp='2021-09-11T14:23:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='8' changeset='111064578'>
+    <member type='node' ref='6843779879' role='station' />
+    <member type='node' ref='6843779881' role='' />
+    <member type='node' ref='6843861785' role='' />
+    <member type='node' ref='6843861816' role='' />
+    <member type='node' ref='6843779865' role='' />
+    <member type='node' ref='6843779866' role='' />
+    <member type='node' ref='6843861967' role='' />
+    <member type='node' ref='6843779871' role='' />
+    <member type='node' ref='7840169892' role='' />
+    <member type='node' ref='6865896952' role='' />
+    <member type='node' ref='6843779877' role='' />
+    <member type='node' ref='7840169896' role='' />
+    <member type='node' ref='6865896949' role='' />
+    <member type='node' ref='6865896947' role='' />
+    <member type='node' ref='7565359569' role='' />
+    <member type='node' ref='7840169917' role='' />
+    <member type='way' ref='840200390' role='' />
+    <member type='way' ref='840200391' role='' />
+    <member type='way' ref='763002272' role='' />
+    <member type='way' ref='763002273' role='' />
+    <member type='way' ref='458263342' role='' />
+    <member type='way' ref='915406780' role='' />
+    <member type='way' ref='730645596' role='' />
+    <member type='way' ref='673293107' role='' />
+    <member type='way' ref='981963458' role='' />
+    <member type='way' ref='915410085' role='' />
+    <member type='way' ref='673302459' role='' />
+    <member type='way' ref='840200363' role='' />
+    <member type='way' ref='840200368' role='' />
+    <member type='way' ref='673293138' role='' />
+    <member type='way' ref='673293137' role='' />
+    <member type='way' ref='481648000' role='' />
+    <member type='way' ref='840200371' role='' />
+    <member type='way' ref='840200375' role='' />
+    <member type='way' ref='840200383' role='' />
+    <member type='way' ref='840200380' role='' />
+    <member type='way' ref='840200385' role='' />
+    <member type='way' ref='840200386' role='' />
+    <member type='way' ref='840200384' role='' />
+    <tag k='from' v='青州火车站' />
+    <tag k='name' v='Bus 9: 青州火车站 =&gt; 朱阁村' />
+    <tag k='network' v='青州公交' />
+    <tag k='operator' v='青州凯程公交' />
+    <tag k='ref' v='9' />
+    <tag k='route' v='bus' />
+    <tag k='to' v='朱阁村' />
+    <tag k='type' v='route' />
+  </relation>
+  <relation id='12424473' timestamp='2021-09-11T14:23:15Z' uid='9403945' user='快乐的老鼠宝宝' visible='true' version='2' changeset='111064578'>
+    <member type='relation' ref='10107858' role='' />
+    <member type='relation' ref='10107859' role='' />
+    <tag k='name' v='青州9路' />
+    <tag k='network' v='青州公交' />
+    <tag k='operator' v='青州凯程公交' />
+    <tag k='ref' v='9' />
+    <tag k='route_master' v='bus' />
+    <tag k='type' v='route_master' />
+  </relation>
+</osm>

@@ -6,8 +6,8 @@
 ## testdata changes
 
 Styles*
-*.osm
-*.osc
+/*.osm
+/*.osc
 *.gpx
 *.xml
 *.jar

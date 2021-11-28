@@ -1,0 +1,1332 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' upload='true' generator='Level0 v1.2'>
+  <node id='-255' version='1' lat='30.0789335' lon='102.0163909' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-254' version='1' lat='30.0775691' lon='102.0143200' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-253' version='1' lat='30.0789672' lon='102.0164675' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-252' version='1' lat='30.0790273' lon='102.0166144' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-251' version='1' lat='30.0644231' lon='102.0047876' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-250' version='1' lat='30.0765503' lon='102.0134799' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-249' version='1' lat='30.0766359' lon='102.0135372' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-248' version='1' lat='30.0761467' lon='102.0132238' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-247' version='1' lat='30.0763238' lon='102.0133746' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-246' version='1' lat='29.9891509' lon='102.2044598' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-245' version='1' lat='29.9910969' lon='102.1698841' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-244' version='1' lat='30.0176515' lon='102.1678399' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-243' version='1' lat='30.0235422' lon='102.1665362' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-242' version='1' lat='30.0287446' lon='102.1414238' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-241' version='1' lat='30.0383665' lon='102.1363386' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-240' version='1' lat='30.0705354' lon='102.0828553' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-239' version='1' lat='30.0833630' lon='102.0502437' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-238' version='1' lat='30.0838645' lon='102.0491119' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-237' version='1' lat='30.0842394' lon='102.0482359' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-236' version='1' lat='30.0844892' lon='102.0475408' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-235' version='1' lat='30.0848151' lon='102.0464034' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-234' version='1' lat='30.0850563' lon='102.0451719' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-233' version='1' lat='30.0852102' lon='102.0441326' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-232' version='1' lat='30.0853241' lon='102.0426918' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-231' version='1' lat='30.0852659' lon='102.0408867' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-230' version='1' lat='30.0846079' lon='102.0484140' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-229' version='1' lat='30.0850319' lon='102.0471937' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-228' version='1' lat='30.0852859' lon='102.0460798' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-227' version='1' lat='30.0855021' lon='102.0448993' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-226' version='1' lat='30.0856482' lon='102.0434550' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-225' version='1' lat='30.0856898' lon='102.0421994' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-224' version='1' lat='30.0850718' lon='102.0392201' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-223' version='1' lat='30.0856134' lon='102.0406273' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-222' version='1' lat='30.0848370' lon='102.0381249' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-221' version='1' lat='30.0852992' lon='102.0384973' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-220' version='1' lat='30.0841219' lon='102.0354859' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-219' version='1' lat='30.0844351' lon='102.0352069' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-218' version='1' lat='30.0638245' lon='102.0048773' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-217' version='1' lat='30.0638477' lon='102.0051026' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-216' version='1' lat='30.0638570' lon='102.0052233' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-215' version='1' lat='30.0639057' lon='102.0055049' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-214' version='1' lat='30.0639382' lon='102.0056068' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-213' version='1' lat='30.0639777' lon='102.0056900' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-212' version='1' lat='30.0640078' lon='102.0057704' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-211' version='1' lat='30.0640659' lon='102.0058804' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-210' version='1' lat='30.0641402' lon='102.0059958' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-209' version='1' lat='30.0642585' lon='102.0061513' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-208' version='1' lat='30.0644164' lon='102.0063364' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-207' version='1' lat='30.0645998' lon='102.0065402' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-206' version='1' lat='30.0647089' lon='102.0066636' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-205' version='1' lat='30.0648366' lon='102.0068085' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-204' version='1' lat='30.0650130' lon='102.0070177' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-203' version='1' lat='30.0651940' lon='102.0072215' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-202' version='1' lat='30.0654865' lon='102.0075273' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-201' version='1' lat='30.0656258' lon='102.0076480' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-200' version='1' lat='30.0657837' lon='102.0077633' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-199' version='1' lat='30.0659229' lon='102.0078706' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-198' version='1' lat='30.0662433' lon='102.0080959' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-197' version='1' lat='30.0664986' lon='102.0082488' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-196' version='1' lat='30.0667517' lon='102.0083936' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-195' version='1' lat='30.0678287' lon='102.0091044' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-194' version='1' lat='30.0680492' lon='102.0092493' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-193' version='1' lat='30.0682883' lon='102.0093914' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-192' version='1' lat='30.0684903' lon='102.0095014' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-191' version='1' lat='30.0686388' lon='102.0095765' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-190' version='1' lat='30.0688269' lon='102.0096516' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-189' version='1' lat='30.0691402' lon='102.0097428' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-188' version='1' lat='30.0694745' lon='102.0098179' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-187' version='1' lat='30.0696509' lon='102.0098608' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-186' version='1' lat='30.0698343' lon='102.0099037' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-185' version='1' lat='30.0699805' lon='102.0099493' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-184' version='1' lat='30.0701476' lon='102.0100030' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-183' version='1' lat='30.0702753' lon='102.0100539' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-182' version='1' lat='30.0704030' lon='102.0101156' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-181' version='1' lat='30.0705306' lon='102.0101800' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-180' version='1' lat='30.0706815' lon='102.0102444' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-179' version='1' lat='30.0708672' lon='102.0103463' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-178' version='1' lat='30.0710344' lon='102.0104348' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-177' version='1' lat='30.0711968' lon='102.0105180' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-176' version='1' lat='30.0713315' lon='102.0105770' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-175' version='1' lat='30.0716495' lon='102.0107057' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-174' version='1' lat='30.0721021' lon='102.0108586' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-173' version='1' lat='30.0722599' lon='102.0109096' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-172' version='1' lat='30.0724247' lon='102.0109739' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-171' version='1' lat='30.0725547' lon='102.0110464' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-170' version='1' lat='30.0726894' lon='102.0111375' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-169' version='1' lat='30.0728147' lon='102.0112341' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-168' version='1' lat='30.0729284' lon='102.0113548' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-167' version='1' lat='30.0730468' lon='102.0115211' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-166' version='1' lat='30.0731675' lon='102.0117196' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-165' version='1' lat='30.0732673' lon='102.0119100' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-164' version='1' lat='30.0733671' lon='102.0120870' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-163' version='1' lat='30.0735180' lon='102.0123043' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-162' version='1' lat='30.0736596' lon='102.0124491' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-161' version='1' lat='30.0738012' lon='102.0125430' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-160' version='1' lat='30.0739080' lon='102.0126047' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-159' version='1' lat='30.0740333' lon='102.0126530' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-158' version='1' lat='30.0742352' lon='102.0127066' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-157' version='1' lat='30.0744743' lon='102.0127656' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-156' version='1' lat='30.0748039' lon='102.0128488' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-155' version='1' lat='30.0751196' lon='102.0129293' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-154' version='1' lat='30.0753192' lon='102.0129856' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-153' version='1' lat='30.0755327' lon='102.0130392' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-152' version='1' lat='30.0758113' lon='102.0131197' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-151' version='1' lat='30.0760596' lon='102.0132163' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-150' version='1' lat='30.0763265' lon='102.0133423' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-149' version='1' lat='30.0765331' lon='102.0134684' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-148' version='1' lat='30.0768418' lon='102.0136749' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-147' version='1' lat='30.0770577' lon='102.0138385' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-146' version='1' lat='30.0771041' lon='102.0138788' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-145' version='1' lat='30.0776449' lon='102.0143991' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-144' version='1' lat='30.0777679' lon='102.0145332' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-143' version='1' lat='30.0779257' lon='102.0147237' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-142' version='1' lat='30.0781021' lon='102.0149436' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-141' version='1' lat='30.0782600' lon='102.0151609' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-140' version='1' lat='30.0783551' lon='102.0153137' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-139' version='1' lat='30.0784898' lon='102.0155230' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-138' version='1' lat='30.0786267' lon='102.0157644' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-137' version='1' lat='30.0787033' lon='102.0159172' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-136' version='1' lat='30.0789516' lon='102.0164295' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-135' version='1' lat='30.0791141' lon='102.0168265' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-134' version='1' lat='30.0792023' lon='102.0170679' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-133' version='1' lat='30.0792859' lon='102.0173200' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-132' version='1' lat='30.0793741' lon='102.0176124' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-131' version='1' lat='30.0794855' lon='102.0180255' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-130' version='1' lat='30.0797036' lon='102.0188301' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-129' version='1' lat='30.0798197' lon='102.0192593' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-128' version='1' lat='30.0799845' lon='102.0198950' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-127' version='1' lat='30.0800309' lon='102.0200452' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-126' version='1' lat='30.0792725' lon='102.0166153' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-125' version='1' lat='30.0793645' lon='102.0166408' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-124' version='1' lat='30.0764491' lon='102.0134812' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-123' version='1' lat='30.0768350' lon='102.0132883' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-122' version='1' lat='30.0767511' lon='102.0132258' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-121' version='1' lat='30.0639062' lon='102.0049459' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-120' version='1' lat='30.0639409' lon='102.0051862' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-119' version='1' lat='30.0639862' lon='102.0054112' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-118' version='1' lat='30.0640929' lon='102.0057347' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-117' version='1' lat='30.0642742' lon='102.0060428' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-116' version='1' lat='30.0644902' lon='102.0063231' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-115' version='1' lat='30.0647222' lon='102.0065450' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-114' version='1' lat='30.0649568' lon='102.0068161' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-113' version='1' lat='30.0650928' lon='102.0069578' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-112' version='1' lat='30.0653622' lon='102.0072505' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-111' version='1' lat='30.0654928' lon='102.0073799' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-110' version='1' lat='30.0657221' lon='102.0075956' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-109' version='1' lat='30.0659648' lon='102.0077866' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-108' version='1' lat='30.0661754' lon='102.0079376' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-107' version='1' lat='30.0662901' lon='102.0080116' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-106' version='1' lat='30.0664634' lon='102.0081132' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-105' version='1' lat='30.0667114' lon='102.0082457' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-104' version='1' lat='30.0668847' lon='102.0083382' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-103' version='1' lat='30.0669647' lon='102.0083597' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-102' version='1' lat='30.0671140' lon='102.0084029' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-101' version='1' lat='30.0675273' lon='102.0085754' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-100' version='1' lat='30.0677300' lon='102.0086709' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-99' version='1' lat='30.0680393' lon='102.0088065' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-98' version='1' lat='30.0681806' lon='102.0089051' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-97' version='1' lat='30.0683033' lon='102.0090067' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-96' version='1' lat='30.0684099' lon='102.0091146' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-95' version='1' lat='30.0685752' lon='102.0092902' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-94' version='1' lat='30.0687512' lon='102.0094689' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-93' version='1' lat='30.0688126' lon='102.0095182' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-92' version='1' lat='30.0689779' lon='102.0095921' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-91' version='1' lat='30.0691325' lon='102.0096353' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-90' version='1' lat='30.0692925' lon='102.0096846' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-89' version='1' lat='30.0694845' lon='102.0097308' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-88' version='1' lat='30.0696658' lon='102.0097801' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-87' version='1' lat='30.0699964' lon='102.0098448' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-86' version='1' lat='30.0701804' lon='102.0099126' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-85' version='1' lat='30.0703564' lon='102.0099865' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-84' version='1' lat='30.0705350' lon='102.0100574' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-83' version='1' lat='30.0707457' lon='102.0101560' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-82' version='1' lat='30.0708817' lon='102.0102176' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-81' version='1' lat='30.0710150' lon='102.0102638' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-80' version='1' lat='30.0712763' lon='102.0103532' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-79' version='1' lat='30.0714549' lon='102.0104179' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-78' version='1' lat='30.0716682' lon='102.0104826' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-77' version='1' lat='30.0719615' lon='102.0105688' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-76' version='1' lat='30.0723082' lon='102.0106767' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-75' version='1' lat='30.0725348' lon='102.0107506' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-74' version='1' lat='30.0727454' lon='102.0108307' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-73' version='1' lat='30.0729374' lon='102.0109047' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-72' version='1' lat='30.0731081' lon='102.0109725' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-71' version='1' lat='30.0733854' lon='102.0111049' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-70' version='1' lat='30.0735427' lon='102.0111850' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-69' version='1' lat='30.0737160' lon='102.0113052' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-68' version='1' lat='30.0739106' lon='102.0114439' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-67' version='1' lat='30.0740306' lon='102.0115332' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-66' version='1' lat='30.0741959' lon='102.0116595' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-65' version='1' lat='30.0744599' lon='102.0118598' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-64' version='1' lat='30.0748065' lon='102.0121032' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-63' version='1' lat='30.0752224' lon='102.0123250' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-62' version='1' lat='30.0753504' lon='102.0123928' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-61' version='1' lat='30.0755184' lon='102.0124760' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-60' version='1' lat='30.0757557' lon='102.0125808' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-59' version='1' lat='30.0758436' lon='102.0126424' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-58' version='1' lat='30.0760489' lon='102.0127625' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-57' version='1' lat='30.0762649' lon='102.0128889' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-56' version='1' lat='30.0765102' lon='102.0130460' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-55' version='1' lat='30.0768488' lon='102.0132986' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-54' version='1' lat='30.0769790' lon='102.0134096' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-53' version='1' lat='30.0774934' lon='102.0139023' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-52' version='1' lat='30.0775156' lon='102.0139255' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-51' version='1' lat='30.0776300' lon='102.0140319' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-50' version='1' lat='30.0778060' lon='102.0142168' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-49' version='1' lat='30.0779153' lon='102.0143308' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-48' version='1' lat='30.0780593' lon='102.0144941' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-47' version='1' lat='30.0781766' lon='102.0146481' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-46' version='1' lat='30.0782992' lon='102.0148053' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-45' version='1' lat='30.0783685' lon='102.0148946' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-44' version='1' lat='30.0784538' lon='102.0150240' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-43' version='1' lat='30.0786031' lon='102.0152520' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-42' version='1' lat='30.0787711' lon='102.0155016' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-41' version='1' lat='30.0788351' lon='102.0156310' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-40' version='1' lat='30.0789420' lon='102.0158308' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-39' version='1' lat='30.0790297' lon='102.0159884' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-38' version='1' lat='30.0790470' lon='102.0160181' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-37' version='1' lat='30.0792459' lon='102.0164523' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-36' version='1' lat='30.0793417' lon='102.0166816' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-35' version='1' lat='30.0794137' lon='102.0168634' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-34' version='1' lat='30.0795203' lon='102.0171346' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-33' version='1' lat='30.0795763' lon='102.0173102' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-32' version='1' lat='30.0797523' lon='102.0178278' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-31' version='1' lat='30.0798109' lon='102.0180157' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-30' version='1' lat='30.0798962' lon='102.0182992' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-29' version='1' lat='30.0799815' lon='102.0185734' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-28' version='1' lat='30.0800349' lon='102.0187521' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-27' version='1' lat='30.0800908' lon='102.0189370' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-26' version='1' lat='30.0802188' lon='102.0194207' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-25' version='1' lat='30.0802668' lon='102.0196148' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-24' version='1' lat='30.0790450' lon='102.0165546' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-23' version='1' lat='30.0724350' lon='102.0103273' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-22' version='1' lat='30.0722691' lon='102.0101817' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-21' version='1' lat='30.0720884' lon='102.0100645' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-20' version='1' lat='30.0618332' lon='102.0012947' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-19' version='1' lat='30.0624630' lon='102.0016057' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-18' version='1' lat='30.0628890' lon='102.0021597' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-17' version='1' lat='30.0627917' lon='102.0019349' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-16' version='1' lat='30.0630005' lon='102.0029108' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-15' version='1' lat='30.0637011' lon='102.0040349' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-14' version='1' lat='30.0638783' lon='102.0047345' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-13' version='1' lat='30.0614961' lon='102.0010418' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-12' version='1' lat='30.0615787' lon='102.0011107' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-11' version='1' lat='30.0639782' lon='102.0048365' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-10' version='1' lat='30.0661512' lon='102.0057951' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-9' version='1' lat='30.0768518' lon='102.0126509' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-8' version='1' lat='30.0799077' lon='102.0167231' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-7' version='1' lat='30.0769646' lon='102.0139997' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-6' version='1' lat='30.0767994' lon='102.0138041' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-5' version='1' lat='30.0760256' lon='102.0131207' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-4' version='1' lat='30.0740746' lon='102.0124489' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-3' version='1' lat='30.0737129' lon='102.0122217' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-2' version='1' lat='30.0734631' lon='102.0119213' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='-1' version='1' lat='30.0732316' lon='102.0115153' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <way id='-277' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-37' />
+    <nd ref='-38' />
+    <tag k='bridge' v='yes' />
+    <tag k='highway' v='motorway' />
+    <tag k='layer' v='1' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='name:zh' v='雅叶高速' />
+    <tag k='oneway' v='yes' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-276' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-38' />
+    <nd ref='-39' />
+    <nd ref='-40' />
+    <nd ref='-41' />
+    <nd ref='-42' />
+    <nd ref='-43' />
+    <nd ref='-44' />
+    <nd ref='-45' />
+    <nd ref='-46' />
+    <nd ref='-47' />
+    <nd ref='-48' />
+    <nd ref='-49' />
+    <nd ref='-50' />
+    <nd ref='-51' />
+    <nd ref='-52' />
+    <nd ref='-53' />
+    <tag k='highway' v='motorway' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='name:zh' v='雅叶高速' />
+    <tag k='oneway' v='yes' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-275' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-137' />
+    <nd ref='-255' />
+    <tag k='bridge' v='yes' />
+    <tag k='highway' v='motorway' />
+    <tag k='layer' v='1' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-274' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-255' />
+    <nd ref='-136' />
+    <nd ref='-253' />
+    <tag k='highway' v='motorway' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-273' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-146' />
+    <nd ref='-254' />
+    <tag k='bridge' v='yes' />
+    <tag k='highway' v='motorway' />
+    <tag k='layer' v='1' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-272' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-249' />
+    <nd ref='-148' />
+    <nd ref='-147' />
+    <nd ref='-146' />
+    <tag k='highway' v='motorway' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-271' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-253' />
+    <nd ref='-252' />
+    <tag k='bridge' v='yes' />
+    <tag k='highway' v='motorway' />
+    <tag k='layer' v='1' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-270' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-252' />
+    <nd ref='-135' />
+    <nd ref='-134' />
+    <nd ref='-133' />
+    <nd ref='-132' />
+    <nd ref='-131' />
+    <nd ref='-130' />
+    <nd ref='-129' />
+    <nd ref='-128' />
+    <nd ref='-127' />
+    <nd ref='6218612017' />
+    <tag k='highway' v='motorway' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-269' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-250' />
+    <nd ref='-249' />
+    <tag k='bridge' v='yes' />
+    <tag k='highway' v='motorway' />
+    <tag k='layer' v='1' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-268' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-254' />
+    <nd ref='-145' />
+    <nd ref='-144' />
+    <nd ref='-143' />
+    <nd ref='-142' />
+    <nd ref='-141' />
+    <nd ref='-140' />
+    <nd ref='-139' />
+    <nd ref='-138' />
+    <nd ref='-137' />
+    <tag k='highway' v='motorway' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-267' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-53' />
+    <nd ref='-54' />
+    <tag k='bridge' v='yes' />
+    <tag k='highway' v='motorway' />
+    <tag k='layer' v='1' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='name:zh' v='雅叶高速' />
+    <tag k='oneway' v='yes' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-266' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-54' />
+    <nd ref='-55' />
+    <nd ref='-123' />
+    <tag k='highway' v='motorway' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='name:zh' v='雅叶高速' />
+    <tag k='oneway' v='yes' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-265' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-248' />
+    <nd ref='-247' />
+    <tag k='highway' v='trunk' />
+    <tag k='layer' v='-1' />
+    <tag k='name' v='318国道' />
+    <tag k='name:en' v='National Highway 318' />
+    <tag k='name:zh' v='318国道' />
+    <tag k='ref' v='G318' />
+    <tag k='surface' v='asphalt' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='-264' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-247' />
+    <nd ref='-124' />
+    <tag k='highway' v='trunk' />
+    <tag k='name' v='318国道' />
+    <tag k='name:en' v='National Highway 318' />
+    <tag k='name:zh' v='318国道' />
+    <tag k='ref' v='G318' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='-263' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-218' />
+    <nd ref='-217' />
+    <nd ref='-216' />
+    <nd ref='-215' />
+    <nd ref='-214' />
+    <nd ref='-213' />
+    <nd ref='-212' />
+    <nd ref='-211' />
+    <nd ref='-210' />
+    <nd ref='-209' />
+    <nd ref='-208' />
+    <nd ref='-207' />
+    <nd ref='-206' />
+    <nd ref='-205' />
+    <nd ref='-204' />
+    <nd ref='-203' />
+    <nd ref='-202' />
+    <nd ref='-201' />
+    <nd ref='-200' />
+    <nd ref='-199' />
+    <nd ref='-198' />
+    <nd ref='-197' />
+    <nd ref='-196' />
+    <nd ref='-195' />
+    <nd ref='-194' />
+    <nd ref='-193' />
+    <nd ref='-192' />
+    <nd ref='-191' />
+    <nd ref='-190' />
+    <nd ref='-189' />
+    <nd ref='-188' />
+    <nd ref='-187' />
+    <nd ref='-186' />
+    <nd ref='-185' />
+    <nd ref='-184' />
+    <nd ref='-183' />
+    <nd ref='-182' />
+    <nd ref='-181' />
+    <nd ref='-180' />
+    <nd ref='-179' />
+    <nd ref='-178' />
+    <nd ref='-177' />
+    <nd ref='-176' />
+    <nd ref='-175' />
+    <nd ref='-174' />
+    <nd ref='-173' />
+    <nd ref='-172' />
+    <nd ref='-171' />
+    <nd ref='-170' />
+    <nd ref='-169' />
+    <nd ref='-168' />
+    <nd ref='-167' />
+    <nd ref='-166' />
+    <nd ref='-165' />
+    <nd ref='-164' />
+    <nd ref='-163' />
+    <nd ref='-162' />
+    <nd ref='-161' />
+    <nd ref='-160' />
+    <nd ref='-159' />
+    <nd ref='-158' />
+    <nd ref='-157' />
+    <nd ref='-156' />
+    <nd ref='-155' />
+    <nd ref='-154' />
+    <nd ref='-153' />
+    <nd ref='-152' />
+    <nd ref='-151' />
+    <nd ref='-150' />
+    <nd ref='-149' />
+    <nd ref='-250' />
+    <tag k='highway' v='motorway' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-262' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-126' />
+    <nd ref='-125' />
+    <tag k='highway' v='trunk' />
+    <tag k='layer' v='-1' />
+    <tag k='name' v='318国道' />
+    <tag k='name:en' v='National Highway 318' />
+    <tag k='name:zh' v='318国道' />
+    <tag k='ref' v='G318' />
+    <tag k='surface' v='asphalt' />
+    <tag k='tunnel' v='yes' />
+  </way>
+  <way id='-261' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-124' />
+    <nd ref='6343383170' />
+    <nd ref='-6' />
+    <nd ref='-7' />
+    <nd ref='6343383171' />
+    <nd ref='6343383172' />
+    <nd ref='6343383173' />
+    <nd ref='6343383174' />
+    <nd ref='6343383175' />
+    <nd ref='6343383176' />
+    <nd ref='6343383177' />
+    <nd ref='6343383178' />
+    <nd ref='6343383179' />
+    <nd ref='6343383180' />
+    <nd ref='6343383183' />
+    <nd ref='6343383181' />
+    <nd ref='6343383182' />
+    <nd ref='-24' />
+    <nd ref='458722355' />
+    <nd ref='-126' />
+    <tag k='highway' v='trunk' />
+    <tag k='name' v='318国道' />
+    <tag k='name:en' v='National Highway 318' />
+    <tag k='name:zh' v='318国道' />
+    <tag k='ref' v='G318' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='-260' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-123' />
+    <nd ref='-122' />
+    <tag k='bridge' v='yes' />
+    <tag k='highway' v='motorway' />
+    <tag k='layer' v='1' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='name:zh' v='雅叶高速' />
+    <tag k='oneway' v='yes' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-259' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='6218612015' />
+    <nd ref='9007162731' />
+    <nd ref='-25' />
+    <nd ref='-26' />
+    <nd ref='-27' />
+    <nd ref='-28' />
+    <nd ref='-29' />
+    <nd ref='-30' />
+    <nd ref='-31' />
+    <nd ref='-32' />
+    <nd ref='-33' />
+    <nd ref='-34' />
+    <nd ref='-35' />
+    <nd ref='-36' />
+    <nd ref='-37' />
+    <tag k='highway' v='motorway' />
+    <tag k='name' v='雅叶高速' />
+    <tag k='name:zh' v='雅叶高速' />
+    <tag k='oneway' v='yes' />
+    <tag k='ref' v='G4218' />
+  </way>
+  <way id='-258' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='8872323757' />
+    <nd ref='8238148340' />
+    <nd ref='458722329' />
+    <nd ref='-1' />
+    <nd ref='-2' />
+    <nd ref='-3' />
+    <nd ref='-4' />
+    <nd ref='458722331' />
+    <nd ref='458722335' />
+    <nd ref='-5' />
+    <nd ref='-248' />
+    <tag k='highway' v='trunk' />
+    <tag k='name' v='318国道' />
+    <tag k='name:en' v='National Highway 318' />
+    <tag k='name:zh' v='318国道' />
+    <tag k='ref' v='G318' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='-257' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-13' />
+    <nd ref='-12' />
+    <tag k='bridge' v='yes' />
+    <tag k='highway' v='trunk' />
+    <tag k='layer' v='1' />
+    <tag k='name' v='318国道' />
+    <tag k='name:en' v='National Highway 318' />
+    <tag k='name:zh' v='318国道' />
+    <tag k='ref' v='G318' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <way id='-256' version='1' action='create' timestamp='2021-11-28T05:14:24+00:00'>
+    <nd ref='-12' />
+    <nd ref='458722067' />
+    <nd ref='-20' />
+    <nd ref='458722069' />
+    <nd ref='-19' />
+    <nd ref='458722111' />
+    <nd ref='-17' />
+    <nd ref='458722168' />
+    <nd ref='-18' />
+    <nd ref='458722211' />
+    <nd ref='458722232' />
+    <nd ref='458722236' />
+    <nd ref='-16' />
+    <nd ref='458722237' />
+    <nd ref='458722251' />
+    <nd ref='6225436692' />
+    <nd ref='-15' />
+    <nd ref='458722273' />
+    <nd ref='458722275' />
+    <nd ref='-14' />
+    <nd ref='6225436691' />
+    <nd ref='-11' />
+    <nd ref='8238148344' />
+    <nd ref='8872323759' />
+    <tag k='highway' v='trunk' />
+    <tag k='name' v='318国道' />
+    <tag k='name:en' v='National Highway 318' />
+    <tag k='name:zh' v='318国道' />
+    <tag k='ref' v='G318' />
+    <tag k='surface' v='asphalt' />
+  </way>
+  <node id='458722067' version='2' lat='30.0616624' lon='102.0011804' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='458722331' version='2' lat='30.0747893' lon='102.0126811' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328158986' version='2' lat='30.0632481' lon='102.0029228' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328158988' version='2' lat='30.0629016' lon='102.0018187' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328158989' version='2' lat='30.0630274' lon='102.0021874' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328158991' version='2' lat='30.0635204' lon='102.0033747' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328158994' version='2' lat='30.0639521' lon='102.0041101' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328158995' version='2' lat='30.0648551' lon='102.0051773' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328158997' version='2' lat='30.0653774' lon='102.0055279' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328158998' version='2' lat='30.0656546' lon='102.0060024' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159004' version='2' lat='30.0681547' lon='102.0085357' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159007' version='2' lat='30.0688395' lon='102.0090532' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159008' version='2' lat='30.0691473' lon='102.0091893' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159012' version='2' lat='30.0695733' lon='102.0094444' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159016' version='2' lat='30.0702460' lon='102.0095848' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159019' version='2' lat='30.0712953' lon='102.0100618' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159022' version='2' lat='30.0718586' lon='102.0102654' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159027' version='2' lat='30.0732149' lon='102.0108144' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159029' version='2' lat='30.0735516' lon='102.0109178' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159077' version='2' lat='30.0775220' lon='102.0144607' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159080' version='2' lat='30.0779604' lon='102.0155203' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159421' version='2' lat='30.0795472' lon='102.0163804' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159437' version='2' lat='30.0799295' lon='102.0164702' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6038876860' version='2' lat='29.9928388' lon='102.1689527' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612007' version='2' lat='30.0794572' lon='102.0565411' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612008' version='2' lat='30.0800947' lon='102.0556532' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612009' version='2' lat='30.0796431' lon='102.0555963' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612010' version='2' lat='30.0791108' lon='102.0563822' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612015' version='2' lat='30.0804047' lon='102.0201364' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612017' version='2' lat='30.0800463' lon='102.0201201' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612025' version='2' lat='30.0806919' lon='102.0548348' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612026' version='2' lat='30.0814476' lon='102.0538285' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612027' version='2' lat='30.0827802' lon='102.0519522' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612028' version='2' lat='30.0836228' lon='102.0505890' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612029' version='2' lat='30.0842025' lon='102.0494334' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612030' version='2' lat='30.0802498' lon='102.0548111' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612031' version='2' lat='30.0807178' lon='102.0541401' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612032' version='2' lat='30.0816083' lon='102.0529220' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612033' version='2' lat='30.0822578' lon='102.0520248' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612034' version='2' lat='30.0806749' lon='102.0211732' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612035' version='2' lat='30.0809496' lon='102.0222244' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612036' version='2' lat='30.0812224' lon='102.0232254' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612037' version='2' lat='30.0814920' lon='102.0242640' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612038' version='2' lat='30.0818120' lon='102.0254667' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612039' version='2' lat='30.0803114' lon='102.0211103' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612040' version='2' lat='30.0806081' lon='102.0222327' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612041' version='2' lat='30.0809090' lon='102.0233373' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612042' version='2' lat='30.0812164' lon='102.0244797' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612043' version='2' lat='30.0815692' lon='102.0258065' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612044' version='2' lat='30.0828781' lon='102.0510583' action='modify' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='3328159064' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6218612018' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406856' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406857' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406858' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406859' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406860' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406861' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406862' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406863' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406864' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406865' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406866' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406867' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406868' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406869' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406870' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406871' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406872' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406873' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406874' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406875' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406876' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406877' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406878' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406879' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406880' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406881' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406882' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406883' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225406884' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407185' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407186' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407187' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407188' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407189' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407190' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407191' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407192' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407193' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407194' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407195' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407196' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407197' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407198' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407199' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407200' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407201' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407202' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407203' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407204' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407205' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407206' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407207' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407208' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407209' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407210' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407211' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407212' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407213' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407214' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407215' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407216' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407217' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407218' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407219' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407220' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407221' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407222' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407223' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407224' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407225' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407226' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407227' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407228' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407229' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407230' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407231' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407232' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407233' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407234' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407235' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407236' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407237' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407238' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407239' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407240' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407241' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407242' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407243' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407244' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407245' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407246' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407247' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407248' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407249' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407250' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407251' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407252' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407253' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407254' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407255' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407256' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407257' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407258' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407259' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407260' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407261' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407262' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407263' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407264' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407265' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407266' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407267' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407268' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407269' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407270' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407271' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407272' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407273' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407274' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407275' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407276' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407277' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407278' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407279' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407280' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407281' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407282' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407283' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407284' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407285' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407286' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407287' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407288' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407289' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407290' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407291' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407292' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407293' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407294' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407295' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407296' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407297' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407298' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407299' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407300' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407301' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407302' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407303' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407304' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407305' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407306' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407307' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407308' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407309' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407310' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407311' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407312' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407313' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407314' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407315' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407316' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407317' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407318' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407319' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407320' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407321' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407322' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407323' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407324' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407325' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+  <node id='6225407326' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
+  </node>
+</osm>
