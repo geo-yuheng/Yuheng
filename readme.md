@@ -24,6 +24,14 @@ OSM数据对象库
 
 [![](https://avatars.githubusercontent.com/u/45530478?v=4)](https://zh.wikipedia.org/wiki/%E5%8E%9F%E7%A5%9E%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#%E7%92%83%E6%9C%88%E4%B8%83%E6%98%9F)
 
+## NOT
+
+列举出可能与本项目相近，相似，但目的并非一致的替代品
+
++ https://github.com/iandees/pyosm
++ https://github.com/gboeing/osmnx
++ https://github.com/sqlalchemy/sqlalchemy
++ https://github.com/drolbr/Overpass-API
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword?ref=badge_large)
