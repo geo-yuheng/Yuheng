@@ -52,6 +52,8 @@ class Member:
 
 
 class Node(BaseOsmModel):
+    upstream_way:list = [0]
+    upstream_relation: list = [0]
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
         super().__init__(attrib, tag_dict)
         self.lat: float = float(attrib['lat'])
@@ -59,12 +61,14 @@ class Node(BaseOsmModel):
 
 
 class Way(BaseOsmModel):
+    upstream_relation: list = [0]
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str], nd_list: List[int]):
         super().__init__(attrib, tag_dict)
         self.nds: List[int] = nd_list.copy()
 
 
 class Relation(BaseOsmModel):
+    upstream_relation: list = [0]
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str], member_list: List[Member]):
         super().__init__(attrib, tag_dict)
         self.members: List[Member] = member_list.copy()
