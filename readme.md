@@ -28,10 +28,27 @@ OSM数据对象库
 
 列举出可能与本项目相近，相似，但目的并非一致的替代品
 
+### Dump Reader
+
++ https://github.com/osmcode/osmium （我们有参考）
++ https://github.com/openstreetmap/osmosis
++ https://gitlab.com/osm-c-tools/osmctools (osmconvert)
+
+### Data process framework
+
++ https://github.com/gboeing/osmnx （我们有参考）
 + https://github.com/iandees/pyosm
-+ https://github.com/gboeing/osmnx
+
+### Query SQL or DSL
+
++ https://github.com/drolbr/Overpass-API （我们有参考）
 + https://github.com/sqlalchemy/sqlalchemy
-+ https://github.com/drolbr/Overpass-API
+
+### Database
+
++ osm2pgsql
++ osm2pgrouting
++ osm2mysql, osm2mongo, and so on.
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword?ref=badge_large)
