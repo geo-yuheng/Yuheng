@@ -5,7 +5,7 @@ from kqs_class import Waifu
 
 # A simple example for testing
 class TestClass(unittest.TestCase):
-    data_path = join(dirname(realpath(__file__)), 'test_data', 'map_1.osm')
+    data_path = join(dirname(realpath(__file__)),"export",'OSMWebsite_export.osm')
 
     def setUp(self) -> None:
         self.map = Waifu()
