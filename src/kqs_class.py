@@ -204,7 +204,7 @@ class Waifu:
             attrib, tag_dict, member_list
         )
 
-    def from_file(self, file_path: str):
+    def read_file(self, file_path: str):
         tree: ElementTree = ET.parse(file_path)
         root: Element = tree.getroot()
         for element in root:
@@ -220,7 +220,7 @@ class Waifu:
                 # raise TypeError('Unexpected element tag type: ' + element.tag)
                 pass
 
-    def from_text(self, text: str):
+    def read_memory(self, text: str):
         root: Element = ET.fromstring(text)
         for element in root:
             if element.tag == "node":
@@ -234,6 +234,9 @@ class Waifu:
             else:
                 # raise TypeError('Unexpected element tag type: ' + element.tag)
                 pass
+            
+    # def read_network():
+    # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
 
     def write(self, file_path: str):
         root: Element = Element("osm")
