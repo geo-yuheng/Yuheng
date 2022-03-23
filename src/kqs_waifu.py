@@ -5,13 +5,16 @@ from xml.etree.ElementTree import Element, ElementTree
 
 from kqs_class import (
     Relation,
-    KQS_GENERATOR,
-    KQS_VERSION,
     Way,
     Bounds,
     Node,
     Member,
     BaseOsmModel,
+)
+
+from kqs_global_const import (
+    KQS_GENERATOR,
+    KQS_VERSION,
     KQS_START_ID,
 )
 

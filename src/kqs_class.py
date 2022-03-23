@@ -1,10 +1,7 @@
 from typing import Dict, Optional, List
 
 from kqs_waifu import Waifu
-
-KQS_VERSION: str = "0.2.0"
-KQS_GENERATOR: str = "Keqing_Sword"
-KQS_START_ID: int = -20210217  # 👴和刻晴小姐的结婚纪念日🥰
+from kqs_global_const import KQS_VERSION, KQS_GENERATOR, KQS_START_ID
 
 
 class BaseOsmModel:
