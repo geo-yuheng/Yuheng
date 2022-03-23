@@ -18,6 +18,10 @@ OSM数据对象库
 
 模拟数据库操作行为，不过只有查是可以批量的，增删只能单id，改是增删组合 ~~省事~~
 
+## Pypy friendly
+
+This package don't depend on any package, so it's compatible with latest pypy.
+
 ## 命名来源
 
 项目Leader @Jyunhou 钦点
