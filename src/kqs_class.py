@@ -3,8 +3,9 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import ElementTree, Element
 
-KQS_VERSION = "0.2.0"
-KQS_GENERATOR = "Keqing_Sword"
+KQS_VERSION: str = "0.2.0"
+KQS_GENERATOR: str = "Keqing_Sword"
+KQS_START_ID: int = -20210217  # 👴和刻晴小姐的结婚纪念日🥰
 
 
 class BaseOsmModel:
@@ -234,7 +235,7 @@ class Waifu:
             else:
                 # raise TypeError('Unexpected element tag type: ' + element.tag)
                 pass
-            
+
     # def read_network():
     # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
 
@@ -297,3 +298,34 @@ class Waifu:
         dom = minidom.parseString(raw_text)
         with open(file_path, "w", encoding="utf-8") as file:
             dom.writexml(file, indent="\t", newl="\n", encoding="utf-8")
+
+    def __new_id(self, model_dict: Dict[int, BaseOsmModel]) -> int:
+        '''
+        生成未使用过的新id。如果已经有新要素，则取id最小的要素并减1，没有则取KQS_START_ID。
+        :param model_dict:结点、路径、关系数据字典。
+        :return: id
+        '''
+        min_id: int = min(model_dict.keys())
+        min_id = min_id if min_id < 0 else KQS_START_ID
+        return min_id - 1
+
+    def new_node_id(self) -> int:
+        '''
+        生成未使用过的新结点id。
+        :return: 结点id
+        '''
+        return self.__new_id(self.node_dict)
+
+    def new_way_id(self) -> int:
+        '''
+        生成未使用过的新路径id。
+        :return: 路径id
+        '''
+        return self.__new_id(self.way_dict)
+
+    def new_relation_id(self) -> int:
+        '''
+        生成未使用过的新关系id。
+        :return: 关系id
+        '''
+        return self.__new_id(self.relation_dict)
