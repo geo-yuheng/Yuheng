@@ -5,7 +5,9 @@ from kqs_class import Waifu
 
 # A simple example for testing
 class TestClass(unittest.TestCase):
-    data_path = join(dirname(realpath(__file__)),"export",'OSMWebsite_export.osm')
+    data_path = join(
+        dirname(realpath(__file__)), "export", "OSMWebsite_export.osm"
+    )
 
     def setUp(self) -> None:
         self.map = Waifu()
@@ -19,5 +21,5 @@ class TestClass(unittest.TestCase):
         assert len(m.relation_dict) == 14
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
