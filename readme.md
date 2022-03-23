@@ -1,22 +1,12 @@
 # OSMChina-Keqing_sword
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword?ref=badge_shield)
 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword?ref=badge_shield)
 
 A non-database Python base OSM data parser, with SQL operation simulated 
 
 ----------
 
 本项目是一个基于Python的对`.osm`文件的访问库
-
-## 技术细节和文件
-
-### kqs_class.py
-
-OSM数据对象库
-
-### kqs_crud.py
-
-模拟数据库操作行为，不过只有查是可以批量的，增删只能单id，改是增删组合 ~~省事~~
 
 ## Pypy friendly
 

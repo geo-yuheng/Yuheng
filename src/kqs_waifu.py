@@ -3,7 +3,8 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from kqs_class import BaseOsmModel, Bounds, Member, Node, Relation, Way
+from kqs_model import BaseOsmModel, Bounds, Member
+from kqs_type import Node, Relation, Way
 from kqs_global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
 
 
