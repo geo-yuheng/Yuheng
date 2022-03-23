@@ -82,15 +82,15 @@ class Node(BaseOsmModel):
 
     def get_upstream_way(self, order=-1):
         if order == -1:
-            return upstream_way
+            return self.upstream_way
         else:
-            return upstream_way[order]
+            return self.upstream_way[order]
 
     def get_upstream_relation(self, order=-1):
         if order == -1:
-            return upstream_relation
+            return self.upstream_relation
         else:
-            return upstream_relation[order]
+            return self.upstream_relation[order]
 
 
 class Way(BaseOsmModel):
@@ -113,9 +113,9 @@ class Way(BaseOsmModel):
 
     def get_upstream_relation(self, order=-1):
         if order == -1:
-            return upstream_relation
+            return self.upstream_relation
         else:
-            return upstream_relation[order]
+            return self.upstream_relation[order]
 
 
 class Relation(BaseOsmModel):
@@ -138,9 +138,9 @@ class Relation(BaseOsmModel):
 
     def get_upstream_relation(self, order=-1):
         if order == -1:
-            return upstream_relation
+            return self.upstream_relation
         else:
-            return upstream_relation[order]
+            return self.upstream_relation[order]
 
 
 class Waifu:
