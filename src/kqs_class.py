@@ -1,7 +1,7 @@
-from typing import Dict, Optional, List
+from typing import Dict, List, Optional
 
+from kqs_global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
 from kqs_waifu import Waifu
-from kqs_global_const import KQS_VERSION, KQS_GENERATOR, KQS_START_ID
 
 
 class BaseOsmModel:
