@@ -45,11 +45,10 @@ for node in waifu.node_dict.values():
     name = node.tags['name']
     node.tags['name:zh'] = name
 
-    # 如果修改前后的标签有差异，则打印差异，并标记为已修改
-    # Print difference if changed, and marked as modify
-    if node.has_diff():
+    # 如果修改前后的标签有差异，则打印差异
+    # Print difference if tags changed
+    if node.has_tag_diff():
         node.print_diff()
-        node.action = 'modify'
 
 # 写到.osm文件
 # Write to .osm file

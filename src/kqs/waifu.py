@@ -137,11 +137,15 @@ class Waifu:
             return tag
 
         for i in self.node_dict.values():
+            if i.has_diff() and i.action != 'delete':
+                i.action = 'modify'
             node: Element = base_osm_model_to_xml("node", i)
             node.attrib["lat"] = str(i.lat)
             node.attrib["lon"] = str(i.lon)
             root.append(node)
         for i in self.way_dict.values():
+            if i.has_diff() and i.action != 'delete':
+                i.action = 'modify'
             way: Element = base_osm_model_to_xml("way", i)
             for ref in i.nds:
                 e: Element = Element("nd")
@@ -149,6 +153,8 @@ class Waifu:
                 way.append(e)
             root.append(way)
         for i in self.relation_dict.values():
+            if i.has_diff() and i.action != 'delete':
+                i.action = 'modify'
             relation = base_osm_model_to_xml("relation", i)
             for member in i.members:
                 e: Element = Element("member")
