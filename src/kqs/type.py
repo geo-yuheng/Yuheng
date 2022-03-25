@@ -1,8 +1,6 @@
-from typing import Dict, List, Optional
+from typing import Dict, List
 
-from kqs_global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
-from kqs_waifu import Waifu
-
+from .model import BaseOsmModel, Member
 
 
 class Node(BaseOsmModel):

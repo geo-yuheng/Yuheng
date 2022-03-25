@@ -1,7 +1,7 @@
 import unittest
 from os.path import join, realpath, dirname
 
-from kqs_waifu import Waifu
+from kqs.waifu import Waifu
 
 # A simple example for testing
 class TestClass(unittest.TestCase):

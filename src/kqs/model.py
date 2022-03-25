@@ -1,7 +1,5 @@
-from typing import Dict, List, Optional
+from typing import Dict, Optional
 
-from kqs_global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
-from kqs_waifu import Waifu
 
 class BaseOsmModel:
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
