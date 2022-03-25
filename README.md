@@ -18,6 +18,44 @@ This package don't depend on any package, so it's compatible with latest pypy.
 
 [![](https://avatars.githubusercontent.com/u/45530478?v=4)](https://zh.wikipedia.org/wiki/%E5%8E%9F%E7%A5%9E%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#%E7%92%83%E6%9C%88%E4%B8%83%E6%98%9F)
 
+## 使用示例 Demo
+
+把有name但没有name:zh标签的点，设置name:zh为name的值。
+
+Find Nodes with name but no name:zh, set name:zh to the name.
+
+```python
+from kqs.waifu import Waifu
+
+# 从.osm文件加载Waifu对象
+# Read Waifu Object from .osm file
+waifu = Waifu()
+waifu.read_file('./demo.osm')
+
+# 遍历所有点
+# Iterate over all Nodes
+for node in waifu.node_dict.values():
+    # 跳过无name或有name:zh标签的点
+    # Skip Nodes not tagged name or name:zh
+    if 'name' not in node.tags or 'name:zh' in node.tags:
+        continue
+
+    # 获取name，并设置name:zh
+    # Get name, and set name:zh
+    name = node.tags['name']
+    node.tags['name:zh'] = name
+
+    # 如果修改前后的标签有差异，则打印差异，并标记为已修改
+    # Print difference if changed, and marked as modify
+    if node.has_diff():
+        node.print_diff()
+        node.action = 'modify'
+
+# 写到.osm文件
+# Write to .osm file
+waifu.write('../demo_changed.osm')
+```
+
 ## NOT
 
 列举出可能与本项目相近，相似，但目的并非一致的替代品
