@@ -3,6 +3,7 @@ from os.path import join, realpath, dirname
 
 from kqs.waifu import Waifu
 
+
 # A simple example for testing
 class TestClass(unittest.TestCase):
     data_path = join(
@@ -11,7 +12,7 @@ class TestClass(unittest.TestCase):
 
     def setUp(self) -> None:
         self.map = Waifu()
-        self.map.from_file(self.data_path)
+        self.map.read_file(self.data_path)
 
     def test_entity_count(self):
         m = self.map
