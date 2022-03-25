@@ -3,9 +3,9 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
+from .global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
 from .model import BaseOsmModel, Bounds, Member
 from .type import Node, Relation, Way
-from .global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
 
 
 class Waifu:

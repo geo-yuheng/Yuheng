@@ -1,5 +1,5 @@
 import unittest
-from os.path import join, realpath, dirname
+from os.path import dirname, join, realpath
 
 from kqs.waifu import Waifu
 

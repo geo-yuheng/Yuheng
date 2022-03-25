@@ -57,4 +57,3 @@ class Member:
         self.type: str = type
         self.ref: int = ref
         self.role: str = role
-
