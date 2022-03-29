@@ -69,3 +69,45 @@ class Member:
         return self.type != self.__type_backup or \
                self.ref != self.__ref_backup or \
                self.role != self.__role_backup
+
+class OSC:
+    def Modify():
+        pass
+
+    def Create():
+        # Call create function to create them in memory
+        pass
+
+    def Delete():
+        # If element already in memory, delete it. (And save other unfound id)
+        pass
+
+class Diff:
+    diff_pair_dict=[]
+
+    def __init__(self) -> None:
+        pass
+
+    def __init__(self, data:OSM) -> None:
+        pass
+
+    def __init__(self, data:OSC) -> None:
+        pass
+
+    def __init__(self, element:Node) -> None:
+        pass
+
+    def __init__(self, element:Way) -> None:
+        pass
+
+    def __init__(self, element:Relation) -> None:
+        pass
+
+    def __init__(self, constraint:Bounds) -> None:
+        pass
+
+    def __init__(self, constraint:Member) -> None:
+        pass
+
+    def print():
+        pass
