@@ -11,6 +11,7 @@ class BaseOsmModel:
         )
         self.user: Optional[str] = attrib.get("user")
         self.visible: bool = bool(attrib.get("visible", "True"))
+        # feat: If version miss, maybe it was redacted. For example: n1
         self.version: Optional[int] = (
             int(attrib.get("version"))
             if attrib.get("version") is not None
