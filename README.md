@@ -12,13 +12,14 @@ A non-database Python base OSM data parser, with SQL operation simulated
 
 This package don't depend on any package, so it's compatible with latest pypy.
 
-## 命名来源
-
-项目Leader @Jyunhou 钦点
-
-[![](https://avatars.githubusercontent.com/u/45530478?v=4)](https://zh.wikipedia.org/wiki/%E5%8E%9F%E7%A5%9E%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#%E7%92%83%E6%9C%88%E4%B8%83%E6%98%9F)
-
 ## 使用示例 Demo
+
+```python
+from kqs.waifu import Waifu
+map=Waifu()
+map.read_file("Demo.osm")
+print(len(map.node_dict), len(map.way_dict), len(map.relation_dict))
+```
 
 把有name但没有name:zh标签的点，设置name:zh为name的值。
 
@@ -80,6 +81,16 @@ waifu.write('../demo_changed.osm')
 + osm2pgsql
 + osm2pgrouting
 + osm2mysql, osm2mongo, and so on.
+
+## 命名来源
+
+项目Leader @Jyunhou 钦点
+
+<a herf="https://zh.wikipedia.org/wiki/%E5%8E%9F%E7%A5%9E%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#%E7%92%83%E6%9C%88%E4%B8%83%E6%98%9F">
+<img alt="Keqing" src="https://avatars.githubusercontent.com/u/45530478?v=4" width=249px>
+</a>
+<!--
+[![](https://avatars.githubusercontent.com/u/45530478?v=4)](https://zh.wikipedia.org/wiki/%E5%8E%9F%E7%A5%9E%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#%E7%92%83%E6%9C%88%E4%B8%83%E6%98%9F)-->
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword?ref=badge_large)
