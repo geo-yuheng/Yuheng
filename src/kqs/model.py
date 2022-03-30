@@ -78,6 +78,7 @@ class Diff:
         pass
 
     def __init__(self, data:OSM) -> None:
+        print_diff(data)
         pass
 
     def __init__(self, data:OSC) -> None:
@@ -101,18 +102,18 @@ class Diff:
     def print():
         pass
 
-    def print_diff(self.data):
+    def print_diff(data):
         # old BaseOsmModel's function
-        print(self.data.tags["name"])
+        print(data.tags["name"])
         print("变更：")
-        for key, value_new in self.data.tags.items():
+        for key, value_new in data.tags.items():
             value_old = (
-                self.data.__tags_backup[key] if key in self.data.__tags_backup else ""
+                data.__tags_backup[key] if key in data.__tags_backup else ""
             )
             if value_new != value_old:
                 print(f"{key}=f{value_old} -> {key}={value_new}")
-        for keys_deleted in self.data.__tags_backup.keys() - self.data.tags.keys():
+        for keys_deleted in data.__tags_backup.keys() - data.tags.keys():
             print(
-                f"{keys_deleted}={self.data.__tags_backup[keys_deleted]} > {keys_deleted}= "
+                f"{keys_deleted}={data.__tags_backup[keys_deleted]} > {keys_deleted}= "
             )
         print("==========================================")
