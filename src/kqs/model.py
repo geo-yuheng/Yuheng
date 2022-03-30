@@ -51,21 +51,44 @@ class BaseOsmModel:
 
 
 class Base:
+    def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
+        self.id: int = int(attrib.get("id"))
+        self.action: Optional[str] = attrib.get("action")
+        self.timestamp: Optional[str] = attrib.get("timestamp")
+        self.uid: Optional[int] = (
+            int(attrib.get("uid")) if attrib.get("uid") is not None else None
+        )
+        self.user: Optional[str] = attrib.get("user")
+        self.visible: bool = bool(attrib.get("visible", "True"))
+        # feat: If version miss, maybe it was redacted. For example: n1
+        self.version: Optional[int] = (
+            int(attrib.get("version"))
+            if attrib.get("version") is not None
+            else None
+        )
+        self.changeset: Optional[int] = (
+            int(attrib.get("changeset"))
+            if attrib.get("changeset") is not None
+            else None
+        )
+        self.tags: Dict[str, str] = dict(tag_dict)
+        self.__tags_backup: Dict[str, str] = dict(tag_dict)
+
+
+class OSM(Base):
     def __init__(self) -> None:
-        pass
+        super().__init__()
 
 
-class OSM:
+class OSH(Base):
     def __init__(self) -> None:
-        pass
+        super().__init__()
 
 
-class OSH:
+class OSC(Base):
     def __init__(self) -> None:
-        pass
+        super().__init__()
 
-
-class OSC:
     def Modify():
         pass
 
