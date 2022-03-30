@@ -1,5 +1,16 @@
 from typing import Dict, Optional
 
+class Base:
+    def __init__(self) -> None:
+        pass
+
+class OSM:
+    def __init__(self) -> None:
+        pass
+
+class OSH:
+    def __init__(self) -> None:
+        pass
 
 class BaseOsmModel:
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
