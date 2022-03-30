@@ -1,17 +1,5 @@
 from typing import Dict, Optional
 
-class Base:
-    def __init__(self) -> None:
-        pass
-
-class OSM:
-    def __init__(self) -> None:
-        pass
-
-class OSH:
-    def __init__(self) -> None:
-        pass
-
 class BaseOsmModel:
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
         self.id: int = int(attrib.get("id"))
@@ -45,41 +33,30 @@ class BaseOsmModel:
     def print_diff(self):
         print(self.tags["name"])
         print("变更：")
-        for key, new_value in self.tags.items():
-            old_value = (
+        for key, value_new in self.tags.items():
+            value_old = (
                 self.__tags_backup[key] if key in self.__tags_backup else ""
             )
-            if new_value != old_value:
-                print(f"{key}=f{old_value} -> {key}={new_value}")
-        for deleted_keys in self.__tags_backup.keys() - self.tags.keys():
+            if value_new != value_old:
+                print(f"{key}=f{value_old} -> {key}={value_new}")
+        for keys_deleted in self.__tags_backup.keys() - self.tags.keys():
             print(
-                f"{deleted_keys}={self.__tags_backup[deleted_keys]} > {deleted_keys}= "
+                f"{keys_deleted}={self.__tags_backup[keys_deleted]} > {keys_deleted}= "
             )
         print("==========================================")
 
 
-class Bounds:
-    def __init__(self, attrib: Dict[str, str]):
-        self.min_lat: float = float(attrib["minlat"])
-        self.min_lon: float = float(attrib["minlon"])
-        self.max_lat: float = float(attrib["maxlat"])
-        self.max_lon: float = float(attrib["maxlon"])
-        self.origin: str = attrib.get("origin", "")
+class Base:
+    def __init__(self) -> None:
+        pass
 
+class OSM:
+    def __init__(self) -> None:
+        pass
 
-class Member:
-    def __init__(self, type: str, ref: int, role: str):
-        self.type: str = type
-        self.ref: int = ref
-        self.role: str = role
-        self.__type_backup: str = type
-        self.__ref_backup: int = ref
-        self.__role_backup: str = role
-
-    def has_diff(self) -> bool:
-        return self.type != self.__type_backup or \
-               self.ref != self.__ref_backup or \
-               self.role != self.__role_backup
+class OSH:
+    def __init__(self) -> None:
+        pass
 
 class OSC:
     def Modify():
