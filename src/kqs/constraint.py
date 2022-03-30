@@ -20,6 +20,8 @@ class Member:
         self.__role_backup: str = role
 
     def has_diff(self) -> bool:
-        return self.type != self.__type_backup or \
-               self.ref != self.__ref_backup or \
-               self.role != self.__role_backup
+        return (
+            self.type != self.__type_backup
+            or self.ref != self.__ref_backup
+            or self.role != self.__role_backup
+        )

@@ -50,18 +50,20 @@ class BaseOsmModel:
         print("==========================================")
 
 
-
 class Base:
     def __init__(self) -> None:
         pass
+
 
 class OSM:
     def __init__(self) -> None:
         pass
 
+
 class OSH:
     def __init__(self) -> None:
         pass
+
 
 class OSC:
     def Modify():
@@ -75,32 +77,33 @@ class OSC:
         # If element already in memory, delete it. (And save other unfound id)
         pass
 
+
 class Diff:
-    diff_pair_dict=[]
+    diff_pair_dict = []
 
     def __init__(self) -> None:
         pass
 
-    def __init__(self, data:OSM) -> None:
+    def __init__(self, data: OSM) -> None:
         print_diff(data)
         pass
 
-    def __init__(self, data:OSC) -> None:
+    def __init__(self, data: OSC) -> None:
         pass
 
-    def __init__(self, element:Node) -> None:
+    def __init__(self, element: Node) -> None:
         pass
 
-    def __init__(self, element:Way) -> None:
+    def __init__(self, element: Way) -> None:
         pass
 
-    def __init__(self, element:Relation) -> None:
+    def __init__(self, element: Relation) -> None:
         pass
 
-    def __init__(self, constraint:Bounds) -> None:
+    def __init__(self, constraint: Bounds) -> None:
         pass
 
-    def __init__(self, constraint:Member) -> None:
+    def __init__(self, constraint: Member) -> None:
         pass
 
     def print():
