@@ -104,31 +104,34 @@ class OSC(Base):
 class Diff:
     diff_pair_dict = []
 
-    def __init__(self) -> None:
-        pass
-
-    def __init__(self, data: OSM) -> None:
-        print_diff(data)
-        pass
-
-    def __init__(self, data: OSC) -> None:
-        pass
-
-    def __init__(self, element: Node) -> None:
-        pass
-
-    def __init__(self, element: Way) -> None:
-        pass
-
-    def __init__(self, element: Relation) -> None:
-        pass
-
-    def __init__(self, constraint: Bounds) -> None:
-        pass
-
-    def __init__(self, constraint: Member) -> None:
-        pass
-
+    def __init__(self, data=None, element=None, constraint=None) -> None:
+        if type(data) == type(OSM()):
+            # Diff OSM
+            print_diff(data)
+        elif type(data) == type(OSC()):
+            # Diff OSC
+            pass
+        elif type(data) == type(OSH()):
+            # Diff OSH
+            pass
+        elif type(element) == type(Node()):
+            # Diff Node
+            pass
+        elif type(element) == type(Way()):
+            # Diff Way
+            pass
+        elif type(element) == type(Relation()):
+            # Diff Relation
+            pass
+        elif type(constraint) == type(Bounds()):
+            # Diff Bounds
+            pass
+        elif type(constraint) == type(Member()):
+            # Diff Member
+            pass
+        else:
+            raise Exception("Unknown type")
+            
     def print():
         pass
 
