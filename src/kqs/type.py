@@ -1,6 +1,7 @@
 from typing import Dict, List
 
-from .model import BaseOsmModel, Member
+from .model import BaseOsmModel
+from .constraint import  Member
 
 
 class Node(BaseOsmModel):

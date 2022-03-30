@@ -4,7 +4,8 @@ from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
 from .global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
-from .model import BaseOsmModel, Bounds, Member
+# from .model import BaseOsmModel
+from .constraint import Bounds, Member
 from .type import Node, Relation, Way
 
 

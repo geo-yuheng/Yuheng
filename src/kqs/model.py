@@ -1,5 +1,9 @@
 from typing import Dict, Optional
 
+from kqs.constraint import Bounds, Member
+from kqs.type import Node, Relation, Way
+
+
 class BaseOsmModel:
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
         self.id: int = int(attrib.get("id"))
