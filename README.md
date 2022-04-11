@@ -51,6 +51,7 @@ Don't need any database environment, just a fast and out-of-the-box tool.
 
 + https://github.com/gboeing/osmnx （我们有参考）
 + https://github.com/iandees/pyosm
++ https://github.com/GIScience/oshdb
 
 ### Query SQL or DSL
 
