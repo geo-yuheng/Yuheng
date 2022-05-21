@@ -41,6 +41,10 @@ Don't need any database environment, just a fast and out-of-the-box tool.
 
 列举出可能与本项目相近，相似，但目的并非一致的替代品
 
+### OSM Memory Database
+
++ https://github.com/osmlab/atlas
+
 ### Dump Reader
 
 + https://github.com/osmcode/osmium （我们有参考）
