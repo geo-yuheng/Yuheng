@@ -3,6 +3,7 @@ from typing import Dict, Optional
 
 
 class BaseOsmModel:
+    # 仅用作历史兼容，merge后移除
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
         self.id: int = int(attrib.get("id"))
         self.action: Optional[str] = attrib.get("action")

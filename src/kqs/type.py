@@ -16,9 +16,11 @@ class Node(BaseOsmModel):
         self.__lon_backup: float = float(attrib["lon"])
 
     def has_diff(self) -> bool:
+        # 未来不在Node/Way/Relation保留diff方法，由diff类完成
         return self.id < 0 or self.has_tag_diff() or self.__has_position_diff()
 
     def __has_position_diff(self) -> bool:
+        # 未来不在Node/Way/Relation保留diff方法，由diff类完成
         return self.lat != self.__lat_backup or self.lon != self.__lon_backup
 
     def get_tag_all(self):
@@ -54,9 +56,11 @@ class Way(BaseOsmModel):
         self.__nds_backup: List[int] = nd_list.copy()
 
     def has_diff(self) -> bool:
+        # 未来不在Node/Way/Relation保留diff方法，由diff类完成
         return self.id < 0 or self.has_tag_diff() or self.__has_member_diff()
 
     def __has_member_diff(self) -> bool:
+        # 未来不在Node/Way/Relation保留diff方法，由diff类完成
         return self.nds != self.__nds_backup
 
     def get_tag_all(self):
@@ -86,9 +90,11 @@ class Relation(BaseOsmModel):
         self.__members_backup: List[Member] = member_list.copy()
 
     def has_diff(self) -> bool:
+        # 未来不在Node/Way/Relation保留diff方法，由diff类完成
         return self.id < 0 or self.has_tag_diff() or self.__has_member_diff()
 
     def __has_member_diff(self) -> bool:
+        # 未来不在Node/Way/Relation保留diff方法，由diff类完成
         if self.members != self.__members_backup:
             return True
         for member in self.members:
