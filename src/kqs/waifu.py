@@ -3,8 +3,9 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
+from .constraint import Bounds, Member
 from .global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
-from .model import BaseOsmModel, Bounds, Member
+from .model import BaseOsmModel
 from .type import Node, Relation, Way
 
 
@@ -137,15 +138,15 @@ class Waifu:
             return tag
 
         for i in self.node_dict.values():
-            if i.has_diff() and i.action != 'delete':
-                i.action = 'modify'
+            if i.has_diff() and i.action != "delete":
+                i.action = "modify"
             node: Element = base_osm_model_to_xml("node", i)
             node.attrib["lat"] = str(i.lat)
             node.attrib["lon"] = str(i.lon)
             root.append(node)
         for i in self.way_dict.values():
-            if i.has_diff() and i.action != 'delete':
-                i.action = 'modify'
+            if i.has_diff() and i.action != "delete":
+                i.action = "modify"
             way: Element = base_osm_model_to_xml("way", i)
             for ref in i.nds:
                 e: Element = Element("nd")
@@ -153,8 +154,8 @@ class Waifu:
                 way.append(e)
             root.append(way)
         for i in self.relation_dict.values():
-            if i.has_diff() and i.action != 'delete':
-                i.action = 'modify'
+            if i.has_diff() and i.action != "delete":
+                i.action = "modify"
             relation = base_osm_model_to_xml("relation", i)
             for member in i.members:
                 e: Element = Element("member")

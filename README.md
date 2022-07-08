@@ -68,6 +68,11 @@ Don't need any database environment, just a fast and out-of-the-box tool.
 + osm2pgrouting
 + osm2mysql, osm2mongo, and so on.
 
+## Roadmap
+
+1. 初期完善Diff工作
+2. 同步加快输入输出流的建设
+
 ## 命名来源
 
 项目Leader @Jyunhou 钦点
