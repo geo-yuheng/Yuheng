@@ -6,12 +6,12 @@ from os.path import dirname, join, realpath
 from kqs.waifu import Waifu
 
 
-class TestLoad(unittest.TestCase):
+class TestIterator(unittest.TestCase):
     def setUp(self) -> None:
         self.map = Waifu()
         FILENAME = "JOSM_export.osm"
         data_path = join(dirname(realpath(__file__)), "export", FILENAME)
-        self.map.read_file(data_path)
+        self.map.read(mode="file", file_path=data_path)
 
     def test_iterator_node(self):
         m = self.map
