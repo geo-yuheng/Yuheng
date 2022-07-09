@@ -15,6 +15,11 @@ class Node(BaseOsmModel):
         self.__lat_backup: float = float(attrib["lat"])
         self.__lon_backup: float = float(attrib["lon"])
 
+    def __str__(self):
+        # 为避免<kqs.type_element.Node object at 0x0000021717B5AF70>这种不利于debug的内容，允许重载运算符，提供输出到文本的函数
+        # 此外，为与在tag_dict中的手打做区分，可以考虑用类似prettytable之类的封装成表，带上id做表头，优化显示
+        pass
+
     def has_diff(self) -> bool:
         # 未来不在Node/Way/Relation保留diff方法，由diff类完成
         return self.id < 0 or self.has_tag_diff() or self.__has_position_diff()
@@ -55,6 +60,11 @@ class Way(BaseOsmModel):
         self.nds: List[int] = nd_list.copy()
         self.__nds_backup: List[int] = nd_list.copy()
 
+    def __str__(self):
+        # 为避免<kqs.type_element.Node object at 0x0000021717B5AF70>这种不利于debug的内容，允许重载运算符，提供输出到文本的函数
+        # 此外，为与在tag_dict中的手打做区分，可以考虑用类似prettytable之类的封装成表，带上id做表头，优化显示
+        pass
+
     def has_diff(self) -> bool:
         # 未来不在Node/Way/Relation保留diff方法，由diff类完成
         return self.id < 0 or self.has_tag_diff() or self.__has_member_diff()
@@ -88,6 +98,11 @@ class Relation(BaseOsmModel):
         super().__init__(attrib, tag_dict)
         self.members: List[Member] = member_list.copy()
         self.__members_backup: List[Member] = member_list.copy()
+
+    def __str__(self):
+        # 为避免<kqs.type_element.Node object at 0x0000021717B5AF70>这种不利于debug的内容，允许重载运算符，提供输出到文本的函数
+        # 此外，为与在tag_dict中的手打做区分，可以考虑用类似prettytable之类的封装成表，带上id做表头，优化显示
+        pass
 
     def has_diff(self) -> bool:
         # 未来不在Node/Way/Relation保留diff方法，由diff类完成
