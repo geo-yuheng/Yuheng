@@ -4,16 +4,19 @@ from .model_basic import Base, BaseOsmModel
 from .type_constraint import Member
 
 
-class Node(BaseOsmModel):
+class Node(Base):
     upstream_way: list = [0]
     upstream_relation: list = [0]
 
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
         super().__init__(attrib, tag_dict)
-        self.lat: float = float(attrib["lat"])
-        self.lon: float = float(attrib["lon"])
-        self.__lat_backup: float = float(attrib["lat"])
-        self.__lon_backup: float = float(attrib["lon"])
+        if not attrib.get("lat") and not attrib.get("lon") :
+            attrib["action"]="delete"
+        else:
+            self.lat: float = float(attrib["lat"])
+            self.lon: float = float(attrib["lon"])
+            self.__lat_backup: float = float(attrib["lat"])
+            self.__lon_backup: float = float(attrib["lon"])
 
     def __str__(self):
         # 为避免<kqs.type_element.Node object at 0x0000021717B5AF70>这种不利于debug的内容，允许重载运算符，提供输出到文本的函数

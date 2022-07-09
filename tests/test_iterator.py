@@ -17,7 +17,7 @@ class TestLoad(unittest.TestCase):
         m = self.map
         test_node_dict = m.node_dict
         for id in test_node_dict:
-            print(id, test_node_dict[id])
+            print(id)#, test_node_dict[id])
             for key in test_node_dict[id].tags:
                 print(key, "=", test_node_dict[id].tags[key])
 
