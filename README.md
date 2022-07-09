@@ -17,7 +17,7 @@ A non-database Python base OSM data parser, with SQL operation simulated
 from kqs.waifu import Waifu
 
 map = Waifu()
-map.read_file("Demo.osm")
+map.read(mode="file", file_path="Demo.osm")
 print(len(map.node_dict), len(map.way_dict), len(map.relation_dict))
 ```
 
@@ -70,8 +70,15 @@ Don't need any database environment, just a fast and out-of-the-box tool.
 
 ## Roadmap
 
+### 1.0版本之前
 1. 初期完善Diff工作
-2. 同步加快输入输出流的建设
+2. 能够正常读写到文件
+3. 正式重命名为Keqing（已预留命名空间）
+
+### 1.0版本之后
+1. 加快建设多种输入输出流
+2. 引入覆盖率测试
+3. 引入select语句，可以自定义查询（预计作为2.0发布）
 
 ## 命名来源
 
