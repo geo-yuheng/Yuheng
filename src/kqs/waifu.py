@@ -93,11 +93,11 @@ class Waifu:
 
     def read(self, mode=None, file_path="", text="", url=""):
         if mode == "file":
-            self.read_file(self, file_path)
+            self.read_file(file_path)
         elif mode == "memory":
-            self.read_memory(self, text)
+            self.read_memory(text)
         elif mode == "network":
-            self.read_memory(self, url)
+            self.read_memory(url)
         else:
             raise TypeError(f"Unexpected read mode: {mode}")
 
@@ -116,7 +116,7 @@ class Waifu:
 
     def write(self, mode=None, file_path=""):
         if mode == "file":
-            self.write_file(self, file_path)
+            self.write_file(file_path)
         elif mode == "network":
             self.write_network()
         elif mode == "josm_remote_control":
