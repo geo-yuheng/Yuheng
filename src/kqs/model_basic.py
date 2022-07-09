@@ -1,7 +1,6 @@
 from typing import Dict, Optional
 
 
-
 class BaseOsmModel:
     # 仅用作历史兼容，merge后移除
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
@@ -72,31 +71,3 @@ class Base:
         )
         self.tags: Dict[str, str] = dict(tag_dict)
         self.__tags_backup: Dict[str, str] = dict(tag_dict)
-
-
-class OSM(Base):
-    def __init__(self) -> None:
-        super().__init__()
-
-
-class OSH(Base):
-    def __init__(self) -> None:
-        super().__init__()
-
-
-class OSC(Base):
-    def __init__(self) -> None:
-        super().__init__()
-
-    def Modify():
-        pass
-
-    def Create():
-        # Call create function to create them in memory
-        pass
-
-    def Delete():
-        # If element already in memory, delete it. (And save other unfound id)
-        pass
-
-

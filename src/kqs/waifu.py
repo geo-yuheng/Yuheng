@@ -3,10 +3,10 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from .constraint import Bounds, Member
 from .global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
-from .model import BaseOsmModel
-from .type import Node, Relation, Way
+from .model_basic import BaseOsmModel
+from .type_constraint import Bounds, Member
+from .type_element import Node, Relation, Way
 
 
 class Waifu:
