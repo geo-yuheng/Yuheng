@@ -23,7 +23,7 @@ class Waifu:
         if value is not None:
             attrib[key] = str(value)
 
-    def __parse(self, element:Element):
+    def __parse(self, element: Element):
         # judge whether is N/W/R then invoke function.
         pass
 
@@ -77,7 +77,7 @@ class Waifu:
             attrib, tag_dict, member_list
         )
 
-    def pre_parse_classify(self,root):
+    def pre_parse_classify(self, root):
         for element in root:
             if element.tag == "node":
                 self.__parse_node(element)
@@ -91,6 +91,16 @@ class Waifu:
                 # raise TypeError('Unexpected element tag type: ' + element.tag)
                 pass
 
+    def read(self, mode=None, file_path="", text="", url=""):
+        if mode == "file":
+            self.read_file(self, file_path)
+        elif mode == "memory":
+            self.read_memory(self, text)
+        elif mode == "network":
+            self.read_memory(self, url)
+        else:
+            raise TypeError(f"Unexpected read mode: {mode}")
+
     def read_file(self, file_path: str):
         tree: ElementTree = ET.parse(file_path)
         root: Element = tree.getroot()
@@ -100,10 +110,22 @@ class Waifu:
         root: Element = ET.fromstring(text)
         self.pre_parse_classify(root)
 
-    # def read_network():
-    # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
+    def read_network(self, url: str):
+        # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
+        pass
 
-    def write(self, file_path: str):
+    def write(self, mode=None, file_path=""):
+        if mode == "file":
+            self.write_file(self, file_path)
+        elif mode == "network":
+            self.write_network()
+        elif mode == "josm_remote_control":
+            # maybe remote_control_josm will be better?
+            self.write_josm_remote_control()
+        else:
+            raise TypeError(f"Unexpected write mode: {mode}")
+
+    def write_file(self, file_path: str):
         root: Element = Element("osm")
         root.attrib["version"] = self.version
         root.attrib["generator"] = self.generator
@@ -168,6 +190,15 @@ class Waifu:
         dom = minidom.parseString(raw_text)
         with open(file_path, "w", encoding="utf-8") as file:
             dom.writexml(file, indent="\t", newl="\n", encoding="utf-8")
+
+    def write_network(self):
+        # will imply in the future
+        pass
+
+    def write_josm_remote_control(self):
+        # Thanks to @AustinZhu's idea about this branch of output stream
+        # will imply in the long future
+        pass
 
     def __new_id(self, model_dict: Dict[int, BaseOsmModel]) -> int:
         """
