@@ -1,5 +1,7 @@
 # Guidebook/Manual of Keqing_Sword
 
+> NOTE: Current Guidebook only suitable for 0.3.0 stable version 
+
 1. [Get_started](/docs/Manual/1.Get_started.md)
 
 1.1 Import
