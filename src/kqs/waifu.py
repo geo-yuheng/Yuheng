@@ -23,7 +23,12 @@ class Waifu:
         if value is not None:
             attrib[key] = str(value)
 
+    def __parse(self, element:Element):
+        # judge whether is N/W/R then invoke function.
+        pass
+
     def __parse_node(self, element: Element):
+        # Will move to method_parse.py
         attrib: Dict[str, str] = element.attrib
         tag_dict: Dict[str, str] = {}
         for sub_element in element:
@@ -31,6 +36,7 @@ class Waifu:
         self.node_dict[int(attrib["id"])] = Node(attrib, tag_dict)
 
     def __parse_way(self, element: Element):
+        # Will move to method_parse.py
         attrib: Dict[str, str] = element.attrib
         tag_dict: Dict[str, str] = {}
         nd_list: List[int] = []
@@ -47,6 +53,7 @@ class Waifu:
         self.way_dict[int(attrib["id"])] = Way(attrib, tag_dict, nd_list)
 
     def __parse_relation(self, element: Element):
+        # Will move to method_parse.py
         attrib: Dict[str, str] = element.attrib
         tag_dict: Dict[str, str] = {}
         member_list: List[Member] = []
@@ -70,9 +77,7 @@ class Waifu:
             attrib, tag_dict, member_list
         )
 
-    def read_file(self, file_path: str):
-        tree: ElementTree = ET.parse(file_path)
-        root: Element = tree.getroot()
+    def pre_parse_classify(self,root):
         for element in root:
             if element.tag == "node":
                 self.__parse_node(element)
@@ -86,20 +91,14 @@ class Waifu:
                 # raise TypeError('Unexpected element tag type: ' + element.tag)
                 pass
 
+    def read_file(self, file_path: str):
+        tree: ElementTree = ET.parse(file_path)
+        root: Element = tree.getroot()
+        self.pre_parse_classify(root)
+
     def read_memory(self, text: str):
         root: Element = ET.fromstring(text)
-        for element in root:
-            if element.tag == "node":
-                self.__parse_node(element)
-            elif element.tag == "way":
-                self.__parse_way(element)
-            elif element.tag == "relation":
-                self.__parse_relation(element)
-            elif element.tag == "bounds":
-                self.bounds_list.append(Bounds(element.attrib))
-            else:
-                # raise TypeError('Unexpected element tag type: ' + element.tag)
-                pass
+        self.pre_parse_classify(root)
 
     # def read_network():
     # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
