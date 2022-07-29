@@ -210,6 +210,10 @@ class Waifu:
         min_id = min_id if min_id < 0 else KQS_START_ID
         return min_id - 1
 
+    def flush(self,id:str)->None:
+        # 传入形如"n123,w456,r789"的字符串，并批量执行flush
+        pass
+
     def new_node_id(self) -> int:
         """
         生成未使用过的新结点id。

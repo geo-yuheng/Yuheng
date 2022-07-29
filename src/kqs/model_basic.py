@@ -71,3 +71,9 @@ class Base:
         )
         self.tags: Dict[str, str] = dict(tag_dict)
         self.__tags_backup: Dict[str, str] = dict(tag_dict)
+    
+    # 其他方法应尽快完善
+
+    def flush(self):
+        # 移除自身，但如果有被编辑应给予警告，在force的情况下可以强制从数据库中移除，即调用析构函数
+        pass
