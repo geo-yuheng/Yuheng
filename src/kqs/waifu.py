@@ -91,6 +91,13 @@ class Waifu:
                 # raise TypeError('Unexpected element tag type: ' + element.tag)
                 pass
 
+    def meow(self):
+        print("==============================")
+        print("Keqing load successful!")
+        print("==============================")
+        print(len(self.node_dict),len(self.way_dict),len(self.relation_dict),len(self.bounds_list))
+        print("==============================")
+
     def read(self, mode=None, file_path="", text="", url=""):
         if mode == "file":
             self.read_file(file_path)
