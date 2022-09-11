@@ -19,7 +19,9 @@ https://wiki.openstreetmap.org/wiki/OsmChange
 
 5. OSH文件
 
-没找到标准
+(No demo file)
+* https://wiki.openstreetmap.org/wiki/Planet.osm/full
+* https://wiki.openstreetmap.org/wiki/User:MaZderMind/Reading_OSM_History_dumps
 
 6. 其他（可以不用兼容）
 
