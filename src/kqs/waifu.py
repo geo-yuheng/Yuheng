@@ -99,11 +99,24 @@ class Waifu:
         print("==============================")
 
     def read(self, mode=None, file_path="", text="", url=""):
+        def pre_read_warn(mode:str, file_path:str, text:str, url:str):
+            if url!="" and mode!="network":
+                print("WARN:You may intent to request from network, but you enter another mode.")
+            if mode=="text":
+                print("WARN:\"text\" is not standard Keqing read mode, it caughted by fallback system and recognized as \"memory\"")
+            
         if mode == "file" or ((mode=="memory" or mode=="text") and text==""):
+            pre_read_warn(mode=mode,file_path=file_path,text=text,url=url)
+            if file_path!="" and text!="":
+                print("WARN:You add parameter for both file mode and memory mode! Keqing will choose you designated **file** mode")
             self.read_file(file_path)
         elif (mode == "memory" or mode =="text") or (mode=="file" and file_path=""):
+            pre_read_warn(mode=mode,file_path=file_path,text=text,url=url)
+            if file_path!="" and text!="":
+                print("WARN:You add parameter for both file mode and memory mode! Keqing will choose you designated **memory** mode")
             self.read_memory(text)
         elif mode == "network":
+            # pre_read_warn(mode=mode,file_path=file_path,text=text,url=url) # No need, we may need warn a 'mode="network" + url=""' situation.
             self.read_memory(url)
         else:
             raise TypeError(f"Unexpected read mode: {mode}")
