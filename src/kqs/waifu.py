@@ -99,9 +99,9 @@ class Waifu:
         print("==============================")
 
     def read(self, mode=None, file_path="", text="", url=""):
-        if mode == "file":
+        if mode == "file" or ((mode=="memory" or mode=="text") and text==""):
             self.read_file(file_path)
-        elif mode == "memory":
+        elif (mode == "memory" or mode =="text") or (mode=="file" and file_path=""):
             self.read_memory(text)
         elif mode == "network":
             self.read_memory(url)
