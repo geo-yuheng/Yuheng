@@ -118,7 +118,9 @@ class Waifu:
         self.pre_parse_classify(root)
 
     def read_network(self, url: str):
+        # Read from OSMAPI
         # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
+        # Read from Overpass
         pass
 
     def write(self, mode=None, file_path=""):
