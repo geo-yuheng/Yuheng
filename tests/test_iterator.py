@@ -10,7 +10,7 @@ class TestIterator(unittest.TestCase):
     def setUp(self) -> None:
         self.map = Waifu()
         FILENAME = "JOSM_export.osm"
-        data_path = join(dirname(realpath(__file__)), "export", FILENAME)
+        data_path = join(dirname(realpath(__file__)), "extract", FILENAME)
         self.map.read(mode="file", file_path=data_path)
 
     def test_iterator_node(self):
