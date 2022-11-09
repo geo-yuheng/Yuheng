@@ -21,7 +21,16 @@ class TestExport(unittest.TestCase):
         # src=xml.parsers
         # dst=xml.parsers
 
-    def test_iterator_way(self):
+    def test_insert_node_save(self):
+        # 在标准读取的基础上插入点后保存
+        pass
+
+    def test_create_node_save(self):
+        # 在空文件创建单点后保存
+        pass
+
+    def test_delete_way_save(self):
+        # 在标准读取中删除路径后保存
         pass
 
 if __name__ == "__main__":
