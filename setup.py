@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="Keqing_Sword",
-    version="0.5.1",
+    version="0.5.2",
     author="OSMChina",
     author_email="keaitianxinmail@qq.com",
     description="A non-database Python base OSM data parser, with SQL operation simulated",
