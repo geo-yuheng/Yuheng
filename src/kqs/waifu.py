@@ -95,7 +95,12 @@ class Waifu:
         print("==============================")
         print("Keqing load successful!")
         print("==============================")
-        print(len(self.node_dict),len(self.way_dict),len(self.relation_dict),len(self.bounds_list))
+        print(
+            len(self.node_dict),
+            len(self.way_dict),
+            len(self.relation_dict),
+            len(self.bounds_list),
+        )
         print("==============================")
 
     def read(self, mode=None, file_path="", text="", url=""):
@@ -219,7 +224,7 @@ class Waifu:
         min_id = min_id if min_id < 0 else KQS_START_ID
         return min_id - 1
 
-    def flush(self,id:str)->None:
+    def flush(self, id: str) -> None:
         # 传入形如"n123,w456,r789"的字符串，并批量执行flush
         pass
 

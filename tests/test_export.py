@@ -1,8 +1,8 @@
 # 尝试直接另存，完全新建对象另存，在已有基础增删改后另存
 
 import unittest
-from os.path import dirname, join, realpath
 import xml
+from os.path import dirname, join, realpath
 
 from kqs.waifu import Waifu
 
@@ -16,7 +16,7 @@ class TestExport(unittest.TestCase):
 
     def test_self_save(self):
         m = self.map
-        m.write(mode="file",file_path="self_save_dist.osm")
+        m.write(mode="file", file_path="self_save_dist.osm")
 
         # src=xml.parsers
         # dst=xml.parsers
@@ -32,6 +32,7 @@ class TestExport(unittest.TestCase):
     def test_delete_way_save(self):
         # 在标准读取中删除路径后保存
         pass
+
 
 if __name__ == "__main__":
     unittest.main()
