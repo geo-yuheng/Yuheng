@@ -4,7 +4,7 @@ from .model_basic import Base, BaseOsmModel
 from .type_constraint import Member
 
 
-class Node(Base,BaseOsmModel):
+class Node(BaseOsmModel):
     upstream_way: list = [0]
     upstream_relation: list = [0]
 
@@ -25,7 +25,7 @@ class Node(Base,BaseOsmModel):
 
     def has_diff(self) -> bool:
         # 未来不在Node/Way/Relation保留diff方法，由diff类完成
-        return self.id < 0 or super().has_tag_diff() or self.__has_position_diff()
+        return self.id < 0 or self.has_tag_diff() or self.__has_position_diff()
 
     def __has_position_diff(self) -> bool:
         # 未来不在Node/Way/Relation保留diff方法，由diff类完成
