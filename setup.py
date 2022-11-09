@@ -1,11 +1,13 @@
 import setuptools
 
+from kqs.global_const import KQS_CORE_NAME, KQS_VERSION
+
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Keqing_Sword",
-    version="0.6.0",
+    name=KQS_CORE_NAME,
+    version=KQS_VERSION,
     author="OSMChina",
     author_email="keaitianxinmail@qq.com",
     description="A non-database Python base OSM data parser, with SQL operation simulated",

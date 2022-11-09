@@ -3,7 +3,7 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from .global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
+from .global_const import KQS_CORE_NAME, KQS_START_ID, KQS_VERSION
 from .model_basic import BaseOsmModel
 from .type_constraint import Bounds, Member
 from .type_element import Node, Relation, Way
@@ -15,7 +15,9 @@ class Waifu:
         self.bounds_list: List[Bounds] = []
         self.version: str = "0.6"
         self.way_dict: Dict[int, Way] = {}
-        self.generator: str = KQS_GENERATOR + "/" + KQS_VERSION
+        self.generator: str = (
+            KQS_CORE_NAME.replace("_Sword", "") + "/" + KQS_VERSION
+        )
         self.relation_dict: Dict[int, Relation] = {}
 
     @staticmethod
