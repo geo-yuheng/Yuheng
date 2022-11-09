@@ -1,9 +1,15 @@
-import setuptools
+import os
+import json
 
-from kqs.global_const import KQS_CORE_NAME, KQS_VERSION
+import setuptools
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
+
+with open(os.path.join(os.getcwd(),"src","kqs","global_const.json"),"r",encoding="utf-8") as kqs_const:
+    kqs_const_json=json.loads(kqs_const.read())
+    KQS_CORE_NAME=kqs_const_json["KQS_CORE_NAME"]
+    KQS_VERSION=kqs_const_json["KQS_VERSION"]
 
 setuptools.setup(
     name=KQS_CORE_NAME,
