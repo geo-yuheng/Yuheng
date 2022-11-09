@@ -49,10 +49,12 @@ class Node(Base):
         else:
             return self.upstream_relation[order]
     
-    def is_latest(self, version=self.version):
+    def is_latest(self, version=None):
         # 在引入OSH以后，一个点多个版本将同时并存，访问时需要判断版本，select查询影响不打，但iterator迭代的时候可能需要考虑避免迭代到旧版本。
         # 可能需要引入一个array，在每个版本都提供一个指向其他任一版本的“指针”？（其实是遍历一遍找对应id+version双匹配吧）
         # 最新版本被redact的情况下尚不知如何正确处理版本号
+        if version == None:
+            version = self.version
         pass
     
     def find_latest(self):
