@@ -5,8 +5,10 @@ import setuptools
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
+    print("=="*10)
+    print(os.system("dir"))
 
-with open(os.path.join(os.getcwd(),"src","kqs","global_const.json"),"r",encoding="utf-8") as kqs_const:
+with open("global_const.json","r",encoding="utf-8") as kqs_const:
     kqs_const_json=json.loads(kqs_const.read())
     KQS_CORE_NAME=kqs_const_json["KQS_CORE_NAME"]
     KQS_VERSION=kqs_const_json["KQS_VERSION"]
