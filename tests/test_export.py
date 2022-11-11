@@ -2,8 +2,8 @@
 
 import unittest
 import xml.sax
-from xml import sax
 from os.path import dirname, join, realpath
+from xml import sax
 from xml.sax.handler import ContentHandler
 
 from kqs.waifu import Waifu
