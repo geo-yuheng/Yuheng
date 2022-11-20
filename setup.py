@@ -1,11 +1,14 @@
+import json
+import os
+
 import setuptools
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Keqing_Sword",
-    version="0.5.1",
+    name="__KQS_CORE_NAME__",
+    version="__KQS_VERSION__",
     author="OSMChina",
     author_email="keaitianxinmail@qq.com",
     description="A non-database Python base OSM data parser, with SQL operation simulated",

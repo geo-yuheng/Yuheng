@@ -71,7 +71,7 @@ class Base:
         )
         self.tags: Dict[str, str] = dict(tag_dict)
         self.__tags_backup: Dict[str, str] = dict(tag_dict)
-    
+
     # 其他方法应尽快完善
 
     def flush(self):

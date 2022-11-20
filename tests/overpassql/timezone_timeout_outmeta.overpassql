@@ -1,0 +1,1 @@
+[out:xml][timeout:1];relation["boundary"="timezone"];out meta;>;out meta qt;

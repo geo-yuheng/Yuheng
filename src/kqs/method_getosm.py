@@ -5,10 +5,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import urllib3
-
 from map_machine.geometry.boundary_box import BoundaryBox
-
-
 
 SLEEP_TIME_BETWEEN_REQUESTS: float = 2.0
 

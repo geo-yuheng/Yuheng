@@ -4,14 +4,14 @@ from .model_basic import Base, BaseOsmModel
 from .type_constraint import Member
 
 
-class Node(Base):
+class Node(BaseOsmModel):
     upstream_way: list = [0]
     upstream_relation: list = [0]
 
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
         super().__init__(attrib, tag_dict)
-        if not attrib.get("lat") and not attrib.get("lon") :
-            attrib["action"]="delete"
+        if not attrib.get("lat") and not attrib.get("lon"):
+            attrib["action"] = "delete"
         else:
             self.lat: float = float(attrib["lat"])
             self.lon: float = float(attrib["lon"])
@@ -48,17 +48,19 @@ class Node(Base):
             return self.upstream_relation
         else:
             return self.upstream_relation[order]
-    
-    def is_latest(self, version=self.version):
+
+    def is_latest(self, version=None):
         # 在引入OSH以后，一个点多个版本将同时并存，访问时需要判断版本，select查询影响不打，但iterator迭代的时候可能需要考虑避免迭代到旧版本。
         # 可能需要引入一个array，在每个版本都提供一个指向其他任一版本的“指针”？（其实是遍历一遍找对应id+version双匹配吧）
         # 最新版本被redact的情况下尚不知如何正确处理版本号
+        if version == None:
+            version = self.version
         pass
-    
+
     def find_latest(self):
-        # return Node(background found latest version) 
+        # return Node(background found latest version)
         pass
-    
+
     def find_history(self):
         # 查找提供本id的元素的上下历史全集，需要后台查找，然后排序一个array返回
         # return list(Node())

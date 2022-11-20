@@ -3,7 +3,7 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from .global_const import KQS_GENERATOR, KQS_START_ID, KQS_VERSION
+from .global_const import KQS_CORE_NAME, KQS_START_ID, KQS_VERSION
 from .model_basic import BaseOsmModel
 from .type_constraint import Bounds, Member
 from .type_element import Node, Relation, Way
@@ -15,7 +15,9 @@ class Waifu:
         self.bounds_list: List[Bounds] = []
         self.version: str = "0.6"
         self.way_dict: Dict[int, Way] = {}
-        self.generator: str = KQS_GENERATOR + "/" + KQS_VERSION
+        self.generator: str = (
+            KQS_CORE_NAME.replace("_Sword", "") + "/" + KQS_VERSION
+        )
         self.relation_dict: Dict[int, Relation] = {}
 
     @staticmethod
@@ -95,7 +97,12 @@ class Waifu:
         print("==============================")
         print("Keqing load successful!")
         print("==============================")
-        print(len(self.node_dict),len(self.way_dict),len(self.relation_dict),len(self.bounds_list))
+        print(
+            len(self.node_dict),
+            len(self.way_dict),
+            len(self.relation_dict),
+            len(self.bounds_list),
+        )
         print("==============================")
 
     def read(self, mode=None, file_path="", text="", url=""):
@@ -131,7 +138,9 @@ class Waifu:
         self.pre_parse_classify(root)
 
     def read_network(self, url: str):
+        # Read from OSMAPI
         # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
+        # Read from Overpass
         pass
 
     def write(self, mode=None, file_path=""):
@@ -230,7 +239,7 @@ class Waifu:
         min_id = min_id if min_id < 0 else KQS_START_ID
         return min_id - 1
 
-    def flush(self,id:str)->None:
+    def flush(self, id: str) -> None:
         # 传入形如"n123,w456,r789"的字符串，并批量执行flush
         pass
 

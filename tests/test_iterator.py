@@ -10,14 +10,14 @@ class TestIterator(unittest.TestCase):
     def setUp(self) -> None:
         self.map = Waifu()
         FILENAME = "JOSM_export.osm"
-        data_path = join(dirname(realpath(__file__)), "export", FILENAME)
+        data_path = join(dirname(realpath(__file__)), "extract", FILENAME)
         self.map.read(mode="file", file_path=data_path)
 
     def test_iterator_node(self):
         m = self.map
         test_node_dict = m.node_dict
         for id in test_node_dict:
-            print(id)#, test_node_dict[id])
+            print(id)  # , test_node_dict[id])
             for key in test_node_dict[id].tags:
                 print(key, "=", test_node_dict[id].tags[key])
 
@@ -45,6 +45,7 @@ class TestIterator(unittest.TestCase):
         # 当关系为关系的成员时，通过关系访问成员关系
         # 多边形问题暂不讨论几何是否正确
         pass
+
 
 if __name__ == "__main__":
     unittest.main()
