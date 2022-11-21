@@ -1,3 +1,4 @@
+import time
 from typing import Dict, List
 from xml.dom import minidom
 from xml.etree import ElementTree as ET
@@ -116,6 +117,8 @@ class Waifu:
                     'WARN:"text" is not standard Keqing read mode, it caughted by fallback system and recognized as "memory"'
                 )
 
+        time_start = time.time()
+
         if mode == "file" or (
             (mode == "memory" or mode == "text") and text == ""
         ):
@@ -139,6 +142,9 @@ class Waifu:
             self.read_memory(url)
         else:
             raise TypeError(f"Unexpected read mode: {mode}")
+
+        time_end = time.time()
+        print("[TIME]: " + str(round((time_end - time_start), 3)) + "s" + "\n")
 
     def read_file(self, file_path: str):
         tree: ElementTree = ET.parse(file_path)
