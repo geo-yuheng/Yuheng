@@ -8,11 +8,17 @@
 
 1.2 Read file
 
-2. [Read_tag](/docs/Manual/2.Read_tag.md)
+2. [Traverse_data](/docs/Manual/2.Traverse_data.md)
+
+2.1 List elements
+
+2.2 Read tag in specific elements
 
 3. [Recursive traversal hierarchy](/docs/Manual/todo)
 
 4. [Create element from data]()
+
+5. [Export]()
 
 
 # DOcument of Keqing_Sword
