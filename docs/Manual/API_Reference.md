@@ -65,7 +65,60 @@ You may also found another 2 type prefixed file `type_data.py` and `type_constra
 
 ### `Node`
 
-Here is prototype of `Node`:
+Prototype of`Node` had inherited from [`Base` model](#Model). But as mentioned above, if you want to create a new Node object, you need to specify its lat and lon when construct.
+
+```python
+    def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
+        super().__init__(attrib, tag_dict)
+        if not attrib.get("lat") and not attrib.get("lon"):
+            attrib["action"] = "delete"
+        else:
+            self.lat: float = float(attrib["lat"])
+            self.lon: float = float(attrib["lon"])
+            self.__lat_backup: float = float(attrib["lat"])
+            self.__lon_backup: float = float(attrib["lon"])
+```
+Here are other method prototype:
+
+#### `__str__`
+
+WELCOME TO CONTRIBUTE!
+
+#### `has_diff`
+
+tldr
+
+#### `__has_position_diff`
+
+tldr
+
+#### `get_tag_all`
+
+tldr
+
+#### `get_tag_query`
+
+The difference with `get_tag_all` is this method need you pass a overpass query or working Ganyu query sentence.
+
+#### `get_upstream_way`
+
+Detail about this function can be found in https://github.com/OSMChina/Keqing/issues/5
+
+#### `get_upstream_relation`
+
+Detail about this function can be found in https://github.com/OSMChina/Keqing/issues/5
+
+#### `is_latest`
+
+See comment
+
+#### `find_latest`
+
+See comment inside code
+
+#### `find_history`
+
+See comment inside code
 
 ### `Way`
 
