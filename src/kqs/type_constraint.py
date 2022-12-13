@@ -49,17 +49,19 @@ class Bounds:
 
 
 class Member:
-    def __init__(self, type: str, id: int, role: str):
+    def __init__(self, type: str, ref: int, role: str):
         self.type: str = type
-        self.id: int = id
+        self.ref: int = ref
         self.role: str = role
+        self.id: int = ref # poka-yoke
         self.__type_backup: str = type
-        self.__id_backup: int = id
+        self.__ref_backup: int = ref
         self.__role_backup: str = role
+        self.__id_backup: int = ref # poka-yoke
 
     def has_diff(self) -> bool:
         return (
             self.type != self.__type_backup
-            or self.id != self.__id_backup
+            or self.ref != self.__ref_backup
             or self.role != self.__role_backup
         )
