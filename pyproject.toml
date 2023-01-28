@@ -1,6 +1,21 @@
+[tool.poetry]
+name = "keqing-sword"
+version = "0.7.0"
+description = "A non-database Python base OSM data parser, with SQL operation simulated."
+authors = ["快乐的老鼠宝宝 <keaitianxinmail@qq.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "keqing_sword"}]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.0.1"
+pyright = "^1.1.291"
+pytest = "^7.2.1"
+pylint = "^2.15.10"
+
 [build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
-]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
