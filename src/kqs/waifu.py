@@ -166,6 +166,25 @@ class Waifu:
         # Read from Overpass
         pass
 
+    def read_network_area(self, S, W, N, E):
+        pass
+
+    def read_network_element_single(self, element_id:str, type="undefined"):
+        if type=="n" or type=="w" or type=="r":
+            pass
+        elif "," in element_id:
+            # have comma or space between multi element
+            read_network_element_list()
+            pass
+        else:
+            # detect type
+            pass
+
+    def read_network_element_list(self, element_id=None):
+        # it can be string or list
+        pass
+
+
     def write(self, mode=None, file_path=""):
         if mode == "file":
             self.write_file(file_path)
