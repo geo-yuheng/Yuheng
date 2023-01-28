@@ -1,3 +1,3 @@
-KQS_VERSION = "0.6.2"
+KQS_VERSION = "0.6.3"
 KQS_CORE_NAME = "Keqing_Sword"
 KQS_START_ID = "-20210217"
