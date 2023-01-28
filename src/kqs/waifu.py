@@ -160,17 +160,29 @@ class Waifu:
         root: Element = ET.fromstring(text)
         self.pre_parse_classify(root)
 
-    def read_network(self, url: str):
-        # Read from OSMAPI
-        # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
-        # Read from Overpass
+    def read_network(self, mode="api", server="OSM", quantity="",**kwargs):
+        # version problem haven't been introduced
+        if quantity!="":
+            pass
+        else:
+            if kwargs.get("url") !=False:
+                # download directly, then judge
+                pass
+            else:
+                return None
         pass
 
-    def read_network_area(self, S, W, N, E):
+    def read_network_area(self, S, W, N, E, mode="api", server="OSM"):
+        if mode=="api":
+            # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
+            # need to add server change function
+            pass
+        if mode=="overpass":
+            pass
         pass
 
-    def read_network_element_single(self, element_id:str, type="undefined"):
-        if type=="n" or type=="w" or type=="r":
+    def read_network_element_single(self, element_id: str, type="undefined", mode="api", server="OSM"):
+        if type == "n" or type == "w" or type == "r":
             pass
         elif "," in element_id:
             # have comma or space between multi element
@@ -180,10 +192,9 @@ class Waifu:
             # detect type
             pass
 
-    def read_network_element_list(self, element_id=None):
+    def read_network_element_list(self, element_id=None, mode="api", server="OSM"):
         # it can be string or list
         pass
-
 
     def write(self, mode=None, file_path=""):
         if mode == "file":
@@ -196,7 +207,7 @@ class Waifu:
         else:
             raise TypeError(f"Unexpected write mode: {mode}")
 
-    def write_file(self, file_path: str):
+    def write_file(self, file_path: str, only_diff=False):
         root: Element = Element("osm")
         root.attrib["version"] = self.version
         root.attrib["generator"] = self.generator
