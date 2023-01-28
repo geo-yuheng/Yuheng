@@ -14,7 +14,7 @@ def main(mode: str) -> None:
     ]
     global_const = {}
     for tag in global_const_data:
-        global_const={**global_const,**tag}
+        global_const = {**global_const, **tag}
     print(global_const)
     if mode == "setup.py":
         setup_py_read = open("setup.py", "r")

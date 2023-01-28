@@ -163,9 +163,17 @@ class Waifu:
     def read_network(self, mode="api", server="OSM", quantity="",**kwargs):
         # version problem haven't been introduced
         if quantity!="":
-            pass
+            if quantity =="area":
+                # parse SWNE
+                self.read_network_area()
+            else:
+                if kwargs.get("element_id"):
+                    self.read_network_element(kwargs["element_id"])
+                else:
+                    # parse Element
+                    pass
         else:
-            if kwargs.get("url") !=False:
+            if kwargs.get("url"):
                 # download directly, then judge
                 pass
             else:
@@ -181,19 +189,26 @@ class Waifu:
             pass
         pass
 
-    def read_network_element_single(self, element_id: str, type="undefined", mode="api", server="OSM"):
+    def read_network_element(self, element_id: str, type="undefined", mode="api", server="OSM"):
+        def have_multi_elements(element_id)->bool:
+            if "," in element_id:
+                # have comma or space between multi element
+                return True
+
         if type == "n" or type == "w" or type == "r":
-            pass
-        elif "," in element_id:
-            # have comma or space between multi element
-            self.read_network_element_list(element_id)
-            pass
+            import requests
+            requests.get(
+                url=get_server()+"/api/0.6/[node|way|relation]/#id"
+            )
+        elif have_multi_elements(element_id):
+            self.read_network_element_batch(element_id)
         else:
-            # detect type
+            # detect type single request
             pass
 
-    def read_network_element_list(self, element_id=None, mode="api", server="OSM"):
+    def read_network_element_batch(self, element_id=None, mode="api", server="OSM"):
         # it can be string or list
+        # https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_/api/0.6/[nodes|ways|relations]?#parameters
         pass
 
     def write(self, mode=None, file_path=""):
