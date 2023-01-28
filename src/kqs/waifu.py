@@ -174,7 +174,7 @@ class Waifu:
             pass
         elif "," in element_id:
             # have comma or space between multi element
-            read_network_element_list()
+            self.read_network_element_list(element_id)
             pass
         else:
             # detect type
