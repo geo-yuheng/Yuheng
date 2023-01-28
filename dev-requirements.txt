@@ -1,7 +1,15 @@
-pytest
-isort
-black>=22.6.0
+# lint
 pre-commit
 pyright
-# pylint
-# pycodestyle
+pytest
+pylint
+pycodestyle
+isort
+black>=22.6.0
+
+# maintain
+pipreqs
+
+# requirements
+urllib3>=1.25
+setuptools>=42
