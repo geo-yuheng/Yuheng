@@ -5,6 +5,8 @@ from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
 from .global_const import KQS_CORE_NAME, KQS_START_ID, KQS_VERSION
+from .method_getserver import get_server
+from .method_parse import t2type
 from .model_basic import BaseOsmModel
 from .type_constraint import Bounds, Member
 from .type_element import Node, Relation, Way
@@ -195,16 +197,21 @@ class Waifu:
                 # have comma or space between multi element
                 return True
 
-        if type == "n" or type == "w" or type == "r":
-            import requests
-            requests.get(
-                url=get_server()+"/api/0.6/[node|way|relation]/#id"
-            )
-        elif have_multi_elements(element_id):
+        if have_multi_elements(element_id):
             self.read_network_element_batch(element_id)
         else:
-            # detect type single request
-            pass
+            if type == "n" or type == "w" or type == "r":
+                import requests
+                pure_id=element_id.replace("n","").replace("w","").replace("r","")
+                if "v" in pure_id:
+                    version=pure_id.split("v")[1]
+                    pure_id=pure_id.split("v")[0]
+                requests.get(
+                    url=get_server(server)+t2type(type)+"/"+pure_id
+                )
+            else:
+                # detect type single request
+                pass
 
     def read_network_element_batch(self, element_id=None, mode="api", server="OSM"):
         # it can be string or list

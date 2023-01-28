@@ -1,1 +1,12 @@
 # Waiting
+def t2type(t:str)->str:
+    if t=="n":
+        return "node"
+    if t=="w":
+        return "way"
+    if t=="r":
+        return "relation"
+    if t=="c":
+        return "changeset"
+    if t=="v":
+        return "version"
