@@ -254,7 +254,7 @@ class Waifu:
         :return: id
         """
         min_id: int = min(model_dict.keys())
-        min_id = min_id if min_id < 0 else KQS_START_ID
+        min_id = min_id if min_id < 0 else int(KQS_START_ID)
         return min_id - 1
 
     def flush(self, id: str) -> None:

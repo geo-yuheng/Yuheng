@@ -3,7 +3,19 @@ import os
 
 
 def main(mode: str) -> None:
-    global_const = json.loads(open("src/kqs/global_const.json", "r").read())
+    global_const_data = [
+        {x.split("=")[0]: x.split("=")[1]}
+        for x in open("src/kqs/global_const.py", "r")
+        .read()
+        .replace(" ", "")
+        .replace('"', "")
+        .split("\n")
+        if x != ""
+    ]
+    global_const = {}
+    for tag in global_const_data:
+        global_const={**global_const,**tag}
+    print(global_const)
     if mode == "setup.py":
         setup_py_read = open("setup.py", "r")
         setup_content = (
