@@ -25,22 +25,6 @@ class Bounds:
             .replace("EB", num_serialization(max_lon))
         )
 
-    def align_serialization(self) -> str:
-        serialize_format = "SB_WB_NB_EB"
-        # another choise is don't use B in output_format, and use A/B insteal of P/N for plus or minus sign
-        def num_serialization(degree: float):
-            if degree >= 0:
-                return "P" + str(degree).replace(".", "D")
-            else:
-                return str(degree).replace("-", "N").replace(".", "D")
-
-        return (
-            serialize_format.replace("SB", num_serialization(min_lat))
-            .replace("WB", num_serialization(min_lon))
-            .replace("NB", num_serialization(max_lat))
-            .replace("EB", num_serialization(max_lon))
-        )
-
     def align_deserialization(
         self, serialize_format="SB_WB_NB_EB"
     ):  # ->Tuple[float,float,float,float]:
@@ -53,11 +37,11 @@ class Member:
         self.type: str = type
         self.ref: int = ref
         self.role: str = role
-        self.id: int = ref # poka-yoke
+        self.id: int = ref  # poka-yoke
         self.__type_backup: str = type
         self.__ref_backup: int = ref
         self.__role_backup: str = role
-        self.__id_backup: int = ref # poka-yoke
+        self.__id_backup: int = ref  # poka-yoke
 
     def has_diff(self) -> bool:
         return (
