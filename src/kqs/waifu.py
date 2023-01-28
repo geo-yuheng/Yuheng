@@ -162,15 +162,19 @@ class Waifu:
         root: Element = ET.fromstring(text)
         self.pre_parse_classify(root)
 
-    def read_network(self, mode="api", server="OSM", quantity="",**kwargs):
+    def read_network(self, mode="api", server="OSM", quantity="", **kwargs):
         # version problem haven't been introduced
-        if quantity!="":
-            if quantity =="area":
+        if quantity != "":
+            if quantity == "area":
                 # parse SWNE
                 self.read_network_area()
             else:
                 if kwargs.get("element_id"):
-                    self.read_network_element(kwargs["element_id"])
+                    self.read_network_element(
+                        element_id=kwargs["element_id"],
+                        type=kwargs.get("type"),
+                        server=server,
+                    )
                 else:
                     # parse Element
                     pass
@@ -183,16 +187,18 @@ class Waifu:
         pass
 
     def read_network_area(self, S, W, N, E, mode="api", server="OSM"):
-        if mode=="api":
+        if mode == "api":
             # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
             # need to add server change function
             pass
-        if mode=="overpass":
+        if mode == "overpass":
             pass
         pass
 
-    def read_network_element(self, element_id: str, type="undefined", mode="api", server="OSM"):
-        def have_multi_elements(element_id)->bool:
+    def read_network_element(
+        self, element_id: str, type="undefined", mode="api", server="OSM"
+    ):
+        def have_multi_elements(element_id) -> bool:
             if "," in element_id:
                 # have comma or space between multi element
                 return True
@@ -200,20 +206,34 @@ class Waifu:
         if have_multi_elements(element_id):
             self.read_network_element_batch(element_id)
         else:
-            if type == "n" or type == "w" or type == "r":
+            if (
+                (type == "node" or type == "n")
+                or (type == "way" or type == "w")
+                or (type == "relation" or type == "r")
+            ):
                 import requests
-                pure_id=element_id.replace("n","").replace("w","").replace("r","")
-                if "v" in pure_id:
-                    version=pure_id.split("v")[1]
-                    pure_id=pure_id.split("v")[0]
-                requests.get(
-                    url=get_server(server)+t2type(type)+"/"+pure_id
+
+                pure_id = (
+                    element_id.replace("n", "")
+                    .replace("w", "")
+                    .replace("r", "")
                 )
+                if "v" in pure_id:
+                    version = pure_id.split("v")[1]
+                    pure_id = pure_id.split("v")[0]
+                url = get_server(server) + t2type(type) + "/" + pure_id
+                print("url:", url)
+                response = requests.get(url=url).text
+                print(response)
+                self.read_memory(response)
             else:
                 # detect type single request
+                # warn that if parameter type and element_id implied type don't match
                 pass
 
-    def read_network_element_batch(self, element_id=None, mode="api", server="OSM"):
+    def read_network_element_batch(
+        self, element_id=None, mode="api", server="OSM"
+    ):
         # it can be string or list
         # https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_/api/0.6/[nodes|ways|relations]?#parameters
         pass
