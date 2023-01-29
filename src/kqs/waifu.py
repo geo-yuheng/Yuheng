@@ -4,7 +4,7 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from .global_const import KQS_CORE_NAME, KQS_START_ID, KQS_VERSION
+from .global_const import KEQING_CORE_NAME, KEQING_START_ID, KEQING_VERSION
 from .method_network import get_server, get_headers
 from .method_parse import t2type
 from .model_basic import BaseOsmModel
@@ -19,7 +19,7 @@ class Waifu:
         self.version: str = "0.6"
         self.way_dict: Dict[int, Way] = {}
         self.generator: str = (
-            KQS_CORE_NAME.replace("_Sword", "") + "/" + KQS_VERSION
+            KEQING_CORE_NAME.replace("_Sword", "") + "/" + KEQING_VERSION
         )
         self.relation_dict: Dict[int, Relation] = {}
 
@@ -222,10 +222,10 @@ class Waifu:
                     version = pure_id.split("v")[1]
                     pure_id = pure_id.split("v")[0]
                 url = get_server(server) + t2type(type) + "/" + pure_id
-                headers=get_headers()
+                headers = get_headers()
                 print("url:", url)
                 print("headers:", headers)
-                response = requests.get(url=url,headers=headers).text
+                response = requests.get(url=url, headers=headers).text
                 print(response)
                 self.read_memory(response)
             else:
@@ -333,7 +333,7 @@ class Waifu:
         :return: id
         """
         min_id: int = min(model_dict.keys())
-        min_id = min_id if min_id < 0 else int(KQS_START_ID)
+        min_id = min_id if min_id < 0 else int(KEQING_START_ID)
         return min_id - 1
 
     def flush(self, id: str) -> None:

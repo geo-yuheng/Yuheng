@@ -1,4 +1,4 @@
-from kqs.global_const import KQS_CORE_NAME, KQS_VERSION
+from kqs.global_const import KEQING_CORE_NAME, KEQING_VERSION
 
 
 def get_server(server_name: str) -> str:
@@ -9,7 +9,10 @@ def get_server(server_name: str) -> str:
     }
     return server_list[server_name]
 
+
 def get_headers():
     return {
-        "User-Agent": KQS_CORE_NAME+"/ "+KQS_VERSION # if possible and necessary, add latest git commit hash
+        "User-Agent": KEQING_CORE_NAME
+        + "/ "
+        + KEQING_VERSION  # if possible and necessary, add latest git commit hash
     }
