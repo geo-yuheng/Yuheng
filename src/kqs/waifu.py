@@ -5,7 +5,7 @@ from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
 from .global_const import KQS_CORE_NAME, KQS_START_ID, KQS_VERSION
-from .method_getserver import get_server
+from .method_network import get_server, get_headers
 from .method_parse import t2type
 from .model_basic import BaseOsmModel
 from .type_constraint import Bounds, Member
@@ -222,8 +222,10 @@ class Waifu:
                     version = pure_id.split("v")[1]
                     pure_id = pure_id.split("v")[0]
                 url = get_server(server) + t2type(type) + "/" + pure_id
+                headers=get_headers()
                 print("url:", url)
-                response = requests.get(url=url).text
+                print("headers:", headers)
+                response = requests.get(url=url,headers=headers).text
                 print(response)
                 self.read_memory(response)
             else:
