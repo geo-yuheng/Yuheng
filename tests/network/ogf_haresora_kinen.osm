@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.8.6 (1239 opengeofiction.net)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <way id="28814809" visible="true" version="2" changeset="1264463" timestamp="2023-01-28T07:18:28Z" user="快乐的老鼠宝宝" uid="24171">
+  <nd ref="299872170"/>
+  <nd ref="299872169"/>
+  <nd ref="299872168"/>
+  <nd ref="299872170"/>
+  <tag k="building" v="yes"/>
+  <tag k="height" v="31"/>
+  <tag k="name" v="晴空刻纪塔"/>
+  <tag k="name:en" v="Haresora Kinen"/>
+  <tag k="name:zh" v="晴空刻纪塔"/>
+ </way>
+</osm>

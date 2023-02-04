@@ -17,8 +17,7 @@ A non-database Python base OSM data parser, with SQL operation simulated
 from kqs.waifu import Waifu
 
 map = Waifu()
-map.read(mode="file", file_path="Demo.osm")
-print(len(map.node_dict), len(map.way_dict), len(map.relation_dict))
+map.read(mode="file", file_path="map.osm")
 ```
 
 ### 获取`name`
@@ -40,33 +39,6 @@ Don't need any database environment, just a fast and out-of-the-box tool.
 ## KQS:NOT
 
 列举出可能与本项目相近，相似，但目的并非一致的替代品
-
-### OSM Memory Database
-
-+ https://github.com/osmlab/atlas
-
-### Dump Reader
-
-+ https://github.com/osmcode/osmium （我们有参考）
-+ https://github.com/openstreetmap/osmosis
-+ https://gitlab.com/osm-c-tools/osmctools (osmconvert)
-
-### Data process framework
-
-+ https://github.com/gboeing/osmnx （我们有参考）
-+ https://github.com/iandees/pyosm
-+ https://github.com/GIScience/oshdb
-
-### Query SQL or DSL
-
-+ https://github.com/drolbr/Overpass-API （我们有参考）
-+ https://github.com/sqlalchemy/sqlalchemy
-
-### Database
-
-+ osm2pgsql
-+ osm2pgrouting
-+ osm2mysql, osm2mongo, and so on.
 
 ## Roadmap
 

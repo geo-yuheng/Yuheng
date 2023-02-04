@@ -1,7 +1,0 @@
-pytest
-isort
-black>=22.6.0
-pre-commit
-pyright
-# pylint
-# pycodestyle
