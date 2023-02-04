@@ -1,3 +1,0 @@
-pytest
-isort
-black>=22.6.0
