@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "__KQS_VERSION__"
-version = "__KQS_CORE_NAME__"
+name = "__KEQING_CORE_NAME__"
+version = "__KEQING_VERSION__"
 description = "A non-database Python base OSM data parser, with SQL operation simulated."
 authors = ["快乐的老鼠宝宝 <keaitianxinmail@qq.com>"]
 license = "MIT"
