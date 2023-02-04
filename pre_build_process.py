@@ -13,7 +13,7 @@ def main() -> None:
     ]
     global_const = {}
     for tag in global_const_data:
-        global_const={**global_const,**tag}
+        global_const = {**global_const, **tag}
     print(global_const)
     # run
     setup_py_read = open("pyproject.toml", "r")

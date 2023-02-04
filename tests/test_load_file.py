@@ -4,11 +4,11 @@ from os.path import dirname, join, realpath
 from kqs.waifu import Waifu
 
 
-class TestLoad(unittest.TestCase):
+class TestLoadFile(unittest.TestCase):
     def setUp(self) -> None:
         self.map = Waifu()
 
-    def test_load_OSMWebsite(self):
+    def test_load_file_OSMWebsite(self):
         FILENAME = "OSMWebsite_export.osm"
         data_path = join(dirname(realpath(__file__)), "extract", FILENAME)
         self.map.read(mode="file", file_path=data_path)
@@ -18,7 +18,7 @@ class TestLoad(unittest.TestCase):
         assert len(m.way_dict) == 2376
         assert len(m.relation_dict) == 14
 
-    def test_load_JOSM(self):
+    def test_load_file_JOSM(self):
         FILENAME = "JOSM_export.osm"
         data_path = join(dirname(realpath(__file__)), "extract", FILENAME)
         self.map.read(mode="file", file_path=data_path)
@@ -28,7 +28,7 @@ class TestLoad(unittest.TestCase):
         assert len(m.way_dict) == 67
         assert len(m.relation_dict) == 5
 
-    def test_load_level0(self):
+    def test_load_file_level0(self):
         FILENAME = "level0_export.osm"
         data_path = join(dirname(realpath(__file__)), "extract", FILENAME)
         self.map.read(mode="file", file_path=data_path)

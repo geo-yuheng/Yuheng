@@ -1,0 +1,53 @@
+repos:
+  # local
+  - repo: local
+    hooks:
+    - id: pyright
+      name: pyright
+      entry: pyright
+      language: node
+      types: [python]
+      pass_filenames: false
+      additional_dependencies: ['pyright@1.1.226']
+    - id: isort # isort (must run before black or it will broken length of line)
+      name: isort
+      entry: isort .
+      language: system
+      types: [python]
+    - id: black #black
+      name: black
+      entry: black * -l 79
+      language: system
+      types: [python]
+    - id: check-requirements
+      name: check requirements files
+      language: system
+      entry: python -m scripts.check_requirements --compare
+      files: ^requirements.*.txt$
+#  # flake8
+#  - repo: https://github.com/PyCQA/flake8
+#    rev: 3.9.2
+#    hooks:
+#      - id: flake8
+#  # autoflake
+#  - repo: https://github.com/myint/autoflake
+#    rev: v1.4
+#    hooks:
+#      - id: autoflake
+#        args: ['--in-place', '--remove-all-unused-imports', '--remove-unused-variable', '--ignore-init-module-imports']
+#  # pre-commit-hooks
+#  - repo: https://github.com/pre-commit/pre-commit-hooks
+#    rev: v3.2.0
+#    hooks:
+#      - id: check-ast
+#      - id: check-byte-order-marker
+#      - id: check-case-conflict
+#      - id: check-docstring-first
+#      - id: check-executables-have-shebangs
+#      - id: check-json
+#      - id: check-yaml
+#      - id: debug-statements
+#      # - id: detect-private-key
+#      - id: end-of-file-fixer
+#      - id: trailing-whitespace
+#      - id: mixed-line-ending

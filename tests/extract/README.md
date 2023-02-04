@@ -26,3 +26,10 @@ https://wiki.openstreetmap.org/wiki/OsmChange
 6. 其他（可以不用兼容）
 
 https://wiki.openstreetmap.org/wiki/OpenLayers_osm_file_example
+
+7. Geofabrik
+
+> The OpenStreetMap data files provided on this server do not contain the user names, user IDs and changeset IDs of the OSM objects because these fields are assumed to contain personal information about the OpenStreetMap contributors and are therefore subject to data protection regulations in the European Union.
+Extracts with full metadata are available to OpenStreetMap contributors only. 
+
+http://download.geofabrik.de/
