@@ -97,16 +97,19 @@ class Waifu:
                 pass
 
     def meow(self):
-        print("==============================")
-        print("Keqing load successful!")
-        print("==============================")
-        print(
-            len(self.node_dict),
-            len(self.way_dict),
-            len(self.relation_dict),
-            len(self.bounds_list),
+        import logging
+        logging.info(str(
+        ("==============================\n")
+        +("Keqing load successful!\n")
+        +("==============================\n")
+        +(
+            str(len(self.node_dict))
+            +str(len(self.way_dict))
+            +str(len(self.relation_dict))
+            +str(len(self.bounds_list))
         )
-        print("==============================")
+        +("\n==============================")
+        ))
 
     def read(self, mode=None, file_path="", text="", url="", fpath=""):
         def pre_read_warn(mode: str, file_path: str, text: str, url: str):
