@@ -17,7 +17,7 @@ def main(mode: str) -> None:
         global_const={**global_const,**tag}
     print(global_const)
     if mode == "setup.py":
-        setup_py_read = open("setup.py", "r")
+        setup_py_read = open("pyproject.toml", "r")
         setup_content = (
             setup_py_read.read()
             .replace("__KQS_VERSION__", global_const["KQS_VERSION"])
