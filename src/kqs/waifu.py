@@ -6,7 +6,7 @@ from xml.etree.ElementTree import Element, ElementTree
 
 from .global_const import KEQING_CORE_NAME, KEQING_START_ID, KEQING_VERSION
 from .method_network import get_server, get_headers
-from .method_parse import t2type
+from .method_transform import prefix_abbreviation
 from .model_basic import BaseOsmModel
 from .type_constraint import Bounds, Member
 from .type_element import Node, Relation, Way
@@ -224,7 +224,7 @@ class Waifu:
                 if "v" in pure_id:
                     version = pure_id.split("v")[1]
                     pure_id = pure_id.split("v")[0]
-                url = get_server(server) + t2type(type) + "/" + pure_id
+                url = get_server(server) + prefix_abbreviation(type,mode="p2prefix") + "/" + pure_id
                 headers = get_headers()
                 print("url:", url)
                 print("headers:", headers)
