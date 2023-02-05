@@ -1,12 +1,12 @@
 import unittest
 from os.path import dirname, join, realpath
 
-from keqing import Waifu
+import keqing
 
 
 class TestLoadFile(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = Waifu()
+        self.map = keqing.Waifu()
 
     def test_load_file_OSMWebsite(self):
         FILENAME = "OSMWebsite_export.osm"

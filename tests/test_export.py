@@ -5,12 +5,12 @@ import xml.sax
 from os.path import dirname, join, realpath
 from xml import sax
 
-from keqing import Waifu
+import keqing
 
 
 class TestExport(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = Waifu()
+        self.map = keqing.Waifu()
         self.FILENAME_TARGET = "standard_load.osm"
         self.FILENAME_OUTPUT = "self_save_dist.osm"
         self.path_target = join(
