@@ -14,7 +14,7 @@ A non-database Python base OSM data parser, with SQL operation simulated
 ### 快速开始
 
 ```python
-from kqs.waifu import Waifu
+from keqing import Waifu
 
 map = Waifu()
 map.read(mode="file", file_path="map.osm")

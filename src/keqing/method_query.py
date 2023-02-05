@@ -1,4 +1,4 @@
-from kqs.waifu import Waifu
+from keqing.keqing import Waifu
 
 
 def remove_comment(query_content:str)->str:

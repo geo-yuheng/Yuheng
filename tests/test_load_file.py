@@ -1,7 +1,7 @@
 import unittest
 from os.path import dirname, join, realpath
 
-from kqs.waifu import Waifu
+from keqing import Waifu
 
 
 class TestLoadFile(unittest.TestCase):

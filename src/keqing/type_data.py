@@ -1,4 +1,4 @@
-from kqs.model_basic import Base
+from keqing.model_basic import Base
 
 
 class OSM(Base):

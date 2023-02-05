@@ -1,4 +1,4 @@
-from kqs.global_const import KEQING_CORE_NAME, KEQING_VERSION
+from keqing.global_const import KEQING_CORE_NAME, KEQING_VERSION
 
 
 def get_server(server_name: str) -> str:
