@@ -4,7 +4,7 @@ import os
 def main() -> None:
     global_const_data = [
         {x.split("=")[0]: x.split("=")[1]}
-        for x in open("src/keqing/global_const.py", "r")
+        for x in open("src/keqing/basic/global_const.py", "r")
         .read()
         .replace(" ", "")
         .replace('"', "")

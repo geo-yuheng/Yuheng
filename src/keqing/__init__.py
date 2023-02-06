@@ -4,12 +4,12 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from .global_const import KEQING_CORE_NAME, KEQING_START_ID, KEQING_VERSION
-from .method_network import get_server, get_headers
-from .method_transform import prefix_abbreviation
-from .model_basic import BaseOsmModel
-from .type_constraint import Bounds, Member
-from .type_element import Node, Relation, Way
+from keqing.basic.global_const import KEQING_CORE_NAME, KEQING_START_ID, KEQING_VERSION
+from keqing.method.network import get_server, get_headers
+from keqing.method.transform import prefix_abbreviation
+from keqing.basic.model import BaseOsmModel
+from keqing.type.constraint import Bounds, Member
+from keqing.type.element import Node, Relation, Way
 
 
 class Waifu:
@@ -33,7 +33,7 @@ class Waifu:
         pass
 
     def __parse_node(self, element: Element):
-        # Will move to method_parse.py
+        # Will move to parse.py
         attrib: Dict[str, str] = element.attrib
         tag_dict: Dict[str, str] = {}
         for sub_element in element:
@@ -41,7 +41,7 @@ class Waifu:
         self.node_dict[int(attrib["id"])] = Node(attrib, tag_dict)
 
     def __parse_way(self, element: Element):
-        # Will move to method_parse.py
+        # Will move to parse.py
         attrib: Dict[str, str] = element.attrib
         tag_dict: Dict[str, str] = {}
         nd_list: List[int] = []
@@ -58,7 +58,7 @@ class Waifu:
         self.way_dict[int(attrib["id"])] = Way(attrib, tag_dict, nd_list)
 
     def __parse_relation(self, element: Element):
-        # Will move to method_parse.py
+        # Will move to parse.py
         attrib: Dict[str, str] = element.attrib
         tag_dict: Dict[str, str] = {}
         member_list: List[Member] = []
