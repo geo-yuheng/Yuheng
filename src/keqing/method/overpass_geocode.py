@@ -1,8 +1,8 @@
-def geocode_transform(id=None, keyword=None) -> int:
+def overpass_geocode_transform(id=None, keyword=None) -> int:
     return 3600 * 1000000 + 1
 
 
-def geocode_replace():
+def overpass_geocode_replace():
     """
     Usage:
     Offer a one-click function to transform in a AreaSearch overpassql(allow both file IO and memory read)
