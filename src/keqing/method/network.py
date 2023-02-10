@@ -44,6 +44,12 @@ def get_overpass(overpass_name: str, server="") -> Optional[str]:
             "region": "global",
             "version": "unknown",
         },
+        "ohm": {
+            "server": "OHM",
+            "url": "https://overpass-api.openhistoricalmap.org/api/",
+            "region": "global",
+            "version": "unknown",
+        },
     }
 
     if server != "":
