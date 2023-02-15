@@ -5,7 +5,7 @@ description = "A non-database Python base OSM data parser, with SQL operation si
 authors = ["快乐的老鼠宝宝 <keaitianxinmail@qq.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "src/kqs"}]
+packages = [{include = "src/keqing"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
