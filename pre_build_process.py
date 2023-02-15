@@ -16,17 +16,17 @@ def main() -> None:
         global_const = {**global_const, **tag}
     print(global_const)
     # run
-    setup_py_read = open("pyproject.toml", "r")
-    setup_content = (
-            setup_py_read.read()
-            .replace("__KEQING_CORE_NAME__", global_const["KEQING_CORE_NAME"])
-            .replace("__KEQING_VERSION__", global_const["KEQING_VERSION"])
-        )
-    setup_py_read.close()
+    build_file_read = open("pyproject.toml", "r", encoding="utf-8")
+    build_file_content = (
+        build_file_read.read()
+        .replace("__KEQING_CORE_NAME__", global_const["KEQING_CORE_NAME"])
+        .replace("__KEQING_VERSION__", global_const["KEQING_VERSION"])
+    )
+    build_file_read.close()
     os.remove("pyproject.toml")
-    setup_py_write = open("pyproject.toml", "w")
-    setup_py_write.write(setup_content)
-    setup_py_write.close()
+    build_file_write = open("pyproject.toml", "w", encoding="utf-8")
+    build_file_write.write(build_file_content)
+    build_file_write.close()
 
 
 if __name__ == "__main__":
