@@ -98,18 +98,31 @@ class Waifu:
 
     def meow(self):
         import logging
-        logging.info(str(
-        ("==============================\n")
-        +("Keqing load successful!\n")
-        +("==============================\n")
-        +(
-            str(len(self.node_dict))
-            +str(len(self.way_dict))
-            +str(len(self.relation_dict))
-            +str(len(self.bounds_list))
+
+        logging.basicConfig(level=logging.INFO)
+        logging.info(
+            str(
+                "\n"
+                + "==============================\n"
+                + "Keqing load successful!\n"
+                + "==============================\n"
+                + (
+                    "node    : "
+                    + str(len(self.node_dict))
+                    + "\n"
+                    + "way     : "
+                    + str(len(self.way_dict))
+                    + "\n"
+                    + "relation: "
+                    + str(len(self.relation_dict))
+                    + "\n"
+                    + "bounds  : "
+                    + str(len(self.bounds_list))
+                    + "\n"
+                )
+                + "=============================="
+            )
         )
-        +("\n==============================")
-        ))
 
     def read(self, mode=None, file_path="", text="", url="", fpath=""):
         def pre_read_warn(mode: str, file_path: str, text: str, url: str):
