@@ -5,7 +5,7 @@
 
 A non-database Python base OSM data parser, with SQL operation simulated 
 
-[English](https://github.com/OSMChina/Keqing/edit/master/README.md#english) [简体中文](https://github.com/OSMChina/Keqing/edit/master/README.md#简体中文)
+[English](https://github.com/OSMChina/Keqing/#english) [简体中文](https://github.com/OSMChina/Keqing/#简体中文)
 
 ----------
 
