@@ -2,6 +2,8 @@
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword?ref=badge_shield)
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+![](https://img.shields.io/badge/stable--version-v0.6.0-green)
+![PyPI](https://img.shields.io/pypi/v/Keqing-Sword)
 
 A non-database Python base OSM data parser, with SQL operation simulated 
 
