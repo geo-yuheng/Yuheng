@@ -111,7 +111,7 @@ class Waifu:
         +("\n==============================")
         ))
 
-    def read(self, mode=None, file_path="", text="", url="", fpath=""):
+    def read(self, mode=None, file_path="", text="", url="", fpath="", data_driver=""):
         def pre_read_warn(mode: str, file_path: str, text: str, url: str):
             if url != "" and (mode != "network" and mode != "n"):
                 if ("http://" in url) or ("https://" in url):
@@ -243,7 +243,7 @@ class Waifu:
         # https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_/api/0.6/[nodes|ways|relations]?#parameters
         pass
 
-    def write(self, mode=None, file_path=""):
+    def write(self, mode=None, file_path="", data_driver=""):
         if mode == "file":
             self.write_file(file_path)
         elif mode == "network":
