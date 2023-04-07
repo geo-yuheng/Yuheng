@@ -6,6 +6,7 @@ from xml.etree.ElementTree import Element, ElementTree
 
 from keqing.basic.global_const import KEQING_CORE_NAME, KEQING_START_ID, KEQING_VERSION
 from keqing.method.network import get_server, get_headers
+from keqing.method.parse import parse_node, parse_way, parse_relation, pre_parse_classify
 from keqing.method.transform import prefix_abbreviation
 from keqing.basic.model import BaseOsmModel
 from keqing.type.constraint import Bounds, Member
@@ -27,74 +28,6 @@ class Waifu:
     def __set_attrib(attrib: Dict[str, str], key: str, value):
         if value is not None:
             attrib[key] = str(value)
-
-    def __parse(self, element: Element):
-        # judge whether is N/W/R then invoke function.
-        pass
-
-    def __parse_node(self, element: Element):
-        # Will move to parse.py
-        attrib: Dict[str, str] = element.attrib
-        tag_dict: Dict[str, str] = {}
-        for sub_element in element:
-            tag_dict[sub_element.attrib["k"]] = sub_element.attrib["v"]
-        self.node_dict[int(attrib["id"])] = Node(attrib, tag_dict)
-
-    def __parse_way(self, element: Element):
-        # Will move to parse.py
-        attrib: Dict[str, str] = element.attrib
-        tag_dict: Dict[str, str] = {}
-        nd_list: List[int] = []
-
-        for sub_element in element:
-            if sub_element.tag == "nd":
-                nd_list.append(int(sub_element.attrib["ref"]))
-            elif sub_element.tag == "tag":
-                tag_dict[sub_element.attrib["k"]] = sub_element.attrib["v"]
-            else:
-                raise TypeError(
-                    f"Unexpected element tag type: {sub_element.tag} in Way"
-                )
-        self.way_dict[int(attrib["id"])] = Way(attrib, tag_dict, nd_list)
-
-    def __parse_relation(self, element: Element):
-        # Will move to parse.py
-        attrib: Dict[str, str] = element.attrib
-        tag_dict: Dict[str, str] = {}
-        member_list: List[Member] = []
-
-        for sub_element in element:
-            if sub_element.tag == "member":
-                member_list.append(
-                    Member(
-                        sub_element.attrib["type"],
-                        int(sub_element.attrib["ref"]),
-                        sub_element.attrib["role"],
-                    )
-                )
-            elif sub_element.tag == "tag":
-                tag_dict[sub_element.attrib["k"]] = sub_element.attrib["v"]
-            else:
-                raise TypeError(
-                    f"Unexpected element tag type: {sub_element.tag} in Relation"
-                )
-        self.relation_dict[int(attrib["id"])] = Relation(
-            attrib, tag_dict, member_list
-        )
-
-    def pre_parse_classify(self, root):
-        for element in root:
-            if element.tag == "node":
-                self.__parse_node(element)
-            elif element.tag == "way":
-                self.__parse_way(element)
-            elif element.tag == "relation":
-                self.__parse_relation(element)
-            elif element.tag == "bounds":
-                self.bounds_list.append(Bounds(element.attrib))
-            else:
-                # raise TypeError('Unexpected element tag type: ' + element.tag)
-                pass
 
     def meow(self):
         import logging
@@ -159,11 +92,11 @@ class Waifu:
     def read_file(self, file_path: str):
         tree: ElementTree = ET.parse(file_path)
         root: Element = tree.getroot()
-        self.pre_parse_classify(root)
+        pre_parse_classify(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, root)
 
     def read_memory(self, text: str):
         root: Element = ET.fromstring(text)
-        self.pre_parse_classify(root)
+        pre_parse_classify(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, root)
 
     def read_network(self, mode="api", server="OSM", quantity="", **kwargs):
         # version problem haven't been introduced
