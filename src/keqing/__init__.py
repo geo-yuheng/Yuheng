@@ -1,17 +1,32 @@
 import time
 from typing import Dict, List
-from xml.dom import minidom
-from xml.etree import ElementTree as ET
-from xml.etree.ElementTree import Element, ElementTree
 
 from keqing.basic.global_const import KEQING_CORE_NAME, KEQING_START_ID, KEQING_VERSION
 from keqing.method.network import get_server, get_headers
 from keqing.method.parse import parse_node, parse_way, parse_relation, pre_parse_classify
+from keqing.method.stream_read import read_file, read_memory, read_network_area, read_network_element_batch, \
+    read_network_element
+from keqing.method.stream_write import write_file, write_network, write_josm_remote_control
 from keqing.method.transform import prefix_abbreviation
 from keqing.basic.model import BaseOsmModel
 from keqing.type.constraint import Bounds, Member
 from keqing.type.element import Node, Relation, Way
 
+
+def meow(self):
+    import logging
+    logging.info(str(
+        ("==============================\n")
+        + ("Keqing load successful!\n")
+        + ("==============================\n")
+        + (
+                str(len(self.node_dict))
+                + str(len(self.way_dict))
+                + str(len(self.relation_dict))
+                + str(len(self.bounds_list))
+        )
+        + ("\n==============================")
+    ))
 
 class Waifu:
     def __init__(self):
@@ -29,20 +44,7 @@ class Waifu:
         if value is not None:
             attrib[key] = str(value)
 
-    def meow(self):
-        import logging
-        logging.info(str(
-        ("==============================\n")
-        +("Keqing load successful!\n")
-        +("==============================\n")
-        +(
-            str(len(self.node_dict))
-            +str(len(self.way_dict))
-            +str(len(self.relation_dict))
-            +str(len(self.bounds_list))
-        )
-        +("\n==============================")
-        ))
+
 
     def read(self, mode=None, file_path="", text="", url="", fpath="", data_driver=""):
         def pre_read_warn(mode: str, file_path: str, text: str, url: str):
@@ -69,7 +71,7 @@ class Waifu:
                 print(
                     "WARN:You add parameter for both file mode and memory mode! Keqing will choose you designated **file** mode"
                 )
-            self.read_file(file_path)
+            read_file(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, file_path)
         elif (
             mode == "memory" or mode == "m" or mode == "text" or mode == "t"
         ) or ((mode == "file" or mode == "f") and file_path == ""):
@@ -78,189 +80,29 @@ class Waifu:
                 print(
                     "WARN:You add parameter for both file mode and memory mode! Keqing will choose you designated **memory** mode"
                 )
-            self.read_memory(text)
+            read_memory(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, text)
         elif mode == "network" or mode == "n":
             # pre_read_warn(mode=mode,file_path=file_path,text=text,url=url) # No need, we may need warn a 'mode="network" + url=""' situation.
-            self.read_memory(url)
+            read_memory(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, url)
         else:
             raise TypeError(f"Unexpected read mode: {mode}")
 
         time_end = time.time()
         print("[TIME]: " + str(round((time_end - time_start), 3)) + "s" + "\n")
-        self.meow()
+        meow()
 
-    def read_file(self, file_path: str):
-        tree: ElementTree = ET.parse(file_path)
-        root: Element = tree.getroot()
-        pre_parse_classify(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, root)
-
-    def read_memory(self, text: str):
-        root: Element = ET.fromstring(text)
-        pre_parse_classify(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, root)
-
-    def read_network(self, mode="api", server="OSM", quantity="", **kwargs):
-        # version problem haven't been introduced
-        if quantity != "":
-            if quantity == "area":
-                # parse SWNE
-                self.read_network_area()
-            else:
-                if kwargs.get("element_id"):
-                    self.read_network_element(
-                        element_id=kwargs["element_id"],
-                        type=kwargs.get("type"),
-                        server=server,
-                    )
-                else:
-                    # parse Element
-                    pass
-        else:
-            if kwargs.get("url"):
-                # download directly, then judge
-                pass
-            else:
-                return None
-        pass
-
-    def read_network_area(self, S, W, N, E, mode="api", server="OSM"):
-        if mode == "api":
-            # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
-            # need to add server change function
-            pass
-        if mode == "overpass":
-            pass
-        pass
-
-    def read_network_element(
-        self, element_id: str, type="undefined", mode="api", server="OSM"
-    ):
-        def have_multi_elements(element_id) -> bool:
-            if "," in element_id:
-                # have comma or space between multi element
-                return True
-
-        if have_multi_elements(element_id):
-            self.read_network_element_batch(element_id)
-        else:
-            if (
-                (type == "node" or type == "n")
-                or (type == "way" or type == "w")
-                or (type == "relation" or type == "r")
-            ):
-                import requests
-
-                pure_id = (
-                    element_id.replace("n", "")
-                    .replace("w", "")
-                    .replace("r", "")
-                )
-                if "v" in pure_id:
-                    version = pure_id.split("v")[1]
-                    pure_id = pure_id.split("v")[0]
-                url = get_server(server) + prefix_abbreviation(type,mode="p2prefix") + "/" + pure_id
-                headers = get_headers()
-                print("url:", url)
-                print("headers:", headers)
-                response = requests.get(url=url, headers=headers).text
-                print(response)
-                self.read_memory(response)
-            else:
-                # detect type single request
-                # warn that if parameter type and element_id implied type don't match
-                pass
-
-    def read_network_element_batch(
-        self, element_id=None, mode="api", server="OSM"
-    ):
-        # it can be string or list
-        # https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_/api/0.6/[nodes|ways|relations]?#parameters
-        pass
-
-    def write(self, mode=None, file_path="", data_driver=""):
+    def write(mode=None, file_path="",
+              data_driver=""):
         if mode == "file":
-            self.write_file(file_path)
+            write_file(version, generator, bounds_list, node_dict, way_dict,
+                       relation_dict, file_path)
         elif mode == "network":
-            self.write_network()
+            write_network()
         elif mode == "josm_remote_control":
             # maybe remote_control_josm will be better?
-            self.write_josm_remote_control()
+            write_josm_remote_control()
         else:
             raise TypeError(f"Unexpected write mode: {mode}")
-
-    def write_file(self, file_path: str, only_diff=False):
-        root: Element = Element("osm")
-        root.attrib["version"] = self.version
-        root.attrib["generator"] = self.generator
-
-        for i in self.bounds_list:
-            element: Element = Element("bounds")
-            Waifu.__set_attrib(element.attrib, "minlat", i.min_lat)
-            Waifu.__set_attrib(element.attrib, "minlon", i.min_lon)
-            Waifu.__set_attrib(element.attrib, "maxlat", i.max_lat)
-            Waifu.__set_attrib(element.attrib, "maxlon", i.max_lon)
-            Waifu.__set_attrib(element.attrib, "origin", i.origin)
-            root.append(element)
-
-        def base_osm_model_to_xml(
-            tag_name: str, model: BaseOsmModel
-        ) -> Element:
-            tag: Element = Element(tag_name)
-            tag.attrib["id"] = str(model.id)
-            Waifu.__set_attrib(tag.attrib, "action", model.action)
-            Waifu.__set_attrib(tag.attrib, "timestamp", model.timestamp)
-            Waifu.__set_attrib(tag.attrib, "uid", model.uid)
-            Waifu.__set_attrib(tag.attrib, "user", model.user)
-            tag.attrib["visible"] = "true" if model.visible else "false"
-            Waifu.__set_attrib(tag.attrib, "version", model.version)
-            Waifu.__set_attrib(tag.attrib, "changeset", model.changeset)
-            for k, v in model.tags.items():
-                sub_element: Element = Element("tag")
-                sub_element.attrib["k"] = k
-                sub_element.attrib["v"] = v
-                tag.append(sub_element)
-            return tag
-
-        for i in self.node_dict.values():
-            if i.has_diff() and i.action != "delete":
-                i.action = "modify"
-            node: Element = base_osm_model_to_xml("node", i)
-            node.attrib["lat"] = str(i.lat)
-            node.attrib["lon"] = str(i.lon)
-            root.append(node)
-        for i in self.way_dict.values():
-            if i.has_diff() and i.action != "delete":
-                i.action = "modify"
-            way: Element = base_osm_model_to_xml("way", i)
-            for ref in i.nds:
-                e: Element = Element("nd")
-                e.attrib["ref"] = str(ref)
-                way.append(e)
-            root.append(way)
-        for i in self.relation_dict.values():
-            if i.has_diff() and i.action != "delete":
-                i.action = "modify"
-            relation = base_osm_model_to_xml("relation", i)
-            for member in i.members:
-                e: Element = Element("member")
-                e.attrib["type"] = member.type
-                e.attrib["ref"] = str(member.ref)
-                e.attrib["role"] = member.role
-                relation.append(e)
-            root.append(relation)
-
-        raw_text = ET.tostring(root)
-        dom = minidom.parseString(raw_text)
-        with open(file_path, "w", encoding="utf-8") as file:
-            dom.writexml(file, indent="\t", newl="\n", encoding="utf-8")
-
-    def write_network(self):
-        # will imply in the future
-        pass
-
-    def write_josm_remote_control(self):
-        # Thanks to @AustinZhu's idea about this branch of output stream
-        # will imply in the long future
-        pass
 
     def __new_id(self, model_dict: Dict[int, BaseOsmModel]) -> int:
         """

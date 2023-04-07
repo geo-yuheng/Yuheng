@@ -4,6 +4,7 @@ import unittest
 from os.path import dirname, join, realpath
 
 import keqing
+from keqing.method.stream_read import read_network
 
 
 class TestLoadNetwork(unittest.TestCase):
@@ -17,7 +18,8 @@ class TestLoadNetwork(unittest.TestCase):
         m_local = self.map
         m_network= keqing.Waifu()
         # m_network.read(mode="n")
-        m_network.read_network(server="OGF",quantity="element",type="way", element_id="w28814809v1")
+        read_network(m_network.node_dict, m_network.way_dict, m_network.relation_dict, m_network.bounds_list,
+                     server="OGF", quantity="element", type="way", element_id="w28814809v1")
         m_network.meow()
         assert len(m_local.way_dict)==1
         assert len(m_network.way_dict)==1
