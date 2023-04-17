@@ -3,6 +3,9 @@ from typing import Dict, List
 from .model_basic import Base, BaseOsmModel
 from .type_constraint import Member
 
+# TODO
+# limit check should be conduct while modify
+
 
 class Node(BaseOsmModel):
     upstream_way: list = [0]
@@ -66,6 +69,10 @@ class Node(BaseOsmModel):
         # return list(Node())
         pass
 
+    def is_limit_valid(self):
+        # if len<API_LIMIT_MAX_ELEMENT_TAGS:
+        return True
+
 
 class Way(BaseOsmModel):
     upstream_relation: list = [0]
@@ -104,6 +111,11 @@ class Way(BaseOsmModel):
             return self.upstream_relation
         else:
             return self.upstream_relation[order]
+        
+    def is_limit_valid(self):
+        # if len<API_LIMIT_MAX_ELEMENT_TAGS:
+        # if len>0 and len<API_LIMIT_MAX_WAY_NODES:
+        return True
 
 
 class Relation(BaseOsmModel):
@@ -148,3 +160,7 @@ class Relation(BaseOsmModel):
             return self.upstream_relation
         else:
             return self.upstream_relation[order]
+
+    def is_limit_valid(self):
+        # if len<API_LIMIT_MAX_RELATION_MEMBERS
+        return True

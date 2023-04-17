@@ -257,6 +257,12 @@ class Waifu:
         pass
 
     def write(self, mode=None, file_path=""):
+        def is_limit_valid(ignore=False):
+            # conduct limit check
+            # for ele in nwr
+            # if ele.is_limit_valid=True
+            return True
+
         if mode == "file":
             self.write_file(file_path)
         elif mode == "network":

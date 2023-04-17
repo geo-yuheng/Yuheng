@@ -77,3 +77,7 @@ class Base:
     def flush(self):
         # 移除自身，但如果有被编辑应给予警告，在force的情况下可以强制从数据库中移除，即调用析构函数
         pass
+
+    def is_limit_valid(self):
+        # conduct check API_LIMIT_MAX_KEY_LENGTH while modify tags
+        return True
