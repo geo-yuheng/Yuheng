@@ -77,7 +77,7 @@ def read_network_element(node_dict, way_dict, relation_dict, bounds_list,
             pass
 
 
-def read_network(node_dict, way_dict, relation_dict, bounds_list, mode="api", server="OSM", quantity="", **kwargs):
+def read_network(node_dict, way_dict, relation_dict, bounds_list, mode="api", server="OSM", quantity="", enable_cache=False **kwargs):
     # version problem haven't been introduced
     if quantity != "":
         if quantity == "area":
