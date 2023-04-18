@@ -67,7 +67,15 @@ def get_overpass(overpass_name: str, server="") -> Optional[str]:
         return overpass_list.get(overpass_name)["url"]
 
 
-def get_headers():
+def get_headers() -> dict:
+    """
+    Generate custom headers for HTTP requests.
+
+    The custom headers include the User-Agent, which is a combination of
+    KEQING_CORE_NAME and KEQING_VERSION (if possible and necessary, add the latest git commit hash).
+
+    :return: A dictionary containing the custom headers.
+    """
     return {
         "User-Agent": KEQING_CORE_NAME
         + "/ "
