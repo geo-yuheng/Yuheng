@@ -4,11 +4,20 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from keqing.basic.global_const import KEQING_CORE_NAME, KEQING_START_ID, KEQING_VERSION
-from keqing.method.network import get_server, get_headers
-from keqing.method.parse import parse_node, parse_way, parse_relation, pre_parse_classify
-from keqing.method.transform import prefix_abbreviation
+from keqing.basic.global_const import (
+    KEQING_CORE_NAME,
+    KEQING_START_ID,
+    KEQING_VERSION,
+)
 from keqing.basic.model import BaseOsmModel
+from keqing.method.network import get_headers, get_server
+from keqing.method.parse import (
+    parse_node,
+    parse_relation,
+    parse_way,
+    pre_parse_classify,
+)
+from keqing.method.transform import prefix_abbreviation
 from keqing.type.constraint import Bounds, Member
 from keqing.type.element import Node, Relation, Way
 
@@ -57,7 +66,15 @@ class Waifu:
             )
         )
 
-    def read(self, mode=None, file_path="", text="", url="", fpath="", data_driver=""):
+    def read(
+        self,
+        mode=None,
+        file_path="",
+        text="",
+        url="",
+        fpath="",
+        data_driver="",
+    ):
         def pre_read_warn(mode: str, file_path: str, text: str, url: str):
             if url != "" and (mode != "network" and mode != "n"):
                 if ("http://" in url) or ("https://" in url):
@@ -105,11 +122,23 @@ class Waifu:
     def read_file(self, file_path: str):
         tree: ElementTree = ET.parse(file_path)
         root: Element = tree.getroot()
-        pre_parse_classify(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, root)
+        pre_parse_classify(
+            self.node_dict,
+            self.way_dict,
+            self.relation_dict,
+            self.bounds_list,
+            root,
+        )
 
     def read_memory(self, text: str):
         root: Element = ET.fromstring(text)
-        pre_parse_classify(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, root)
+        pre_parse_classify(
+            self.node_dict,
+            self.way_dict,
+            self.relation_dict,
+            self.bounds_list,
+            root,
+        )
 
     def read_network(self, mode="api", server="OSM", quantity="", **kwargs):
         # version problem haven't been introduced
@@ -170,7 +199,12 @@ class Waifu:
                 if "v" in pure_id:
                     version = pure_id.split("v")[1]
                     pure_id = pure_id.split("v")[0]
-                url = get_server(server) + prefix_abbreviation(type,mode="p2prefix") + "/" + pure_id
+                url = (
+                    get_server(server)
+                    + prefix_abbreviation(type, mode="p2prefix")
+                    + "/"
+                    + pure_id
+                )
                 headers = get_headers()
                 print("url:", url)
                 print("headers:", headers)
@@ -189,9 +223,7 @@ class Waifu:
         # https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_/api/0.6/[nodes|ways|relations]?#parameters
         pass
 
-
     def write(self, mode=None, file_path="", data_driver=""):
-
         def is_limit_valid(ignore=False):
             # conduct limit check
             # for ele in nwr

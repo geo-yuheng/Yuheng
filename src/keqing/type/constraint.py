@@ -11,6 +11,7 @@ class Bounds:
 
     def align_serialization(self) -> str:
         serialize_format = "SB_WB_NB_EB"
+
         # another choise is don't use B in output_format, and use A/B insteal of P/N for plus or minus sign
         def num_serialization(degree: float):
             if degree >= 0:

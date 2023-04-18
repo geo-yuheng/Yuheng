@@ -18,5 +18,6 @@ class TestLoadAbbreviation(unittest.TestCase):
         assert len(m.way_dict) == 2376
         assert len(m.relation_dict) == 14
 
+
 if __name__ == "__main__":
     unittest.main()

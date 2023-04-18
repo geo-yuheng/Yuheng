@@ -1,6 +1,7 @@
 from typing import Dict, List
 
 from keqing.basic.model import BaseOsmModel
+
 from .constraint import Member
 
 # TODO
@@ -111,7 +112,7 @@ class Way(BaseOsmModel):
             return self.upstream_relation
         else:
             return self.upstream_relation[order]
-        
+
     def is_limit_valid(self):
         # if len<API_LIMIT_MAX_ELEMENT_TAGS:
         # if len>0 and len<API_LIMIT_MAX_WAY_NODES:

@@ -1,9 +1,9 @@
 from typing import Dict, List
 from xml.etree.ElementTree import Element
 
+from keqing.type.constraint import Bounds, Member
+from keqing.type.element import Node, Relation, Way
 
-from keqing.type.constraint import Member, Bounds
-from keqing.type.element import Node, Way, Relation
 
 def parse(element: Element):
     # judge whether is N/W/R then invoke function.
@@ -23,7 +23,6 @@ def pre_parse_classify(node_dict, way_dict, relation_dict, bounds_list, root):
         else:
             # raise TypeError('Unexpected element tag type: ' + element.tag)
             pass
-
 
 
 def parse_node(node_dict, element: Element):
@@ -71,8 +70,4 @@ def parse_relation(relation_dict, element: Element):
             raise TypeError(
                 f"Unexpected element tag type: {sub_element.tag} in Relation"
             )
-    relation_dict[int(attrib["id"])] = Relation(
-        attrib, tag_dict, member_list
-    )
-
-
+    relation_dict[int(attrib["id"])] = Relation(attrib, tag_dict, member_list)
