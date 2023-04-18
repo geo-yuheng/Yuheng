@@ -1,6 +1,6 @@
 from typing import Dict, List
 
-from keqing.basic.model import BaseOsmModel
+from src.keqing.basic.model import BaseOsmModel
 
 from .constraint import Member
 

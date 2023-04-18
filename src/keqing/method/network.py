@@ -1,6 +1,9 @@
 from typing import Optional
 
-from keqing.basic.global_const import KEQING_CORE_NAME, KEQING_VERSION
+from src.keqing import KEQING_CORE_NAME, KEQING_VERSION
+
+
+# from src.keqing.basic.global_const import KEQING_CORE_NAME, KEQING_VERSION
 
 
 def get_server(server_name: str) -> Optional[str]:

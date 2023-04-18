@@ -4,22 +4,22 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from keqing.basic.global_const import (
+from .basic.global_const import (
     KEQING_CORE_NAME,
     KEQING_START_ID,
     KEQING_VERSION,
 )
-from keqing.basic.model import BaseOsmModel
-from keqing.method.network import get_headers, get_server
-from keqing.method.parse import (
+from .basic.model import BaseOsmModel
+from .method.network import get_headers, get_server
+from .method.parse_xml import (
     parse_node,
     parse_relation,
     parse_way,
     pre_parse_classify,
 )
-from keqing.method.transform import prefix_abbreviation
-from keqing.type.constraint import Bounds, Member
-from keqing.type.element import Node, Relation, Way
+from .method.transform import prefix_abbreviation
+from .type.constraint import Bounds, Member
+from .type.element import Node, Relation, Way
 
 
 class Waifu:
