@@ -1,12 +1,12 @@
 import unittest
 from os.path import dirname, join, realpath
 
-from kqs.waifu import Waifu
+import keqing
 
 
 class TestLoadAbbreviation(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = Waifu()
+        self.map = keqing.Waifu()
 
     def test_load_abbreviation(self):
         FILENAME = "OSMWebsite_export.osm"

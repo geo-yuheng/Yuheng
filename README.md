@@ -81,9 +81,9 @@ ACGN waifu of project leader @Jyunhou :
 ### 快速开始
 
 ```python
-from kqs.waifu import Waifu
+import keqing
 
-map = Waifu()
+map = keqing.Waifu()
 map.read(mode="file", file_path="map.osm")
 ```
 

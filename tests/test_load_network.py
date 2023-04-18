@@ -3,19 +3,19 @@
 import unittest
 from os.path import dirname, join, realpath
 
-from kqs.waifu import Waifu
+import keqing
 
 
 class TestLoadNetwork(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = Waifu()
+        self.map = keqing.Waifu()
         FILENAME = "ogf_haresora_kinen.osm"
         data_path = join(dirname(realpath(__file__)), "network", FILENAME)
         self.map.read(mode="file", file_path=data_path)
 
     def test_load_network_single_element(self):
         m_local = self.map
-        m_network= Waifu()
+        m_network= keqing.Waifu()
         # m_network.read(mode="n")
         m_network.read_network(server="OGF",quantity="element",type="way", element_id="w28814809v1")
         m_network.meow()

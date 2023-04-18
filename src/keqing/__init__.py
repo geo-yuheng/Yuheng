@@ -4,12 +4,13 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from .global_const import KEQING_CORE_NAME, KEQING_START_ID, KEQING_VERSION
-from .method_network import get_server, get_headers
-from .method_parse import t2type
-from .model_basic import BaseOsmModel
-from .type_constraint import Bounds, Member
-from .type_element import Node, Relation, Way
+from keqing.basic.global_const import KEQING_CORE_NAME, KEQING_START_ID, KEQING_VERSION
+from keqing.method.network import get_server, get_headers
+from keqing.method.parse import parse_node, parse_way, parse_relation, pre_parse_classify
+from keqing.method.transform import prefix_abbreviation
+from keqing.basic.model import BaseOsmModel
+from keqing.type.constraint import Bounds, Member
+from keqing.type.element import Node, Relation, Way
 
 
 class Waifu:
@@ -27,74 +28,6 @@ class Waifu:
     def __set_attrib(attrib: Dict[str, str], key: str, value):
         if value is not None:
             attrib[key] = str(value)
-
-    def __parse(self, element: Element):
-        # judge whether is N/W/R then invoke function.
-        pass
-
-    def __parse_node(self, element: Element):
-        # Will move to method_parse.py
-        attrib: Dict[str, str] = element.attrib
-        tag_dict: Dict[str, str] = {}
-        for sub_element in element:
-            tag_dict[sub_element.attrib["k"]] = sub_element.attrib["v"]
-        self.node_dict[int(attrib["id"])] = Node(attrib, tag_dict)
-
-    def __parse_way(self, element: Element):
-        # Will move to method_parse.py
-        attrib: Dict[str, str] = element.attrib
-        tag_dict: Dict[str, str] = {}
-        nd_list: List[int] = []
-
-        for sub_element in element:
-            if sub_element.tag == "nd":
-                nd_list.append(int(sub_element.attrib["ref"]))
-            elif sub_element.tag == "tag":
-                tag_dict[sub_element.attrib["k"]] = sub_element.attrib["v"]
-            else:
-                raise TypeError(
-                    f"Unexpected element tag type: {sub_element.tag} in Way"
-                )
-        self.way_dict[int(attrib["id"])] = Way(attrib, tag_dict, nd_list)
-
-    def __parse_relation(self, element: Element):
-        # Will move to method_parse.py
-        attrib: Dict[str, str] = element.attrib
-        tag_dict: Dict[str, str] = {}
-        member_list: List[Member] = []
-
-        for sub_element in element:
-            if sub_element.tag == "member":
-                member_list.append(
-                    Member(
-                        sub_element.attrib["type"],
-                        int(sub_element.attrib["ref"]),
-                        sub_element.attrib["role"],
-                    )
-                )
-            elif sub_element.tag == "tag":
-                tag_dict[sub_element.attrib["k"]] = sub_element.attrib["v"]
-            else:
-                raise TypeError(
-                    f"Unexpected element tag type: {sub_element.tag} in Relation"
-                )
-        self.relation_dict[int(attrib["id"])] = Relation(
-            attrib, tag_dict, member_list
-        )
-
-    def pre_parse_classify(self, root):
-        for element in root:
-            if element.tag == "node":
-                self.__parse_node(element)
-            elif element.tag == "way":
-                self.__parse_way(element)
-            elif element.tag == "relation":
-                self.__parse_relation(element)
-            elif element.tag == "bounds":
-                self.bounds_list.append(Bounds(element.attrib))
-            else:
-                # raise TypeError('Unexpected element tag type: ' + element.tag)
-                pass
 
     def meow(self):
         import logging
@@ -124,7 +57,7 @@ class Waifu:
             )
         )
 
-    def read(self, mode=None, file_path="", text="", url="", fpath=""):
+    def read(self, mode=None, file_path="", text="", url="", fpath="", data_driver=""):
         def pre_read_warn(mode: str, file_path: str, text: str, url: str):
             if url != "" and (mode != "network" and mode != "n"):
                 if ("http://" in url) or ("https://" in url):
@@ -172,11 +105,11 @@ class Waifu:
     def read_file(self, file_path: str):
         tree: ElementTree = ET.parse(file_path)
         root: Element = tree.getroot()
-        self.pre_parse_classify(root)
+        pre_parse_classify(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, root)
 
     def read_memory(self, text: str):
         root: Element = ET.fromstring(text)
-        self.pre_parse_classify(root)
+        pre_parse_classify(self.node_dict, self.way_dict, self.relation_dict, self.bounds_list, root)
 
     def read_network(self, mode="api", server="OSM", quantity="", **kwargs):
         # version problem haven't been introduced
@@ -237,7 +170,7 @@ class Waifu:
                 if "v" in pure_id:
                     version = pure_id.split("v")[1]
                     pure_id = pure_id.split("v")[0]
-                url = get_server(server) + t2type(type) + "/" + pure_id
+                url = get_server(server) + prefix_abbreviation(type,mode="p2prefix") + "/" + pure_id
                 headers = get_headers()
                 print("url:", url)
                 print("headers:", headers)
@@ -256,7 +189,9 @@ class Waifu:
         # https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_/api/0.6/[nodes|ways|relations]?#parameters
         pass
 
-    def write(self, mode=None, file_path=""):
+
+    def write(self, mode=None, file_path="", data_driver=""):
+
         def is_limit_valid(ignore=False):
             # conduct limit check
             # for ele in nwr

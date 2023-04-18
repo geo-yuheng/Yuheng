@@ -5,10 +5,13 @@ description = "A non-database Python base OSM data parser, with SQL operation si
 authors = ["快乐的老鼠宝宝 <keaitianxinmail@qq.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [
-    {include = "kqs", from = "src"},
-]
-
+repository="https://github.com/OSMChina/Keqing"
+classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ]
+packages = [{include = "src/keqing"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"

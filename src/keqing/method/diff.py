@@ -1,6 +1,6 @@
-from kqs.type_constraint import Bounds, Member
-from kqs.type_data import OSC, OSH, OSM
-from kqs.type_element import Node, Relation, Way
+from keqing.type.constraint import Bounds, Member
+from keqing.type.data import OSC, OSH, OSM
+from keqing.type.element import Node, Relation, Way
 
 
 class Diff:

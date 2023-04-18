@@ -1,7 +1,7 @@
 from typing import Dict, List
 
-from .model_basic import Base, BaseOsmModel
-from .type_constraint import Member
+from keqing.basic.model import BaseOsmModel
+from .constraint import Member
 
 # TODO
 # limit check should be conduct while modify

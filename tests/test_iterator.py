@@ -3,12 +3,12 @@
 import unittest
 from os.path import dirname, join, realpath
 
-from kqs.waifu import Waifu
+import keqing
 
 
 class TestIterator(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = Waifu()
+        self.map = keqing.Waifu()
         FILENAME = "JOSM_export.osm"
         data_path = join(dirname(realpath(__file__)), "extract", FILENAME)
         self.map.read(mode="file", file_path=data_path)
