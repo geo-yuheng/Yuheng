@@ -1,9 +1,9 @@
 # Keqing
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FOSMChina%2FOSMChina-Keqing_Sword?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOSMChina%2FKeqing.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FOSMChina%2FKeqing?ref=badge_shield)
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 ![](https://img.shields.io/badge/stable--version-v0.6.0-green)
-![PyPI](https://img.shields.io/pypi/v/Keqing-Sword)
+![PyPI](https://img.shields.io/pypi/v/Keqing)
 
 A non-database Python base OSM data parser, with SQL operation simulated 
 
@@ -50,11 +50,9 @@ List alternatives that may be close and similar to this item, but have a differe
 
 ### Prior to version 1.0
 
-1. Improve the Diff work in the initial stage
+1. Can read and write files normally
 
-2. Can read and write files normally
-
-3. Officially renamed to Keqing (namespace reserved)
+2. Officially renamed to Keqing (namespace reserved)
 
 ### After version 1.0
 
@@ -63,6 +61,8 @@ List alternatives that may be close and similar to this item, but have a differe
 2. Introduce coverage test
 
 3. Introduce the select statement, you can customize the query (expected to be released as 2.0)
+
+4. Improve the Diff work in the initial stage
 
 ## Source of project name
 
@@ -110,14 +110,14 @@ map.read(mode="file", file_path="map.osm")
 ## Roadmap
 
 ### 1.0版本之前
-1. 初期完善Diff工作
-2. 能够正常读写到文件
-3. 正式重命名为Keqing（已预留命名空间）
+1. 能够正常读写到文件
+2. 正式重命名为Keqing（已预留命名空间）
 
 ### 1.0版本之后
 1. 加快建设多种输入输出流
 2. 引入覆盖率测试
 3. 引入select语句，可以自定义查询（预计作为2.0发布）
+4. 初期完善Diff工作
 
 ## 命名来源
 
