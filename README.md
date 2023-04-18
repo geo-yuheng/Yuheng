@@ -20,9 +20,9 @@ This project is a Python-based manipulation library for `.osm` files
 ### Quick Start
 
 ```python
-from kqs.waifu import Waifu
+import keqing
 
-map = Waifu()
+map = keqing.Waifu()
 map.read(mode="file", file_path="map.osm")
 ```
 
