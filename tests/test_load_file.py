@@ -1,7 +1,7 @@
 import unittest
 from os.path import dirname, join, realpath
 
-import keqing
+from src import keqing
 
 
 class TestLoadFile(unittest.TestCase):

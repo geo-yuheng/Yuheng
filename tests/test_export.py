@@ -5,7 +5,7 @@ import xml.sax
 from os.path import dirname, join, realpath
 from xml import sax
 
-import keqing
+from src import keqing
 
 
 class TestExport(unittest.TestCase):
