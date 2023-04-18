@@ -77,3 +77,33 @@ def pre_parse_classify(node_dict, way_dict, relation_dict, bounds_list, root):
         else:
             # raise TypeError('Unexpected element tag type: ' + element.tag)
             pass
+
+# Waiting
+def t2type(t: str) -> str:
+    if t == "n" or t == "node":
+        return "node"
+    if t == "w" or t == "way":
+        return "way"
+    if t == "r" or t == "relation":
+        return "relation"
+    if t == "c" or t == "changeset":
+        return "changeset"
+    if t == "v" or t == "version":
+        return "version"
+
+def url_parse(url:str,domain:str="openstreetmap.org"):
+    type:str="node"
+    id:int=0
+#     import urlib
+    url=url.split(domain)
+    #test case
+    # node/way/relation/changeset
+    # openstreetmap.org/node/5739239358
+    #　http://www.openstreetmap.org/node/5739239358
+    # https://www.openstreetmap.org/node/5739239358#map=19/25.53658/113.53478
+    #　https://www.openstreetmap.org/node/5739239358#map=19/25.53658/113.53444&layers=TNDG
+    #　https://www.openstreetmap.org/node/5739239358?locale=zh-TW#map=19/25.53658/113.53444
+    # https://www.openstreetmap.org/node/5739239358/history#map=19/25.53668/113.53436
+    return [type,id]
+
+parse_url_fallback=["osm.org","openstreetmap.org", "openstreetmap.com"]# parse this js file https://github.com/openstreetmap/dns/blob/master/dnsconfig.js
