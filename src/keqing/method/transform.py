@@ -1,5 +1,7 @@
-# Waiting
-def prefix_abbreviation(source: str, mode="p2prefix") -> str:
+from typing import Optional
+
+
+def prefix_normalization(source: str, mode="p2prefix") -> str:
     if mode == "p2prefix":
         if source == "n" or source == "node":
             return "node"
@@ -22,3 +24,16 @@ def prefix_abbreviation(source: str, mode="p2prefix") -> str:
             return "c"
         if source == "v" or source == "version":
             return "v"
+
+
+def prefix_judgement(object_id: str) -> Optional[str]:
+    if (
+        object_id[0] == "n"
+        or object_id[0] == "w"
+        or object_id[0] == "r"
+        or object_id[0] == "c"
+        or object_id[0] == "v"
+    ):
+        return prefix_normalization(object_id[0])
+    else:
+        return None

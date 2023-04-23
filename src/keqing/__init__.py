@@ -17,7 +17,7 @@ from .method.parse_xml import (
     parse_way,
     pre_parse_classify,
 )
-from .method.transform import prefix_abbreviation
+from .method.transform import prefix_normalization
 from .type.constraint import Bounds, Member
 from .type.element import Node, Relation, Way
 
@@ -182,12 +182,13 @@ class Waifu:
                 return True
 
         if have_multi_elements(element_id):
+            # if flag_allow_batch_download
             self.read_network_element_batch(element_id)
         else:
             if (
-                (type == "node" or type == "n")
-                or (type == "way" or type == "w")
-                or (type == "relation" or type == "r")
+                prefix_normalization(type) == "node"
+                or prefix_normalization(type) == "way"
+                or prefix_normalization(type) == "relation"
             ):
                 import requests
 
@@ -201,7 +202,7 @@ class Waifu:
                     pure_id = pure_id.split("v")[0]
                 url = (
                     get_server(server)
-                    + prefix_abbreviation(type, mode="p2prefix")
+                    + prefix_normalization(type, mode="p2prefix")
                     + "/"
                     + pure_id
                 )
