@@ -2,8 +2,18 @@ from keqing.keqing import Waifu
 
 
 def remove_comment(query_content: str) -> str:
-    # line comment
+    # priority: block comment > line comment
     # block comment
+    # suggestion: regex
+    # line comment
+    query_content = query_content.split("\n")
+    query_content_judge = [line.replace(" ", "") for line in query_content]
+    query_content_none_comment = []
+    for i in range(len(query_content_judge)):
+        if i[:2] != "//":
+            query_content_none_comment.append(line)
+    query_content = "".join(query_content)
+    # warning: if a line not begin with comment, it't comment won't be removed, I still waiting for a good method.
     pass
     return query_content
 
