@@ -120,25 +120,40 @@ class Waifu:
         self.meow()
 
     def read_file(self, file_path: str):
-        tree: ElementTree = ET.parse(file_path)
-        root: Element = tree.getroot()
-        pre_parse_classify(
-            self.node_dict,
-            self.way_dict,
-            self.relation_dict,
-            self.bounds_list,
-            root,
-        )
+        try:
+            tree: ElementTree = ET.parse(file_path)
+            root: Element = tree.getroot()
+            pre_parse_classify(
+                self.node_dict,
+                self.way_dict,
+                self.relation_dict,
+                self.bounds_list,
+                root,
+            )
+        except FileNotFoundError:
+            print("Error: 文件不存在，请检查文件路径")
+        except PermissionError:
+            print("Error: 无权访问文件，请检查文件权限")
+        except ET.ParseError:
+            print("Error: XML 解析失败，请检查文件内容是否为有效的 XML 格式")
+        except Exception as e:
+            print(f"Error: 发生未知错误 - {str(e)}")
+
 
     def read_memory(self, text: str):
-        root: Element = ET.fromstring(text)
-        pre_parse_classify(
-            self.node_dict,
-            self.way_dict,
-            self.relation_dict,
-            self.bounds_list,
-            root,
-        )
+        try:
+            root: Element = ET.fromstring(text)
+            pre_parse_classify(
+                self.node_dict,
+                self.way_dict,
+                self.relation_dict,
+                self.bounds_list,
+                root,
+            )
+        except ET.ParseError:
+            print("Error: XML 解析失败，请检查文本内容是否为有效的 XML 格式")
+        except Exception as e:
+            print(f"Error: 发生未知错误 - {str(e)}")
 
     def read_network(self, mode="api", server="OSM", quantity="", **kwargs):
         # version problem haven't been introduced
