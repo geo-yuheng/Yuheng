@@ -1,6 +1,6 @@
 from typing import Optional
 
-from src.keqing import KEQING_CORE_NAME, KEQING_VERSION
+from ..basic import KEQING_CORE_NAME, KEQING_VERSION
 
 
 # from src.keqing.basic.global_const import KEQING_CORE_NAME, KEQING_VERSION

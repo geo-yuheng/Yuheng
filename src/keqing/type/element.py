@@ -1,8 +1,10 @@
 from typing import Dict, List
 
-from src.keqing.basic.model import BaseOsmModel
+
 
 from .constraint import Member
+from .. import BaseOsmModel
+
 
 # TODO
 # limit check should be conduct while modify

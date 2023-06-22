@@ -1,6 +1,3 @@
-from keqing.keqing import Waifu
-
-
 def remove_comment(query_content: str) -> str:
     # priority: block comment > line comment
     # block comment
@@ -18,8 +15,9 @@ def remove_comment(query_content: str) -> str:
     return query_content
 
 
-def query_in_type(type: list, query_content: str) -> Waifu:
-    return Waifu()
+# def query_in_type(type: list, query_content: str) -> Waifu:
+#     return Waifu()
+# 不能直接返回Waifu，因为并不打算撤销这套__init__里放单独一个waifu的结构。这里只能返回其他内容（如xml/json）再在waifu里面parse它
 
 
 def overpass_query(query_content: str) -> None:

@@ -1,8 +1,8 @@
 from typing import Dict, List
 from xml.etree.ElementTree import Element
 
-from src.keqing.type.constraint import Bounds, Member
-from src.keqing.type.element import Node, Relation, Way
+from ..type.constraint import Bounds, Member
+from ..type.element import Node, Relation, Way
 
 
 def parse(element: Element):
