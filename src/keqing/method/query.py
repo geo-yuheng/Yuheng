@@ -67,6 +67,6 @@ def query(query_content: str, query_language: str) -> None:
         ganyu_query(query_content)
 
 
-query(
-    open("../../../tests/overpassql/telecommunication.overpassql"), "Overpass"
-)
+# query(
+#     open("../../../tests/overpassql/telecommunication.overpassql"), "Overpass"
+# )
