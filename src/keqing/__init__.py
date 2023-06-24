@@ -11,7 +11,7 @@ from .basic.global_const import (
 )
 from .basic.model import BaseOsmModel
 from .method.network import get_headers, get_server
-from .method.parse_xml import (
+from .method.parse import (
     parse_node,
     parse_relation,
     parse_way,
