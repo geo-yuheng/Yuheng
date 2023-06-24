@@ -1,6 +1,5 @@
 from .diff import *
 from .network import *
-from .nominatim import *
 from .parse_url import *
 from .parse_xml import *
 from .query import *
