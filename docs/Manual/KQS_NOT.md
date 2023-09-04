@@ -25,6 +25,13 @@ Thanks for other developer work on OSM related manipulating library.
 + https://github.com/drolbr/Overpass-API （我们有参考）
 + https://github.com/sqlalchemy/sqlalchemy
 
+### Possible network API manipulate lib as driver
+
+（Wikk also have db/file driver as i/o driver list）
++ https://github.com/matkoniecz/osm_bot_abstraction_layer
++ https://github.com/docentYT/osm_easy_api
++ https://github.com/metaodi/osmapi
+
 ### Database
 
 + osm2pgsql
