@@ -2,45 +2,21 @@
 # （以及允许人工new对象）
 
 import unittest
-from os.path import dirname, join, realpath
+# from os.path import dirname, join, realpath # 可能后期会导出存为.osm文件
 
 from src import keqing
+from src.keqing.type.element import Node, Way, Relation
 
 
-class TestLoadNetwork(unittest.TestCase):
+class TestTypeConstructor(unittest.TestCase):
     def setUp(self) -> None:
         self.map = keqing.Waifu()
-        FILENAME = "ogf_haresora_kinen.osm"
-        data_path = join(dirname(realpath(__file__)), "network", FILENAME)
-        self.map.read(mode="file", file_path=data_path)
 
-    def test_load_network_single_element(self):
-        m_local = self.map
-        m_network = keqing.Waifu()
-        # m_network.read(mode="n")
-        m_network.read_network(
-            server="OGF",
-            quantity="element",
-            type="way",
-            element_id="w28814809v1",
-        )
-        m_network.meow()
-        assert len(m_local.way_dict) == 1
-        assert len(m_network.way_dict) == 1
-        for id in m_network.way_dict:
-            assert m_network.way_dict[id].id == 28814809
-        assert (
-            m_local.way_dict[28814809].tags
-            == m_network.way_dict[28814809].tags
-        )
-        assert (
-            m_local.way_dict[28814809].changeset
-            == m_network.way_dict[28814809].changeset
-        )
-        assert (
-            m_local.way_dict[28814809].timestamp
-            == m_network.way_dict[28814809].timestamp
-        )
+    def test_construct_elements(self):
+        map=self.map
+        node_1=Node(attrib={"id":"114514","version":"1","changeset":"1"}, tag_dict={"building":"yes","colour":"red"})
+
+        assert len(map.way_dict) == 1
 
 
 if __name__ == "__main__":
