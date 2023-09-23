@@ -16,17 +16,91 @@ class TestTypeConstructor(unittest.TestCase):
     def test_construct_elements(self):
         map = self.map
         node_1 = Node(
-            attrib={"id": "114514", 
+            attrib={"id": "1", 
                     "visible":"true",
                     "version": "1", 
                     "changeset": "1"
                     "timestamp":"2012-12-21T11:33:55Z",
                     "user":"810",
                     "uid":"1919",
-                    "lat":"39.5116939",
-                    "lon":"116.3682258"},
+                    "lat":"1.0",
+                    "lon":"5.0"},
             tag_dict={},
         )
+        node_2 = Node(
+            attrib={"id": "2", 
+                    "visible":"true",
+                    "version": "1", 
+                    "changeset": "1"
+                    "timestamp":"2012-12-21T11:33:55Z",
+                    "user":"810",
+                    "uid":"1919",
+                    "lat":"6.0",
+                    "lon":"5.0"},
+            tag_dict={},
+        )
+        node_3 = Node(
+            attrib={"id": "3", 
+                    "visible":"true",
+                    "version": "1", 
+                    "changeset": "1"
+                    "timestamp":"2012-12-21T11:33:55Z",
+                    "user":"810",
+                    "uid":"1919",
+                    "lat":"3.5",
+                    "lon":"1.0"},
+            tag_dict={},
+        )
+        node_4 = Node(
+            attrib={"id": "4", 
+                    "visible":"false",
+                    "version": "1", 
+                    "changeset": "1"
+                    "timestamp":"2012-12-21T11:33:55Z",
+                    "user":"810",
+                    "uid":"1919",
+                    "lat":"6.0",
+                    "lon":"5.0"},
+            tag_dict={},
+        )
+        node_5 = Node(
+            attrib={"id": "5", 
+                    "visible":"true",
+                    "version": "1", 
+                    "changeset": "1"
+                    "timestamp":"2012-12-21T11:33:55Z",
+                    "user":"810",
+                    "uid":"1919",
+                    "lat":"6.0",
+                    "lon":"5.0"},
+            tag_dict={},
+        )
+        node_6 = Node(
+            attrib={"id": "6", 
+                    "visible":"true",
+                    "version": "1", 
+                    "changeset": "1"
+                    "timestamp":"2012-12-21T11:33:55Z",
+                    "user":"810",
+                    "uid":"1919",
+                    "lat":"6.0",
+                    "lon":"5.0"},
+            tag_dict={},
+        )
+        node_7 = Node(
+            attrib={"id": "7", 
+                    "visible":"true",
+                    "version": "1", 
+                    "changeset": "1"
+                    "timestamp":"2012-12-21T11:33:55Z",
+                    "user":"810",
+                    "uid":"1919",
+                    "lat":"6.0",
+                    "lon":"5.0"},
+            tag_dict={},
+        )
+        way_1=Way()
+        way_2=Way()
         relation_1 = Relation(
             attrib={"id": "114514", 
                     "visible":"true",
