@@ -24,13 +24,13 @@ from .type.element import Node, Relation, Way
 
 class Waifu:
     def __init__(self):
-        self.node_dict: Dict[int, Node] = {}
-        self.bounds_list: List[Bounds] = []
         self.version: str = "0.6"
-        self.way_dict: Dict[int, Way] = {}
         self.generator: str = (
             KEQING_CORE_NAME.replace("_Sword", "") + "/" + KEQING_VERSION
         )
+        self.bounds_list: List[Bounds] = []
+        self.node_dict: Dict[int, Node] = {}
+        self.way_dict: Dict[int, Way] = {}
         self.relation_dict: Dict[int, Relation] = {}
 
     @staticmethod
@@ -138,7 +138,6 @@ class Waifu:
             print("Error: XML 解析失败，请检查文件内容是否为有效的 XML 格式")
         except Exception as e:
             print(f"Error: 发生未知错误 - {str(e)}")
-
 
     def read_memory(self, text: str):
         try:
