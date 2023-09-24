@@ -308,6 +308,7 @@ class Waifu:
             if i.has_diff() and i.action != "delete":
                 i.action = "modify"
             relation = base_osm_model_to_xml("relation", i)
+            print(i.members.type, i.members.ref, i.members.role, i.members.id)
             for member in i.members:
                 e: Element = Element("member")
                 e.attrib["type"] = member.type
