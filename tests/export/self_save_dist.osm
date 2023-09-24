@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-	<osm version="0.6" generator="Keqing/1.0.0">
+	<osm version="0.6" generator="Keqing/1.0.1">
 	<bounds minlat="39.50741" minlon="116.37745" maxlat="39.5132" maxlon="116.38237" origin=""/>
 	<node id="3247656863" timestamp="2014-12-22T13:00:03Z" uid="288524" user="Chen Jia" visible="true" version="1" changeset="27629460" lat="39.5116939" lon="116.3682258"/>
 	<node id="3247656867" timestamp="2014-12-22T13:00:03Z" uid="288524" user="Chen Jia" visible="true" version="1" changeset="27629460" lat="39.5190565" lon="116.3676176"/>

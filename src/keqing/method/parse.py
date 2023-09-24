@@ -59,9 +59,9 @@ def parse_relation(relation_dict, element: Element):
         if sub_element.tag == "member":
             member_list.append(
                 Member(
-                    sub_element.attrib["type"],
-                    int(sub_element.attrib["ref"]),
-                    sub_element.attrib["role"],
+                    element_type=sub_element.attrib["type"],
+                    role=sub_element.attrib["role"],
+                    ref=int(sub_element.attrib["ref"]),
                 )
             )
         elif sub_element.tag == "tag":

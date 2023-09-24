@@ -46,20 +46,17 @@ class Member:
                 )
         else:
             if isinstance(ref, int):
-                print("ref is not None")
                 ref_value: int = ref
                 id_value: int = ref
             elif isinstance(id, int):
-                print("id is not None")
                 ref_value: int = id
                 id_value: int = id
             else:
                 print("Both 'ref' and 'id' isn't int.")
-
-        print(self.__dir__())
-        print(ref_value, id_value)
-        self.__ref_backup: int = ref
-        self.__id_backup: int = id
+        self.ref = ref_value
+        self.id = id_value
+        self.__ref_backup: int = ref_value
+        self.__id_backup: int = id_value
 
     def has_diff(self) -> bool:
         return (
