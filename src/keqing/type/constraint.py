@@ -39,12 +39,7 @@ class Member:
         self.role: str = role
         self.__type_backup: str = element_type
         self.__role_backup: str = role
-        if ref is None:
-            if id is None:
-                print(
-                    "WARNING: Both 'ref' and 'id' haven't been offer while initializing Member class."
-                )
-        else:
+        if (ref is not None) or (id is not None):
             if isinstance(ref, int):
                 ref_value: int = ref
                 id_value: int = ref
@@ -53,6 +48,10 @@ class Member:
                 id_value: int = id
             else:
                 print("Both 'ref' and 'id' isn't int.")
+        else:
+            print(
+                "WARNING: Both 'ref' and 'id' haven't been offer while initializing Member class."
+            )
         self.ref = ref_value
         self.id = id_value
         self.__ref_backup: int = ref_value
