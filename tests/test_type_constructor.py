@@ -13,7 +13,7 @@ src_dir = os.path.join(current_dir, "../src")
 sys.path.append(src_dir)
 
 import keqing
-from keqing.type import Node, Way, Relation
+from keqing.type import Node, Way, Relation, Member
 
 
 class TestTypeConstructor(unittest.TestCase):
@@ -161,7 +161,14 @@ class TestTypeConstructor(unittest.TestCase):
                 "colour": "red",
                 "building:prefabricated": "cai-gang-ban",
             },
+            member_list=[
+                Member(type="way", ref=114, role="outer"),
+                Member(type="way", ref=514, role="inner"),
+            ],
         )
+        print("len(carto.node_dict):", len(carto.node_dict))
+        print("len(carto.way_dict):", len(carto.way_dict))
+        print("len(carto.relation_dict):", len(carto.relation_dict))
         assert len(carto.node_dict) == 7
         assert len(carto.way_dict) == 2
         assert len(carto.relation_dict) == 1
