@@ -7,11 +7,13 @@ import os
 import sys
 import unittest
 
+
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../src")
 sys.path.append(src_dir)
 
 import keqing
+from keqing.type import Node, Way, Relation
 
 
 class TestTypeConstructor(unittest.TestCase):
@@ -19,7 +21,7 @@ class TestTypeConstructor(unittest.TestCase):
         self.map = keqing.Waifu()
 
     def test_construct_elements(self):
-        map = self.map
+        carto = self.map
         node_1 = Node(
             attrib={
                 "id": "1",
@@ -160,9 +162,9 @@ class TestTypeConstructor(unittest.TestCase):
                 "building:prefabricated": "cai-gang-ban",
             },
         )
-        assert len(map.node_dict) == 7
-        assert len(map.way_dict) == 2
-        assert len(map.relation_dict) == 1
+        assert len(carto.node_dict) == 7
+        assert len(carto.way_dict) == 2
+        assert len(carto.relation_dict) == 1
 
 
 if __name__ == "__main__":
