@@ -166,6 +166,16 @@ class TestTypeConstructor(unittest.TestCase):
                 Member(type="way", ref=514, role="inner"),
             ],
         )
+        carto.node_dict[int(node_1.id)] = node_1
+        carto.node_dict[int(node_2.id)] = node_2
+        carto.node_dict[int(node_3.id)] = node_3
+        carto.node_dict[int(node_4.id)] = node_4
+        carto.node_dict[int(node_5.id)] = node_5
+        carto.node_dict[int(node_6.id)] = node_6
+        carto.node_dict[int(node_7.id)] = node_7
+        carto.way_dict[int(way_1.id)] = way_1
+        carto.way_dict[int(way_2.id)] = way_2
+        carto.relation_dict[int(relation_1.id)] = relation_1
         print("len(carto.node_dict):", len(carto.node_dict))
         print("len(carto.way_dict):", len(carto.way_dict))
         print("len(carto.relation_dict):", len(carto.relation_dict))
