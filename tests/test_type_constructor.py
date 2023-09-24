@@ -162,8 +162,8 @@ class TestTypeConstructor(unittest.TestCase):
                 "building:prefabricated": "cai-gang-ban",
             },
             member_list=[
-                Member(type="way", ref=114, role="outer"),
-                Member(type="way", ref=514, role="inner"),
+                Member(element_type="way", ref=114, role="outer"),
+                Member(element_type="way", id=514, role="inner"),
             ],
         )
 
@@ -177,7 +177,7 @@ class TestTypeConstructor(unittest.TestCase):
         )
         insert_to_dict(carto.way_dict, [way_1, way_2])
         insert_to_dict(carto.relation_dict, [relation_1])
-        
+
         print("len(carto.node_dict):", len(carto.node_dict))
         print("len(carto.way_dict):", len(carto.way_dict))
         print("len(carto.relation_dict):", len(carto.relation_dict))
