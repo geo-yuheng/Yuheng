@@ -13,6 +13,9 @@ classifiers = [
 ]
 packages = [{ include = "keqing", from = "src" }]
 
+[tool.poetry.scripts]
+clean = "tool.clean:clean_dist"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.28.2"
