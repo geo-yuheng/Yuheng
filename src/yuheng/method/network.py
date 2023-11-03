@@ -3,7 +3,7 @@ from typing import Optional
 from ..basic import KEQING_CORE_NAME, KEQING_VERSION
 
 
-# from src.keqing.basic.global_const import KEQING_CORE_NAME, KEQING_VERSION
+# from src.yuheng.basic.global_const import KEQING_CORE_NAME, KEQING_VERSION
 
 
 def get_server(server_name: str) -> Optional[str]:

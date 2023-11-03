@@ -1,17 +1,17 @@
 [tool.poetry]
-name = "__KEQING_CORE_NAME__"
-version = "__KEQING_VERSION__"
+name = "__YUHENG_CORE_NAME__"
+version = "__YUHENG_VERSION__"
 description = "A non-database Python base OSM data parser, with SQL operation simulated."
 authors = ["快乐的老鼠宝宝 <keaitianxinmail@qq.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/OSMChina/Keqing"
+repository = "https://github.com/OSMChina/Yuheng"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-packages = [{ include = "keqing", from = "src" }]
+packages = [{ include = "yuheng", from = "src" }]
 
 [tool.poetry.scripts]
 clean = "tool.clean:clean_dist"
