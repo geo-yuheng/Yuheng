@@ -5,7 +5,7 @@
 该语言是为了**查询**本地`.osm`数据，
 根据 [Overpass QL](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL) 修改而成的玩具语言。
 
-本语言是一个过程化，指令式的查询语言， 可以查询 Keqing_Sword 中一个 `Waifu` 对象中的 节点，路径和关系数据。
+本语言是一个过程化，指令式的查询语言， 可以查询 Yuheng 中一个 `Carto` 对象中的 节点，路径和关系数据。
 
 ## 词法定义
 

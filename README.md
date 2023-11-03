@@ -1,4 +1,4 @@
-# Keqing
+# Yuheng
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOSMChina%2FKeqing.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FOSMChina%2FKeqing?ref=badge_shield)
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
@@ -7,7 +7,7 @@
 
 A non-database Python base OSM data parser, with SQL operation simulated 
 
-[English](https://github.com/OSMChina/Keqing/#english) [简体中文](https://github.com/OSMChina/Keqing/#简体中文)
+[English](#english) [简体中文](#简体中文)
 
 ----------
 
@@ -20,9 +20,9 @@ This project is a Python-based manipulation library for `.osm` files
 ### Quick Start
 
 ```python
-import keqing
+import yuheng
 
-map = keqing.Waifu()
+map = yuheng.Waifu()
 map.read(mode="file", file_path="map.osm")
 ```
 
@@ -48,14 +48,6 @@ List alternatives that may be close and similar to this item, but have a differe
 
 ## Roadmap
 
-### Prior to version 1.0
-
-1. Can read and write files normally
-
-2. Officially renamed to Keqing (namespace reserved)
-
-### After version 1.0
-
 1. Accelerate the construction of multiple input and output streams
 
 2. Introduce coverage test
@@ -63,12 +55,6 @@ List alternatives that may be close and similar to this item, but have a differe
 3. Introduce the select statement, you can customize the query (expected to be released as 2.0)
 
 4. Improve the Diff work in the initial stage
-
-## Source of project name
-
-ACGN waifu of project leader @Jyunhou :
-
-<a herf="https://zh.wikipedia.org/wiki/%E5%8E%9F%E7%A5%9E%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#%E7%92%83%E6%9C%88%E4%B8%83%E6%98%9F"><img alt="Keqing" src="https://avatars.githubusercontent.com/u/45530478?v=4" width=249px></a>
 
 ----------
 
@@ -81,9 +67,9 @@ ACGN waifu of project leader @Jyunhou :
 ### 快速开始
 
 ```python
-import keqing
+import yuheng
 
-map = keqing.Waifu()
+map = yuheng.Waifu()
 map.read(mode="file", file_path="map.osm")
 ```
 
@@ -109,21 +95,10 @@ map.read(mode="file", file_path="map.osm")
 
 ## Roadmap
 
-### 1.0版本之前
-1. 能够正常读写到文件
-2. 正式重命名为Keqing（已预留命名空间）
-
-### 1.0版本之后
 1. 加快建设多种输入输出流
 2. 引入覆盖率测试
 3. 引入select语句，可以自定义查询（预计作为2.0发布）
 4. 初期完善Diff工作
-
-## 命名来源
-
-项目Leader @Jyunhou 钦点：
-
-<a herf="https://zh.wikipedia.org/wiki/%E5%8E%9F%E7%A5%9E%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8#%E7%92%83%E6%9C%88%E4%B8%83%E6%98%9F"><img alt="Keqing" src="https://avatars.githubusercontent.com/u/45530478?v=4" width=249px></a>
 
 ----------
 
