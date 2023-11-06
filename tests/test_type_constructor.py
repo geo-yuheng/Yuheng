@@ -1,5 +1,6 @@
 # 构造1个relation，2个way，几个node，看看way_dict/node_dict序列化后是否和预期一致（先做序列化）
 # （以及允许人工new对象）
+
 # 可能后期会导出存为.osm文件
 
 

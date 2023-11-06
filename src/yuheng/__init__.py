@@ -40,6 +40,7 @@ class Waifu:
 
     def meow(self):
         import logging
+        # from loguru import logger
 
         logging.basicConfig(level=logging.INFO)
         logging.info(

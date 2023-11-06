@@ -37,7 +37,7 @@ def get_overpass(overpass_name: str, server="") -> Optional[str]:
         },
         "osmfr": {
             "server": "OSM",
-            "url": "https//overpass.openstreetmap.fr/api/",
+            "url": "https://overpass.openstreetmap.fr/api/",
             "region": "global",
             "version": "unknown",
         },
