@@ -1,8 +1,8 @@
 from typing import Dict, List
 from xml.etree.ElementTree import Element
 
-from src.keqing.type.constraint import Bounds, Member
-from src.keqing.type.element import Node, Relation, Way
+from ..type.constraint import Bounds, Member
+from ..type.element import Node, Relation, Way
 
 
 def parse(element: Element):
@@ -59,9 +59,9 @@ def parse_relation(relation_dict, element: Element):
         if sub_element.tag == "member":
             member_list.append(
                 Member(
-                    sub_element.attrib["type"],
-                    int(sub_element.attrib["ref"]),
-                    sub_element.attrib["role"],
+                    element_type=sub_element.attrib["type"],
+                    role=sub_element.attrib["role"],
+                    ref=int(sub_element.attrib["ref"]),
                 )
             )
         elif sub_element.tag == "tag":

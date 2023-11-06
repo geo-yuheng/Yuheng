@@ -1,8 +1,10 @@
 from typing import Dict, List
 
-from src.keqing.basic.model import BaseOsmModel
+
 
 from .constraint import Member
+from .. import BaseOsmModel
+
 
 # TODO
 # limit check should be conduct while modify
@@ -13,6 +15,7 @@ class Node(BaseOsmModel):
     upstream_relation: list = [0]
 
     def __init__(self, attrib: Dict[str, str], tag_dict: Dict[str, str]):
+        # 应允许tags作为参数类型参与传参，给不给警告另说，这是作为poka-yoke的一部分
         super().__init__(attrib, tag_dict)
         if not attrib.get("lat") and not attrib.get("lon"):
             attrib["action"] = "delete"
@@ -84,6 +87,7 @@ class Way(BaseOsmModel):
         tag_dict: Dict[str, str],
         nd_list: List[int],
     ):
+        # 应允许tags，nodes，node_list作为参数类型参与传参，给不给警告另说，这是作为poka-yoke的一部分；虽然osm源文件就是nd，但是nd并不够elegent也不好记，反常规
         super().__init__(attrib, tag_dict)
         self.nds: List[int] = nd_list.copy()
         self.__nds_backup: List[int] = nd_list.copy()
@@ -128,6 +132,8 @@ class Relation(BaseOsmModel):
         tag_dict: Dict[str, str],
         member_list: List[Member],
     ):
+        # 应允许tags、members作为参数类型参与传参，给不给警告另说，这是作为poka-yoke的一部分
+        # 应允许members直接以list[list[str(id),str(role)]]（或者内层是元组、字典，都应该加以识别？）作为参数类型参与传参，必须给警告
         super().__init__(attrib, tag_dict)
         self.members: List[Member] = member_list.copy()
         self.__members_backup: List[Member] = member_list.copy()

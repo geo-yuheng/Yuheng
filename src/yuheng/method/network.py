@@ -1,14 +1,14 @@
 from typing import Optional
 
-from src.keqing import KEQING_CORE_NAME, KEQING_VERSION
+from ..basic import KEQING_CORE_NAME, KEQING_VERSION
 
 
-# from src.keqing.basic.global_const import KEQING_CORE_NAME, KEQING_VERSION
+# from src.yuheng.basic.global_const import KEQING_CORE_NAME, KEQING_VERSION
 
 
 def get_server(server_name: str) -> Optional[str]:
     server_list = {
-        "OSM": {"url": "https://www.openstreetmap.org/api/0.6/"},
+        "OSM": {"url": "https://api.openstreetmap.org/api/0.6/"},
         "OGF": {"url": "https://opengeofiction.net/api/0.6/"},
         "OHM": {"url": "https://www.openhistoricalmap.org/api/0.6"},
     }

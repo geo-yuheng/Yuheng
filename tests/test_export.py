@@ -1,11 +1,17 @@
 # 尝试直接另存，完全新建对象另存，在已有基础增删改后另存
 
+
+import os
+import sys
 import unittest
 import xml.sax
-from os.path import dirname, join, realpath
 from xml import sax
 
-from src import keqing
+current_dir = os.path.dirname(os.path.realpath(__file__))
+src_dir = os.path.join(current_dir, "../src")
+sys.path.append(src_dir)
+
+import keqing
 
 
 class TestExport(unittest.TestCase):
@@ -13,11 +19,15 @@ class TestExport(unittest.TestCase):
         self.map = keqing.Waifu()
         self.FILENAME_TARGET = "standard_load.osm"
         self.FILENAME_OUTPUT = "self_save_dist.osm"
-        self.path_target = join(
-            dirname(realpath(__file__)), "export", self.FILENAME_TARGET
+        self.path_target = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)),
+            "export",
+            self.FILENAME_TARGET,
         )
-        self.path_output = join(
-            dirname(realpath(__file__)), "export", self.FILENAME_OUTPUT
+        self.path_output = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)),
+            "export",
+            self.FILENAME_OUTPUT,
         )
         self.map.read(mode="file", file_path=self.path_target)
 

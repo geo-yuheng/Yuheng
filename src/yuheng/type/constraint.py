@@ -34,15 +34,28 @@ class Bounds:
 
 
 class Member:
-    def __init__(self, type: str, ref: int, role: str):
-        self.type: str = type
-        self.ref: int = ref
+    def __init__(self, element_type: str, role: str, ref=None, id=None):
+        self.type: str = element_type
         self.role: str = role
-        self.id: int = ref  # poka-yoke
-        self.__type_backup: str = type
-        self.__ref_backup: int = ref
+        self.__type_backup: str = element_type
         self.__role_backup: str = role
-        self.__id_backup: int = ref  # poka-yoke
+        if (ref is not None) or (id is not None):
+            if isinstance(ref, int):
+                ref_value: int = ref
+                id_value: int = ref
+            elif isinstance(id, int):
+                ref_value: int = id
+                id_value: int = id
+            else:
+                print("Both 'ref' and 'id' isn't int.")
+        else:
+            print(
+                "WARNING: Both 'ref' and 'id' haven't been offer while initializing Member class."
+            )
+        self.ref = ref_value
+        self.id = id_value
+        self.__ref_backup: int = ref_value
+        self.__id_backup: int = id_value
 
     def has_diff(self) -> bool:
         return (

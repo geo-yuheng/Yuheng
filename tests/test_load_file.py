@@ -1,7 +1,12 @@
+import os
+import sys
 import unittest
-from os.path import dirname, join, realpath
 
-from src import keqing
+current_dir = os.path.dirname(os.path.realpath(__file__))
+src_dir = os.path.join(current_dir, "../src")
+sys.path.append(src_dir)
+
+import keqing
 
 
 class TestLoadFile(unittest.TestCase):
@@ -10,7 +15,9 @@ class TestLoadFile(unittest.TestCase):
 
     def test_load_file_OSMWebsite(self):
         FILENAME = "OSMWebsite_export.osm"
-        data_path = join(dirname(realpath(__file__)), "extract", FILENAME)
+        data_path = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)), "extract", FILENAME
+        )
         self.map.read(mode="file", file_path=data_path)
         m = self.map
         assert len(m.bounds_list) == 1
@@ -20,7 +27,9 @@ class TestLoadFile(unittest.TestCase):
 
     def test_load_file_JOSM(self):
         FILENAME = "JOSM_export.osm"
-        data_path = join(dirname(realpath(__file__)), "extract", FILENAME)
+        data_path = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)), "extract", FILENAME
+        )
         self.map.read(mode="file", file_path=data_path)
         m = self.map
         assert len(m.bounds_list) == 1
@@ -30,7 +39,9 @@ class TestLoadFile(unittest.TestCase):
 
     def test_load_file_level0(self):
         FILENAME = "level0_export.osm"
-        data_path = join(dirname(realpath(__file__)), "extract", FILENAME)
+        data_path = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)), "extract", FILENAME
+        )
         self.map.read(mode="file", file_path=data_path)
         m = self.map
         # level0 test failed because current program can't handle element without lat, e.g.: <node id='3328159064' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>

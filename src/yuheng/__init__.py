@@ -11,26 +11,26 @@ from .basic.global_const import (
 )
 from .basic.model import BaseOsmModel
 from .method.network import get_headers, get_server
-from .method.parse_xml import (
+from .method.parse import (
     parse_node,
     parse_relation,
     parse_way,
     pre_parse_classify,
 )
-from .method.transform import prefix_abbreviation
+from .method.transform import prefix_normalization
 from .type.constraint import Bounds, Member
 from .type.element import Node, Relation, Way
 
 
 class Waifu:
     def __init__(self):
-        self.node_dict: Dict[int, Node] = {}
-        self.bounds_list: List[Bounds] = []
         self.version: str = "0.6"
-        self.way_dict: Dict[int, Way] = {}
         self.generator: str = (
             KEQING_CORE_NAME.replace("_Sword", "") + "/" + KEQING_VERSION
         )
+        self.bounds_list: List[Bounds] = []
+        self.node_dict: Dict[int, Node] = {}
+        self.way_dict: Dict[int, Way] = {}
         self.relation_dict: Dict[int, Relation] = {}
 
     @staticmethod
@@ -121,25 +121,39 @@ class Waifu:
         self.meow()
 
     def read_file(self, file_path: str):
-        tree: ElementTree = ET.parse(file_path)
-        root: Element = tree.getroot()
-        pre_parse_classify(
-            self.node_dict,
-            self.way_dict,
-            self.relation_dict,
-            self.bounds_list,
-            root,
-        )
+        try:
+            tree: ElementTree = ET.parse(file_path)
+            root: Element = tree.getroot()
+            pre_parse_classify(
+                self.node_dict,
+                self.way_dict,
+                self.relation_dict,
+                self.bounds_list,
+                root,
+            )
+        except FileNotFoundError:
+            print("Error: 文件不存在，请检查文件路径")
+        except PermissionError:
+            print("Error: 无权访问文件，请检查文件权限")
+        except ET.ParseError:
+            print("Error: XML 解析失败，请检查文件内容是否为有效的 XML 格式")
+        except Exception as e:
+            print(f"Error: 发生未知错误 - {str(e)}")
 
     def read_memory(self, text: str):
-        root: Element = ET.fromstring(text)
-        pre_parse_classify(
-            self.node_dict,
-            self.way_dict,
-            self.relation_dict,
-            self.bounds_list,
-            root,
-        )
+        try:
+            root: Element = ET.fromstring(text)
+            pre_parse_classify(
+                self.node_dict,
+                self.way_dict,
+                self.relation_dict,
+                self.bounds_list,
+                root,
+            )
+        except ET.ParseError:
+            print("Error: XML 解析失败，请检查文本内容是否为有效的 XML 格式")
+        except Exception as e:
+            print(f"Error: 发生未知错误 - {str(e)}")
 
     def read_network(self, mode="api", server="OSM", quantity="", **kwargs):
         # version problem haven't been introduced
@@ -183,12 +197,13 @@ class Waifu:
                 return True
 
         if have_multi_elements(element_id):
+            # if flag_allow_batch_download
             self.read_network_element_batch(element_id)
         else:
             if (
-                (type == "node" or type == "n")
-                or (type == "way" or type == "w")
-                or (type == "relation" or type == "r")
+                prefix_normalization(type) == "node"
+                or prefix_normalization(type) == "way"
+                or prefix_normalization(type) == "relation"
             ):
                 import requests
 
@@ -202,7 +217,7 @@ class Waifu:
                     pure_id = pure_id.split("v")[0]
                 url = (
                     get_server(server)
-                    + prefix_abbreviation(type, mode="p2prefix")
+                    + prefix_normalization(type, mode="p2prefix")
                     + "/"
                     + pure_id
                 )
@@ -295,6 +310,7 @@ class Waifu:
                 i.action = "modify"
             relation = base_osm_model_to_xml("relation", i)
             for member in i.members:
+                print(member.type, member.ref, member.role, member.id)
                 e: Element = Element("member")
                 e.attrib["type"] = member.type
                 e.attrib["ref"] = str(member.ref)
