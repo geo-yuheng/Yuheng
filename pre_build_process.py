@@ -19,8 +19,8 @@ def main() -> None:
     build_file_read = open("pyproject.toml", "r", encoding="utf-8")
     build_file_content = (
         build_file_read.read()
-        .replace("__KEQING_CORE_NAME__", global_const["KEQING_CORE_NAME"])
-        .replace("__KEQING_VERSION__", global_const["KEQING_VERSION"])
+        .replace("__YUHENG_CORE_NAME__", global_const["YUHENG_CORE_NAME"])
+        .replace("__YUHENG_VERSION__", global_const["YUHENG_VERSION"])
     )
     build_file_read.close()
     os.remove("pyproject.toml")

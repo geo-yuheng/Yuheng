@@ -30,7 +30,7 @@ map.read(mode="file", file_path="map.osm")
 
 ### Generate `.osm` file based on input
 
-**For more examples, see the [README file](/docs/README.md) in `/docs`, which lists the various functions of Keqing in detail**
+**For more examples, see the [README file](/docs/README.md) in `/docs`, which lists the various functions of Yuheng in detail**
 
 ## Features
 
@@ -77,7 +77,7 @@ map.read(mode="file", file_path="map.osm")
 
 ### 基于输入生成`.osm`文件
 
-**更多示例可见`/docs`中[README文件](/docs/README.md)，详细列出了Keqing的各种功能**
+**更多示例可见`/docs`中[README文件](/docs/README.md)，详细列出了Yuheng的各种功能**
 
 ## 特性
 

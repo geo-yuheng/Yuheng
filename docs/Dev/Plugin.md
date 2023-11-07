@@ -14,4 +14,4 @@ Detailed usage still in progress.
 
 ## Registry
 
-See: https://github.com/LaoshuBaby/keqing-plugin-registry
+See: https://github.com/LaoshuBaby/yuheng-plugin-registry

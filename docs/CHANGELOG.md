@@ -4,7 +4,7 @@
 
 ---
 
-## [1.0.2](https://github.com/LaoshuBaby/Keqing/compare/1.0.1...1.0.2)
+## [1.0.2](https://github.com/LaoshuBaby/Yuheng/compare/1.0.1...1.0.2)
 
 相比于1.0.1，这一版本更新的内容主要有：
 

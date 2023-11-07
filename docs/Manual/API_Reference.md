@@ -28,7 +28,7 @@ In a extracted OSM raw file you can see this attribute in XML element:
 
 + `id` and `version` is the only identifier of a OSM element if type was given.
 
-But in some kind of overpass-api response the `version` will be erased, that's because you only need `body` information for its shape, not whole `meta`. Currently Keqing can't support this kind of data.
+But in some kind of overpass-api response the `version` will be erased, that's because you only need `body` information for its shape, not whole `meta`. Currently Yuheng can't support this kind of data.
 
 **Those attributes are not such vital but also useful so almost all kinds of backend contain them:**
 
@@ -57,7 +57,7 @@ if this is a node, it was expected to carrying spatial information, so those 2 a
 
 ### General
 
-Keqing offer 3 kind of basic OSM element types, they are `Node`, `Way` and `Relation`, and they are inherited from super class `BaseOsmModel`(which will be replaced with `Base` in future version).
+Yuheng offer 3 kind of basic OSM element types, they are `Node`, `Way` and `Relation`, and they are inherited from super class `BaseOsmModel`(which will be replaced with `Base` in future version).
 
 They can be found in `src/kqs/type_element.py`.
 
@@ -102,11 +102,11 @@ The difference with `get_tag_all` is this method need you pass a overpass query 
 
 #### `get_upstream_way`
 
-Detail about this function can be found in https://github.com/OSMChina/Keqing/issues/5
+Detail about this function can be found in https://github.com/OSMChina/Yuheng/issues/5
 
 #### `get_upstream_relation`
 
-Detail about this function can be found in https://github.com/OSMChina/Keqing/issues/5
+Detail about this function can be found in https://github.com/OSMChina/Yuheng/issues/5
 
 #### `is_latest`
 

@@ -1,4 +1,4 @@
-# Guidebook of Keqing
+# Guidebook of Yuheng
 
 > NOTE: Current Guidebook only suitable for **0.6.0 stable version** 
 
@@ -13,7 +13,7 @@
 + 5. [Export]()
 
 
-# Manual of Keqing
+# Manual of Yuheng
 
 ## IO API
 

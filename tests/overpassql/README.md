@@ -1,6 +1,6 @@
 # OverpassQL
 
-This folder store every QL we used in Keqing's testing.
+This folder store every QL we used in Yuheng's testing.
 
 Some was imported in before commit's message.
 
