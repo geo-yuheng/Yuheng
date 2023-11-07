@@ -1,9 +1,9 @@
 from typing import Optional
 
-from ..basic import KEQING_CORE_NAME, KEQING_VERSION
+from ..basic import YUHENG_CORE_NAME, YUHENG_VERSION
 
 
-# from src.yuheng.basic.global_const import KEQING_CORE_NAME, KEQING_VERSION
+# from src.yuheng.basic.global_const import YUHENG_CORE_NAME, YUHENG_VERSION
 
 
 def get_server(server_name: str) -> Optional[str]:
@@ -72,12 +72,12 @@ def get_headers() -> dict:
     Generate custom headers for HTTP requests.
 
     The custom headers include the User-Agent, which is a combination of
-    KEQING_CORE_NAME and KEQING_VERSION (if possible and necessary, add the latest git commit hash).
+    YUHENG_CORE_NAME and YUHENG_VERSION (if possible and necessary, add the latest git commit hash).
 
     :return: A dictionary containing the custom headers.
     """
     return {
-        "User-Agent": KEQING_CORE_NAME
+        "User-Agent": YUHENG_CORE_NAME
         + "/ "
-        + KEQING_VERSION  # if possible and necessary, add latest git commit hash
+        + YUHENG_VERSION  # if possible and necessary, add latest git commit hash
     }

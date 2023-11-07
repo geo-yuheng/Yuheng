@@ -6,12 +6,12 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../src")
 sys.path.append(src_dir)
 
-import keqing
+import yuheng
 
 
 class TestLoadAbbreviation(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = keqing.Waifu()
+        self.map = yuheng.Waifu()
 
     def test_load_abbreviation(self):
         FILENAME = "OSMWebsite_export.osm"

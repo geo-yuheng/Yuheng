@@ -1,6 +1,6 @@
-from keqing.type.constraint import Bounds, Member
-from keqing.type.data import OSC, OSH, OSM
-from keqing.type.element import Node, Relation, Way
+from yuheng.type.constraint import Bounds, Member
+from yuheng.type.data import OSC, OSH, OSM
+from yuheng.type.element import Node, Relation, Way
 
 
 class Diff:

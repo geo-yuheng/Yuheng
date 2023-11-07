@@ -13,13 +13,13 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../src")
 sys.path.append(src_dir)
 
-import keqing
-from keqing.type import Node, Way, Relation, Member
+import yuheng
+from yuheng.type import Node, Way, Relation, Member
 
 
 class TestTypeConstructor(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = keqing.Waifu()
+        self.map = yuheng.Waifu()
 
     def test_construct_elements(self):
         carto = self.map

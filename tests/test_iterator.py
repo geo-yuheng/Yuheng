@@ -8,12 +8,12 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../src")
 sys.path.append(src_dir)
 
-import keqing
+import yuheng
 
 
 class TestIterator(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = keqing.Waifu()
+        self.map = yuheng.Waifu()
         FILENAME = "JOSM_export.osm"
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)), "extract", FILENAME

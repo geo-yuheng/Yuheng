@@ -11,12 +11,12 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../src")
 sys.path.append(src_dir)
 
-import keqing
+import yuheng
 
 
 class TestExport(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = keqing.Waifu()
+        self.map = yuheng.Waifu()
         self.FILENAME_TARGET = "standard_load.osm"
         self.FILENAME_OUTPUT = "self_save_dist.osm"
         self.path_target = os.path.join(

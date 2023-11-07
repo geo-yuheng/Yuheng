@@ -8,12 +8,12 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../src")
 sys.path.append(src_dir)
 
-import keqing
+import yuheng
 
 
 class TestLoadNetwork(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = keqing.Waifu()
+        self.map = yuheng.Waifu()
         FILENAME = "ogf_haresora_kinen.osm"
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)), "network", FILENAME
@@ -22,7 +22,7 @@ class TestLoadNetwork(unittest.TestCase):
 
     def test_load_network_single_element(self):
         m_local = self.map
-        m_network = keqing.Waifu()
+        m_network = yuheng.Waifu()
         # m_network.read(mode="n")
         m_network.read_network(
             server="OGF",
