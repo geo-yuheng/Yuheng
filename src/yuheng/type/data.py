@@ -1,4 +1,4 @@
-from keqing.basic.model import Base
+from yuheng.basic.model import Base
 
 
 class OSM(Base):

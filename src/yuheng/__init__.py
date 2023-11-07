@@ -5,9 +5,9 @@ from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
 from .basic.global_const import (
-    KEQING_CORE_NAME,
-    KEQING_START_ID,
-    KEQING_VERSION,
+    YUHENG_CORE_NAME,
+    YUHENG_START_ID,
+    YUHENG_VERSION,
 )
 from .basic.model import BaseOsmModel
 from .method.network import get_headers, get_server
@@ -26,7 +26,7 @@ class Waifu:
     def __init__(self):
         self.version: str = "0.6"
         self.generator: str = (
-            KEQING_CORE_NAME.replace("_Sword", "") + "/" + KEQING_VERSION
+            YUHENG_CORE_NAME.replace("_Sword", "") + "/" + YUHENG_VERSION
         )
         self.bounds_list: List[Bounds] = []
         self.node_dict: Dict[int, Node] = {}
@@ -40,6 +40,7 @@ class Waifu:
 
     def meow(self):
         import logging
+
         # from loguru import logger
 
         logging.basicConfig(level=logging.INFO)
@@ -47,7 +48,7 @@ class Waifu:
             str(
                 "\n"
                 + "==============================\n"
-                + "Keqing load successful!\n"
+                + "Yuheng load successful!\n"
                 + "==============================\n"
                 + (
                     "node    : "
@@ -84,7 +85,7 @@ class Waifu:
                     )
             if mode == "text" or mode == "t":
                 print(
-                    'WARN:"text" is not standard Keqing read mode, it caughted by fallback system and recognized as "memory"'
+                    'WARN:"text" is not standard Yuheng read mode, it caughted by fallback system and recognized as "memory"'
                 )
 
         time_start = time.time()
@@ -98,7 +99,7 @@ class Waifu:
             pre_read_warn(mode=mode, file_path=file_path, text=text, url=url)
             if file_path != "" and text != "":
                 print(
-                    "WARN:You add parameter for both file mode and memory mode! Keqing will choose you designated **file** mode"
+                    "WARN:You add parameter for both file mode and memory mode! Yuheng will choose you designated **file** mode"
                 )
             self.read_file(file_path)
         elif (
@@ -107,7 +108,7 @@ class Waifu:
             pre_read_warn(mode=mode, file_path=file_path, text=text, url=url)
             if file_path != "" and text != "":
                 print(
-                    "WARN:You add parameter for both file mode and memory mode! Keqing will choose you designated **memory** mode"
+                    "WARN:You add parameter for both file mode and memory mode! Yuheng will choose you designated **memory** mode"
                 )
             self.read_memory(text)
         elif mode == "network" or mode == "n":
@@ -339,7 +340,7 @@ class Waifu:
         :return: id
         """
         min_id: int = min(model_dict.keys())
-        min_id = min_id if min_id < 0 else int(KEQING_START_ID)
+        min_id = min_id if min_id < 0 else int(YUHENG_START_ID)
         return min_id - 1
 
     def flush(self, id: str) -> None:
