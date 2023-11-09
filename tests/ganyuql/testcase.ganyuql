@@ -1,0 +1,3 @@
+(["name:zh-Hans"="滬昆線"] AND ["name:zh-Hant"!="浙贛鐵路"]) -> (["name:zh-Hans"="沪昆线"] AND ["name:zh-Hant"="滬昆線"]) # c143819500
+(["name:zh-Hans"="滬昆線"] AND ["name:zh-Hant"="浙贛鐵路"]) -> (["name:zh"="沪昆线"] AND ["name:zh-Hans"="沪昆线"] AND ["name:zh-Hant"="滬昆線"]) # c143819659
+
