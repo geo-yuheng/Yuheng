@@ -37,3 +37,7 @@ Thanks for other developer work on OSM related manipulating library.
 + osm2pgsql
 + osm2pgrouting
 + osm2mysql, osm2mongo, and so on.
+
+### IDK.
+
++ https://github.com/clarisma/geodesk/
