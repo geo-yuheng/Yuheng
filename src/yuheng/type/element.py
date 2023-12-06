@@ -121,6 +121,12 @@ class Way(BaseOsmModel):
         # if len<API_LIMIT_MAX_ELEMENT_TAGS:
         # if len>0 and len<API_LIMIT_MAX_WAY_NODES:
         return True
+    
+    def reverse(self) -> Way:
+        """
+        return a object that reverse node order and keep other things no touched
+        """
+        pass
 
 
 class Relation(BaseOsmModel):
