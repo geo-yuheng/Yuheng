@@ -367,3 +367,18 @@ class Waifu:
         :return: 关系id
         """
         return self.__new_id(self.relation_dict)
+    
+    def clip(self) -> Waifu:
+        """
+        map=Waifu().clip(condiation)
+        condiation can be:
+
+        country_or_region_code (use built-in geojson)
+        user_defined.geojson
+        user_defined.poly
+        bbox
+        (point,radius) tuple or dict/list/2_arguments
+
+        maybe we need to create a boundary Class and OSM bound Class inherit from it.
+        """
+        pass
