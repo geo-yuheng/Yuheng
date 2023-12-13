@@ -74,6 +74,8 @@ class Base:
 
     # 其他方法应尽快完善
 
+    # 应提供 __copy__() 和 __deepcopy__()
+
     def flush(self):
         # 移除自身，但如果有被编辑应给予警告，在force的情况下可以强制从数据库中移除，即调用析构函数
         pass
