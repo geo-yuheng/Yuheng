@@ -10,7 +10,7 @@ from .basic.global_const import (
     YUHENG_VERSION,
 )
 from .basic.model import BaseOsmModel
-from .method.network import get_headers, get_server
+from .method.network import get_headers, get_endpoint_api
 from .method.parse import (
     parse_node,
     parse_relation,
@@ -217,10 +217,10 @@ class Waifu:
                     version = pure_id.split("v")[1]
                     pure_id = pure_id.split("v")[0]
                 url = (
-                    get_server(server)
-                    + prefix_normalization(type, mode="p2prefix")
-                    + "/"
-                    + pure_id
+                        get_endpoint_api(server)
+                        + prefix_normalization(type, mode="p2prefix")
+                        + "/"
+                        + pure_id
                 )
                 headers = get_headers()
                 print("url:", url)
@@ -367,7 +367,7 @@ class Waifu:
         :return: 关系id
         """
         return self.__new_id(self.relation_dict)
-    
+
     def clip(self) -> Waifu:
         """
         map=Waifu().clip(condiation)

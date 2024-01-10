@@ -6,7 +6,7 @@ from ..basic import YUHENG_CORE_NAME, YUHENG_VERSION
 # from src.yuheng.basic.global_const import YUHENG_CORE_NAME, YUHENG_VERSION
 
 
-def get_server(server_name: str) -> Optional[str]:
+def get_endpoint_api(server_name: str) -> Optional[str]:
     server_list = {
         "OSM": {"url": "https://api.openstreetmap.org/api/0.6/"},
         "OGF": {"url": "https://opengeofiction.net/api/0.6/"},
@@ -15,7 +15,7 @@ def get_server(server_name: str) -> Optional[str]:
     return server_list.get(server_name)["url"]
 
 
-def get_overpass(overpass_name: str, server="") -> Optional[str]:
+def get_endpoint_overpass(overpass_name: str, server="") -> Optional[str]:
     overpass_list = {
         "osmde": {
             "server": "OSM",
