@@ -7,16 +7,27 @@ from ..basic import YUHENG_CORE_NAME, YUHENG_VERSION
 
 
 def get_endpoint_api(server_name: str) -> Optional[str]:
-    server_list = {
-        "OSM": {"url": "https://api.openstreetmap.org/api/0.6/"},
-        "OGF": {"url": "https://opengeofiction.net/api/0.6/"},
-        "OHM": {"url": "https://www.openhistoricalmap.org/api/0.6"},
+    api_server_list = {
+        "OSM": {"url": "https://api.openstreetmap.org/api", "version": 0.6},
+        "OGF": {"url": "https://opengeofiction.net/api", "version": 0.6},
+        "OHM": {
+            "url": "https://www.openhistoricalmap.org/api",
+            "version": 0.6,
+        },
+        "OSM-api06": {
+            "url": "https://api06.dev.openstreetmap.org/api",
+            "version": 0.6,
+        },
+        "OSM-dev": {
+            "url": "https://master.apis.dev.openstreetmap.org/api",
+            "version": 0.6,
+        },
     }
-    return server_list.get(server_name)["url"]
+    return api_server_list.get(server_name)["url"]
 
 
 def get_endpoint_overpass(overpass_name: str, server="") -> Optional[str]:
-    overpass_list = {
+    overpass_server_list = {
         "osmde": {
             "server": "OSM",
             "url": "https://overpass-api.de/api/",
@@ -57,14 +68,14 @@ def get_endpoint_overpass(overpass_name: str, server="") -> Optional[str]:
 
     if server != "":
         if (
-            overpass_list.get(overpass_name) != None
-            and overpass_list.get(overpass_name)["server"] != server
+            overpass_server_list.get(overpass_name) != None
+            and overpass_server_list.get(overpass_name)["server"] != server
         ):
-            return overpass_list.get(overpass_name)["url"]
+            return overpass_server_list.get(overpass_name)["url"]
         else:
             return None
     else:
-        return overpass_list.get(overpass_name)["url"]
+        return overpass_server_list.get(overpass_name)["url"]
 
 
 def get_headers() -> dict:

@@ -217,10 +217,10 @@ class Waifu:
                     version = pure_id.split("v")[1]
                     pure_id = pure_id.split("v")[0]
                 url = (
-                        get_endpoint_api(server)
-                        + prefix_normalization(type, mode="p2prefix")
-                        + "/"
-                        + pure_id
+                    get_endpoint_api(server)
+                    + prefix_normalization(type, mode="p2prefix")
+                    + "/"
+                    + pure_id
                 )
                 headers = get_headers()
                 print("url:", url)
