@@ -9,7 +9,7 @@ class Bounds:
         self.max_lon: float = float(attrib["maxlon"])
         self.origin: str = attrib.get("origin", "")
 
-    def align_serialization(
+    def bound_serialization(
         self, serialize_format="SS_WW_NN_EE", escape=True
     ) -> str:
         """
@@ -37,7 +37,7 @@ class Bounds:
             .replace("EE", num_serialization(max_lon))
         )
 
-    def align_deserialization(
+    def bound_deserialization(
         self, serialize_format="SS_WW_NN_EE"
     ):  # ->Tuple[float,float,float,float]:
         # return (min_lat,min_lon,max_lat,max_lon)
