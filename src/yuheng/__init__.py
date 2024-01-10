@@ -222,6 +222,7 @@ class Waifu:
         if source == "api":
             # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
             # need to add server change function
+            # https://www.openstreetmap.org/api/0.6/map?bbox=W,S,E,N
             pass
         if source == "overpass":
             # def query_in_type(type: list, query_content: str) -> Waifu:

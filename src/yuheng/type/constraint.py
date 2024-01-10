@@ -9,25 +9,36 @@ class Bounds:
         self.max_lon: float = float(attrib["maxlon"])
         self.origin: str = attrib.get("origin", "")
 
-    def align_serialization(self) -> str:
-        serialize_format = "SB_WB_NB_EB"
+    def align_serialization(
+        self, serialize_format="SS_WW_NN_EE", escape=True
+    ) -> str:
+        """
+        选择重复书写两次字母是因为避免单独的N出现。
+        因为P/N被用于转义正负数，D被用于转义小数点
 
-        # another choise is don't use B in output_format, and use A/B insteal of P/N for plus or minus sign
-        def num_serialization(degree: float):
-            if degree >= 0:
-                return "P" + str(degree).replace(".", "D")
+        常见顺序有多种，因此您应当指定输出顺序，否则使用默认顺序：
+        * 在OSMAPI后端：https://www.openstreetmap.org/api/0.6/map?bbox=W,S,E,N
+        * 在OverpassQL中：[bbox:south,west,north,east]
+        """
+
+        def num_serialization(degree: float, escape: bool):
+            if escape:
+                if degree >= 0:
+                    return "P" + str(degree).replace(".", "D")
+                else:
+                    return str(degree).replace("-", "N").replace(".", "D")
             else:
-                return str(degree).replace("-", "N").replace(".", "D")
+                return str(degree)
 
         return (
-            serialize_format.replace("SB", num_serialization(min_lat))
-            .replace("WB", num_serialization(min_lon))
-            .replace("NB", num_serialization(max_lat))
-            .replace("EB", num_serialization(max_lon))
+            serialize_format.replace("SS", num_serialization(min_lat))
+            .replace("WW", num_serialization(min_lon))
+            .replace("NN", num_serialization(max_lat))
+            .replace("EE", num_serialization(max_lon))
         )
 
     def align_deserialization(
-        self, serialize_format="SB_WB_NB_EB"
+        self, serialize_format="SS_WW_NN_EE"
     ):  # ->Tuple[float,float,float,float]:
         # return (min_lat,min_lon,max_lat,max_lon)
         pass
