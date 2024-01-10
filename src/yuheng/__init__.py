@@ -168,7 +168,7 @@ class Waifu:
 
             return requests.get(
                 url=server + urllib.parse.quote(ql_content),
-                headers={"UA": "WOSHINIDIE"},
+                headers=get_headers(),
             ).text
 
         if kwargs.get(

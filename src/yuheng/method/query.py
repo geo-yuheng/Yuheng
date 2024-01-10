@@ -41,8 +41,7 @@ def ganyu_query(query_content: str) -> None:
     pass
 
 
-def query(query_content: str, query_language: str) -> None:
-    query_language: str = "oVerPass"
+def query(query_content: str, query_language="oVerPass") -> None:
     name_list_overpass: List[str] = [
         name.lower()
         for name in [
