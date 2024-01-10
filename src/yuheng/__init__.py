@@ -186,6 +186,14 @@ class Waifu:
             # need to add server change function
             pass
         if source == "overpass":
+            # def query_in_type(type: list, query_content: str) -> Waifu:
+            #     return Waifu()
+            # 不能直接返回Waifu，因为并不打算撤销这套__init__里放单独一个waifu的结构。这里只能返回其他内容（如xml/json）再在waifu里面parse它
+
+            # query(
+            #     open("../../../tests/overpassql/telecommunication.overpassql"), "Overpass"
+            # )
+            # 应提供允许调用本地overpassql文件而非生成的途径（如果不生成就不用调用query模块生成QL）
             pass
         pass
 

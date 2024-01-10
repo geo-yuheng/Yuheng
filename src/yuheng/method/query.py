@@ -1,13 +1,13 @@
-# from src.yuheng.plugin.overpass.overpass_parse import remove_comment
-
-
-# def query_in_type(type: list, query_content: str) -> Waifu:
-#     return Waifu()
-# 不能直接返回Waifu，因为并不打算撤销这套__init__里放单独一个waifu的结构。这里只能返回其他内容（如xml/json）再在waifu里面parse它
+# query生成了以后，query模块并不负责执行，只是把QL返回给需要QL的上层函数
+# 调用query模块的上层函数一般是从network read driver在指定overpass作为来源后，希望生成一个QL
+# 在它获取QL后，也不会要求network模块提供conductor来执行，它自己就是执行网络请求（底层requests/httpx）的模块
+# 后话：它读取了以后会送去parse
 
 
 def overpass_query(query_content: str) -> None:
     print("NOTE: currently only support basic ql")
+    # from src.yuheng.plugin.overpass.overpass_parse import remove_comment
+    # # 默认不调用overpass插件的方法，因为这就和lxml与regex一样，默认的xml和re也不是不能用，只是如果基本的检测能跑就行了，组合一下类型，只用yuheng默认的方法
     # lines = (
     #     remove_comment(
     #         query_content,
@@ -17,7 +17,6 @@ def overpass_query(query_content: str) -> None:
     #     .replace(")", "")
     #     .split(";")
     # )
-    # 默认不调用overpass插件的方法，因为这就和lxml与regex一样，默认的xml和re也不是不能用，只是如果基本的检测能跑就行了，组合一下类型，只用yuheng默认的方法
     lines = query_content
     types = ["node", "way", "relation"] + ["nw", "nr", "wr", "nwr"]
     operations = set()
@@ -55,13 +54,3 @@ def query(query_content: str, query_language: str) -> None:
         overpass_query(query_content)
     if query_language in name_list_ganyu:
         ganyu_query(query_content)
-
-
-# query生成了以后，query模块并不负责执行，只是把QL返回给需要QL的上层函数
-# 调用query模块的上层函数一般是从network read driver在指定overpass作为来源后，希望生成一个QL
-# 在它获取QL后，也不会要求network模块提供conductor来执行，它自己就是执行网络请求（底层requests/httpx）的模块
-# 后话：它读取了以后会送去parse
-
-# query(
-#     open("../../../tests/overpassql/telecommunication.overpassql"), "Overpass"
-# )
