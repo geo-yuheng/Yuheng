@@ -10,6 +10,7 @@ from .basic.global_const import (
     YUHENG_VERSION,
 )
 from .basic.model import BaseOsmModel
+from .method import query
 from .method.network import get_headers, get_endpoint_api
 from .method.parse import (
     parse_node,
@@ -157,10 +158,14 @@ class Waifu:
             print(f"Error: 发生未知错误 - {str(e)}")
 
     def read_network(self, source="api", server="OSM", quantity="", **kwargs):
-        # version problem haven't been introduced
+        # 所有类型的网络请求最终都将返回一个work_load，最后转给read_memory读取这个work_load
         # source： 是从api读还是 overpass读，还是其他网站的野数据（比如IA恰好存了一个xml之类的情况）
         # server：填OSM/OGF或者osmru/osmde/kumi之类的
         # quantity：很遗憾我忘了我当时取这个名字啥意思了
+        # optional arguments:
+        # * allow_cache: 将会把请求的各种信息（含url，主要是url）hash以后创建一个cache文件名，如果重复请求的话不需要对代码作出修改就自动用缓存，避免反复打目标机
+        # * local_overpassql_path：overpass语句不会自动生成而是照抄本地文件内的
+        # * version： 读取指定版本的文件
 
         def conduct_query_on_overpass(ql_content: str, server="") -> str:
             import requests
@@ -174,9 +179,9 @@ class Waifu:
         if kwargs.get(
             "use_overpass_query"
         ):  # 其实我还没想好分source和分quantity（看起来是根据id/区域等形状区分）谁先谁后所以xjb写一个逻辑
-            if kwargs.get("local_overpass_ql_file_path"):
+            if kwargs.get("local_overpassql_path"):
                 ql_file = open(
-                    kwargs.get("local_overpass_ql_file_path"),
+                    kwargs.get("local_overpassql_path"),
                     "r",
                     encoding="utf-8",
                 )
@@ -184,7 +189,7 @@ class Waifu:
                 ql_file.close()
             else:
                 ql_content = query("", "Overpass")
-            conduct_query_on_overpass(ql_content, "osmde")
+            work_load = conduct_query_on_overpass(ql_content, "osmde")
 
         if quantity != "":
             if quantity == "area":
