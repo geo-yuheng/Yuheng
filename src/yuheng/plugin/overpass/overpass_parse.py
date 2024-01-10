@@ -3,6 +3,7 @@
 # 移除注释就是对注释体进行替换的处理（对于匹配过程是后处理，但整个移除注释对于解析过程是预处理），不过处理方式不一样。
 # 块注释是直接替换为""，行注释则是替换为"\n"以保证这一行还在（虽然对于overpass来说是比较抗折行的不给\n也行，但毕竟最小程度降低对原来信息的改动）
 
+
 def remove_comment(query_content: str) -> str:
     # priority: block comment > line comment
     # block comment

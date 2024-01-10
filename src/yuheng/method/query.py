@@ -1,4 +1,4 @@
-from src.yuheng.plugin.overpass.parse import remove_comment
+# from src.yuheng.plugin.overpass.overpass_parse import remove_comment
 
 
 # def query_in_type(type: list, query_content: str) -> Waifu:
@@ -8,13 +8,17 @@ from src.yuheng.plugin.overpass.parse import remove_comment
 
 def overpass_query(query_content: str) -> None:
     print("NOTE: currently only support basic ql")
-    lines = (
-        remove_comment(query_content, )
-        .replace("\n", "") # 解析时是否按单行解析应设置为单独的参数，因为和parse分离了，要如何传参是个大问题。
-        .replace("(", "")
-        .replace(")", "")
-        .split(";")
-    )
+    # lines = (
+    #     remove_comment(
+    #         query_content,
+    #     )
+    #     .replace("\n", "")  # 解析时是否按单行解析应设置为单独的参数，因为和parse分离了，要如何传参是个大问题。
+    #     .replace("(", "")
+    #     .replace(")", "")
+    #     .split(";")
+    # )
+    # 默认不调用overpass插件的方法，因为这就和lxml与regex一样，默认的xml和re也不是不能用，只是如果基本的检测能跑就行了，组合一下类型，只用yuheng默认的方法
+    lines = query_content
     types = ["node", "way", "relation"] + ["nw", "nr", "wr", "nwr"]
     operations = set()
     for line in lines:
