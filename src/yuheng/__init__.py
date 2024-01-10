@@ -156,15 +156,44 @@ class Waifu:
         except Exception as e:
             print(f"Error: 发生未知错误 - {str(e)}")
 
-    def read_network(self, mode="api", server="OSM", quantity="", **kwargs):
+    def read_network(self, source="api", server="OSM", quantity="", **kwargs):
         # version problem haven't been introduced
+        # source： 是从api读还是 overpass读，还是其他网站的野数据（比如IA恰好存了一个xml之类的情况）
+        # server：填OSM/OGF或者osmru/osmde/kumi之类的
+        # quantity：很遗憾我忘了我当时取这个名字啥意思了
+
+        def conduct_query_on_overpass(ql_content: str, server="") -> str:
+            import requests
+            import urllib.parse
+
+            return requests.get(
+                url=server + urllib.parse.quote(ql_content),
+                headers={"UA": "WOSHINIDIE"},
+            ).text
+
+        if kwargs.get(
+            "use_overpass_query"
+        ):  # 其实我还没想好分source和分quantity（看起来是根据id/区域等形状区分）谁先谁后所以xjb写一个逻辑
+            if kwargs.get("local_overpass_ql_file_path"):
+                ql_file = open(
+                    kwargs.get("local_overpass_ql_file_path"),
+                    "r",
+                    encoding="utf-8",
+                )
+                ql_content = ql_file.read()
+                ql_file.close()
+            else:
+                ql_content = query("", "Overpass")
+            conduct_query_on_overpass(ql_content, "osmde")
+
         if quantity != "":
             if quantity == "area":
                 # parse SWNE
-                self.read_network_area()
+                self.read_network_area(source=source, server=server)
             else:
                 if kwargs.get("element_id"):
-                    self.read_network_element(
+                    # 但element_id是单个还是多个也不知道
+                    self.read_network_element_singleormulti(
                         element_id=kwargs["element_id"],
                         type=kwargs.get("type"),
                         server=server,
@@ -178,7 +207,6 @@ class Waifu:
                 pass
             else:
                 return None
-        pass
 
     def read_network_area(self, S, W, N, E, source="api", server="OSM"):
         if source == "api":
@@ -197,9 +225,13 @@ class Waifu:
             pass
         pass
 
-    def read_network_element(
+    def read_network_element(self):
+        pass
+
+    def read_network_element_singleormulti(
         self, element_id: str, type="undefined", source="api", server="OSM"
     ):
+        # 这个函数目前写的太乱了，后续重写一个不管多个单个都能读的read_network_element
         def have_multi_elements(element_id) -> bool:
             if "," in element_id:
                 # have comma or space between multi element
