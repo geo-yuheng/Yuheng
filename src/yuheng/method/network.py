@@ -8,8 +8,8 @@ from ..basic import YUHENG_CORE_NAME, YUHENG_VERSION
 # network 模块并不负责从网上读取数据，它负责的是endpoint和各种网络相关环境的处理。而从网络上读取数据是作为read driver的一种（因为并不仅仅有一种来源的driver）
 
 
-def get_endpoint_api(server_name: str) -> Optional[str]:
-    api_server_list = {
+def get_endpoint_api(endpoint_name: str) -> Optional[str]:
+    endpoint_api_list = {
         "OSM": {"url": "https://api.openstreetmap.org/api", "version": 0.6},
         "OGF": {"url": "https://opengeofiction.net/api", "version": 0.6},
         "OHM": {
@@ -25,11 +25,11 @@ def get_endpoint_api(server_name: str) -> Optional[str]:
             "version": 0.6,
         },
     }
-    return api_server_list.get(server_name)["url"]
+    return endpoint_api_list.get(endpoint_name)["url"]
 
 
-def get_endpoint_overpass(overpass_name: str, server="") -> Optional[str]:
-    overpass_server_list = {
+def get_endpoint_overpass(endpoint_name: str, server="") -> Optional[str]:
+    endpoint_overpass_list = {
         "osmde": {
             "server": "OSM",
             "url": "https://overpass-api.de/api/",
@@ -68,16 +68,7 @@ def get_endpoint_overpass(overpass_name: str, server="") -> Optional[str]:
         },
     }
 
-    if server != "":
-        if (
-            overpass_server_list.get(overpass_name) != None
-            and overpass_server_list.get(overpass_name)["server"] != server
-        ):
-            return overpass_server_list.get(overpass_name)["url"]
-        else:
-            return None
-    else:
-        return overpass_server_list.get(overpass_name)["url"]
+    return endpoint_overpass_list.get(endpoint_name)["url"]
 
 
 def get_headers() -> dict:
