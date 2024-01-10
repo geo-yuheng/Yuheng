@@ -5,6 +5,8 @@ from ..basic import YUHENG_CORE_NAME, YUHENG_VERSION
 
 # from src.yuheng.basic.global_const import YUHENG_CORE_NAME, YUHENG_VERSION
 
+# network 模块并不负责从网上读取数据，它负责的是endpoint和各种网络相关环境的处理。而从网络上读取数据是作为read driver的一种（因为并不仅仅有一种来源的driver）
+
 
 def get_endpoint_api(server_name: str) -> Optional[str]:
     api_server_list = {

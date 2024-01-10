@@ -57,6 +57,11 @@ def query(query_content: str, query_language: str) -> None:
         ganyu_query(query_content)
 
 
+# query生成了以后，query模块并不负责执行，只是把QL返回给需要QL的上层函数
+# 调用query模块的上层函数一般是从network read driver在指定overpass作为来源后，希望生成一个QL
+# 在它获取QL后，也不会要求network模块提供conductor来执行，它自己就是执行网络请求（底层requests/httpx）的模块
+# 后话：它读取了以后会送去parse
+
 # query(
 #     open("../../../tests/overpassql/telecommunication.overpassql"), "Overpass"
 # )

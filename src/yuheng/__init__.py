@@ -180,17 +180,17 @@ class Waifu:
                 return None
         pass
 
-    def read_network_area(self, S, W, N, E, mode="api", server="OSM"):
-        if mode == "api":
+    def read_network_area(self, S, W, N, E, source="api", server="OSM"):
+        if source == "api":
             # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
             # need to add server change function
             pass
-        if mode == "overpass":
+        if source == "overpass":
             pass
         pass
 
     def read_network_element(
-        self, element_id: str, type="undefined", mode="api", server="OSM"
+        self, element_id: str, type="undefined", source="api", server="OSM"
     ):
         def have_multi_elements(element_id) -> bool:
             if "," in element_id:
