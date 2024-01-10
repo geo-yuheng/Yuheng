@@ -158,7 +158,8 @@ class Waifu:
             print(f"Error: 发生未知错误 - {str(e)}")
 
     def read_network(self, source="api", server="OSM", quantity="", **kwargs):
-        # 所有类型的网络请求最终都将返回一个work_load，最后转给read_memory读取这个work_load
+        # 所有类型的网络请求最终都将返回一个work_url，在read_network中调用worker来获取work_load，最后转给read_memory读取这个work_load
+        # 无论如何先获取url，才能算hash确定是否使用cache
         # source： 是从api读还是 overpass读，还是其他网站的野数据（比如IA恰好存了一个xml之类的情况）
         # server：填OSM/OGF或者osmru/osmde/kumi之类的
         # quantity：很遗憾我忘了我当时取这个名字啥意思了
@@ -167,14 +168,18 @@ class Waifu:
         # * local_overpassql_path：overpass语句不会自动生成而是照抄本地文件内的
         # * version： 读取指定版本的文件
 
-        def conduct_query_on_overpass(ql_content: str, server="") -> str:
+        def worker(url: str) -> str:
             import requests
-            import urllib.parse
 
             return requests.get(
-                url=server + urllib.parse.quote(ql_content),
+                url=url,
                 headers=get_headers(),
             ).text
+
+        def url_of_overpass_quary(ql_content: str, server="") -> str:
+            import urllib.parse
+
+            return server + urllib.parse.quote(ql_content)
 
         if kwargs.get(
             "use_overpass_query"
@@ -189,18 +194,16 @@ class Waifu:
                 ql_file.close()
             else:
                 ql_content = query("", "Overpass")
-            work_load = conduct_query_on_overpass(ql_content, "osmde")
+            work_url = url_of_overpass_quary(ql_content, "osmde")
 
         if quantity != "":
             if quantity == "area":
                 # parse SWNE
-                work_load = self.read_network_area(
-                    source=source, server=server
-                )
+                work_url = self.read_network_area(source=source, server=server)
             else:
                 if kwargs.get("element_id"):
                     # 但element_id是单个还是多个也不知道
-                    work_load = self.read_network_element_singleormulti(
+                    work_load = self.read_network_element_single(
                         element_id=kwargs["element_id"],
                         type=kwargs.get("type"),
                         server=server,
@@ -211,14 +214,15 @@ class Waifu:
         else:
             if kwargs.get("url"):
                 # download directly, then judge
-                work_load = ""
+                work_url = ""
             else:
                 return None
 
+        work_load = worker(work_url)
         self.read_memory(work_load)
 
     def read_network_area(self, S, W, N, E, source="api", server="OSM"):
-        work_load = ""
+        work_url = ""
         if source == "api":
             # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
             # need to add server change function
@@ -234,67 +238,57 @@ class Waifu:
             # )
             # 应提供允许调用本地overpassql文件而非生成的途径（如果不生成就不用调用query模块生成QL）
             pass
-        return work_load
+        return work_url
 
     def read_network_element(self):
-        work_load = ""
-        return work_load
-
-    def read_network_element_singleormulti(
-        self, element_id: str, type="undefined", source="api", server="OSM"
-    ):
-        # 这个函数目前写的太乱了，后续重写一个不管多个单个都能读的read_network_element
-        work_load = ""
-
+        # 后续重写一个不管single/multi都能生成url的read_network_element
         def have_multi_elements(element_id) -> bool:
             if "," in element_id:
                 # have comma or space between multi element
                 return True
 
-        if have_multi_elements(element_id):
-            # if flag_allow_batch_download
-            self.read_network_element_batch(element_id)
+        work_url = ""
+        return work_url
+
+    def read_network_element_single(
+        self, element_id: str, type="undefined", source="api", server="OSM"
+    ):
+        work_url = ""
+
+        if (
+            prefix_normalization(type) == "node"
+            or prefix_normalization(type) == "way"
+            or prefix_normalization(type) == "relation"
+        ):
+            import requests
+
+            pure_id = (
+                element_id.replace("n", "").replace("w", "").replace("r", "")
+            )
+            if "v" in pure_id:
+                version = pure_id.split("v")[1]
+                pure_id = pure_id.split("v")[0]
+            work_url = (
+                get_endpoint_api(server)
+                + prefix_normalization(type, mode="p2prefix")
+                + "/"
+                + pure_id
+            )
+
         else:
-            if (
-                prefix_normalization(type) == "node"
-                or prefix_normalization(type) == "way"
-                or prefix_normalization(type) == "relation"
-            ):
-                import requests
+            # detect type single request
+            # warn that if parameter type and element_id implied type don't match
+            pass
 
-                pure_id = (
-                    element_id.replace("n", "")
-                    .replace("w", "")
-                    .replace("r", "")
-                )
-                if "v" in pure_id:
-                    version = pure_id.split("v")[1]
-                    pure_id = pure_id.split("v")[0]
-                url = (
-                    get_endpoint_api(server)
-                    + prefix_normalization(type, mode="p2prefix")
-                    + "/"
-                    + pure_id
-                )
-                headers = get_headers()
-                print("url:", url)
-                print("headers:", headers)
-                response = requests.get(url=url, headers=headers).text
-                print(response)
-                work_load = response
-            else:
-                # detect type single request
-                # warn that if parameter type and element_id implied type don't match
-                pass
+        return work_url
 
-        return work_load
-
-    def read_network_element_batch(
+    def read_network_element_multi(
         self, element_id=None, mode="api", server="OSM"
     ):
+        work_url = ""
         # it can be string or list
         # https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_/api/0.6/[nodes|ways|relations]?#parameters
-        pass
+        return work_url
 
     def write(self, mode=None, file_path="", data_driver=""):
         def is_limit_valid(ignore=False):
