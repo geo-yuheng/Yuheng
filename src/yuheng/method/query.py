@@ -2,6 +2,7 @@
 # 调用query模块的上层函数一般是从network read driver在指定overpass作为来源后，希望生成一个QL
 # 在它获取QL后，也不会要求network模块提供conductor来执行，它自己就是执行网络请求（底层requests/httpx）的模块
 # 后话：它读取了以后会送去parse
+from typing import List
 
 
 def overpass_query(query_content: str) -> None:
@@ -41,16 +42,19 @@ def ganyu_query(query_content: str) -> None:
 
 
 def query(query_content: str, query_language: str) -> None:
-    query_language = "Overpass"
-    name_list_overpass = [
-        "Overpass",
-        "OverpassQuery",
-        "OverpassQL",
-        "OverpassAPI",
-        "OverpassTurbo",
+    query_language: str = "oVerPass"
+    name_list_overpass: List[str] = [
+        name.lower()
+        for name in [
+            "Overpass",
+            "OverpassQuery",
+            "OverpassQL",
+            "OverpassAPI",
+            "OverpassTurbo",
+        ]
     ]
-    name_list_ganyu = ["Ganyu", "Yeyang"]
-    if query_language in name_list_overpass:
+    name_list_ganyu: List[str] = [name.lower() for name in ["Ganyu", "Yeyang"]]
+    if query_language.lower() in name_list_overpass:
         overpass_query(query_content)
-    if query_language in name_list_ganyu:
+    if query_language.lower() in name_list_ganyu:
         ganyu_query(query_content)
