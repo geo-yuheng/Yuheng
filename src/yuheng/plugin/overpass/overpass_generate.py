@@ -41,9 +41,28 @@ def gen_metadata(**kwargs) -> Optional[str]:
             # * csv
             # * custom
             # * popup
-            if metadata_entry_key == "out" and metadata_entry_value == "csv":
+            if metadata_entry_key == "out" and metadata_entry_value in [
+                "xml",
+                "json",
+            ]:
+                buffer += wrap_metadata(
+                    metadata_entry_key, metadata_entry_value
+                )
+                # There should be a lint about final part after output format detected, I guess, such as geom/meta/body.
+            elif metadata_entry_key == "out" and metadata_entry_value == "csv":
                 pass
-            buffer += wrap_metadata(metadata_entry_key, metadata_entry_value)
+            elif metadata_entry_key == "out" and metadata_entry_value in [
+                "custom",
+                "popup",
+            ]:
+                print(
+                    "This kind of output format will lead to a OSM3S Response, which currently not supported by Yuheng."
+                    + "See more about this format in https://github.com/drolbr/Overpass-API/"
+                )
+            else:
+                buffer += wrap_metadata(
+                    metadata_entry_key, metadata_entry_value
+                )
     if buffer != "":
         return buffer + ";"
     else:
