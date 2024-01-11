@@ -1,4 +1,4 @@
-from typing import Optional, Union
+from typing import Optional, Union, List
 
 query_template = "<metadata_part>\n<condition_part>\n<output_part>"
 
@@ -11,23 +11,28 @@ def gen_metadata(**kwargs) -> Optional[str]:
             value = str(value)
         return f"[{key}:{value}]"
 
-    query_option_key = [
-        "amenity",
-        "name",
-        "name:en",
-        "short_name",
-        "addr:province",
-        "operators",
-    ]
-    OVERPASS_QL_CONTENTcsv = """
-[out:csv(
-    ::type,
-    ::id,{{键}};
-    true; "|"
-)];"""
+    query_key_list: List[str] = kwargs.get("query_key_list", [])
+    metadata_csv_template = "[out:csv({{content}})];"
+    # #
+    # ::type,
+    # ::id,{{key_list}};
+    # true; "|"
 
-    OVERPASS_QL_CONTENTcsv.replace(
-        "{{键}}", ",".join(['"' + i + '"' for i in query_option_key])
+    def gen_magic_key(**kwargs):
+        buffer=""
+        if kwargs.get("type"):
+            buffer+="::type"
+        if kwargs.get("id"):
+            buffer+="::id"
+        if kwargs.get("type_str"):
+            buffer+="::\"type\""
+        if kwargs.get("id_str"):
+            buffer+="::\"id\""
+        return buffer
+
+    def gen_csv_key_list ():
+        return gen_magic_key() + ",".join(
+        ['"' + i + '"' for i in query_key_list]
     )
 
     if kwargs.get("metadata_entry_data"):
@@ -35,7 +40,14 @@ def gen_metadata(**kwargs) -> Optional[str]:
             metadata_entry_value = kwargs.get("metadata_entry_data").get(
                 metadata_entry_key, ""
             )
-            # possible value for out:
+            # possible key:
+            # * out
+            # * timeout
+            # * maxsize
+            # * bbox
+            # * date
+            # * diff
+            # possible value for "out" key:
             # * xml
             # * json
             # * csv
@@ -50,7 +62,7 @@ def gen_metadata(**kwargs) -> Optional[str]:
                 )
                 # There should be a lint about final part after output format detected, I guess, such as geom/meta/body.
             elif metadata_entry_key == "out" and metadata_entry_value == "csv":
-                pass
+                buffer+=
             elif metadata_entry_key == "out" and metadata_entry_value in [
                 "custom",
                 "popup",
