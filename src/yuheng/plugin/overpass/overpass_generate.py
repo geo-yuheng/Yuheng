@@ -11,13 +11,39 @@ def gen_metadata(**kwargs) -> Optional[str]:
             value = str(value)
         return f"[{key}:{value}]"
 
+    query_option_key = [
+        "amenity",
+        "name",
+        "name:en",
+        "short_name",
+        "addr:province",
+        "operators",
+    ]
+    OVERPASS_QL_CONTENTcsv = """
+[out:csv(
+    ::type,
+    ::id,{{键}};
+    true; "|"
+)];"""
+
+    OVERPASS_QL_CONTENTcsv.replace(
+        "{{键}}", ",".join(['"' + i + '"' for i in query_option_key])
+    )
+
     if kwargs.get("metadata_entry_data"):
-        for metadata_entry in kwargs.get("metadata_entry_data"):
-            # print(kwargs.get("metadata_entry_data").get(metadata_entry))
-            buffer += wrap_metadata(
-                metadata_entry,
-                kwargs.get("metadata_entry_data").get(metadata_entry, ""),
+        for metadata_entry_key in kwargs.get("metadata_entry_data"):
+            metadata_entry_value = kwargs.get("metadata_entry_data").get(
+                metadata_entry_key, ""
             )
+            # possible value for out:
+            # * xml
+            # * json
+            # * csv
+            # * custom
+            # * popup
+            if metadata_entry_key == "out" and metadata_entry_value == "csv":
+                pass
+            buffer += wrap_metadata(metadata_entry_key, metadata_entry_value)
     if buffer != "":
         return buffer + ";"
     else:
