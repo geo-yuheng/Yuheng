@@ -58,16 +58,23 @@ def gen_metadata(**kwargs) -> Optional[str]:
                         ['"' + i + '"' for i in query_key_list]
                     )
 
-                query_key_list: List[str] = kwargs.get("query_key_list", [])
+                csv_argument = kwargs.get("csv_argument")
+                query_key_list: List[str] = csv_argument.get(
+                    "query_key_list", []
+                )
                 metadata_csv_content = gen_csv_key_list()
-                if kwargs.get("explicit_declare_header", None) != None:
+                if csv_argument.get("explicit_declare_header", None) != None:
                     metadata_csv_content += (
                         ";"
-                        + str(kwargs.get("explicit_declare_header")).lower()
+                        + str(
+                            csv_argument.get("explicit_declare_header")
+                        ).lower()
                     )
-                if kwargs.get("delimiter"):
-                    metadata_csv_content += ";" + f"{kwargs.get('delimiter')}"
-                buffer += f"[out:csv({metadata_csv_content})];"
+                if csv_argument.get("delimiter"):
+                    metadata_csv_content += (
+                        ";" + f"\"{csv_argument.get('delimiter')}\""
+                    )
+                buffer += f"[out:csv({metadata_csv_content})]"
             elif metadata_entry_key == "out" and metadata_entry_value in [
                 "custom",
                 "popup",
@@ -118,11 +125,11 @@ print(
         metadata_entry_data={
             "out": "csv",
             "timeout": 255,
-            "csv_argument": {
-                "query_key_list": ["amenity", "addr:city", "admin_level"],
-                "explicit_declare_header": True,
-                "delimiter": "|",
-            },
-        }
+        },
+        csv_argument={
+            "query_key_list": ["amenity", "addr:city", "admin_level"],
+            "explicit_declare_header": True,
+            "delimiter": "|",
+        },
     )
 )
