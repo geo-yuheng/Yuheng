@@ -31,10 +31,12 @@ class Bounds:
                 return str(degree)
 
         return (
-            serialize_format.replace("SS", num_serialization(self.min_lat))
-            .replace("WW", num_serialization(self.min_lon))
-            .replace("NN", num_serialization(self.max_lat))
-            .replace("EE", num_serialization(self.max_lon))
+            serialize_format.replace(
+                "SS", num_serialization(self.min_lat, escape=escape)
+            )
+            .replace("WW", num_serialization(self.min_lon, escape=escape))
+            .replace("NN", num_serialization(self.max_lat, escape=escape))
+            .replace("EE", num_serialization(self.max_lon, escape=escape))
         )
 
     def bound_deserialization(

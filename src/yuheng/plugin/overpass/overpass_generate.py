@@ -104,7 +104,9 @@ def gen_metadata(**kwargs) -> Optional[str]:
                             "maxlon": bbox_info.get("E"),
                             "origin": "NONE SENSE",
                         }
-                    ).bound_serialization(serialize_format="SS, WW, NN, EE"),
+                    ).bound_serialization(
+                        serialize_format="SS,WW,NN,EE", escape=False
+                    ),
                 )
             else:
                 buffer += wrap_metadata(
