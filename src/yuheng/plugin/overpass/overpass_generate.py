@@ -1,6 +1,11 @@
 from typing import Optional, Union, List
 
-from Yuheng.type.constraint import Bounds
+import sys
+import os
+
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+from src.yuheng import Bounds
+
 
 query_template = "<metadata_part>\n<condition_part>\n<output_part>"
 
