@@ -11,43 +11,26 @@ def gen_metadata(**kwargs) -> Optional[str]:
             value = str(value)
         return f"[{key}:{value}]"
 
-    query_key_list: List[str] = kwargs.get("query_key_list", [])
-
-    def gen_csv_key_list():
-        def gen_magic_key(**kwargs):
-            buffer = ""
-            if kwargs.get("type"):
-                buffer += "::type"
-            if kwargs.get("id"):
-                buffer += "::id"
-            if kwargs.get("type_str"):
-                buffer += '::"type"'
-            if kwargs.get("id_str"):
-                buffer += '::"id"'
-            return buffer
-
-        return gen_magic_key() + ",".join(
-            ['"' + i + '"' for i in query_key_list]
-        )
-
     if kwargs.get("metadata_entry_data"):
         for metadata_entry_key in kwargs.get("metadata_entry_data"):
             metadata_entry_value = kwargs.get("metadata_entry_data").get(
                 metadata_entry_key, ""
             )
-            # possible key:
-            # * out
-            # * timeout
-            # * maxsize
-            # * bbox
-            # * date
-            # * diff
-            # possible value for "out" key:
-            # * xml
-            # * json
-            # * csv
-            # * custom
-            # * popup
+            possible_key = [
+                "out",
+                "timeout",
+                "maxsize",
+                "bbox",
+                "date",
+                "diff",
+            ]
+            possible_value_for_out_key = [
+                "xml",
+                "json",
+                "csv",
+                "custom",
+                "popup",
+            ]
             if metadata_entry_key == "out" and metadata_entry_value in [
                 "xml",
                 "json",
@@ -57,12 +40,26 @@ def gen_metadata(**kwargs) -> Optional[str]:
                 )
                 # There should be a lint about final part after output format detected, I guess, such as geom/meta/body.
             elif metadata_entry_key == "out" and metadata_entry_value == "csv":
-                # #
-                # ::type,
-                # ::id,{{key_list}};
-                # true; "|"
 
-                metadata_csv_content = gen_csv_key_list
+                def gen_csv_key_list():
+                    def gen_magic_key(**kwargs):
+                        buffer = ""
+                        if kwargs.get("type"):
+                            buffer += "::type"
+                        if kwargs.get("id"):
+                            buffer += "::id"
+                        if kwargs.get("type_str"):
+                            buffer += '::"type"'
+                        if kwargs.get("id_str"):
+                            buffer += '::"id"'
+                        return buffer
+
+                    return gen_magic_key() + ",".join(
+                        ['"' + i + '"' for i in query_key_list]
+                    )
+
+                query_key_list: List[str] = kwargs.get("query_key_list", [])
+                metadata_csv_content = gen_csv_key_list()
                 if kwargs.get("explicit_declare_header", None) != None:
                     metadata_csv_content += (
                         ";"
@@ -111,7 +108,21 @@ def gen_query():
     )
 
 
-testcase_gen_metadata = gen_metadata(
-    metadata_entry_data={"out": "xml", "timeout": 255}
+print(
+    gen_metadata(
+        metadata_entry_data={"out": "xml", "timeout": 255, "bbox": "earth"}
+    )
 )
-print(testcase_gen_metadata)
+print(
+    gen_metadata(
+        metadata_entry_data={
+            "out": "csv",
+            "timeout": 255,
+            "csv_argument": {
+                "query_key_list": ["amenity", "addr:city", "admin_level"],
+                "explicit_declare_header": True,
+                "delimiter": "|",
+            },
+        }
+    )
+)
