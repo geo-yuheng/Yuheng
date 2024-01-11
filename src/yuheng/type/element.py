@@ -1,10 +1,10 @@
 from typing import Dict, List
 
 
-
 from .constraint import Member
 from .. import BaseOsmModel
 
+# from __future__ import annotations # 3.7-3.9
 
 # TODO
 # limit check should be conduct while modify
@@ -121,8 +121,8 @@ class Way(BaseOsmModel):
         # if len<API_LIMIT_MAX_ELEMENT_TAGS:
         # if len>0 and len<API_LIMIT_MAX_WAY_NODES:
         return True
-    
-    def reverse(self) -> Way:
+
+    def reverse(self) -> "Way":
         """
         return a object that reverse node order and keep other things no touched
         """

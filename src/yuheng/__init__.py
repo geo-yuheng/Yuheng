@@ -418,7 +418,7 @@ class Waifu:
         """
         return self.__new_id(self.relation_dict)
 
-    def clip(self) -> Waifu:
+    def clip(self) -> "Waifu":
         """
         map=Waifu().clip(condiation)
         condiation can be:

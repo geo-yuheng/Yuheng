@@ -21,7 +21,7 @@ class Bounds:
         * 在OverpassQL中：[bbox:south,west,north,east]
         """
 
-        def num_serialization(degree: float, escape: bool):
+        def num_serialization(degree: float, escape=True):
             if escape:
                 if degree >= 0:
                     return "P" + str(degree).replace(".", "D")
@@ -31,10 +31,10 @@ class Bounds:
                 return str(degree)
 
         return (
-            serialize_format.replace("SS", num_serialization(min_lat))
-            .replace("WW", num_serialization(min_lon))
-            .replace("NN", num_serialization(max_lat))
-            .replace("EE", num_serialization(max_lon))
+            serialize_format.replace("SS", num_serialization(self.min_lat))
+            .replace("WW", num_serialization(self.min_lon))
+            .replace("NN", num_serialization(self.max_lat))
+            .replace("EE", num_serialization(self.max_lon))
         )
 
     def bound_deserialization(
