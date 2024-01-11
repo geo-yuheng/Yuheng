@@ -12,28 +12,23 @@ def gen_metadata(**kwargs) -> Optional[str]:
         return f"[{key}:{value}]"
 
     query_key_list: List[str] = kwargs.get("query_key_list", [])
-    metadata_csv_template = "[out:csv({{content}})];"
-    # #
-    # ::type,
-    # ::id,{{key_list}};
-    # true; "|"
 
-    def gen_magic_key(**kwargs):
-        buffer=""
-        if kwargs.get("type"):
-            buffer+="::type"
-        if kwargs.get("id"):
-            buffer+="::id"
-        if kwargs.get("type_str"):
-            buffer+="::\"type\""
-        if kwargs.get("id_str"):
-            buffer+="::\"id\""
-        return buffer
+    def gen_csv_key_list():
+        def gen_magic_key(**kwargs):
+            buffer = ""
+            if kwargs.get("type"):
+                buffer += "::type"
+            if kwargs.get("id"):
+                buffer += "::id"
+            if kwargs.get("type_str"):
+                buffer += '::"type"'
+            if kwargs.get("id_str"):
+                buffer += '::"id"'
+            return buffer
 
-    def gen_csv_key_list ():
         return gen_magic_key() + ",".join(
-        ['"' + i + '"' for i in query_key_list]
-    )
+            ['"' + i + '"' for i in query_key_list]
+        )
 
     if kwargs.get("metadata_entry_data"):
         for metadata_entry_key in kwargs.get("metadata_entry_data"):
@@ -62,7 +57,20 @@ def gen_metadata(**kwargs) -> Optional[str]:
                 )
                 # There should be a lint about final part after output format detected, I guess, such as geom/meta/body.
             elif metadata_entry_key == "out" and metadata_entry_value == "csv":
-                buffer+=
+                # #
+                # ::type,
+                # ::id,{{key_list}};
+                # true; "|"
+
+                metadata_csv_content = gen_csv_key_list
+                if kwargs.get("explicit_declare_header", None) != None:
+                    metadata_csv_content += (
+                        ";"
+                        + str(kwargs.get("explicit_declare_header")).lower()
+                    )
+                if kwargs.get("delimiter"):
+                    metadata_csv_content += ";" + f"{kwargs.get('delimiter')}"
+                buffer += f"[out:csv({metadata_csv_content})];"
             elif metadata_entry_key == "out" and metadata_entry_value in [
                 "custom",
                 "popup",
