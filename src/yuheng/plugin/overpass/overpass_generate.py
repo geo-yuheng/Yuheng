@@ -1,5 +1,7 @@
 from typing import Optional, Union, List
 
+from Yuheng.type.constraint import Bounds
+
 query_template = "<metadata_part>\n<condition_part>\n<output_part>"
 
 
@@ -58,7 +60,7 @@ def gen_metadata(**kwargs) -> Optional[str]:
                         ['"' + i + '"' for i in query_key_list]
                     )
 
-                csv_argument = kwargs.get("csv_argument")
+                csv_argument = kwargs.get("csv_info")
                 query_key_list: List[str] = csv_argument.get(
                     "query_key_list", []
                 )
@@ -82,6 +84,22 @@ def gen_metadata(**kwargs) -> Optional[str]:
                 print(
                     "This kind of output format will lead to a OSM3S Response, which currently not supported by Yuheng."
                     + "See more about this format in https://github.com/drolbr/Overpass-API/"
+                )
+                buffer += wrap_metadata("out", "xml")
+            elif metadata_entry_key == "bbox":
+                bbox_info = kwargs.get("bbox_info")
+
+                buffer += wrap_metadata(
+                    metadata_entry_key,
+                    Bounds(
+                        {
+                            "minlat": bbox_info.get("S"),
+                            "maxlat": bbox_info.get("N"),
+                            "minlon": bbox_info.get("W"),
+                            "maxlon": bbox_info.get("E"),
+                            "origin": "NONE SENSE",
+                        }
+                    ).bound_serialization(serialize_format="SS, WW, NN, EE"),
                 )
             else:
                 buffer += wrap_metadata(
@@ -115,9 +133,16 @@ def gen_query():
     )
 
 
+print(gen_metadata(metadata_entry_data={"out": "xml", "maxsize": 65535}))
+print(gen_metadata(metadata_entry_data={"out": "popup", "maxsize": 65535}))
 print(
     gen_metadata(
-        metadata_entry_data={"out": "xml", "timeout": 255, "bbox": "earth"}
+        metadata_entry_data={
+            "out": "json",
+            "timeout": 255,
+            "bbox": "whatever",
+        },
+        bbox_info={"E": 20, "W": 10, "S": 30, "N": 40.5},
     )
 )
 print(
@@ -126,7 +151,7 @@ print(
             "out": "csv",
             "timeout": 255,
         },
-        csv_argument={
+        csv_info={
             "query_key_list": ["amenity", "addr:city", "admin_level"],
             "explicit_declare_header": True,
             "delimiter": "|",
