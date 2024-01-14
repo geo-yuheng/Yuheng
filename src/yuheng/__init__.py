@@ -157,11 +157,11 @@ class Waifu:
         except Exception as e:
             print(f"Error: 发生未知错误 - {str(e)}")
 
-    def read_network(self, source="api", server="OSM", quantity="", **kwargs):
+    def read_network(self, source="api", endpoint="osm", quantity="", **kwargs):
         # 所有类型的网络请求最终都将返回一个work_url，在read_network中调用worker来获取work_load，最后转给read_memory读取这个work_load
         # 无论如何先获取url，才能算hash确定是否使用cache
         # source： 是从api读还是 overpass读，还是其他网站的野数据（比如IA恰好存了一个xml之类的情况）
-        # server：填OSM/OGF或者osmru/osmde/kumi之类的
+        # endpoint：填osm/ogf或者osmru/osmde/kumi之类的
         # quantity：很遗憾我忘了我当时取这个名字啥意思了
         # optional arguments:
         # * allow_cache: 将会把请求的各种信息（含url，主要是url）hash以后创建一个cache文件名，如果重复请求的话不需要对代码作出修改就自动用缓存，避免反复打目标机
@@ -176,10 +176,10 @@ class Waifu:
                 headers=get_headers(),
             ).text
 
-        def url_of_overpass_quary(ql_content: str, server="") -> str:
+        def url_of_overpass_quary(ql_content: str, endpoint="") -> str:
             import urllib.parse
 
-            return server + urllib.parse.quote(ql_content)
+            return endpoint + urllib.parse.quote(ql_content)
 
         if kwargs.get(
             "use_overpass_query"
@@ -199,14 +199,14 @@ class Waifu:
         if quantity != "":
             if quantity == "area":
                 # parse SWNE
-                work_url = self.read_network_area(source=source, server=server)
+                work_url = self.read_network_area(source=source, endpoint=endpoint)
             else:
                 if kwargs.get("element_id"):
                     # 但element_id是单个还是多个也不知道
                     work_load = self.read_network_element_single(
                         element_id=kwargs["element_id"],
                         type=kwargs.get("type"),
-                        server=server,
+                        endpoint=endpoint,
                     )
                 else:
                     # parse Element
@@ -217,15 +217,15 @@ class Waifu:
                 work_url = ""
             else:
                 return None
-
+        print(work_url)
         work_load = worker(work_url)
         self.read_memory(work_load)
 
-    def read_network_area(self, S, W, N, E, source="api", server="OSM"):
+    def read_network_area(self, S, W, N, E, source="api", endpoint="osm"):
         work_url = ""
         if source == "api":
             # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
-            # need to add server change function
+            # need to add endpoint change function
             # https://www.openstreetmap.org/api/0.6/map?bbox=W,S,E,N
             pass
         if source == "overpass":
@@ -251,7 +251,7 @@ class Waifu:
         return work_url
 
     def read_network_element_single(
-        self, element_id: str, type="undefined", source="api", server="OSM"
+        self, element_id: str, type="undefined", source="api", endpoint="osm"
     ):
         work_url = ""
 
@@ -269,7 +269,7 @@ class Waifu:
                 version = pure_id.split("v")[1]
                 pure_id = pure_id.split("v")[0]
             work_url = (
-                get_endpoint_api(server)
+                get_endpoint_api(endpoint)
                 + prefix_normalization(type, mode="p2prefix")
                 + "/"
                 + pure_id
@@ -283,7 +283,7 @@ class Waifu:
         return work_url
 
     def read_network_element_multi(
-        self, element_id=None, mode="api", server="OSM"
+        self, element_id=None, mode="api", server="osm"
     ):
         work_url = ""
         # it can be string or list

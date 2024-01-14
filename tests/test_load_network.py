@@ -25,7 +25,7 @@ class TestLoadNetwork(unittest.TestCase):
         m_network = yuheng.Waifu()
         # m_network.read(mode="n")
         m_network.read_network(
-            server="OGF",
+            endpoint="ogf",
             quantity="element",
             type="way",
             element_id="w28814809v1",
