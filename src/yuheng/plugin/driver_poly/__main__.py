@@ -1,4 +1,5 @@
 import os
+import argparse
 from typing import Dict, List, Tuple, Union
 
 
@@ -12,6 +13,7 @@ def extractor(poly_file_path: str) -> str:
 def transformer(
     line_str: str, **kwargs
 ) -> Union[Dict[str, float], List[float], Tuple[float, float]]:
+    # print(kwargs.get("schema"), type(kwargs.get("schema")))
     if kwargs.get("schema") == None:
         return dict(
             zip(
@@ -19,12 +21,12 @@ def transformer(
                 [float(f) for f in line_str.split("   ")],
             )
         )
-    elif isinstance(kwargs.get("schema", None), type([])):
+    elif kwargs.get("schema", "").lower() == "list":
         if kwargs.get("order", None) == "lon-lat":
             return [float(f) for f in line_str.split("   ")]
         else:  # lat-lon
             return list(reversed([float(f) for f in line_str.split("   ")]))
-    elif isinstance(kwargs.get("schema", None), type(())):
+    elif kwargs.get("schema", "").lower() == "tuple":
         if kwargs.get("order", None) == "lon-lat":
             return tuple([float(f) for f in line_str.split("   ")])
         else:  # lat-lon
@@ -33,13 +35,18 @@ def transformer(
 
 
 def main(
-    poly_file_path: str, schema=None, order=None, output_format="raw"
+    poly_file_path: str,
+    schema=None,
+    order=None,
+    output_format="raw",
+    **kwargs: dict
 ) -> List[Dict[str, float]]:
     # 暂时只处理单一环路的poly文件
 
     # 文件处理
     poly_content = extractor(poly_file_path).split("END")[0].split("\n")[2:]
 
+    print(schema, type(schema))
     poly_object = [
         transformer(i[3:], schema=schema, order=order)
         for i in list(filter(bool, poly_content))
@@ -52,17 +59,43 @@ def main(
 
 
 if __name__ == "__main__":
-    # main("polyfile.poly")
-    # # For Debug
+    argument_parser = argparse.ArgumentParser()
+    argument_parser.add_argument(
+        "--poly_file_path", type=str, dest="poly_file_path"
+    )
+    argument_parser.add_argument("--schema", default=None, dest="schema")
+    argument_parser.add_argument("--order", default=None, dest="order")
+    argument_parser.add_argument(
+        "--output-format", type=str, default="raw", dest="output-format"
+    )
+    args = argument_parser.parse_args(
+        [
+            "--poly_file_path",
+            os.path.join(
+                os.getcwd(),
+                "..",
+                "..",
+                "..",
+                "..",
+                "tests",
+                "poly",
+                "Izaland-polyfile-20231213-laoshubabytest.poly",
+            ),
+            "--order",
+            "lat-tlon",
+            "--schema",
+            "list",
+        ]
+    )
+    print(type(args.__dict__))
+    from pprint import pprint
+
+    pprint(args.__dict__)
     main(
-        os.path.join(
-            os.getcwd(),
-            "..",
-            "..",
-            "..",
-            "..",
-            "tests",
-            "poly",
-            "Izaland-polyfile-20231213-laoshubabytest.poly",
-        )
+        args.__dict__.get("poly_file_path"),
+        kwargs={
+            k: v
+            for k, v in args.__dict__.items()
+            if k not in ["poly_file_path"]
+        },
     )
