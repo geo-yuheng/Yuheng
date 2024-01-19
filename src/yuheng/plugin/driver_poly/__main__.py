@@ -68,34 +68,5 @@ if __name__ == "__main__":
     argument_parser.add_argument(
         "--output-format", type=str, default="raw", dest="output-format"
     )
-    args = argument_parser.parse_args(
-        [
-            "--poly_file_path",
-            os.path.join(
-                os.getcwd(),
-                "..",
-                "..",
-                "..",
-                "..",
-                "tests",
-                "poly",
-                "Izaland-polyfile-20231213-laoshubabytest.poly",
-            ),
-            "--order",
-            "lat-tlon",
-            "--schema",
-            "list",
-        ]
-    )
-    print(type(args.__dict__))
-    from pprint import pprint
 
-    pprint(args.__dict__)
-    main(
-        args.__dict__.get("poly_file_path"),
-        kwargs={
-            k: v
-            for k, v in args.__dict__.items()
-            if k not in ["poly_file_path"]
-        },
-    )
+    main(**argument_parser.parse_args().__dict__)
