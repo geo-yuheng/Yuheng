@@ -13,7 +13,6 @@ def extractor(poly_file_path: str) -> str:
 def transformer(
     line_str: str, **kwargs
 ) -> Union[Dict[str, float], List[float], Tuple[float, float]]:
-    # print(kwargs.get("schema"), type(kwargs.get("schema")))
     if kwargs.get("schema") == None:
         return dict(
             zip(
@@ -45,8 +44,6 @@ def main(
 
     # 文件处理
     poly_content = extractor(poly_file_path).split("END")[0].split("\n")[2:]
-
-    print(schema, type(schema))
     poly_object = [
         transformer(i[3:], schema=schema, order=order)
         for i in list(filter(bool, poly_content))
