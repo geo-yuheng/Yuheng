@@ -33,7 +33,7 @@ class TestPluginDriverPoly(unittest.TestCase):
                 "poly",
                 "Izaland-polyfile-20231213-laoshubabytest.poly",
             )
-            + ' --schema list --order "lat-lon" --output-format yuheng'
+            + ' --schema dict --order "lat-lon" --output-format yuheng'
         )
         os.system(
             "python"

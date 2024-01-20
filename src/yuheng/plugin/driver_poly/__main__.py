@@ -21,7 +21,10 @@ def extractor(poly_file_path: str) -> str:
 def transformer(
     line_str: str, **kwargs
 ) -> Union[Dict[str, float], List[float], Tuple[float, float]]:
-    if kwargs.get("schema") == None:
+    if (
+        kwargs.get("schema") == None
+        or kwargs.get("schema", "").lower() == "dict"
+    ):
         return dict(
             zip(
                 ["longitude", "latitude"],  # ["经度", "纬度"]
@@ -45,9 +48,9 @@ def load(
     poly_object: List[Dict[str, float]], output_format="yuheng"
 ) -> Union[None, Waifu]:
     carto_object = Waifu()
-    temp_node_list = []
+    node_obj_list = []
     for i in range(len(poly_object)):
-        temp_node_list.append(
+        node_obj_list.append(
             Node(
                 attrib={
                     "id": str(i),
@@ -63,45 +66,37 @@ def load(
                 tag_dict={},
             )
         )
-    way = Way(
+    node_id_list = [i.id for i in node_obj_list]
+    poly_way = Way(
         attrib={
-            "id": "114",
+            "id": "1",
             "visible": "true",
             "version": "1",
-            "changeset": "3",
-            "timestamp": "2012-12-23T11:33:55Z",
-            "user": "810",
-            "uid": "1919",
+            "changeset": "1",
+            "timestamp": "1970-01-01T00:00:00Z",
+            "user": "plugin_driver_poly",
+            "uid": "1",
         },
         tag_dict={},
-        nd_list=["1", "2", "3"],
+        nd_list=node_id_list,
     )
 
+    # 这个函数是从test_type_constructor抄来的，后续建议转正
     def insert_to_dict(spec_dict, element_list):
         for i in element_list:
             spec_dict[int(i.id)] = i
 
-    # 这个函数是从test_type_constructor抄来的，后续建议转正
-
-    insert_to_dict(
-        carto.node_dict,
-        [node_1, node_2, node_3, node_4, node_5, node_6, node_7],
-    )
-    insert_to_dict(carto.way_dict, [way_1, way_2])
+    insert_to_dict(carto_object.node_dict, node_obj_list)
+    insert_to_dict(carto_object.way_dict, [poly_way])
 
     return carto_object
 
 
 def main(
-    poly_file_path: str,
-    schema=None,
-    order=None,
-    output_format="raw",
-    **kwargs: dict
+    poly_file_path: str, schema=None, order=None, output_format="raw", **kwargs
 ) -> List[Dict[str, float]]:
     # 暂时只处理单一环路的poly文件
 
-    # 文件处理
     poly_content: List[str] = (
         extractor(poly_file_path).split("END")[0].split("\n")[2:]
     )
@@ -109,9 +104,10 @@ def main(
         transformer(i[3:], schema=schema, order=order)
         for i in list(filter(bool, poly_content))
     ]
+
     if output_format.lower() == "raw":
         return poly_object
-    if output_format.lower() == "yuheng":
+    elif output_format.lower() == "yuheng":
         return load(poly_object)
     else:
         return poly_object
@@ -125,7 +121,7 @@ if __name__ == "__main__":
     argument_parser.add_argument("--schema", default=None, dest="schema")
     argument_parser.add_argument("--order", default=None, dest="order")
     argument_parser.add_argument(
-        "--output-format", type=str, default="raw", dest="output-format"
+        "--output-format", type=str, default="raw", dest="output_format"
     )
 
     main(**argument_parser.parse_args().__dict__)
