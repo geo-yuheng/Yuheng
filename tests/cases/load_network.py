@@ -14,7 +14,7 @@ import yuheng
 class TestLoadNetwork(unittest.TestCase):
     def setUp(self) -> None:
         self.map = yuheng.Waifu()
-        FILENAME = "ogf_haresora_kinen.osm"
+        FILENAME = "element_ogf_haresora_kinen.osm"
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)), "network", FILENAME
         )

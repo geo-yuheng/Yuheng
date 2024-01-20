@@ -186,6 +186,8 @@ class TestTypeConstructor(unittest.TestCase):
         assert len(carto.way_dict) == 2
         assert len(carto.relation_dict) == 1
 
+        # 尝试写出文件
+
 
 if __name__ == "__main__":
     unittest.main()

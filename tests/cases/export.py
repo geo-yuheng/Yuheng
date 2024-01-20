@@ -17,7 +17,7 @@ import yuheng
 class TestExport(unittest.TestCase):
     def setUp(self) -> None:
         self.map = yuheng.Waifu()
-        self.FILENAME_TARGET = "standard_load.osm"
+        self.FILENAME_TARGET = "extract_bbox_osm_daxingjichang.osm"
         self.FILENAME_OUTPUT = "self_save_dist.osm"
         self.path_target = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
