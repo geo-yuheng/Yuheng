@@ -16,13 +16,14 @@ class TestPluginDriverPoly(unittest.TestCase):
     def test_plugin_driver_poly_import(self):
         from yuheng.plugin.driver_poly.__main__ import main
 
-        main(
+        ans = main(
             poly_file_path=os.path.join(
                 os.getcwd(),
                 "poly",
                 "Izaland-polyfile-20231213-laoshubabytest.poly",
             )
         )
+        print(ans)
 
     def test_plugin_driver_poly_cli(self):
         args = (
@@ -32,7 +33,7 @@ class TestPluginDriverPoly(unittest.TestCase):
                 "poly",
                 "Izaland-polyfile-20231213-laoshubabytest.poly",
             )
-            + ' --schema list --order "lat-lon"'
+            + ' --schema list --order "lat-lon" --output-format yuheng'
         )
         os.system(
             "python"
