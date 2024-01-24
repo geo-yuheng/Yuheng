@@ -1,5 +1,6 @@
 import os
 import sys
+from typing import Union
 
 import geojson
 
@@ -10,7 +11,7 @@ from yuheng import Waifu
 
 
 def read(
-    json_file_path: str, output_target=None
+    input_file_path: str, output_target="geojson"
 ) -> Union[dict, str, geojson.feature.FeatureCollection, Waifu]:
     """
     ourput_target:
@@ -19,15 +20,29 @@ def read(
     * geojson: 输出geojson.feature.FeatureCollection对象
     * serialize: 输出特定格式的序列化字符串对象
     """
-    json_file = open(json_file_path, "r", encoding="utf-8")
-    json_content = json_file.read()
-    json_file.close()
-    geojson_obj = geojson.loads(json_content)
+    geojson_file = open(input_file_path, "r", encoding="utf-8")
+    geojson_content = geojson_file.read()
+    geojson_file.close()
+    geojson_obj = geojson.loads(geojson_content)
 
-    from pprint import pprint
-
-    pprint(geojson_obj)
-    return geojson_obj
+    if output_target == "geojson":
+        return geojson_obj
+    elif output_target == "dict":
+        return dict(geojson_obj)
+    elif output_target == "str":
+        return ""  # 因为返回模式还没设计
+    elif output_target == "yuheng":
+        # 真正的人上人——中间格式！
+        print(dict(geojson_obj))
+        for key in geojson_obj:
+            if key == "type" and geojson_obj[key] == "FeatureCollection":
+                # geojson.io生成的都是这种
+                features = list(geojson_obj["features"])
+                # print(type(features))
+                # print(features)
+        pass
+    else:
+        return geojson_obj
 
 
 def write(
@@ -50,7 +65,9 @@ def write(
 
 
 if __name__ == "__main__":
-    read(
+    from pprint import pprint
+
+    ans = read(
         os.path.join(
             os.path.dirname(__file__),
             "..",
@@ -61,5 +78,8 @@ if __name__ == "__main__":
             "assets",
             "geojson",
             "geojsonio-ring2.geojson",
-        )
+            # "geojsonio-commute-bus.geojson",
+        ),
+        output_target="yuheng",
     )
+    pprint(ans)
