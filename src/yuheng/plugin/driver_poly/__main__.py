@@ -47,6 +47,7 @@ def transformer(
 def load(
     poly_object: List[Dict[str, float]], output_format="yuheng"
 ) -> Union[None, Waifu]:
+    # load_2_waifu
     carto_object = Waifu()
     node_obj_list = []
     for i in range(len(poly_object)):
@@ -91,6 +92,10 @@ def load(
 
     return carto_object
 
+# def load_2_poly
+
+# def read(): read poly file and specific a target
+# def write(): write to poly file (input maybe various)
 
 def main(
     poly_file_path: str, schema=None, order=None, output_format="raw", **kwargs
