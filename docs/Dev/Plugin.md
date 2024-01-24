@@ -2,6 +2,8 @@
 
 ## Official
 
+> 注意：后续插件列表可能按字母顺序排序
+
 ### `overpass`
 
 Conduct overpass query, can be replaced by other python-overpass library:
@@ -27,6 +29,13 @@ Detailed usage still in progress.
 * 仓库地址：https://github.com/mattijn/topojson
 * 包地址：https://pypi.org/project/topojson/
 * 文档地址：https://mattijn.github.io/topojson/
+
+### `driver_shp`
+
+基于 `pyshp` 库，并未完全自行实现读取
+
+* 仓库地址：https://github.com/GeospatialPython/pyshp
+* 包地址：https://pypi.org/project/pyshp/
 
 ### `driver_poly`
 
