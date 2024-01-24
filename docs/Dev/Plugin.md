@@ -45,4 +45,4 @@ Detailed usage still in progress.
 
 ## Registry
 
-See: https://github.com/LaoshuBaby/yuheng-plugin-registry
+See: https://github.com/geo-yuheng/yuheng-plugin-registry

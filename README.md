@@ -42,7 +42,7 @@ map.read(mode="file", file_path="map.osm")
 
 Don't need any database environment, just a fast and out-of-the-box tool.
 
-## KQS: NOT
+## YH: NOT
 
 List alternatives that may be close and similar to this item, but have a different purpose
 
@@ -89,7 +89,7 @@ map.read(mode="file", file_path="map.osm")
 
 不需要任何数据库环境，只是一个快速且开箱即用的工具。
 
-## KQS:NOT
+## YH:NOT
 
 列举出可能与本项目相近，相似，但目的并非一致的替代品
 

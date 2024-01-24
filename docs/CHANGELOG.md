@@ -4,7 +4,7 @@
 
 ---
 
-## [1.2.0](https://github.com/LaoshuBaby/Keqing/compare/1.1.0...1.2.0)
+## [1.2.0](https://github.com/geo-yuheng/Yuheng/compare/1.1.0...1.2.0)
 
 主要更新：
 
@@ -20,7 +20,7 @@
 + 提供了poly文件的数据驱动
 + 一些文档和测试工作
 
-## [1.1.0](https://github.com/LaoshuBaby/Keqing/compare/1.0.2...1.1.0)
+## [1.1.0](https://github.com/geo-yuheng/Yuheng/compare/1.0.2...1.1.0)
 
 相比于上一版本，这一版本更新的内容主要有：
 
@@ -28,7 +28,7 @@
 + 大量文档工作和文档构建流水线
 + 修正了部分测试用例未能导入的问题
 
-## [1.0.2](https://github.com/LaoshuBaby/Yuheng/compare/1.0.1...1.0.2)
+## [1.0.2](https://github.com/geo-yuheng/Yuheng/compare/1.0.1...1.0.2)
 
 相比于1.0.1，这一版本更新的内容主要有：
 
