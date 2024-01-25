@@ -8,6 +8,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from yuheng import Waifu
+from pprint import pprint
 
 
 def read(
@@ -33,10 +34,21 @@ def read(
         return ""  # 因为返回模式还没设计
     elif output_target == "yuheng":
         # 真正的人上人——中间格式！
-        print(dict(geojson_obj))
+        pprint(dict(geojson_obj))
+
+        def is_valid_geojson_element(element_dict):
+            key_list = [key for key in element_dict]
+            if "type" not in key_list:
+                return False
+            else:
+                # There still can contain more validation
+                return True
+
+        def parse_geojson_element(element_dict):
+            pass
+
         for key in geojson_obj:
             if key == "type" and geojson_obj[key] == "FeatureCollection":
-                # geojson.io生成的都是这种
                 features = list(geojson_obj["features"])
                 # print(type(features))
                 # print(features)
@@ -65,8 +77,6 @@ def write(
 
 
 if __name__ == "__main__":
-    from pprint import pprint
-
     ans = read(
         os.path.join(
             os.path.dirname(__file__),
