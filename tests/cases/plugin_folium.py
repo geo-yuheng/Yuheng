@@ -6,23 +6,35 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
+from yuheng import Way, Node, Relation, Waifu, Member
 
-class TestPluginDriverPoly(unittest.TestCase):
+
+class TestPluginFolium(unittest.TestCase):
     def setUp(self) -> None:
-        pass
-
-    def test_plugin_driver_poly_import(self):
         from yuheng.plugin.folium.__main__ import display
 
-        test_way = Way()
-        test_node = Node()
-        test_relation = Relation()
+        test_node_1 = Node(
+            {"id": "1"}, {"name": "folium cafe", "amenity": "cafe"}
+        )
+        test_node_2 = Node(
+            {"id": "2"}, {"name": "yuheng restaurant", "amenity": "restaurant"}
+        )
+        test_way = Way(
+            {"id": "10"}, {"cuisine": "chinese;chicken;bubble_tea"}, [1, 2]
+        )
+        test_relation = Relation(
+            {"id": "100"},
+            {"highway": "food"},
+            [
+                Member(element_type="node", role="dessert",ref=1),
+                Member(element_type="node", role="dessert",ref=2),
+                Mebmer(element_type="way", role="meal",ref=10),
+            ],
+        )
         test_map = Waifu()
 
+    def test_plugin_driver_poly_import(self):
         display()
-
-    def test_plugin_driver_poly_cli(self):
-        pass
 
 
 if __name__ == "__main__":
