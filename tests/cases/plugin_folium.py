@@ -10,7 +10,7 @@ from yuheng import Way, Node, Relation, Waifu, Member
 from yuheng.plugin.folium.__main__ import display
 
 
-class TestPluginFolium(unittest.TestCase):
+class TestPluginVisualizationFolium(unittest.TestCase):
     def setUp(self) -> None:
         from yuheng.plugin.folium.__main__ import display
 

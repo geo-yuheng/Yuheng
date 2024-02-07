@@ -12,7 +12,7 @@ from yuheng import Waifu, Way, Node, Relation
 
 def display(element: Union[Waifu, Way, Node, Relation]) -> None:
     if isinstance(element, type(Way({"id": "114"}, {}, []))):
-        pass
+        print("This is a Way")
     return None
 
 
