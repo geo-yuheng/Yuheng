@@ -1,11 +1,12 @@
 from typing import Optional, List
 
 import psycopg
+import shapely
 from psycopg.types import TypeInfo
 
 from psycopg.types.shapely import register_shapely
 
-from shapely.geometry import Point
+
 import os
 import sys
 
@@ -19,6 +20,23 @@ def check():
     # migration if needed
     #
     pass
+
+
+def geoproj():
+    from pyproj import Proj, transform
+
+    # 定义原始坐标系和目标坐标系
+    # 假定原坐标系为Web Mercator（EPSG:3857），目标坐标系为WGS84（EPSG:4326）
+    proj_from = Proj(init="epsg:3857")  # 假定这个坐标是Web Mercator
+    proj_to = Proj(init="epsg:4326")  # 转换到WGS84
+
+    # 原始点坐标
+    x, y = 12844204.461364638, 4895775.268753434
+
+    # 坐标转换
+    lon, lat = transform(proj_from, proj_to, x, y)
+
+    print(f"Longitude: {lon}, Latitude: {lat}")
 
 
 def get_column(
@@ -69,6 +87,8 @@ def get_data(
         info = TypeInfo.fetch(connection, "geometry")
         register_shapely(info, connection)
         # 不确定 ST_AsText 和 ST_AsGeoJSON 是否可用，依照 https://www.psycopg.org/psycopg3/docs/basic/pgtypes.html#geometry-adaptation-using-shapely 为准。
+        # Shapely.LineString https://shapely.readthedocs.io/en/stable/reference/shapely.LineString.html
+        # Shapely.Point https://shapely.readthedocs.io/en/stable/reference/shapely.Point.html
         with connection.cursor() as cursor:
             if query_mode == "full":
                 if len(query_type) == 1 and (
@@ -129,6 +149,9 @@ def get_data(
             geom = attrib["way"]
             # print(attrib)  # debug
             print(geom)
+            if isinstance(geom, shapely.geometry.Point):
+                print("yoo")
+                print(geom.x, geom.y)
     return result
 
 
