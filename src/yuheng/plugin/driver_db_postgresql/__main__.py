@@ -1,6 +1,11 @@
 from typing import Optional, List
 
 import psycopg
+from psycopg.types import TypeInfo
+
+from psycopg.types.shapely import register_shapely
+
+from shapely.geometry import Point
 import os
 import sys
 
@@ -61,6 +66,9 @@ def get_data(
     with psycopg.connect(
         " ".join([item + "=" + config.get(item) for item in config])
     ) as connection:
+        info = TypeInfo.fetch(connection, "geometry")
+        register_shapely(info, connection)
+        # 不确定 ST_AsText 和 ST_AsGeoJSON 是否可用，依照 https://www.psycopg.org/psycopg3/docs/basic/pgtypes.html#geometry-adaptation-using-shapely 为准。
         with connection.cursor() as cursor:
             if query_mode == "full":
                 if len(query_type) == 1 and (
@@ -79,6 +87,7 @@ def get_data(
                     cursor.execute(sql_table)
                     for record in cursor:
                         result.append((query_type[0], record))
+
                 elif (
                     len(query_type) == 2
                     and "line" in query_type
@@ -117,7 +126,9 @@ def get_data(
         if len(query_type) == 1:
             column = columns[0]
             attrib = dict(zip(column, element_data))
-            print(attrib)  # debug
+            geom = attrib["way"]
+            # print(attrib)  # debug
+            print(geom)
     return result
 
 
