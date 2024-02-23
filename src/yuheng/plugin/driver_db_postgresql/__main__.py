@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 
 import psycopg
 import os
@@ -14,6 +14,11 @@ def check():
     # migration if needed
     #
     pass
+
+
+def get_column(cursor: psycopg.Cursor, table_name: str) -> List[str]:
+    column_list = []
+    return column_list
 
 
 def get_data(
@@ -48,8 +53,19 @@ def get_data(
                 if len(query_type) == 1 and (
                     "line" in query_type or "point" in query_type
                 ):
-                    sql = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[0]}"
-                    cursor.execute(sql)
+                    sql_column = (
+                        f"SELECT column_name "
+                        + f"FROM information_schema.columns "
+                        + f"WHERE table_name = '{pg_pre_fix}_{query_type[0]}' AND table_schema = '{pg_schema}'"
+                        + f"ORDER BY ordinal_position;"
+                    )
+                    cursor.execute(sql_column)
+                    columns = []
+                    for record in cursor:
+                        columns.append(record[0])
+                    print(columns)
+                    sql_table = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[0]}"
+                    cursor.execute(sql_table)
                     for record in cursor:
                         result.append((query_type[0], record))
                 elif (
@@ -57,18 +73,34 @@ def get_data(
                     and "line" in query_type
                     and "point" in query_type
                 ):
-                    sql_a = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[0]}"
-                    cursor.execute(sql_a)
+                    # sql_column_a="""
+                    # SELECT column_name
+                    # FROM information_schema.columns
+                    # WHERE table_name = 'your_table_name' AND table_schema = 'your_schema_name'
+                    # ORDER BY ordinal_position;
+                    # """
+                    # sql_column_b="""
+                    # SELECT column_name
+                    # FROM information_schema.columns
+                    # WHERE table_name = 'your_table_name' AND table_schema = 'your_schema_name'
+                    # ORDER BY ordinal_position;
+                    # """
+                    sql_table_a = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[0]}"
+                    cursor.execute(sql_table_a)
                     for record in cursor:
                         result.append((query_type[0], record))
-                    sql_b = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[1]}"
-                    cursor.execute(sql_b)
+                    sql_table_b = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[1]}"
+                    cursor.execute(sql_table_b)
                     for record in cursor:
                         result.append((query_type[1], record))
                 else:
                     print("要么你就想查询line/point以外的表，要么你就输了太多项。目前无法支持。")
                     return None
-    print("len(result)", "=", len(result))
+    print("len(result)", "=", len(result))  # debug
+    for element in result:
+        element_type = element[0]
+        element_data = list(element[1])
+        # print(element_data)
     return result
 
 
