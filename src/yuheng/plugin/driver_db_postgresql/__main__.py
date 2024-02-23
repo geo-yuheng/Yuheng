@@ -16,8 +16,20 @@ def check():
     pass
 
 
-def get_column(cursor: psycopg.Cursor, table_name: str) -> List[str]:
+def get_column(
+    cursor: psycopg.Cursor, table_name: str, schema: str
+) -> List[str]:
     column_list = []
+    sql_column = (
+        f"SELECT column_name "
+        + f"FROM information_schema.columns "
+        + f"WHERE table_name = '{table_name}' AND table_schema = '{schema}'"
+        + f"ORDER BY ordinal_position;"
+    )
+    cursor.execute(sql_column)
+    for record in cursor:
+        column_list.append(record[0])
+    # print(column_list) # debug
     return column_list
 
 
@@ -45,6 +57,7 @@ def get_data(
         "port": connection_port,
     }
     result = []
+    columns = []
     with psycopg.connect(
         " ".join([item + "=" + config.get(item) for item in config])
     ) as connection:
@@ -53,17 +66,15 @@ def get_data(
                 if len(query_type) == 1 and (
                     "line" in query_type or "point" in query_type
                 ):
-                    sql_column = (
-                        f"SELECT column_name "
-                        + f"FROM information_schema.columns "
-                        + f"WHERE table_name = '{pg_pre_fix}_{query_type[0]}' AND table_schema = '{pg_schema}'"
-                        + f"ORDER BY ordinal_position;"
+                    # column
+                    column = get_column(
+                        cursor=cursor,
+                        table_name=pg_pre_fix + "_" + query_type[0],
+                        schema=pg_schema,
                     )
-                    cursor.execute(sql_column)
-                    columns = []
-                    for record in cursor:
-                        columns.append(record[0])
-                    print(columns)
+                    columns.append(column)
+                    # print(columns) # debug
+                    # table
                     sql_table = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[0]}"
                     cursor.execute(sql_table)
                     for record in cursor:
@@ -73,18 +84,20 @@ def get_data(
                     and "line" in query_type
                     and "point" in query_type
                 ):
-                    # sql_column_a="""
-                    # SELECT column_name
-                    # FROM information_schema.columns
-                    # WHERE table_name = 'your_table_name' AND table_schema = 'your_schema_name'
-                    # ORDER BY ordinal_position;
-                    # """
-                    # sql_column_b="""
-                    # SELECT column_name
-                    # FROM information_schema.columns
-                    # WHERE table_name = 'your_table_name' AND table_schema = 'your_schema_name'
-                    # ORDER BY ordinal_position;
-                    # """
+                    # column
+                    column_a = get_column(
+                        cursor=cursor,
+                        table_name=pg_pre_fix + "_" + query_type[0],
+                        schema=pg_schema,
+                    )
+                    columns.append(column_a)
+                    column_b = get_column(
+                        cursor=cursor,
+                        table_name=pg_pre_fix + "_" + query_type[1],
+                        schema=pg_schema,
+                    )
+                    columns.append(column_b)
+                    # table
                     sql_table_a = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[0]}"
                     cursor.execute(sql_table_a)
                     for record in cursor:
@@ -100,7 +113,11 @@ def get_data(
     for element in result:
         element_type = element[0]
         element_data = list(element[1])
-        # print(element_data)
+        # print(element_data)  # debug
+        if len(query_type) == 1:
+            column = columns[0]
+            attrib = dict(zip(column, element_data))
+            print(attrib)  # debug
     return result
 
 
