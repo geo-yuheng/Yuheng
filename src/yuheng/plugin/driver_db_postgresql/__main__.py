@@ -147,6 +147,16 @@ def get_data(
                 print(geoproj(geom.x, geom.y))
                 if count >= 500:
                     exit(0)
+            if isinstance(geom, shapely.geometry.LineString):
+                print(type(geom), geom)
+                # print(type(geom.xy), geom.xy)
+                # print(type(geom.xy[0]), geom.xy[0])
+                # print(type(list(geom.xy[0])), list(geom.xy[0]))
+                print(list(zip(list(geom.xy[0]), list(geom.xy[1]))))
+                # for i in geom:
+                #     print(i)
+                if count >= 2:
+                    exit(0)
 
     return result
 
