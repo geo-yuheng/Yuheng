@@ -9,11 +9,10 @@ sys.path.append(src_dir)
 
 class TestPluginDriverDbPostgresql(unittest.TestCase):
     def setUp(self) -> None:
+        # NOTE: conduct this part of postgresql need you deploy a server.
         pass
 
-    def test_plugin_driver_db_postgresql_full(self):
-        # NOTE: conduct this part of postgresql need you deploy a server.
-
+    def test_plugin_driver_db_postgresql_full_1type(self):
         from yuheng.plugin.driver_db_postgresql.__main__ import get_data
 
         result = get_data(
@@ -26,7 +25,36 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
             query_type=["line"],
         )
         print(len(result))
-        # assert len(result) == 0
+        # assert len(result) == 114 or 514
+
+    def test_plugin_driver_db_postgresql_full_2type(self):
+        from yuheng.plugin.driver_db_postgresql.__main__ import get_data
+
+        result = get_data(
+            connection_dbname="osm2pgsql",
+            connection_user="postgres",
+            connection_password="12345678",
+            connection_host="localhost",
+            connection_port="5432",
+            query_mode="full",
+            query_type=["line", "point"],
+        )
+        print(len(result))
+        # assert len(result) == 114 + 514
+
+    def test_plugin_driver_db_postgresql_full_invalidtype(self):
+        from yuheng.plugin.driver_db_postgresql.__main__ import get_data
+
+        result = get_data(
+            connection_dbname="osm2pgsql",
+            connection_user="postgres",
+            connection_password="12345678",
+            connection_host="localhost",
+            connection_port="5432",
+            query_mode="full",
+            query_type=["line", "point", "polygon"],
+        )
+        assert result == None
 
 
 if __name__ == "__main__":

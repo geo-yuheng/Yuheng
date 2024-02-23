@@ -1,3 +1,5 @@
+from typing import Optional
+
 import psycopg
 import os
 import sys
@@ -24,7 +26,7 @@ def get_data(
     query_type=["line"],
     pg_schema="public",
     pg_pre_fix="planet_osm",
-) -> Waifu:
+) -> Optional[Waifu]:
     """
     # full-全量查询
     # batch-批量查询
@@ -42,25 +44,31 @@ def get_data(
         " ".join([item + "=" + config.get(item) for item in config])
     ) as connection:
         with connection.cursor() as cursor:
-            # config flag
-            flag_query_directly = False
-            # generate sql
             if query_mode == "full":
-                if len(query_type) == 1:
+                if len(query_type) == 1 and (
+                    "line" in query_type or "point" in query_type
+                ):
                     sql = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[0]}"
+                    cursor.execute(sql)
+                    for record in cursor:
+                        result.append((query_type[0], record))
                 elif (
                     len(query_type) == 2
                     and "line" in query_type
                     and "point" in query_type
                 ):
-                    if flag_query_directly:
-                        sql = f"SELECT * FROM join({pg_schema}.{pg_pre_fix}_line,{pg_schema}.{pg_pre_fix}_point)"
-            # conduct and collect
-            cursor.execute(sql)
-            for record in cursor:
-                result.append(record)
-            connection.commit()
-    print(len(result))
+                    sql_a = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[0]}"
+                    cursor.execute(sql_a)
+                    for record in cursor:
+                        result.append((query_type[0], record))
+                    sql_b = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[1]}"
+                    cursor.execute(sql_b)
+                    for record in cursor:
+                        result.append((query_type[1], record))
+                else:
+                    print("要么你就想查询line/point以外的表，要么你就输了太多项。目前无法支持。")
+                    return None
+    print("len(result)", "=", len(result))
     return result
 
 
