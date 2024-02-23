@@ -1,4 +1,6 @@
 import psycopg
+import os
+import sys
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
@@ -20,6 +22,9 @@ def get_data(
     password="12345678",
     host="localhost",
     port="5432",
+    query_type="line",
+    pg_schema="public",
+    pg_pre_fix="planet_osm",
 ) -> Waifu:
     """
     # full-全量查询
@@ -33,16 +38,21 @@ def get_data(
         "host": host,
         "port": port,
     }
+    result = []
     with psycopg.connect(
         " ".join([item + "=" + config.get(item) for item in config])
     ) as connection:
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM public.planet_osm_line")
-
+            if mode == "full":
+                if query_type == "line":
+                    sql = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_line"
+            cursor.execute(sql)
             for record in cursor:
-                print(record)
-
+                result.append(record)
             connection.commit()
+    # print(result)
+    print(len(result))
+    return result
 
 
 def main():
@@ -50,4 +60,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    get_data()
