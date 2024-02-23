@@ -9,6 +9,7 @@ from psycopg.types.shapely import register_shapely
 
 import os
 import sys
+from pyproj import Proj, transform
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
@@ -22,21 +23,10 @@ def check():
     pass
 
 
-def geoproj():
-    from pyproj import Proj, transform
-
-    # 定义原始坐标系和目标坐标系
-    # 假定原坐标系为Web Mercator（EPSG:3857），目标坐标系为WGS84（EPSG:4326）
-    proj_from = Proj(init="epsg:3857")  # 假定这个坐标是Web Mercator
-    proj_to = Proj(init="epsg:4326")  # 转换到WGS84
-
-    # 原始点坐标
-    x, y = 12844204.461364638, 4895775.268753434
-
-    # 坐标转换
-    lon, lat = transform(proj_from, proj_to, x, y)
-
+def geoproj(x: float, y: float):
+    lon, lat = transform(Proj(init="epsg:3857"), Proj(init="epsg:4326"), x, y)
     print(f"Longitude: {lon}, Latitude: {lat}")
+    return transform(Proj(init="epsg:3857"), Proj(init="epsg:4326"), x, y)
 
 
 def get_column(
@@ -139,7 +129,9 @@ def get_data(
                     print("要么你就想查询line/point以外的表，要么你就输了太多项。目前无法支持。")
                     return None
     print("len(result)", "=", len(result))  # debug
+    count = 0
     for element in result:
+        count += 1
         element_type = element[0]
         element_data = list(element[1])
         # print(element_data)  # debug
@@ -148,10 +140,14 @@ def get_data(
             attrib = dict(zip(column, element_data))
             geom = attrib["way"]
             # print(attrib)  # debug
-            print(geom)
+            # print(geom) # debug
             if isinstance(geom, shapely.geometry.Point):
                 print("yoo")
                 print(geom.x, geom.y)
+                print(geoproj(geom.x, geom.y))
+                if count >= 500:
+                    exit(0)
+
     return result
 
 
