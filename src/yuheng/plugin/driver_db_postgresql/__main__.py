@@ -13,6 +13,8 @@ src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from yuheng import Node, Waifu, Way
 
+PROJ_TRANSFORMER = pyproj.Transformer.from_crs("epsg:3857", "epsg:4326")
+
 
 def check():
     # migration if needed
@@ -28,15 +30,11 @@ def prune_tag(prune_list: List[str], target_dict: Dict[str, Any]):
     }
 
 
-PROJ_3857 = pyproj.Proj(init="epsg:3857")
-PROJ_4326 = pyproj.Proj(init="epsg:4326")
-
-
 def geoproj(x: float, y: float) -> Tuple[float, float]:
     """
     return Tuple[lon:float, lat:float]
     """
-    return pyproj.transform(PROJ_3857, PROJ_4326, x, y)
+    return PROJ_TRANSFORMER.transform(x, y)
 
 
 def get_column(
