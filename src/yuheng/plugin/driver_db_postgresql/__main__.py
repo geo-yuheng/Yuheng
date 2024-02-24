@@ -14,7 +14,7 @@ from pyproj import Proj, transform
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
-from yuheng import Waifu
+from yuheng import Waifu, Node
 
 
 def check():
@@ -129,7 +129,10 @@ def get_data(
                     print("要么你就想查询line/point以外的表，要么你就输了太多项。目前无法支持。")
                     return None
     print("len(result)", "=", len(result))  # debug
+    node_remap_count = -1
+    way_remap_count = -1
     count = 0
+    map = Waifu()
     for element in result:
         count += 1
         element_type = element[0]
@@ -139,8 +142,8 @@ def get_data(
             column = columns[0]
             attrib = dict(zip(column, element_data))
             geom = attrib["way"]
-            # print(attrib)  # debug
-            # print(geom) # debug
+            print(attrib)  # debug
+            print(geom)  # debug
             if isinstance(geom, shapely.geometry.Point):
                 print("yoo")
                 print(geom.x, geom.y)
@@ -148,15 +151,13 @@ def get_data(
                 if count >= 500:
                     exit(0)
             if isinstance(geom, shapely.geometry.LineString):
-                print(type(geom), geom)
-                # print(type(geom.xy), geom.xy)
-                # print(type(geom.xy[0]), geom.xy[0])
-                # print(type(list(geom.xy[0])), list(geom.xy[0]))
-                print(list(zip(list(geom.xy[0]), list(geom.xy[1]))))
-                # for i in geom:
-                #     print(i)
-                if count >= 2:
-                    exit(0)
+                point_list = [
+                    geoproj(x=i[0], y=i[1])
+                    for i in list(zip(list(geom.xy[0]), list(geom.xy[1])))
+                ]
+                temp_node = Node()
+                if count >= 3:
+                    exit(1)
 
     return result
 
