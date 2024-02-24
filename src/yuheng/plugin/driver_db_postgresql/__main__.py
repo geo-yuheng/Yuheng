@@ -142,7 +142,9 @@ def get_data(
         for i in element_list:
             spec_dict[int(i.id)] = i
 
-    count = 0  # debug
+    control_count = 0  # debug
+    control_count_way = 0
+    control_count_node = 0
     # transform and insert
     node_remap_count = -1
     way_remap_count = -1
@@ -150,10 +152,16 @@ def get_data(
     way_list = []
     carto = Waifu()
     for element in result:
-        count += 1
         element_type = element[0]
         element_data = list(element[1])
         # print(element_data)  # debug
+
+        if element_type == "line" or element_type == "way":
+            control_count_way += 1
+        elif element_type == "point" or element_type == "node":
+            control_count_node += 1
+        else:
+            control_count += 1
 
         column = columns[0]
         tag_dict = dict(zip(column, element_data))
@@ -180,7 +188,7 @@ def get_data(
             )
             node_list.append(this_node)
             node_remap_count -= 1
-            if count >= 1000:
+            if control_count_node >= 100:
                 break
         if isinstance(geom, shapely.geometry.LineString):
             import time
@@ -223,7 +231,7 @@ def get_data(
             duration = end_time - start_time
             print("time:", duration, "s")
 
-            if count >= 500:
+            if control_count_way >= 100:
                 break
 
     insert_to_dict(carto.node_dict, node_list)
