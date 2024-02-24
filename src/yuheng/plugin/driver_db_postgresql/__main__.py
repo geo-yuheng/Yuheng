@@ -28,13 +28,15 @@ def prune_tag(prune_list: List[str], target_dict: Dict[str, Any]):
     }
 
 
+PROJ_3857 = pyproj.Proj(init="epsg:3857")
+PROJ_4326 = pyproj.Proj(init="epsg:4326")
+
+
 def geoproj(x: float, y: float) -> Tuple[float, float]:
     """
     return Tuple[lon:float, lat:float]
     """
-    return pyproj.transform(
-        pyproj.Proj(init="epsg:3857"), pyproj.Proj(init="epsg:4326"), x, y
-    )
+    return pyproj.transform(PROJ_3857, PROJ_4326, x, y)
 
 
 def get_column(
