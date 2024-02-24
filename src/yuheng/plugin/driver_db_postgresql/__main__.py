@@ -1,20 +1,17 @@
-from typing import Optional, List, Dict, Any
-
-import psycopg
-import shapely
-from psycopg.types import TypeInfo
-
-from psycopg.types.shapely import register_shapely
-
-
 import os
 import sys
-from pyproj import Proj, transform
+from typing import Any, Dict, List, Optional, Tuple
+
+import psycopg
+import pyproj
+import shapely
+from psycopg.types import TypeInfo
+from psycopg.types.shapely import register_shapely
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
-from yuheng import Waifu, Node, Way
+from yuheng import Node, Waifu, Way
 
 
 def check():
@@ -31,10 +28,13 @@ def prune_tag(prune_list: List[str], target_dict: Dict[str, Any]):
     }
 
 
-def geoproj(x: float, y: float):
-    lon, lat = transform(Proj(init="epsg:3857"), Proj(init="epsg:4326"), x, y)
-    # print(f"Longitude: {lon}, Latitude: {lat}") # debug
-    return transform(Proj(init="epsg:3857"), Proj(init="epsg:4326"), x, y)
+def geoproj(x: float, y: float) -> Tuple[float, float]:
+    """
+    return Tuple[lon:float, lat:float]
+    """
+    return pyproj.transform(
+        pyproj.Proj(init="epsg:3857"), pyproj.Proj(init="epsg:4326"), x, y
+    )
 
 
 def get_column(
