@@ -6,6 +6,8 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
+from yuheng import Waifu
+
 
 class TestPluginDriverDbPostgresql(unittest.TestCase):
     def setUp(self) -> None:
@@ -15,7 +17,7 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
     def test_plugin_driver_db_postgresql_full_1type(self):
         from yuheng.plugin.driver_db_postgresql.__main__ import get_data
 
-        result = get_data(
+        carto = get_data(
             connection_dbname="osm2pgsql",
             connection_user="postgres",
             connection_password="12345678",
@@ -24,13 +26,14 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
             query_mode="full",
             query_type=["line"],
         )
-        print(len(result))
-        # assert len(result) == 114 or 514
+        print("len(carto.node_dict):", len(carto.node_dict))
+        print("len(carto.way_dict):", len(carto.way_dict))
+        assert isinstance(carto, type(yuheng.Waifu))
 
     def test_plugin_driver_db_postgresql_full_2type(self):
         from yuheng.plugin.driver_db_postgresql.__main__ import get_data
 
-        result = get_data(
+        carto = get_data(
             connection_dbname="osm2pgsql",
             connection_user="postgres",
             connection_password="12345678",
@@ -39,8 +42,8 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
             query_mode="full",
             query_type=["line", "point"],
         )
-        print(len(result))
-        # assert len(result) == 114 + 514
+        print("len(carto.node_dict):", len(carto.node_dict))
+        print("len(carto.way_dict):", len(carto.way_dict))
 
     def test_plugin_driver_db_postgresql_full_invalidtype(self):
         from yuheng.plugin.driver_db_postgresql.__main__ import get_data

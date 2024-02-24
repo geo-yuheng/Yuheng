@@ -1,4 +1,4 @@
-from typing import Optional, List
+from typing import Optional, List, Dict, Any
 
 import psycopg
 import shapely
@@ -14,7 +14,7 @@ from pyproj import Proj, transform
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
-from yuheng import Waifu, Node
+from yuheng import Waifu, Node, Way
 
 
 def check():
@@ -23,9 +23,15 @@ def check():
     pass
 
 
+def prune_tag(prune_list: List[str], target_dict: Dict[str, Any]):
+    return {
+        key: target_dict[key] for key in target_dict if key not in prune_list
+    }
+
+
 def geoproj(x: float, y: float):
     lon, lat = transform(Proj(init="epsg:3857"), Proj(init="epsg:4326"), x, y)
-    print(f"Longitude: {lon}, Latitude: {lat}")
+    # print(f"Longitude: {lon}, Latitude: {lat}") # debug
     return transform(Proj(init="epsg:3857"), Proj(init="epsg:4326"), x, y)
 
 
@@ -134,12 +140,13 @@ def get_data(
         for i in element_list:
             spec_dict[int(i.id)] = i
 
+    count = 0  # debug
+    # transform and insert
     node_remap_count = -1
     way_remap_count = -1
     node_list = []
     way_list = []
-    count = 0
-    map = Waifu()
+    carto = Waifu()
     for element in result:
         count += 1
         element_type = element[0]
@@ -148,9 +155,14 @@ def get_data(
         if len(query_type) == 1:
             column = columns[0]
             attrib = dict(zip(column, element_data))
+            osm_id = attrib["osm_id"]
             geom = attrib["way"]
+            attrib = prune_tag(
+                prune_list=["osm_id", "z_order", "way_area", "way"],
+                target_dict=attrib,
+            )  # 第一项和后三项，不是tag内容而是osm2pgsql加的
             print(attrib)  # debug
-            print(geom)  # debug
+            # print(geom)  # debug
             if isinstance(geom, shapely.geometry.Point):
                 print("yoo")
                 print(geom.x, geom.y)
@@ -162,7 +174,7 @@ def get_data(
                     geoproj(x=i[0], y=i[1])
                     for i in list(zip(list(geom.xy[0]), list(geom.xy[1])))
                 ]
-                temp_node_list = []
+                temp_node_list: List[int] = []
                 for point in point_list:
                     temp_node = Node(
                         attrib={
@@ -175,7 +187,7 @@ def get_data(
                         },
                         tag_dict={},
                     )
-                    temp_node_list.append(temp_node)
+                    temp_node_list.append(node_remap_count)
                     node_list.append(temp_node)
                     node_remap_count -= 1
                 temp_way = Way(
@@ -189,10 +201,12 @@ def get_data(
                     nd_list=[],
                 )
                 way_list.append(temp_way)
-                if count >= 3:
-                    exit(1)
-
-    return result
+                way_remap_count -= 1
+                if count >= 10:
+                    exit(0)
+    insert_to_dict(carto.node_dict, node_list)
+    insert_to_dict(carto.way_dict, way_list)
+    return carto
 
 
 def main():
