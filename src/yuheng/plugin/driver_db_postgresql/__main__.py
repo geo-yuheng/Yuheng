@@ -129,8 +129,15 @@ def get_data(
                     print("要么你就想查询line/point以外的表，要么你就输了太多项。目前无法支持。")
                     return None
     print("len(result)", "=", len(result))  # debug
+
+    def insert_to_dict(spec_dict, element_list):
+        for i in element_list:
+            spec_dict[int(i.id)] = i
+
     node_remap_count = -1
     way_remap_count = -1
+    node_list = []
+    way_list = []
     count = 0
     map = Waifu()
     for element in result:
@@ -155,7 +162,33 @@ def get_data(
                     geoproj(x=i[0], y=i[1])
                     for i in list(zip(list(geom.xy[0]), list(geom.xy[1])))
                 ]
-                temp_node = Node()
+                temp_node_list = []
+                for point in point_list:
+                    temp_node = Node(
+                        attrib={
+                            "id": node_remap_count,
+                            "visible": True,
+                            "version": 1,
+                            "changeset": 1,
+                            "lat": point[1],
+                            "lon": point[0],
+                        },
+                        tag_dict={},
+                    )
+                    temp_node_list.append(temp_node)
+                    node_list.append(temp_node)
+                    node_remap_count -= 1
+                temp_way = Way(
+                    attrib={
+                        "id": way_remap_count,
+                        "visible": True,
+                        "version": 1,
+                        "changeset": 1,
+                    },
+                    tag_dict={},
+                    nd_list=[],
+                )
+                way_list.append(temp_way)
                 if count >= 3:
                     exit(1)
 
