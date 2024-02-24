@@ -14,7 +14,23 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
         # NOTE: conduct this part of postgresql need you deploy a server.
         pass
 
-    def test_plugin_driver_db_postgresql_full_1type(self):
+    def test_plugin_driver_db_postgresql_full_type_node(self):
+        from yuheng.plugin.driver_db_postgresql.__main__ import get_data
+
+        carto = get_data(
+            connection_dbname="osm2pgsql",
+            connection_user="postgres",
+            connection_password="12345678",
+            connection_host="localhost",
+            connection_port="5432",
+            query_mode="full",
+            query_type=["point"],
+        )
+        print("len(carto.node_dict):", len(carto.node_dict))
+        print("len(carto.way_dict):", len(carto.way_dict))
+        assert isinstance(carto, type(yuheng.Waifu))
+
+    def test_plugin_driver_db_postgresql_full_type_way(self):
         from yuheng.plugin.driver_db_postgresql.__main__ import get_data
 
         carto = get_data(
@@ -30,7 +46,7 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
         print("len(carto.way_dict):", len(carto.way_dict))
         assert isinstance(carto, type(yuheng.Waifu))
 
-    def test_plugin_driver_db_postgresql_full_2type(self):
+    def test_plugin_driver_db_postgresql_full_type_multi(self):
         from yuheng.plugin.driver_db_postgresql.__main__ import get_data
 
         carto = get_data(

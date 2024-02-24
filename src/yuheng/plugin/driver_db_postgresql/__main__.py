@@ -25,7 +25,9 @@ def check():
 
 def prune_tag(prune_list: List[str], target_dict: Dict[str, Any]):
     return {
-        key: target_dict[key] for key in target_dict if key not in prune_list
+        key: target_dict.get(key)
+        for key in target_dict
+        if key not in prune_list
     }
 
 
@@ -132,7 +134,7 @@ def get_data(
                     for record in cursor:
                         result.append((query_type[1], record))
                 else:
-                    print("要么你就想查询line/point以外的表，要么你就输了太多项。目前无法支持。")
+                    print("要么是想查询line/point以外的表，要么是输入了太多项类型；故目前无法支持。")
                     return None
     print("len(result)", "=", len(result))  # debug
 
@@ -152,58 +154,59 @@ def get_data(
         element_type = element[0]
         element_data = list(element[1])
         # print(element_data)  # debug
-        if len(query_type) == 1:
-            column = columns[0]
-            attrib = dict(zip(column, element_data))
-            osm_id = attrib["osm_id"]
-            geom = attrib["way"]
-            attrib = prune_tag(
-                prune_list=["osm_id", "z_order", "way_area", "way"],
-                target_dict=attrib,
-            )  # 第一项和后三项，不是tag内容而是osm2pgsql加的
-            print(attrib)  # debug
-            # print(geom)  # debug
-            if isinstance(geom, shapely.geometry.Point):
-                print("yoo")
-                print(geom.x, geom.y)
-                print(geoproj(geom.x, geom.y))
-                if count >= 500:
-                    exit(0)
-            if isinstance(geom, shapely.geometry.LineString):
-                point_list = [
-                    geoproj(x=i[0], y=i[1])
-                    for i in list(zip(list(geom.xy[0]), list(geom.xy[1])))
-                ]
-                temp_node_list: List[int] = []
-                for point in point_list:
-                    temp_node = Node(
-                        attrib={
-                            "id": node_remap_count,
-                            "visible": True,
-                            "version": 1,
-                            "changeset": 1,
-                            "lat": point[1],
-                            "lon": point[0],
-                        },
-                        tag_dict={},
-                    )
-                    temp_node_list.append(node_remap_count)
-                    node_list.append(temp_node)
-                    node_remap_count -= 1
-                temp_way = Way(
+
+        column = columns[0]
+        tag_dict = dict(zip(column, element_data))
+        osm_id = tag_dict.get("osm_id")
+        geom = tag_dict.get("way")
+        tag_dict = prune_tag(
+            prune_list=["osm_id", "z_order", "way_area", "way"],
+            target_dict=tag_dict,
+        )  # 第一项和后三项，不是tag内容而是osm2pgsql加的
+        # print(tag_dict)  # debug
+        # print(geom)  # debug
+        if isinstance(geom, shapely.geometry.Point):
+            print("yoo")
+            print(geom.x, geom.y)
+            print(geoproj(geom.x, geom.y))
+            if count >= 10:
+                break
+        if isinstance(geom, shapely.geometry.LineString):
+            point_list = [
+                geoproj(x=i[0], y=i[1])
+                for i in list(zip(list(geom.xy[0]), list(geom.xy[1])))
+            ]
+            temp_node_list: List[int] = []
+            for point in point_list:
+                temp_node = Node(
                     attrib={
-                        "id": way_remap_count,
+                        "id": node_remap_count,
                         "visible": True,
                         "version": 1,
                         "changeset": 1,
+                        "lat": point[1],
+                        "lon": point[0],
                     },
-                    tag_dict={},
-                    nd_list=[],
+                    tag_dict={"type": "virtual_node"},
                 )
-                way_list.append(temp_way)
-                way_remap_count -= 1
-                if count >= 10:
-                    exit(0)
+                temp_node_list.append(node_remap_count)
+                node_list.append(temp_node)
+                node_remap_count -= 1
+            temp_way = Way(
+                attrib={
+                    "id": way_remap_count if osm_id <= 0 else osm_id,
+                    "visible": True,
+                    "version": 1,
+                    "changeset": 1,
+                },
+                tag_dict=tag_dict,
+                nd_list=temp_node_list,
+            )
+            way_list.append(temp_way)
+            way_remap_count -= 1
+            if count >= 2:
+                break
+
     insert_to_dict(carto.node_dict, node_list)
     insert_to_dict(carto.way_dict, way_list)
     return carto
@@ -214,4 +217,4 @@ def main():
 
 
 if __name__ == "__main__":
-    get_data()
+    main()
