@@ -166,12 +166,26 @@ def get_data(
         # print(tag_dict)  # debug
         # print(geom)  # debug
         if isinstance(geom, shapely.geometry.Point):
-            print("yoo")
-            print(geom.x, geom.y)
-            print(geoproj(geom.x, geom.y))
-            if count >= 10:
+            pos = geoproj(geom.x, geom.y)
+            this_node = Node(
+                attrib={
+                    "id": node_remap_count if osm_id <= 0 else osm_id,
+                    "visible": True,
+                    "version": 1,
+                    "changeset": 1,
+                    "lat": pos[1],
+                    "lon": pos[0],
+                },
+                tag_dict=tag_dict,
+            )
+            node_list.append(this_node)
+            node_remap_count -= 1
+            if count >= 1000:
                 break
         if isinstance(geom, shapely.geometry.LineString):
+            import time
+
+            start_time = time.time()
             point_list = [
                 geoproj(x=i[0], y=i[1])
                 for i in list(zip(list(geom.xy[0]), list(geom.xy[1])))
@@ -204,7 +218,12 @@ def get_data(
             )
             way_list.append(temp_way)
             way_remap_count -= 1
-            if count >= 2:
+
+            end_time = time.time()
+            duration = end_time - start_time
+            print("time:", duration, "s")
+
+            if count >= 500:
                 break
 
     insert_to_dict(carto.node_dict, node_list)
