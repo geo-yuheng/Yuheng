@@ -34,6 +34,10 @@ def geoproj(x: float, y: float) -> Tuple[float, float]:
     """
     return Tuple[lon:float, lat:float]
     """
+    # don't use this old api
+    # return pyproj.transform(
+    #     pyproj.Proj(init="epsg:3857"), pyproj.Proj(init="epsg:4326"), x, y
+    # )
     return PROJ_TRANSFORMER.transform(x, y)
 
 
