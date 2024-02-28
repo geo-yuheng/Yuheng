@@ -47,7 +47,7 @@ def load(
     poly_object: List[Dict[str, float]], output_format="yuheng"
 ) -> Union[None, Waifu]:
     # load_2_waifu
-    carto_object = Waifu()
+    world = Waifu()
     node_obj_list = []
     for i in range(len(poly_object)):
         node_obj_list.append(
@@ -81,10 +81,10 @@ def load(
         nd_list=node_id_list,
     )
 
-    carto.insert_to_dict(carto_object.node_dict, node_obj_list)
-    carto.insert_to_dict(carto_object.way_dict, [poly_way])
+    world.insert_to_dict(world.node_dict, node_obj_list)
+    world.insert_to_dict(world.way_dict, [poly_way])
 
-    return carto_object
+    return world
 
 
 # def load_2_poly

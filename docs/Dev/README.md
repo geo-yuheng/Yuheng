@@ -13,3 +13,19 @@ Especially for some basic OSM related property, you may want to name them with s
 ## "Kill that o-ta-ku"
 
 Still many place using the name "Waifu" for main class.
+
+We suggest this usage:
+
+```python
+import yuheng
+
+world=yuheng.Carto()
+```
+
+or
+
+```python
+from yuheng import Carto
+
+world=Carto()
+```
