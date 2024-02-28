@@ -18,7 +18,7 @@ class TestPluginDriverPoly(unittest.TestCase):
 
         ans = main(
             poly_file_path=os.path.join(
-                os.getcwd(),
+                os.path.dirname(os.path.realpath(__file__)),
                 "..",
                 "assets",
                 "poly",
@@ -31,7 +31,7 @@ class TestPluginDriverPoly(unittest.TestCase):
         args = (
             "--poly_file_path "
             + os.path.join(
-                os.getcwd(),
+                os.path.dirname(os.path.realpath(__file__)),
                 "..",
                 "assets",
                 "poly",
