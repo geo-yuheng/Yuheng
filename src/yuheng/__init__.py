@@ -212,7 +212,7 @@ class Waifu:
             else:
                 if kwargs.get("element_id"):
                     # 但element_id是单个还是多个也不知道
-                    work_url = self.read_network_element_single(
+                    work_url = self.read_network_element(
                         element_id=kwargs["element_id"],
                         type=kwargs.get("type"),
                         endpoint=endpoint,
@@ -230,7 +230,7 @@ class Waifu:
         work_load = worker(work_url)
         self.read_memory(work_load)
 
-    def read_network_area(self, S, W, N, E, source="api", endpoint="osm"):
+    def read_network_area(self, S, W, N, E, source="api", endpoint="osm")->str:
         work_url = ""
         if source == "api":
             # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
@@ -249,28 +249,38 @@ class Waifu:
             pass
         return work_url
 
-    def read_network_element(self):
-        # 后续重写一个不管single/multi都能生成url的read_network_element
-        def have_multi_elements(element_id) -> bool:
-            if "," in element_id:
-                # have comma or space between multi element
-                return True
-
-        work_url = ""
-        return work_url
-
-    def read_network_element_single(
+    def read_network_element(
         self, element_id: str, type="undefined", source="api", endpoint="osm"
     ) -> str:
+        # 一个不管single/multi都能生成url的read_network_element
+        # element_id: it can be string or list, but we will normalize it to list.
+        # this maybe help when batch request:
+        # https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_/api/0.6/[nodes|ways|relations]?#parameters
+
         work_url = ""
+
+        def element_id_normalizer(element_id_object: Union[List[str], str]):
+            element_id_list = []
+
+            def have_multi_elements(element_id_string: str) -> bool:
+                if "," in element_id:
+                    # have comma or space between multi element
+                    return True
+
+            if isinstance(element_id_object, list):
+                return element_id_object
+            else:
+                if have_multi_elements(element_id_object):
+                    # should split it and append
+                    return element_id_list
+                else:
+                    return [element_id_object]
 
         if (
             prefix_normalization(type) == "node"
             or prefix_normalization(type) == "way"
             or prefix_normalization(type) == "relation"
         ):
-            import requests
-
             pure_id = (
                 element_id.replace("n", "").replace("w", "").replace("r", "")
             )
@@ -298,14 +308,6 @@ class Waifu:
             # warn that if parameter type and element_id implied type don't match
             pass
 
-        return work_url
-
-    def read_network_element_multi(
-        self, element_id=None, mode="api", server="osm"
-    ):
-        work_url = ""
-        # it can be string or list
-        # https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_/api/0.6/[nodes|ways|relations]?#parameters
         return work_url
 
     def write(self, mode=None, file_path="", data_driver=""):
