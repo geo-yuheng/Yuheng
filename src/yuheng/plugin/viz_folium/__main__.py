@@ -11,7 +11,7 @@ from yuheng import Waifu
 from yuheng.type import Node, Relation, Way
 
 
-class Map:
+class VizFolium:
     def __init__(self):
         self.element_list = []
 
@@ -22,9 +22,11 @@ class Map:
         self.element_list.append(element)
         return None
 
-    def display(self) -> None:
+    def display(self, **kwargs) -> None:
         """
         This func display some element to html
+
+        If **kwargs is not blank, then we should call self.add() for each one, then display as expected.
         """
 
         m = folium.Map(location=[11.4, 51.4], zoom_start=0)

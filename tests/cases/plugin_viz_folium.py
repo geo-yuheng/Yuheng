@@ -8,13 +8,11 @@ sys.path.append(src_dir)
 
 from yuheng import Waifu
 from yuheng.type import Member, Node, Relation, Way
-from yuheng.plugin.folium.__main__ import display
+from yuheng.plugin.folium.__main__ import VizFolium, display
 
 
 class TestPluginVisualizationFolium(unittest.TestCase):
     def setUp(self) -> None:
-        from yuheng.plugin.folium.__main__ import display
-
         self.test_node_1 = Node(
             {"id": "1"}, {"name": "folium cafe", "amenity": "cafe"}
         )
@@ -34,9 +32,34 @@ class TestPluginVisualizationFolium(unittest.TestCase):
             ],
         )
         self.test_map = Waifu()
+        # 需要插入到Waifu对象里面。
+        # self.test_map.insert(
+        #     self.test_node_1,
+        #     self.test_node_2,
+        #     self.test_way,
+        #     self.test_relation,
+        # )
 
-    def test_plugin_driver_poly_import(self):
-        display(self.test_relation)
+    def test_plugin_viz_folium_display_kwargs(self):
+        carto_viz = VizFolium()
+        carto_viz.display(
+            self.test_node_1,
+            self.test_node_2,
+            self.test_way,
+            self.test_relation,
+        )
+
+    def test_plugin_viz_folium_display_added(self):
+        carto_viz = VizFolium()
+        carto_viz.add(self.test_node_1)
+        carto_viz.add(self.test_node_2)
+        carto_viz.add(self.test_way)
+        carto_viz.add(self.test_relation)
+        carto_viz.display()
+
+    def test_plugin_viz_folium_display_object(self):
+        carto_viz = VizFolium()
+        carto_viz.display(self.test_map)
 
 
 if __name__ == "__main__":
