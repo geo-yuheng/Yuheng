@@ -39,6 +39,11 @@ class Waifu:
         if value is not None:
             attrib[key] = str(value)
 
+    @staticmethod
+    def insert_to_dict(spec_dict, element_list):
+        for i in element_list:
+            spec_dict[int(i.id)] = i
+
     def meow(self):
         import logging
 

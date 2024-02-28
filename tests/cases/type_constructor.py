@@ -167,16 +167,12 @@ class TestTypeConstructor(unittest.TestCase):
             ],
         )
 
-        def insert_to_dict(spec_dict, element_list):
-            for i in element_list:
-                spec_dict[int(i.id)] = i
-
-        insert_to_dict(
+        carto.insert_to_dict(
             carto.node_dict,
             [node_1, node_2, node_3, node_4, node_5, node_6, node_7],
         )
-        insert_to_dict(carto.way_dict, [way_1, way_2])
-        insert_to_dict(carto.relation_dict, [relation_1])
+        carto.insert_to_dict(carto.way_dict, [way_1, way_2])
+        carto.insert_to_dict(carto.relation_dict, [relation_1])
 
         print("len(carto.node_dict):", len(carto.node_dict))
         print("len(carto.way_dict):", len(carto.way_dict))
