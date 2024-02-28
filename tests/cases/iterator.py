@@ -14,9 +14,13 @@ import yuheng
 class TestIterator(unittest.TestCase):
     def setUp(self) -> None:
         self.map = yuheng.Waifu()
-        FILENAME = "JOSM_export.osm"
+        FILENAME = "extract_josm_bbox_qingzhou.osm"
         data_path = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "assets", FILENAME
+            os.path.dirname(os.path.realpath(__file__)),
+            "..",
+            "assets",
+            "osm",
+            FILENAME,
         )
         self.map.read(mode="file", file_path=data_path)
 

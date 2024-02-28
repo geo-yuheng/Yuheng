@@ -16,7 +16,11 @@ class TestLoadNetwork(unittest.TestCase):
         self.map = yuheng.Waifu()
         FILENAME = "element_ogf_haresora_kinen.osm"
         data_path = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "network", FILENAME
+            os.path.dirname(os.path.realpath(__file__)),
+            "..",
+            "assets",
+            "osm",
+            FILENAME,
         )
         self.map.read(mode="file", file_path=data_path)
 

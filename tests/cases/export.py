@@ -18,15 +18,19 @@ class TestExport(unittest.TestCase):
     def setUp(self) -> None:
         self.map = yuheng.Waifu()
         self.FILENAME_TARGET = "extract_bbox_osm_daxingjichang.osm"
-        self.FILENAME_OUTPUT = "self_save_dist.osm"
+        self.FILENAME_OUTPUT = "dump_selfsave_daxingjichang.osm"
         self.path_target = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
-            "export",
+            "..",
+            "assets",
+            "osm",
             self.FILENAME_TARGET,
         )
         self.path_output = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
-            "export",
+            "..",
+            "assets",
+            "osm",
             self.FILENAME_OUTPUT,
         )
         self.map.read(mode="file", file_path=self.path_target)

@@ -14,11 +14,15 @@ class TestLoadAbbreviation(unittest.TestCase):
         self.map = yuheng.Waifu()
 
     def test_load_abbreviation(self):
-        FILENAME = "OSMWebsite_export.osm"
+        FILENAME = "extract_osmwebsite_bbox_weihaichengshantou.osm"
         data_path = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "assets", FILENAME
+            os.path.dirname(os.path.realpath(__file__)),
+            "..",
+            "assets",
+            "osm",
+            FILENAME,
         )
-        self.map.read(mode="f", fpath=data_path)
+        self.map.read(mode="file", file_path=data_path)
         m = self.map
         assert len(m.bounds_list) == 1
         assert len(m.node_dict) == 11818
