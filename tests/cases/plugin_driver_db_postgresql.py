@@ -15,9 +15,9 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
         pass
 
     def test_plugin_driver_db_postgresql_full_type_node(self):
-        from yuheng.plugin.driver_db_postgresql.__main__ import get_data
-
         import time
+
+        from yuheng.plugin.driver_db_postgresql.__main__ import get_data
 
         start_time = time.time()
         carto = get_data(
@@ -37,9 +37,9 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
         assert isinstance(carto, Waifu)
 
     def test_plugin_driver_db_postgresql_full_type_way(self):
-        from yuheng.plugin.driver_db_postgresql.__main__ import get_data
-
         import time
+
+        from yuheng.plugin.driver_db_postgresql.__main__ import get_data
 
         start_time = time.time()
         carto = get_data(
@@ -59,9 +59,9 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
         assert isinstance(carto, Waifu)
 
     def test_plugin_driver_db_postgresql_full_type_multi(self):
-        from yuheng.plugin.driver_db_postgresql.__main__ import get_data
-
         import time
+
+        from yuheng.plugin.driver_db_postgresql.__main__ import get_data
 
         start_time = time.time()
         carto = get_data(
