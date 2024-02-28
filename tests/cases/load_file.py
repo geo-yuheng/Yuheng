@@ -14,9 +14,13 @@ class TestLoadFile(unittest.TestCase):
         self.map = yuheng.Waifu()
 
     def test_load_file_OSMWebsite(self):
-        FILENAME = "OSMWebsite_export.osm"
+        FILENAME = "extract_osmwebsite_bbox_weihaichengshantou.osm"
         data_path = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "assets", FILENAME
+            os.path.dirname(os.path.realpath(__file__)),
+            "..",
+            "assets",
+            "osm",
+            FILENAME,
         )
         self.map.read(mode="file", file_path=data_path)
         m = self.map
@@ -26,9 +30,13 @@ class TestLoadFile(unittest.TestCase):
         assert len(m.relation_dict) == 14
 
     def test_load_file_JOSM(self):
-        FILENAME = "JOSM_export.osm"
+        FILENAME = "extract_josm_bbox_qingzhou.osm"
         data_path = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "assets", FILENAME
+            os.path.dirname(os.path.realpath(__file__)),
+            "..",
+            "assets",
+            "osm",
+            FILENAME,
         )
         self.map.read(mode="file", file_path=data_path)
         m = self.map
@@ -38,9 +46,13 @@ class TestLoadFile(unittest.TestCase):
         assert len(m.relation_dict) == 5
 
     def test_load_file_level0(self):
-        FILENAME = "level0_export.osm"
+        FILENAME = "extract_level0_newdata.osm"
         data_path = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "assets", FILENAME
+            os.path.dirname(os.path.realpath(__file__)),
+            "..",
+            "assets",
+            "osm",
+            FILENAME,
         )
         self.map.read(mode="file", file_path=data_path)
         m = self.map
