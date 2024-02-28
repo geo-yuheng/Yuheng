@@ -4,6 +4,7 @@ import os
 import sys
 import unittest
 
+
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
@@ -19,6 +20,8 @@ class TestPluginDriverPoly(unittest.TestCase):
         ans = main(
             poly_file_path=os.path.join(
                 os.getcwd(),
+                "..",
+                "assets",
                 "poly",
                 "Izaland-polyfile-20231213-laoshubabytest.poly",
             )
@@ -30,6 +33,8 @@ class TestPluginDriverPoly(unittest.TestCase):
             "--poly_file_path "
             + os.path.join(
                 os.getcwd(),
+                "..",
+                "assets",
                 "poly",
                 "Izaland-polyfile-20231213-laoshubabytest.poly",
             )
@@ -40,6 +45,7 @@ class TestPluginDriverPoly(unittest.TestCase):
             + " "
             + os.path.join(
                 os.getcwd(),
+                "..",
                 "..",
                 "src",
                 "yuheng",
