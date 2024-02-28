@@ -1,8 +1,7 @@
-import os
 import argparse
+import os
 import sys
 from typing import Dict, List, Tuple, Union
-
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
@@ -92,10 +91,12 @@ def load(
 
     return carto_object
 
+
 # def load_2_poly
 
 # def read(): read poly file and specific a target
 # def write(): write to poly file (input maybe various)
+
 
 def main(
     poly_file_path: str, schema=None, order=None, output_format="raw", **kwargs

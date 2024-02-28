@@ -6,6 +6,7 @@ from yuheng.basic.model import Base
 
 # 随想
 
+
 class OSM(Base):
     def __init__(self) -> None:
         super().__init__()

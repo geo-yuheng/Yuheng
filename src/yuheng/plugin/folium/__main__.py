@@ -7,7 +7,8 @@ import folium
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
-from yuheng import Waifu, Way, Node, Relation
+from yuheng import Waifu
+from yuheng.type import Node, Relation, Way
 
 
 class Map:

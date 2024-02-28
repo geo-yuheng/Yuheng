@@ -11,7 +11,7 @@ from .basic.global_const import (
 )
 from .basic.model import BaseOsmModel
 from .method import query
-from .method.network import get_headers, get_endpoint_api
+from .method.network import get_endpoint_api, get_headers
 from .method.parse import (
     parse_node,
     parse_relation,

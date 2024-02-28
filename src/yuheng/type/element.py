@@ -1,8 +1,7 @@
 from typing import Dict, List
 
-
-from .constraint import Member
 from .. import BaseOsmModel
+from .constraint import Member
 
 # from __future__ import annotations # 3.7-3.9
 
