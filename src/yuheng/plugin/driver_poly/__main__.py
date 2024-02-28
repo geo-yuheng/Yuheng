@@ -81,13 +81,8 @@ def load(
         nd_list=node_id_list,
     )
 
-    # 这个函数是从test_type_constructor抄来的，后续建议转正
-    def insert_to_dict(spec_dict, element_list):
-        for i in element_list:
-            spec_dict[int(i.id)] = i
-
-    insert_to_dict(carto_object.node_dict, node_obj_list)
-    insert_to_dict(carto_object.way_dict, [poly_way])
+    carto.insert_to_dict(carto_object.node_dict, node_obj_list)
+    carto.insert_to_dict(carto_object.way_dict, [poly_way])
 
     return carto_object
 

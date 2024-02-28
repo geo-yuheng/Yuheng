@@ -143,10 +143,6 @@ def get_data(
                     return None
     print("len(result)", "=", len(result))  # debug
 
-    def insert_to_dict(spec_dict, element_list):
-        for i in element_list:
-            spec_dict[int(i.id)] = i
-
     control_count = 0  # debug
     control_count_way = 0
     control_count_node = 0
@@ -239,8 +235,8 @@ def get_data(
             if control_count_way >= 100:
                 break
 
-    insert_to_dict(carto.node_dict, node_list)
-    insert_to_dict(carto.way_dict, way_list)
+    carto.insert_to_dict(carto.node_dict, node_list)
+    carto.insert_to_dict(carto.way_dict, way_list)
     return carto
 
 
