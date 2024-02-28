@@ -157,13 +157,17 @@ class Waifu:
         except Exception as e:
             print(f"Error: 发生未知错误 - {str(e)}")
 
-    def read_network(self, source="api", endpoint="osm", quantity="", **kwargs):
+    def read_network(
+        self, source="api", endpoint="osm", quantity="", **kwargs
+    ):
         # 所有类型的网络请求最终都将返回一个work_url，在read_network中调用worker来获取work_load，最后转给read_memory读取这个work_load
         # 无论如何先获取url，才能算hash确定是否使用cache
+        # quantity：表数量，是想下载单一个元素还是一片区域。建议后续改为target，毕竟数量只有单或者多。区域和batch都是多。target可以有single_element/batch_element/area等。
         # source： 是从api读还是 overpass读，还是其他网站的野数据（比如IA恰好存了一个xml之类的情况）
         # endpoint：填osm/ogf或者osmru/osmde/kumi之类的
-        # quantity：很遗憾我忘了我当时取这个名字啥意思了
         # optional arguments:
+        # * type： 下载元素的时候指定nwr，部分情况下可能冗余。
+        # * element_id: 暂不清楚是列表合适还是字符串（单个or多个），下载除了area以外都需要。建议后续维护成强制传列表，一个也得列表。
         # * allow_cache: 将会把请求的各种信息（含url，主要是url）hash以后创建一个cache文件名，如果重复请求的话不需要对代码作出修改就自动用缓存，避免反复打目标机
         # * local_overpassql_path：overpass语句不会自动生成而是照抄本地文件内的
         # * version： 读取指定版本的文件
@@ -199,11 +203,13 @@ class Waifu:
         if quantity != "":
             if quantity == "area":
                 # parse SWNE
-                work_url = self.read_network_area(source=source, endpoint=endpoint)
+                work_url = self.read_network_area(
+                    source=source, endpoint=endpoint
+                )
             else:
                 if kwargs.get("element_id"):
                     # 但element_id是单个还是多个也不知道
-                    work_load = self.read_network_element_single(
+                    work_url = self.read_network_element_single(
                         element_id=kwargs["element_id"],
                         type=kwargs.get("type"),
                         endpoint=endpoint,
@@ -252,7 +258,7 @@ class Waifu:
 
     def read_network_element_single(
         self, element_id: str, type="undefined", source="api", endpoint="osm"
-    ):
+    ) -> str:
         work_url = ""
 
         if (
@@ -268,8 +274,17 @@ class Waifu:
             if "v" in pure_id:
                 version = pure_id.split("v")[1]
                 pure_id = pure_id.split("v")[0]
+
+            print(endpoint)
             work_url = (
-                get_endpoint_api(endpoint)
+                get_endpoint_api(endpoint_name=endpoint)
+                + "/"
+                + str(
+                    get_endpoint_api(
+                        endpoint_name=endpoint, property="version"
+                    )
+                )
+                + "/"
                 + prefix_normalization(type, mode="p2prefix")
                 + "/"
                 + pure_id

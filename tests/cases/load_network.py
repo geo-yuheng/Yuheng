@@ -29,11 +29,15 @@ class TestLoadNetwork(unittest.TestCase):
         m_network = yuheng.Waifu()
         # m_network.read(mode="n")
         m_network.read_network(
-            endpoint="ogf",
             quantity="element",
+            source="api",
+            endpoint="ogf",
             type="way",
+            allow_cache=False,
             element_id="w28814809v1",
+            version="2",
         )
+
         m_network.meow()
         assert len(m_local.way_dict) == 1
         assert len(m_network.way_dict) == 1

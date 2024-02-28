@@ -8,7 +8,7 @@ from ..basic import YUHENG_CORE_NAME, YUHENG_VERSION
 # network 模块并不负责从网上读取数据，它负责的是endpoint和各种网络相关环境的处理。而从网络上读取数据是作为read driver的一种（因为并不仅仅有一种来源的driver）
 
 
-def get_endpoint_api(endpoint_name="osm") -> Optional[str]:
+def get_endpoint_api(endpoint_name="osm", property="url") -> Optional[str]:
     endpoint_api_list = {
         "osm": {"url": "https://api.openstreetmap.org/api", "version": 0.6},
         "ogf": {"url": "https://opengeofiction.net/api", "version": 0.6},
@@ -25,7 +25,7 @@ def get_endpoint_api(endpoint_name="osm") -> Optional[str]:
             "version": 0.6,
         },
     }
-    return endpoint_api_list.get(endpoint_name.lower())["url"]
+    return endpoint_api_list.get(endpoint_name.lower())[property]
 
 
 def get_endpoint_overpass(endpoint_name="osmde") -> Optional[str]:
