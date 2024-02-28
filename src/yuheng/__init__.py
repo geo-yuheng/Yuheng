@@ -1,5 +1,5 @@
 import time
-from typing import Dict, List
+from typing import Dict, List, Union
 from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
@@ -168,7 +168,7 @@ class Waifu:
         * endpoint：填osm/ogf或者osmru/osmde/kumi之类的
 
         optional arguments:
-        * type： 下载元素的时候指定nwr，部分情况下可能冗余。
+        * element_type： 下载元素的时候指定nwr，部分情况下可能冗余。
         * element_id: 暂不清楚是列表合适还是字符串（单个or多个），下载除了area以外都需要。建议后续维护成强制传列表，一个也得列表。
         * allow_cache: 将会把请求的各种信息（含url，主要是url）hash以后创建一个cache文件名，如果重复请求的话不需要对代码作出修改就自动用缓存，避免反复打目标机
         * local_overpassql_path：overpass语句不会自动生成而是照抄本地文件内的
@@ -188,9 +188,10 @@ class Waifu:
 
             return endpoint + urllib.parse.quote(ql_content)
 
-        if kwargs.get(
-            "use_overpass_query"
-        ):  # 其实我还没想好分source和分quantity（看起来是根据id/区域等形状区分）谁先谁后所以xjb写一个逻辑
+        if kwargs.get("use_overpass_query"):
+            # 先分source是api还是overpass
+            # 再看target是区域还是单个/多个元素
+            # 因为从API下载和从Overpass的逻辑天差地别，但元素还是区域的差异基本就是模板填空
             if kwargs.get("local_overpassql_path"):
                 ql_file = open(
                     kwargs.get("local_overpassql_path"),
@@ -214,7 +215,7 @@ class Waifu:
                     # 但element_id是单个还是多个也不知道
                     work_url = self.read_network_element(
                         element_id=kwargs["element_id"],
-                        type=kwargs.get("type"),
+                        element_type=kwargs.get("type"),
                         endpoint=endpoint,
                     )
                 else:
@@ -230,7 +231,9 @@ class Waifu:
         work_load = worker(work_url)
         self.read_memory(work_load)
 
-    def read_network_area(self, S, W, N, E, source="api", endpoint="osm")->str:
+    def read_network_area(
+        self, S, W, N, E, source="api", endpoint="osm"
+    ) -> str:
         work_url = ""
         if source == "api":
             # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
@@ -238,7 +241,7 @@ class Waifu:
             # https://www.openstreetmap.org/api/0.6/map?bbox=W,S,E,N
             pass
         if source == "overpass":
-            # def query_in_type(type: list, query_content: str) -> Waifu:
+            # def query_in_type(element_type: list, query_content: str) -> Waifu:
             #     return Waifu()
             # 不能直接返回Waifu，因为并不打算撤销这套__init__里放单独一个waifu的结构。这里只能返回其他内容（如xml/json）再在waifu里面parse它
 
@@ -250,7 +253,11 @@ class Waifu:
         return work_url
 
     def read_network_element(
-        self, element_id: str, type="undefined", source="api", endpoint="osm"
+        self,
+        element_id: Union[List[str], str],
+        element_type="undefined",
+        source="api",
+        endpoint="osm",
     ) -> str:
         # 一个不管single/multi都能生成url的read_network_element
         # element_id: it can be string or list, but we will normalize it to list.
@@ -277,9 +284,9 @@ class Waifu:
                     return [element_id_object]
 
         if (
-            prefix_normalization(type) == "node"
-            or prefix_normalization(type) == "way"
-            or prefix_normalization(type) == "relation"
+            prefix_normalization(element_type) == "node"
+            or prefix_normalization(element_type) == "way"
+            or prefix_normalization(element_type) == "relation"
         ):
             pure_id = (
                 element_id.replace("n", "").replace("w", "").replace("r", "")
@@ -298,14 +305,14 @@ class Waifu:
                     )
                 )
                 + "/"
-                + prefix_normalization(type, mode="p2prefix")
+                + prefix_normalization(element_type, mode="p2prefix")
                 + "/"
                 + pure_id
             )
 
         else:
-            # detect type single request
-            # warn that if parameter type and element_id implied type don't match
+            # detect element_type single request
+            # warn that if parameter element_type and element_id implied element_type don't match
             pass
 
         return work_url
