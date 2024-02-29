@@ -178,7 +178,7 @@ class Carto:
         * allow_cache: 将会把请求的各种信息（含url，主要是url）hash以后创建一个cache文件名，如果重复请求的话不需要对代码作出修改就自动用缓存，避免反复打目标机
         * local_overpassql_path：overpass语句不会自动生成而是照抄本地文件内的
         * version： 读取指定版本的文件
-        * child: 是否含子成员（int）。0或小于0为不包含。1时，对路径就是所有点，对关系就是所有成员。2时，对路径所有点，关系内路径的点和子关系的成员也下载。3或更大时为无穷尽直到找出所有子子孙孙。
+        * child: 是否含子成员（int）。0或小于0为不包含。1时，对路径就是所有点，对关系就是所有成员。2时，对路径所有点，关系内路径的点和子关系的成员也下载。child=2时与官方API中的/full等价。3或更大时为无穷尽直到找出所有子子孙孙。
         """
 
         def worker(url: str) -> str:
@@ -213,8 +213,13 @@ class Carto:
         if target != "":
             if target == "area":
                 # parse SWNE
+                S = kwargs.get("S") if kwargs.get("S") else 0.0
+                W = kwargs.get("W") if kwargs.get("W") else 0.0
+                N = kwargs.get("N") if kwargs.get("N") else 0.0
+                E = kwargs.get("E") if kwargs.get("E") else 0.0
+                # call
                 work_url = self.read_network_area(
-                    source=source, endpoint=endpoint
+                    source=source, endpoint=endpoint, S=S, W=W, N=N, E=E
                 )
             else:
                 if kwargs.get("element_id"):
@@ -245,7 +250,7 @@ class Carto:
             # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
             # need to add endpoint change function
             # https://www.openstreetmap.org/api/0.6/map?bbox=W,S,E,N
-            pass
+            return f"https://www.openstreetmap.org/api/0.6/map?bbox={W},{S},{E},{N}"
         if source == "overpass":
             # def query_in_type(element_type: list, query_content: str) -> Carto:
             #     return Carto()

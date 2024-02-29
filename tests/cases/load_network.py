@@ -61,13 +61,14 @@ class TestLoadNetwork(unittest.TestCase):
         world_network.read_network(
             target="area",
             source="api",
-            endpoint="ogf",
+            endpoint="osm",
             allow_cache=False,
             S=39.9671,
             W=116.4110,
             N=39.9726,
             E=116.4191,
         )
+        world_network.meow()
 
 
 if __name__ == "__main__":
