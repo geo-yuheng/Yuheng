@@ -73,7 +73,7 @@ class TestPluginVisualizationFolium(unittest.TestCase):
                 "..",
                 "assets",
                 "osm",
-                "extract_bbox_osm_daxingjichang.osm",
+                "extract_osmwebsite_bbox_daxingjichang.osm",
             ),
         )
         world.meow()
