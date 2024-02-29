@@ -42,7 +42,7 @@ class VizFolium:
         return None
 
 
-def main() -> 1:
+def main() -> None:
     print("This plugin can't be run as module.")
 
 
