@@ -7,7 +7,7 @@ import folium
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
-from yuheng import Waifu
+from yuheng import Carto
 from yuheng.type import Node, Relation, Way
 
 
@@ -15,7 +15,7 @@ class VizFolium:
     def __init__(self):
         self.element_list = []
 
-    def add(self, element: Union[Waifu, Way, Node, Relation]) -> None:
+    def add(self, element: Union[Carto, Way, Node, Relation]) -> None:
         """
         Append some element to list
         """
