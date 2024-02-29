@@ -20,7 +20,7 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
         from yuheng.plugin.driver_db_postgresql.__main__ import get_data
 
         start_time = time.time()
-        carto = get_data(
+        world = get_data(
             connection_dbname="osm2pgsql",
             connection_user="postgres",
             connection_password="12345678",
@@ -29,12 +29,12 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
             query_mode="full",
             query_type=["point"],
         )
-        print("len(carto.node_dict):", len(carto.node_dict))
-        print("len(carto.way_dict):", len(carto.way_dict))
+        print("len(world.node_dict):", len(world.node_dict))
+        print("len(world.way_dict):", len(world.way_dict))
         end_time = time.time()
         duration = end_time - start_time
         print("total time:", duration, "s")
-        assert isinstance(carto, Waifu)
+        assert isinstance(world, Waifu)
 
     def test_plugin_driver_db_postgresql_full_type_way(self):
         import time
@@ -42,7 +42,7 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
         from yuheng.plugin.driver_db_postgresql.__main__ import get_data
 
         start_time = time.time()
-        carto = get_data(
+        world = get_data(
             connection_dbname="osm2pgsql",
             connection_user="postgres",
             connection_password="12345678",
@@ -51,12 +51,12 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
             query_mode="full",
             query_type=["line"],
         )
-        print("len(carto.node_dict):", len(carto.node_dict))
-        print("len(carto.way_dict):", len(carto.way_dict))
+        print("len(world.node_dict):", len(world.node_dict))
+        print("len(world.way_dict):", len(world.way_dict))
         end_time = time.time()
         duration = end_time - start_time
         print("total time:", duration, "s")
-        assert isinstance(carto, Waifu)
+        assert isinstance(world, Waifu)
 
     def test_plugin_driver_db_postgresql_full_type_multi(self):
         import time

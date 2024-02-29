@@ -29,7 +29,7 @@ def overpass_query(query_content: str) -> None:
     # for operation in operations:
     #     # type:list=operation.jianceleixing
     #     # actions:list=operation.fenliqitayaosu
-    #     # temp:Waifu=Waifu()
+    #     # temp:Carto=Carto()
     #     # for i in actions:
     #     #     # i就是[k=v]
     #     #     temp=query_in_type(type,query_content)

@@ -18,10 +18,10 @@ from yuheng.type import Member, Node, Relation, Way
 
 class TestTypeConstructor(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = yuheng.Waifu()
+        self.world = yuheng.Waifu()
 
     def test_construct_elements(self):
-        carto = self.map
+        carto = self.world
         node_1 = Node(
             attrib={
                 "id": "1",

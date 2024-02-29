@@ -16,7 +16,7 @@ import yuheng
 
 class TestExport(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = yuheng.Waifu()
+        self.world = yuheng.Waifu()
         self.FILENAME_TARGET = "extract_bbox_osm_daxingjichang.osm"
         self.FILENAME_OUTPUT = "dump_selfsave_daxingjichang.osm"
         self.path_target = os.path.join(
@@ -33,10 +33,10 @@ class TestExport(unittest.TestCase):
             "osm",
             self.FILENAME_OUTPUT,
         )
-        self.map.read(mode="file", file_path=self.path_target)
+        self.world.read(mode="file", file_path=self.path_target)
 
     def test_self_save(self):
-        m = self.map
+        m = self.world
         m.write(mode="file", file_path=self.path_output)
 
         class MapElementHandler(xml.sax.ContentHandler):

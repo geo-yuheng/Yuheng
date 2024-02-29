@@ -11,7 +11,7 @@ import yuheng
 
 class TestLoadFile(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = yuheng.Waifu()
+        self.world = yuheng.Waifu()
 
     def test_load_file_OSMWebsite(self):
         FILENAME = "extract_osmwebsite_bbox_weihaichengshantou.osm"
@@ -22,8 +22,8 @@ class TestLoadFile(unittest.TestCase):
             "osm",
             FILENAME,
         )
-        self.map.read(mode="file", file_path=data_path)
-        m = self.map
+        self.world.read(mode="file", file_path=data_path)
+        m = self.world
         assert len(m.bounds_list) == 1
         assert len(m.node_dict) == 11818
         assert len(m.way_dict) == 2376
@@ -38,8 +38,8 @@ class TestLoadFile(unittest.TestCase):
             "osm",
             FILENAME,
         )
-        self.map.read(mode="file", file_path=data_path)
-        m = self.map
+        self.world.read(mode="file", file_path=data_path)
+        m = self.world
         assert len(m.bounds_list) == 1
         assert len(m.node_dict) == 539
         assert len(m.way_dict) == 67
@@ -54,8 +54,8 @@ class TestLoadFile(unittest.TestCase):
             "osm",
             FILENAME,
         )
-        self.map.read(mode="file", file_path=data_path)
-        m = self.map
+        self.world.read(mode="file", file_path=data_path)
+        m = self.world
         # level0 test failed because current program can't handle element without lat, e.g.: <node id='3328159064' version='2' action='delete' timestamp='2021-11-28T05:14:24+00:00'>
         assert len(m.bounds_list) == 0
         assert len(m.node_dict) == 478

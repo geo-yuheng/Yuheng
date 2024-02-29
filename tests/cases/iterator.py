@@ -13,7 +13,7 @@ import yuheng
 
 class TestIterator(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = yuheng.Waifu()
+        self.world = yuheng.Waifu()
         FILENAME = "extract_josm_bbox_qingzhou.osm"
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
@@ -22,10 +22,10 @@ class TestIterator(unittest.TestCase):
             "osm",
             FILENAME,
         )
-        self.map.read(mode="file", file_path=data_path)
+        self.world.read(mode="file", file_path=data_path)
 
     def test_iterator_node(self):
-        m = self.map
+        m = self.world
         test_node_dict = m.node_dict
         for id in test_node_dict:
             print(id)  # , test_node_dict[id])

@@ -13,7 +13,7 @@ import yuheng
 
 class TestLoadNetwork(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = yuheng.Waifu()
+        self.world = yuheng.Waifu()
         FILENAME = "element_ogf_haresora_kinen.osm"
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
@@ -22,10 +22,10 @@ class TestLoadNetwork(unittest.TestCase):
             "osm",
             FILENAME,
         )
-        self.map.read(mode="file", file_path=data_path)
+        self.world.read(mode="file", file_path=data_path)
 
     def test_load_network_single_element(self):
-        m_local = self.map
+        m_local = self.world
         m_network = yuheng.Waifu()
         # m_network.read(mode="n")
         m_network.read_network(

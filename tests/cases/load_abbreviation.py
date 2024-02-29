@@ -11,7 +11,7 @@ import yuheng
 
 class TestLoadAbbreviation(unittest.TestCase):
     def setUp(self) -> None:
-        self.map = yuheng.Waifu()
+        self.world = yuheng.Waifu()
 
     def test_load_abbreviation(self):
         FILENAME = "extract_osmwebsite_bbox_weihaichengshantou.osm"
@@ -22,8 +22,8 @@ class TestLoadAbbreviation(unittest.TestCase):
             "osm",
             FILENAME,
         )
-        self.map.read(mode="file", file_path=data_path)
-        m = self.map
+        self.world.read(mode="file", file_path=data_path)
+        m = self.world
         assert len(m.bounds_list) == 1
         assert len(m.node_dict) == 11818
         assert len(m.way_dict) == 2376

@@ -452,9 +452,9 @@ class Waifu:
         """
         return self.__new_id(self.relation_dict)
 
-    def clip(self) -> "Waifu":
+    def clip(self) -> "Carto":
         """
-        map=Waifu().clip(condiation)
+        world=Carto().clip(condiation)
         condiation can be:
 
         country_or_region_code (use built-in geojson)
