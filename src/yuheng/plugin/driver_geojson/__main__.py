@@ -1,13 +1,14 @@
+import argparse
 import os
 import sys
 from typing import Union
-
+from pprint import pprint
 import geojson
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
-from pprint import pprint
+
 
 from yuheng import Carto
 
@@ -78,19 +79,4 @@ def write(
 
 
 if __name__ == "__main__":
-    ans = read(
-        os.path.join(
-            os.path.dirname(__file__),
-            "..",
-            "..",
-            "..",
-            "..",
-            "tests",
-            "assets",
-            "geojson",
-            "geojsonio-ring2.geojson",
-            # "geojsonio-commute-bus.geojson",
-        ),
-        output_target="yuheng",
-    )
-    pprint(ans)
+    main()
