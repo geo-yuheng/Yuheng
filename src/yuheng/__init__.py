@@ -23,7 +23,7 @@ from .type.constraint import Bounds, Member
 from .type.element import Node, Relation, Way
 
 
-class Waifu:
+class Carto:
     def __init__(self):
         self.version: str = "0.6"
         self.generator: str = (
@@ -246,8 +246,8 @@ class Waifu:
             # https://www.openstreetmap.org/api/0.6/map?bbox=W,S,E,N
             pass
         if source == "overpass":
-            # def query_in_type(element_type: list, query_content: str) -> Waifu:
-            #     return Waifu()
+            # def query_in_type(element_type: list, query_content: str) -> Carto:
+            #     return Carto()
             # 不能直接返回Waifu，因为并不打算撤销这套__init__里放单独一个waifu的结构。这里只能返回其他内容（如xml/json）再在waifu里面parse它
 
             # query(
@@ -346,11 +346,11 @@ class Waifu:
 
         for i in self.bounds_list:
             element: Element = Element("bounds")
-            Waifu.__set_attrib(element.attrib, "minlat", i.min_lat)
-            Waifu.__set_attrib(element.attrib, "minlon", i.min_lon)
-            Waifu.__set_attrib(element.attrib, "maxlat", i.max_lat)
-            Waifu.__set_attrib(element.attrib, "maxlon", i.max_lon)
-            Waifu.__set_attrib(element.attrib, "origin", i.origin)
+            Carto.__set_attrib(element.attrib, "minlat", i.min_lat)
+            Carto.__set_attrib(element.attrib, "minlon", i.min_lon)
+            Carto.__set_attrib(element.attrib, "maxlat", i.max_lat)
+            Carto.__set_attrib(element.attrib, "maxlon", i.max_lon)
+            Carto.__set_attrib(element.attrib, "origin", i.origin)
             root.append(element)
 
         def base_osm_model_to_xml(
@@ -358,13 +358,13 @@ class Waifu:
         ) -> Element:
             tag: Element = Element(tag_name)
             tag.attrib["id"] = str(model.id)
-            Waifu.__set_attrib(tag.attrib, "action", model.action)
-            Waifu.__set_attrib(tag.attrib, "timestamp", model.timestamp)
-            Waifu.__set_attrib(tag.attrib, "uid", model.uid)
-            Waifu.__set_attrib(tag.attrib, "user", model.user)
+            Carto.__set_attrib(tag.attrib, "action", model.action)
+            Carto.__set_attrib(tag.attrib, "timestamp", model.timestamp)
+            Carto.__set_attrib(tag.attrib, "uid", model.uid)
+            Carto.__set_attrib(tag.attrib, "user", model.user)
             tag.attrib["visible"] = "true" if model.visible else "false"
-            Waifu.__set_attrib(tag.attrib, "version", model.version)
-            Waifu.__set_attrib(tag.attrib, "changeset", model.changeset)
+            Carto.__set_attrib(tag.attrib, "version", model.version)
+            Carto.__set_attrib(tag.attrib, "changeset", model.changeset)
             for k, v in model.tags.items():
                 sub_element: Element = Element("tag")
                 sub_element.attrib["k"] = k

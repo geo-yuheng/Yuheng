@@ -6,7 +6,7 @@ from typing import Dict, List, Tuple, Union
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
-from yuheng import Waifu
+from yuheng import Carto
 from yuheng.type import Node, Way
 
 
@@ -45,9 +45,9 @@ def transformer(
 
 def load(
     poly_object: List[Dict[str, float]], output_format="yuheng"
-) -> Union[None, Waifu]:
-    # load_2_waifu
-    world = Waifu()
+) -> Union[None, Carto]:
+    # load_2_Carto
+    world = Carto()
     node_obj_list = []
     for i in range(len(poly_object)):
         node_obj_list.append(

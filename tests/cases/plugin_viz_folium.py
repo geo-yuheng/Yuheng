@@ -6,7 +6,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
-from yuheng import Waifu
+from yuheng import Carto
 from yuheng.type import Member, Node, Relation, Way
 from yuheng.plugin.folium.__main__ import VizFolium, display
 
@@ -31,8 +31,8 @@ class TestPluginVisualizationFolium(unittest.TestCase):
                 Member(element_type="way", role="meal", ref=10),
             ],
         )
-        self.test_map = Waifu()
-        # 需要插入到Waifu对象里面。
+        self.test_map = Carto()
+        # 需要插入到Carto对象里面。
         # self.test_map.insert(
         #     self.test_node_1,
         #     self.test_node_2,

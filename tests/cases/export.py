@@ -16,7 +16,7 @@ import yuheng
 
 class TestExport(unittest.TestCase):
     def setUp(self) -> None:
-        self.world = yuheng.Waifu()
+        self.world = yuheng.Carto()
         self.FILENAME_TARGET = "extract_bbox_osm_daxingjichang.osm"
         self.FILENAME_OUTPUT = "dump_selfsave_daxingjichang.osm"
         self.path_target = os.path.join(

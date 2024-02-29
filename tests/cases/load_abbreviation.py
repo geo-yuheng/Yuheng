@@ -11,7 +11,7 @@ import yuheng
 
 class TestLoadAbbreviation(unittest.TestCase):
     def setUp(self) -> None:
-        self.world = yuheng.Waifu()
+        self.world = yuheng.Carto()
 
     def test_load_abbreviation(self):
         FILENAME = "extract_osmwebsite_bbox_weihaichengshantou.osm"

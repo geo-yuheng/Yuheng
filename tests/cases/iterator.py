@@ -13,7 +13,7 @@ import yuheng
 
 class TestIterator(unittest.TestCase):
     def setUp(self) -> None:
-        self.world = yuheng.Waifu()
+        self.world = yuheng.Carto()
         FILENAME = "extract_josm_bbox_qingzhou.osm"
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),

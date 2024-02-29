@@ -9,15 +9,15 @@ src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from pprint import pprint
 
-from yuheng import Waifu
+from yuheng import Carto
 
 
 def read(
     input_file_path: str, output_target="geojson"
-) -> Union[dict, str, geojson.feature.FeatureCollection, Waifu]:
+) -> Union[dict, str, geojson.feature.FeatureCollection, Carto]:
     """
     ourput_target:
-    * yuheng: 输出Waifu对象
+    * yuheng: 输出Carto对象
     * dict: 输出Python原生的dict对象
     * geojson: 输出geojson.feature.FeatureCollection对象
     * serialize: 输出特定格式的序列化字符串对象
@@ -59,7 +59,7 @@ def read(
 
 
 def write(
-    yuheng_obj: Waifu, output_target=None, **kwargs
+    yuheng_obj: Carto, output_target=None, **kwargs
 ) -> Union[dict, str, geojson.feature.FeatureCollection]:
     """
     ourput_target:
@@ -71,8 +71,8 @@ def write(
     """
     from geojson import Point
 
-    for id in Waifu.way_dict:
-        single_node = Waifu.way_dict[id]
+    for id in Carto.way_dict:
+        single_node = Carto.way_dict[id]
         geojson_point_ojb = Point(single_node.lon, single_node.lat)
     pass
 

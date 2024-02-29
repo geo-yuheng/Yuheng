@@ -18,10 +18,10 @@ from yuheng.type import Member, Node, Relation, Way
 
 class TestTypeConstructor(unittest.TestCase):
     def setUp(self) -> None:
-        self.world = yuheng.Waifu()
+        self.world = yuheng.Carto()
 
     def test_construct_elements(self):
-        carto = self.world
+        world = self.world
         node_1 = Node(
             attrib={
                 "id": "1",
@@ -167,19 +167,19 @@ class TestTypeConstructor(unittest.TestCase):
             ],
         )
 
-        carto.insert_to_dict(
-            carto.node_dict,
+        world.insert_to_dict(
+            world.node_dict,
             [node_1, node_2, node_3, node_4, node_5, node_6, node_7],
         )
-        carto.insert_to_dict(carto.way_dict, [way_1, way_2])
-        carto.insert_to_dict(carto.relation_dict, [relation_1])
+        world.insert_to_dict(world.way_dict, [way_1, way_2])
+        world.insert_to_dict(world.relation_dict, [relation_1])
 
-        print("len(carto.node_dict):", len(carto.node_dict))
-        print("len(carto.way_dict):", len(carto.way_dict))
-        print("len(carto.relation_dict):", len(carto.relation_dict))
-        assert len(carto.node_dict) == 7
-        assert len(carto.way_dict) == 2
-        assert len(carto.relation_dict) == 1
+        print("len(world.node_dict):", len(world.node_dict))
+        print("len(world.way_dict):", len(world.way_dict))
+        print("len(world.relation_dict):", len(world.relation_dict))
+        assert len(world.node_dict) == 7
+        assert len(world.way_dict) == 2
+        assert len(world.relation_dict) == 1
 
         # 尝试写出文件
 

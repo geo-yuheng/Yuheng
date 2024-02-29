@@ -11,7 +11,7 @@ import yuheng
 
 class TestLoadFile(unittest.TestCase):
     def setUp(self) -> None:
-        self.world = yuheng.Waifu()
+        self.world = yuheng.Carto()
 
     def test_load_file_OSMWebsite(self):
         FILENAME = "extract_osmwebsite_bbox_weihaichengshantou.osm"

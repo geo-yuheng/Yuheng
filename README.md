@@ -22,8 +22,8 @@ This project is a Python-based manipulation library for `.osm` files
 ```python
 import yuheng
 
-map = yuheng.Waifu()
-map.read(mode="file", file_path="map.osm")
+world = yuheng.Carto()
+world.read(mode="file", file_path="map.osm")
 ```
 
 ### Get `name`
@@ -69,8 +69,8 @@ List alternatives that may be close and similar to this item, but have a differe
 ```python
 import yuheng
 
-map = yuheng.Waifu()
-map.read(mode="file", file_path="map.osm")
+world = yuheng.Carto()
+world.read(mode="file", file_path="map.osm")
 ```
 
 ### 获取`name`

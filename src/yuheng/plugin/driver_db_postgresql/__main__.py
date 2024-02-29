@@ -11,7 +11,7 @@ from psycopg.types.shapely import register_shapely
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
-from yuheng import Waifu
+from yuheng import Carto
 from yuheng.type import Node, Way
 
 PROJ_TRANSFORMER = pyproj.Transformer.from_crs("epsg:3857", "epsg:4326")
@@ -69,7 +69,7 @@ def get_data(
     query_type=["line"],
     pg_schema="public",
     pg_pre_fix="planet_osm",
-) -> Optional[Waifu]:
+) -> Optional[Carto]:
     """
     # full-全量查询
     # batch-批量查询
@@ -151,7 +151,7 @@ def get_data(
     way_remap_count = -1
     node_list = []
     way_list = []
-    carto = Waifu()
+    world = Carto()
     for element in result:
         element_type = element[0]
         element_data = list(element[1])
@@ -235,9 +235,9 @@ def get_data(
             if control_count_way >= 100:
                 break
 
-    carto.insert_to_dict(carto.node_dict, node_list)
-    carto.insert_to_dict(carto.way_dict, way_list)
-    return carto
+    world.insert_to_dict(world.node_dict, node_list)
+    world.insert_to_dict(world.way_dict, way_list)
+    return world
 
 
 def main():

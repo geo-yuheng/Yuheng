@@ -6,7 +6,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
-from yuheng import Waifu
+from yuheng import Carto
 
 
 class TestPluginDriverDbPostgresql(unittest.TestCase):
@@ -34,7 +34,7 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
         end_time = time.time()
         duration = end_time - start_time
         print("total time:", duration, "s")
-        assert isinstance(world, Waifu)
+        assert isinstance(world, Carto)
 
     def test_plugin_driver_db_postgresql_full_type_way(self):
         import time
@@ -56,7 +56,7 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
         end_time = time.time()
         duration = end_time - start_time
         print("total time:", duration, "s")
-        assert isinstance(world, Waifu)
+        assert isinstance(world, Carto)
 
     def test_plugin_driver_db_postgresql_full_type_multi(self):
         import time
