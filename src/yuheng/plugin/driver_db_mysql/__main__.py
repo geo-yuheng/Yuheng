@@ -24,7 +24,17 @@ connection = pymysql.connect(
 with connection:
     with connection.cursor() as cursor:
         # Create a new record
-        sql = "INSERT INTO `users` (`email`, `password`) VALUES (%s, %s)"
-        for i in range(100):
-            cursor.execute(sql, (f"webmaster-{i}@python.org", "very-secret"))
-            connection.commit()
+        sql = "SELECT * FROM osm_nodes;"
+        # table definition can be seen at https://github.com/iandees/osm2mysql/blob/master/osmarchive.sql
+        # osm_changesets
+        # osm_changeset_tags
+        # osm_nodes
+        # osm_node_tags
+        # osm_relations
+        # osm_relation_members
+        # osm_relation_tags
+        # osm_ways
+        # osm_way_nodes
+        # osm_way_tags
+        cursor.execute(sql)
+        connection.commit()
