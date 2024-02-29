@@ -13,6 +13,7 @@ from yuheng.type import Node, Relation, Way, Member
 
 class VizFolium:
     def __init__(self):
+        self.config_node_display_method = "marker"
         self.element_list = []
         self.sample_node = Node({"id": "114"}, {})
         self.sample_way = Way({"id": "514"}, {}, [])
@@ -38,12 +39,33 @@ class VizFolium:
 
     @staticmethod
     def transform(
-        element: Union[Node, Way, Relation], element_type=""
+        self,
+        element: Union[Node, Way, Relation],
+        element_type="",
+        reference_carto=None,
     ) -> Union[Tuple[float, float], List[Tuple[float, float]]]:
-        if element_type == "node" or isinstance(element, self.sample_node):
+        if element_type == "node" or isinstance(
+            element, type(self.sample_node)
+        ):
             lat = element.lat
             lon = element.lon
-            return (lat, lon)
+            return tuple([lat, lon])
+        elif element_type == "way" or isinstance(
+            element, type(self.sample_way)
+        ):
+            nd_list = element.nds
+            nd_shape_list = []
+            node_space = self.element_list
+            if reference_carto != None:
+                node_space = [v for k, v in reference_carto.node_dict.items()]
+            for node in nd_list:
+                for iter_ele in node_space:
+                    if (
+                        isinstance(iter_ele, type(Node({"id": "114"}, {})))
+                        and iter_ele.id == node
+                    ):
+                        nd_shape_list.append((iter_ele.lat, iter_ele.lon))
+            return nd_shape_list
 
     def display(self, **kwargs) -> None:
         """
@@ -63,30 +85,24 @@ class VizFolium:
         for element in self.element_list:
             if isinstance(element, type(self.sample_node)):
                 print("This is a Node")
-                node_display_method = "marker"
 
-                if node_display_method == "marker":
-                    folium.Marker(list(transform(element))).add_to(m)
-                elif node_display_method == "short_line":
+                if self.config_node_display_method == "marker":
+                    folium.Marker(list(self.transform(self, element))).add_to(
+                        m
+                    )
+                elif self.config_node_display_method == "short_line":
                     folium.PolyLine(
-                        [transform(element), transform(element)]
+                        [
+                            self.transform(self, element),
+                            self.transform(self, element),
+                        ]
                     ).add_to(m)
                 else:
                     pass
 
             if isinstance(element, type(self.sample_way)):
                 print("This is a Way")
-                nd_list = element.nds
-                nd_shape_list = []
-                for node in nd_list:
-                    for iter_ele in self.element_list:
-                        if (
-                            isinstance(iter_ele, type(Node({"id": "114"}, {})))
-                            and iter_ele.id == node
-                        ):
-                            nd_shape_list.append((iter_ele.lat, iter_ele.lon))
-
-                folium.PolyLine(nd_shape_list).add_to(m)
+                folium.PolyLine(self.transform(self, element)).add_to(m)
             if isinstance(
                 element,
                 type(self.sample_relation),
@@ -94,6 +110,17 @@ class VizFolium:
                 print("This is a Relation")
             if isinstance(element, type(self.sample_carto)):
                 print("Wow a hole map!")
+                for id, obj in element.node_dict.items():
+                    # print(f"world-node-{id}")
+                    folium.PolyLine(
+                        [(obj.lat, obj.lon), (obj.lat, obj.lon)]
+                    ).add_to(m)
+                for id, obj in element.way_dict.items():
+                    # print(f"world-way-{id}", len(obj.nds))
+                    if len(obj.nds) >= 0:
+                        folium.PolyLine(
+                            self.transform(self, obj, reference_carto=element)
+                        ).add_to(m)
 
         # gen html file or call webbrowser
         m.save("index.html")

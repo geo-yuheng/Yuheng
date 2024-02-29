@@ -64,6 +64,22 @@ class TestPluginVisualizationFolium(unittest.TestCase):
         carto_viz = VizFolium()
         carto_viz.display(world=self.test_map)
 
+    def test_plugin_viz_folium_outside(self):
+        world = Carto()
+        world.read(
+            mode="file",
+            file_path=os.path.join(
+                os.path.dirname(os.path.realpath(__file__)),
+                "..",
+                "assets",
+                "osm",
+                "extract_bbox_osm_daxingjichang.osm",
+            ),
+        )
+        viz = VizFolium()
+        viz.add(world)
+        viz.display()
+
 
 if __name__ == "__main__":
     unittest.main()
