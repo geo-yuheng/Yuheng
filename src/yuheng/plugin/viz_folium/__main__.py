@@ -81,6 +81,16 @@ class VizFolium:
                 self.add(v)
 
         m = folium.Map(location=[0, 0], zoom_start=0)
+        # # You can replace with custom tiles
+        # m = folium.Map(
+        #     tiles="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        #     attr=" ".join(
+        #         [
+        #             f'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        #             f'&copy; <a href="https://carto.com/attributions">CARTO</a>',
+        #         ]
+        #     ),
+        # )
 
         for element in self.element_list:
             if isinstance(element, type(self.sample_node)):
@@ -111,15 +121,19 @@ class VizFolium:
             if isinstance(element, type(self.sample_carto)):
                 print("Wow a hole map!")
                 for id, obj in element.node_dict.items():
-                    # print(f"world-node-{id}")
-                    folium.PolyLine(
-                        [(obj.lat, obj.lon), (obj.lat, obj.lon)]
+                    # print(f"world-node-{id}") # debug
+                    folium.ColorLine(
+                        positions=[(obj.lat, obj.lon), (obj.lat, obj.lon)],
+                        colors=[0.114514, 0.1919810],
+                        colormap=["black", "black"],
+                        weight=4,
                     ).add_to(m)
                 for id, obj in element.way_dict.items():
-                    # print(f"world-way-{id}", len(obj.nds))
+                    # print(f"world-way-{id}", len(obj.nds)) # debug
                     if len(obj.nds) >= 0:
                         folium.PolyLine(
-                            self.transform(self, obj, reference_carto=element)
+                            self.transform(self, obj, reference_carto=element),
+                            weight=2,
                         ).add_to(m)
 
         # gen html file or call webbrowser
