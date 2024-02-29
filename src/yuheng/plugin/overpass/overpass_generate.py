@@ -122,30 +122,3 @@ def gen_query():
         .replace("<condition_part>", gen_condition())
         .replace("<output_part>", gen_output())
     )
-
-
-print(gen_metadata(metadata_entry_data={"out": "xml", "maxsize": 65535}))
-print(gen_metadata(metadata_entry_data={"out": "popup", "maxsize": 65535}))
-print(
-    gen_metadata(
-        metadata_entry_data={
-            "out": "json",
-            "timeout": 255,
-            "bbox": "whatever",
-        },
-        bbox_info={"E": 20, "W": 10, "S": 30, "N": 40.5},
-    )
-)
-print(
-    gen_metadata(
-        metadata_entry_data={
-            "out": "csv",
-            "timeout": 255,
-        },
-        csv_info={
-            "query_key_list": ["amenity", "addr:city", "admin_level"],
-            "explicit_declare_header": True,
-            "delimiter": "|",
-        },
-    )
-)
