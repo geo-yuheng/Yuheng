@@ -93,7 +93,7 @@ class TestPluginVisualizationFolium(unittest.TestCase):
             endpoint="ogf",
             type="node",
             allow_cache=False,
-            element_id=["w299872168v1", "w299872169v1", "w299872170v1"],
+            element_id=["n299872168v1", "n299872169v1", "n299872170v1"],
             version="1",
         )
         world.meow()

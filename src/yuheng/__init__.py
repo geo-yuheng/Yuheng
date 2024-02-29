@@ -174,7 +174,7 @@ class Carto:
 
         optional arguments:
         * element_type： 下载元素的时候指定nwr，部分情况下可能冗余。
-        * element_id: 暂不清楚是列表合适还是字符串（单个or多个），下载除了area以外都需要。建议后续维护成强制传列表，一个也得列表。
+        * element_id: 下载除了area以外都需要。强制传列表，一个也得列表。出于兼容性，不是列表的字符串会被转换成列表。
         * allow_cache: 将会把请求的各种信息（含url，主要是url）hash以后创建一个cache文件名，如果重复请求的话不需要对代码作出修改就自动用缓存，避免反复打目标机
         * local_overpassql_path：overpass语句不会自动生成而是照抄本地文件内的
         * version： 读取指定版本的文件
@@ -293,27 +293,60 @@ class Carto:
             or prefix_normalization(element_type) == "way"
             or prefix_normalization(element_type) == "relation"
         ):
-            pure_id = (
-                element_id.replace("n", "").replace("w", "").replace("r", "")
-            )
-            if "v" in pure_id:
-                version = pure_id.split("v")[1]
-                pure_id = pure_id.split("v")[0]
-
-            print(endpoint)
-            work_url = (
-                get_endpoint_api(endpoint_name=endpoint)
-                + "/"
-                + str(
-                    get_endpoint_api(
-                        endpoint_name=endpoint, property="version"
-                    )
+            element_id = element_id_normalizer(element_id)
+            # print(element_id_normalizer(element_id)) # debug
+            if len(element_id) == 1:
+                pure_id = (
+                    element_id[0]
+                    .replace("n", "")
+                    .replace("w", "")
+                    .replace("r", "")
                 )
-                + "/"
-                + prefix_normalization(element_type, mode="p2prefix")
-                + "/"
-                + pure_id
-            )
+                if "v" in pure_id:
+                    version = pure_id.split("v")[1]
+                    pure_id = pure_id.split("v")[0]
+
+                print(endpoint)
+                work_url = (
+                    get_endpoint_api(endpoint_name=endpoint)
+                    + "/"
+                    + str(
+                        get_endpoint_api(
+                            endpoint_name=endpoint, property="version"
+                        )
+                    )
+                    + "/"
+                    + prefix_normalization(element_type, mode="p2prefix")
+                    + "/"
+                    + pure_id
+                )
+            else:
+                pure_id_list = [
+                    id.replace("n", "").replace("w", "").replace("r", "")
+                    for id in element_id
+                ]
+                # print(pure_id_list) # debug
+                work_url = (
+                    get_endpoint_api(endpoint_name=endpoint)
+                    + "/"
+                    + str(
+                        get_endpoint_api(
+                            endpoint_name=endpoint, property="version"
+                        )
+                    )
+                    + "/"
+                    + (
+                        prefix_normalization(element_type, mode="p2prefix")
+                        + "s"
+                    )
+                    + "?"
+                    + (
+                        prefix_normalization(element_type, mode="p2prefix")
+                        + "s"
+                    )
+                    + "="
+                    + ",".join(pure_id_list)
+                )
 
         else:
             # detect element_type single request
