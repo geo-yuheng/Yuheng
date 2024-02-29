@@ -245,22 +245,11 @@ class Carto:
     def read_network_area(
         self, S, W, N, E, source="api", endpoint="osm"
     ) -> str:
-        work_url = ""
-        if source == "api":
-            # https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
-            # need to add endpoint change function
-            # https://www.openstreetmap.org/api/0.6/map?bbox=W,S,E,N
-            return f"https://www.openstreetmap.org/api/0.6/map?bbox={W},{S},{E},{N}"
-        if source == "overpass":
-            # def query_in_type(element_type: list, query_content: str) -> Carto:
-            #     return Carto()
-            # 不能直接返回Waifu，因为并不打算撤销这套__init__里放单独一个waifu的结构。这里只能返回其他内容（如xml/json）再在waifu里面parse它
-
-            # query(
-            #     open("../../../tests/overpassql/telecommunication.overpassql"), "Overpass"
-            # )
-            # 应提供允许调用本地overpassql文件而非生成的途径（如果不生成就不用调用query模块生成QL）
-            pass
+        """
+        仅限API读取。
+        另可参考 https://github.com/enzet/map-machine/blob/main/map_machine/osm/osm_getter.py
+        """
+        work_url = f"{get_endpoint_api(endpoint_name=endpoint)}/0.6/map?bbox={W},{S},{E},{N}"
         return work_url
 
     def read_network_element(
@@ -270,10 +259,11 @@ class Carto:
         source="api",
         endpoint="osm",
     ) -> str:
-        # 一个不管single/multi都能生成url的read_network_element
-        # element_id: it can be string or list, but we will normalize it to list.
-        # this maybe help when batch request:
-        # https://wiki.openstreetmap.org/wiki/API_v0.6#Multi_fetch:_GET_/api/0.6/[nodes|ways|relations]?#parameters
+        """
+        仅限API读取。
+        一个不管single/multi都能生成url的read_network_element。
+        * element_id: it can be string or list, but we will normalize it to list.
+        """
 
         work_url = ""
 
