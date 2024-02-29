@@ -76,6 +76,27 @@ class TestPluginVisualizationFolium(unittest.TestCase):
                 "extract_bbox_osm_daxingjichang.osm",
             ),
         )
+        world.meow()
+        world.read_network(
+            target="element",
+            source="api",
+            endpoint="ogf",
+            type="way",
+            allow_cache=False,
+            element_id="w28814809v1",
+            version="2",
+        )
+        world.meow()
+        world.read_network(
+            target="element",
+            source="api",
+            endpoint="ogf",
+            type="node",
+            allow_cache=False,
+            element_id=["w299872168v1", "w299872169v1", "w299872170v1"],
+            version="1",
+        )
+        world.meow()
         viz = VizFolium()
         viz.add(world)
         viz.display()
