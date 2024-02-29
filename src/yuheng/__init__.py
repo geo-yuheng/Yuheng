@@ -341,14 +341,12 @@ class Carto:
                         )
                     )
                     + "/"
-                    + (
-                        prefix_normalization(element_type, mode="p2prefix")
-                        + "s"
+                    + prefix_normalization(
+                        element_type, mode="p2prefix", plural=True
                     )
                     + "?"
-                    + (
-                        prefix_normalization(element_type, mode="p2prefix")
-                        + "s"
+                    + prefix_normalization(
+                        element_type, mode="p2prefix", plural=True
                     )
                     + "="
                     + ",".join(pure_id_list)
