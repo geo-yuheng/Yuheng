@@ -13,7 +13,9 @@ import yuheng
 
 class TestLoadNetwork(unittest.TestCase):
     def setUp(self) -> None:
-        self.world = yuheng.Carto()
+        pass
+
+    def test_load_network_single_element(self):
         FILENAME = "element_ogf_haresora_kinen.osm"
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
@@ -22,13 +24,11 @@ class TestLoadNetwork(unittest.TestCase):
             "osm",
             FILENAME,
         )
-        self.world.read(mode="file", file_path=data_path)
-
-    def test_load_network_single_element(self):
-        m_local = self.world
-        m_network = yuheng.Carto()
-        # m_network.read(mode="n")
-        m_network.read_network(
+        world_local = yuheng.Carto()
+        world_local.read(mode="file", file_path=data_path)
+        world_network = yuheng.Carto()
+        # world_network.read(mode="n")
+        world_network.read_network(
             target="element",
             source="api",
             endpoint="ogf",
@@ -38,22 +38,35 @@ class TestLoadNetwork(unittest.TestCase):
             version="2",
         )
 
-        m_network.meow()
-        assert len(m_local.way_dict) == 1
-        assert len(m_network.way_dict) == 1
-        for id in m_network.way_dict:
-            assert m_network.way_dict[id].id == 28814809
+        world_network.meow()
+        assert len(world_local.way_dict) == 1
+        assert len(world_network.way_dict) == 1
+        for id in world_network.way_dict:
+            assert world_network.way_dict[id].id == 28814809
         assert (
-            m_local.way_dict[28814809].tags
-            == m_network.way_dict[28814809].tags
+            world_local.way_dict[28814809].tags
+            == world_network.way_dict[28814809].tags
         )
         assert (
-            m_local.way_dict[28814809].changeset
-            == m_network.way_dict[28814809].changeset
+            world_local.way_dict[28814809].changeset
+            == world_network.way_dict[28814809].changeset
         )
         assert (
-            m_local.way_dict[28814809].timestamp
-            == m_network.way_dict[28814809].timestamp
+            world_local.way_dict[28814809].timestamp
+            == world_network.way_dict[28814809].timestamp
+        )
+
+    def test_load_network_area(self):
+        world_network = yuheng.Carto()
+        world_network.read_network(
+            target="area",
+            source="api",
+            endpoint="ogf",
+            allow_cache=False,
+            S=39.9671,
+            W=116.4110,
+            N=39.9726,
+            E=116.4191,
         )
 
 

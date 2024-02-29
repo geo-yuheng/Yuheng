@@ -178,6 +178,7 @@ class Carto:
         * allow_cache: 将会把请求的各种信息（含url，主要是url）hash以后创建一个cache文件名，如果重复请求的话不需要对代码作出修改就自动用缓存，避免反复打目标机
         * local_overpassql_path：overpass语句不会自动生成而是照抄本地文件内的
         * version： 读取指定版本的文件
+        * child: 是否含子成员（int）。0或小于0为不包含。1时，对路径就是所有点，对关系就是所有成员。2时，对路径所有点，关系内路径的点和子关系的成员也下载。3或更大时为无穷尽直到找出所有子子孙孙。
         """
 
         def worker(url: str) -> str:
