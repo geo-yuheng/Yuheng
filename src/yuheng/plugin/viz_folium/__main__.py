@@ -119,25 +119,90 @@ class VizFolium:
             ):
                 print("This is a Relation")
             if isinstance(element, type(self.sample_carto)):
+                import time
+
                 print("Wow a hole map!")
+                # batch time control
+                work_burden = (
+                    len(element.node_dict)
+                    + len(element.way_dict)
+                    + len(element.relation_dict)
+                )
+                work_burden_report_node_interval = 1000
+                work_burden_report_way_interval = 15
+                # node
+                time_node_start = time.time()
+                work_burden_node_count = 0
                 for id, obj in element.node_dict.items():
                     # print(f"world-node-{id}") # debug
+                    work_burden_node_count += 1
                     folium.ColorLine(
                         positions=[(obj.lat, obj.lon), (obj.lat, obj.lon)],
                         colors=[0.114514, 0.1919810],
                         colormap=["black", "black"],
                         weight=4,
                     ).add_to(m)
+                    if (
+                        work_burden > work_burden_report_node_interval
+                        and work_burden_node_count
+                        % work_burden_report_node_interval
+                        == 0
+                    ):
+                        time_node_this = time.time()
+                        print(
+                            "[time] display "
+                            + str(work_burden_node_count)
+                            + " node use "
+                            + str(time_node_this - time_node_start)
+                            + " s"
+                        )
+                time_node_end = time.time()
+                print(
+                    "[time] display **all** node use "
+                    + str(time_node_end - time_node_start)
+                    + " s"
+                )
+                # way
+                time_way_start = time.time()
+                work_burden_way_count = 0
                 for id, obj in element.way_dict.items():
                     # print(f"world-way-{id}", len(obj.nds)) # debug
                     if len(obj.nds) >= 0:
+                        work_burden_way_count += 1
                         folium.PolyLine(
                             self.transform(self, obj, reference_carto=element),
                             weight=2,
                         ).add_to(m)
+                        if (
+                            work_burden > work_burden_report_way_interval
+                            and work_burden_way_count
+                            % work_burden_report_way_interval
+                            == 0
+                        ):
+                            time_way_this = time.time()
+                            print(
+                                "[time] display "
+                                + str(work_burden_way_count)
+                                + " way use "
+                                + str(time_way_this - time_way_start)
+                                + " s"
+                            )
+                time_way_end = time.time()
+                print(
+                    "[time] display **all** way use "
+                    + str(time_way_end - time_way_start)
+                    + " s"
+                )
 
         # gen html file or call webbrowser
+        time_save_html_start = time.time()
         m.save("index.html")
+        time_save_html_end = time.time()
+        print(
+            "[time] save html use "
+            + str(time_save_html_end - time_save_html_start)
+            + " s"
+        )
         # webbrowser.open(
         #     url=os.path.join(
         #         os.path.dirname(os.path.realpath(__file__)), "index.html"
