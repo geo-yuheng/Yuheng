@@ -72,15 +72,43 @@ class VizFolium:
         This func display some element to html
 
         If **kwargs is not blank, then we should call self.add() for each one, then display as expected.
+
+        Preserce argument:
+        * default_center_lat:float
+        * default_center_lon:float
+        * default_zoom:int
         """
         import webbrowser
+
+        preserve_argument = {
+            "default_zoom": 0,
+            "default_center_lat": 0.0,
+            "default_center_lon": 0.0,
+            "default_tiles": "",
+            "default_attribution": "",
+        }
+        for k, v in preserve_argument.items():
+            if (
+                kwargs.get(k, None) != None
+                and isinstance(kwargs.get(k), type(v)) != True
+            ):
+                print(
+                    f"ERROR: You use preverse argument {k}, please check your usage!"
+                )
+                return None
 
         if (len(kwargs)) > 0:
             print(f"There are {len(kwargs)} object need to append")
             for k, v in kwargs.items():
                 self.add(v)
 
-        m = folium.Map(location=[0, 0], zoom_start=0)
+        m = folium.Map(
+            location=[
+                kwargs.get("default_center_lat", 0.0),
+                kwargs.get("default_center_lon", 0.0),
+            ],
+            zoom_start=kwargs.get("default_zoom", 0),
+        )
         # # You can replace with custom tiles
         # m = folium.Map(
         #     tiles="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",

@@ -34,15 +34,49 @@ class TestPluginVisualizationFolium(unittest.TestCase):
             ],
         )
         self.test_map = Carto()
-        # 需要插入到Carto对象里面。
-        # self.test_map.insert(
-        #     self.test_node_1,
-        #     self.test_node_2,
-        #     self.test_way,
-        #     self.test_relation,
-        # )
+        self.test_map.insert_to_dict(
+            self.test_map.node_dict,
+            [
+                self.test_node_1,
+                self.test_node_2,
+            ],
+        )
+        self.test_map.insert_to_dict(
+            self.test_map.way_dict,
+            [self.test_way],
+        )
+        self.test_map.insert_to_dict(
+            self.test_map.relation_dict,
+            [self.test_relation],
+        )
+
+    def test_plugin_viz_folium_display_invalid_argument(self):
+        """
+        Test exit directly because occupy preserved arguments.
+        """
+        # rebellious developer
+        carto_viz = VizFolium()
+        carto_viz.display(
+            default_zoom=self.test_map,  # should be int
+            default_center_lat="beijing",  # should be float
+            default_center_lon=int(6),  # should be float
+        )
+
+    def test_plugin_viz_folium_display_added(self):
+        """
+        Test load NWR object via add method.
+        """
+        carto_viz = VizFolium()
+        carto_viz.add(self.test_node_1)
+        carto_viz.add(self.test_node_2)
+        carto_viz.add(self.test_way)
+        carto_viz.add(self.test_relation)
+        carto_viz.display()
 
     def test_plugin_viz_folium_display_kwargs(self):
+        """
+        Test load NWR object via argument enumerate.
+        """
         carto_viz = VizFolium()
         carto_viz.display(
             test_node_1=self.test_node_1,
@@ -51,19 +85,15 @@ class TestPluginVisualizationFolium(unittest.TestCase):
             test_relation=self.test_relation,
         )
 
-    def test_plugin_viz_folium_display_added(self):
-        carto_viz = VizFolium()
-        carto_viz.add(self.test_node_1)
-        carto_viz.add(self.test_node_2)
-        carto_viz.add(self.test_way)
-        carto_viz.add(self.test_relation)
-        carto_viz.display()
-
     def test_plugin_viz_folium_display_object(self):
+        """
+        Test load Carto object via argument.
+        """
         carto_viz = VizFolium()
         carto_viz.display(world=self.test_map)
 
-    def test_plugin_viz_folium_outside(self):
+    def test_plugin_viz_folium_complex(self):
+        # can add default_tiles and default_attribution in future
         world = Carto()
         world.read(
             mode="file",
@@ -98,7 +128,11 @@ class TestPluginVisualizationFolium(unittest.TestCase):
         world.meow()
         viz = VizFolium()
         viz.add(world)
-        viz.display()
+        viz.display(
+            default_center_lat=39.8571,
+            default_center_lon=116.3974,
+            default_zoom=9,
+        )
 
 
 if __name__ == "__main__":
