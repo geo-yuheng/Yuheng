@@ -181,19 +181,34 @@ class Carto:
         * child: 是否含子成员（int）。0或小于0为不包含。1时，对路径就是所有点，对关系就是所有成员。2时，对路径所有点，关系内路径的点和子关系的成员也下载。child=2时与官方API中的/full等价。3或更大时为无穷尽直到找出所有子子孙孙。
         """
 
-        def worker(url: str) -> str:
+        def worker(work_url: str, allow_cache: bool) -> str:
             import hashlib
 
             import requests
 
-            hasher = hashlib.new("md5")
-            hasher.update(url.encode("utf-8"))
-            hash_content = str(hasher.hexdigest())
-            # print(type(hash_content))
-            # exit(-1)
+            print(work_url)
+
+            if allow_cache:
+                url_hash = hashlib.new(
+                    name="md5", data=work_url.encode("utf-8")
+                ).hexdigest()
+                url_safe = (
+                    work_url.replace("https://", "")
+                    .replace("http://", "")
+                    .replace("/", "_")
+                    .replace("-", "_")
+                    .replace("#", "_")
+                    .replace("$", "_")
+                    .replace("%", "_")
+                    .replace("&", "_")
+                    .replace(".", "_")
+                )
+                url_cache_filename = url_safe + "__" + url_hash + ".osm"
+
+                print(url_cache_filename)
 
             return requests.get(
-                url=url,
+                url=work_url,
                 headers=get_headers(),
             ).text
 
@@ -246,8 +261,10 @@ class Carto:
                 work_url = ""
             else:
                 return None
-        print(work_url)
-        work_load = worker(work_url)
+        # run worker
+        work_load = worker(
+            work_url=work_url, allow_cache=kwargs.get("allow_cache", True)
+        )
         self.read_memory(work_load)
 
     def read_network_area(
