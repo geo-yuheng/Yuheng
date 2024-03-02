@@ -27,12 +27,12 @@ def overpass_query(query_content: str) -> None:
                 operations = operations.union(set([line]))
     print(operations)
     # for operation in operations:
-    #     # type:list=operation.jianceleixing
+    #     # element_type:list=operation.jianceleixing
     #     # actions:list=operation.fenliqitayaosu
     #     # temp:Carto=Carto()
     #     # for i in actions:
     #     #     # i就是[k=v]
-    #     #     temp=query_in_type(type,query_content)
+    #     #     temp=query_in_type(element_type,query_content)
     #     # 最后剩下的就是逐层查询完了以后的，可以是空
     #     pass # 分离出逐次查询
 

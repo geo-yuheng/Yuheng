@@ -1,3 +1,5 @@
+import os
+import sys
 import time
 from typing import Dict, List, Union
 from xml.dom import minidom
@@ -6,6 +8,7 @@ from xml.etree.ElementTree import Element, ElementTree
 
 from .basic.global_const import (
     YUHENG_CORE_NAME,
+    YUHENG_PATH,
     YUHENG_START_ID,
     YUHENG_VERSION,
 )
@@ -186,7 +189,13 @@ class Carto:
 
             import requests
 
+            print(allow_cache)
             print(work_url)
+
+            response = requests.get(
+                url=work_url,
+                headers=get_headers(),
+            ).text
 
             if allow_cache:
                 url_hash = hashlib.new(
@@ -205,12 +214,16 @@ class Carto:
                 )
                 url_cache_filename = url_safe + "__" + url_hash + ".osm"
 
-                print(url_cache_filename)
+                print("cache file: ", url_cache_filename)
 
-            return requests.get(
-                url=work_url,
-                headers=get_headers(),
-            ).text
+                with open(
+                    os.path.join(YUHENG_PATH, "cache", url_cache_filename),
+                    "w",
+                    encoding="utf-8",
+                ) as f_cache:
+                    f_cache.write(response)
+
+            return response
 
         def url_of_overpass_quary(ql_content: str, endpoint="") -> str:
             import urllib.parse
