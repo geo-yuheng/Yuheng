@@ -11,6 +11,7 @@ from .basic.global_const import (
     YUHENG_PATH,
     YUHENG_START_ID,
     YUHENG_VERSION,
+    get_yuheng_path,
 )
 from .basic.model import BaseOsmModel
 from .component.type_constraint import Bounds, Member
@@ -217,7 +218,9 @@ class Carto:
                 print("cache file: ", url_cache_filename)
 
                 with open(
-                    os.path.join(YUHENG_PATH, "cache", url_cache_filename),
+                    os.path.join(
+                        get_yuheng_path(), "cache", url_cache_filename
+                    ),
                     "w",
                     encoding="utf-8",
                 ) as f_cache:

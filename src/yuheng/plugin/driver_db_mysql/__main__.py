@@ -1,13 +1,23 @@
 import json
 import os
+import sys
 
 import pymysql
 
-database_profile_path = os.path.join(
-    YUHENG_PATH, "db_profiles", "mysql.db_profiles.yuheng"
-)
+current_dir = os.path.dirname(os.path.realpath(__file__))
+src_dir = os.path.join(current_dir, "..", "..", "..")
+sys.path.append(src_dir)
+from yuheng import Carto
+from yuheng.basic import get_yuheng_path
+
 database_profile = json.load(
-    open(database_profile_path, "r", encoding="utf-8")
+    open(
+        os.path.join(
+            get_yuheng_path(), "db_profiles", "mysql.db_profiles.yuheng"
+        ),
+        "r",
+        encoding="utf-8",
+    )
 )
 
 connection = pymysql.connect(
