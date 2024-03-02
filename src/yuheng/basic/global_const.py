@@ -21,13 +21,17 @@ def get_ua() -> str:
 def get_yuheng_path() -> str:
     def init_yuheng_path() -> None:
         YUHENG_FOLDER = ["cache", "db_profiles"]
+        # root check
         if os.path.exists(YUHENG_PATH) != True:
             print(YUHENG_PATH, "isn't exist!")
             os.mkdir(YUHENG_PATH)
-            for folder in YUHENG_FOLDER:
-                if os.path.exists(os.path.join(YUHENG_PATH, folder)) != True:
-                    print(os.path.join(YUHENG_PATH, folder), "isn't exist!")
-                    os.mkdir(os.path.join(YUHENG_PATH, folder))
+        # folder check
+        for folder in YUHENG_FOLDER:
+            if os.path.exists(os.path.join(YUHENG_PATH, folder)) != True:
+                print(os.path.join(YUHENG_PATH, folder), "isn't exist!")
+                os.mkdir(os.path.join(YUHENG_PATH, folder))
+        # profile files check
+        # WIP
 
     init_yuheng_path()
     return YUHENG_PATH
