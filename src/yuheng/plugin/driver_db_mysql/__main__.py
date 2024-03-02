@@ -20,6 +20,12 @@ database_profile = json.load(
     )
 )
 
+
+def check_profile(database_profile: dict) -> None:
+    if "_WARNING" in database_profile:
+        print("WARNING: this profile is invalid!")
+
+
 connection = pymysql.connect(
     host=database_profile["host"],
     port=database_profile["port"],

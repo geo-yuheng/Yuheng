@@ -26,6 +26,12 @@ database_profile = json.load(
     )
 )
 
+
+def check_profile(database_profile: dict) -> None:
+    if "_WARNING" in database_profile:
+        print("WARNING: this profile is invalid!")
+
+
 PROJ_TRANSFORMER = pyproj.Transformer.from_crs("epsg:3857", "epsg:4326")
 
 
