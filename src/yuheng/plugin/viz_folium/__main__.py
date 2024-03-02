@@ -53,6 +53,7 @@ class VizFolium:
         elif element_type == "way" or isinstance(
             element, type(self.sample_way)
         ):
+            # optimization of processing line have room, but difficult
             nd_list = element.nds
             nd_shape_list = []
             node_space = self.element_list
@@ -158,6 +159,7 @@ class VizFolium:
                 )
                 work_burden_report_node_interval = 1000
                 work_burden_report_way_interval = 15
+                work_burden_report_large_data = 0.5
                 # node
                 time_node_start = time.time()
                 work_burden_node_count = 0
@@ -197,10 +199,13 @@ class VizFolium:
                     # print(f"world-way-{id}", len(obj.nds)) # debug
                     if len(obj.nds) >= 0:
                         work_burden_way_count += 1
+                        time_this_way_start = time.time()
                         folium.PolyLine(
                             self.transform(self, obj, reference_carto=element),
                             weight=2,
                         ).add_to(m)
+                        time_this_way_end = time.time()
+
                         if (
                             work_burden > work_burden_report_way_interval
                             and work_burden_way_count
@@ -214,6 +219,13 @@ class VizFolium:
                                 + " way use "
                                 + str(time_way_this - time_way_start)
                                 + " s"
+                            )
+                        # inspect large data (long way)
+                        if (
+                            time_this_way_end - time_this_way_start
+                        ) >= work_burden_report_large_data:
+                            print(
+                                f"[time] way {obj.id} have {len(obj.nds)} node and cause time longer than {work_burden_report_large_data} s"
                             )
                 time_way_end = time.time()
                 print(
