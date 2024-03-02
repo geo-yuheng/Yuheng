@@ -1,6 +1,6 @@
-from yuheng.type.constraint import Bounds, Member
-from yuheng.type.data import OSC, OSH, OSM
-from yuheng.type.element import Node, Relation, Way
+from ..component.type_constraint import Bounds, Member
+from ..component.type_data import OSC, OSH, OSM
+from ..component.type_element import Node, Relation, Way
 
 
 class Diff:

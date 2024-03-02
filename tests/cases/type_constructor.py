@@ -13,7 +13,7 @@ src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
 import yuheng
-from yuheng.type import Member, Node, Relation, Way
+from yuheng.component import Member, Node, Relation, Way
 
 
 class TestTypeConstructor(unittest.TestCase):

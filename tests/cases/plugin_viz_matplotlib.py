@@ -7,7 +7,7 @@ src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
 from yuheng import Carto
-from yuheng.type import Member, Node, Relation, Way
+from yuheng.component import Member, Node, Relation, Way
 from yuheng.plugin.viz_matplotlib.__main__ import init
 
 

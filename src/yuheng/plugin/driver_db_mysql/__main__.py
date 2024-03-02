@@ -1,6 +1,7 @@
-import pymysql
-import os
 import json
+import os
+
+import pymysql
 
 database_profile_path = os.path.join(
     os.environ["USERPROFILE"], "database_profile_mysql.yuheng"

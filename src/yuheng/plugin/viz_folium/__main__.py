@@ -1,6 +1,6 @@
 import os
 import sys
-from typing import Union, Tuple, List
+from typing import List, Tuple, Union
 
 import folium
 
@@ -8,7 +8,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from yuheng import Carto
-from yuheng.type import Node, Relation, Way, Member
+from yuheng.component import Member, Node, Relation, Way
 
 
 class VizFolium:

@@ -10,6 +10,8 @@ from .basic.global_const import (
     YUHENG_VERSION,
 )
 from .basic.model import BaseOsmModel
+from .component.type_constraint import Bounds, Member
+from .component.type_element import Node, Relation, Way
 from .method import query
 from .method.network import get_endpoint_api, get_headers
 from .method.parse import (
@@ -19,8 +21,6 @@ from .method.parse import (
     pre_parse_classify,
 )
 from .method.transform import prefix_normalization
-from .component.type_constraint import Bounds, Member
-from .component.type_element import Node, Relation, Way
 
 
 class Carto:
@@ -182,15 +182,15 @@ class Carto:
         """
 
         def worker(url: str) -> str:
-            import requests
-
             import hashlib
+
+            import requests
 
             hasher = hashlib.new("md5")
             hasher.update(url.encode("utf-8"))
             hash_content = str(hasher.hexdigest())
-            print(type(hash_content))
-            exit(-1)
+            # print(type(hash_content))
+            # exit(-1)
 
             return requests.get(
                 url=url,

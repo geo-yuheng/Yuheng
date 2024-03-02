@@ -7,7 +7,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from yuheng import Carto
-from yuheng.type import Node, Way
+from yuheng.component import Node, Way
 
 
 def extractor(poly_file_path: str) -> str:

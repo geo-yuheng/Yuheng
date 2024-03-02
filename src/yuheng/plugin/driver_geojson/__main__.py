@@ -1,8 +1,9 @@
 import argparse
 import os
 import sys
-from typing import Union
 from pprint import pprint
+from typing import Union
+
 import geojson
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
