@@ -184,6 +184,14 @@ class Carto:
         def worker(url: str) -> str:
             import requests
 
+            import hashlib
+
+            hasher = hashlib.new("md5")
+            hasher.update(url.encode("utf-8"))
+            hash_content = str(hasher.hexdigest())
+            print(type(hash_content))
+            exit(-1)
+
             return requests.get(
                 url=url,
                 headers=get_headers(),
