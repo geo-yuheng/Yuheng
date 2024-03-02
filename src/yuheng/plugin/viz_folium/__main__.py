@@ -159,7 +159,7 @@ class VizFolium:
                 )
                 work_burden_report_node_interval = 1000
                 work_burden_report_way_interval = 15
-                work_burden_report_large_data = 0.5
+                work_burden_report_large_data = 1.5
                 # node
                 time_node_start = time.time()
                 work_burden_node_count = 0
@@ -183,13 +183,13 @@ class VizFolium:
                             "[time] display "
                             + str(work_burden_node_count)
                             + " node use "
-                            + str(time_node_this - time_node_start)
+                            + str(round(time_node_this - time_node_start, 3))
                             + " s"
                         )
                 time_node_end = time.time()
                 print(
                     "[time] display **all** node use "
-                    + str(time_node_end - time_node_start)
+                    + str(round(time_node_end - time_node_start, 3))
                     + " s"
                 )
                 # way
@@ -217,7 +217,7 @@ class VizFolium:
                                 "[time] display "
                                 + str(work_burden_way_count)
                                 + " way use "
-                                + str(time_way_this - time_way_start)
+                                + str(round(time_way_this - time_way_start))
                                 + " s"
                             )
                         # inspect large data (long way)
@@ -225,12 +225,14 @@ class VizFolium:
                             time_this_way_end - time_this_way_start
                         ) >= work_burden_report_large_data:
                             print(
-                                f"[time] way {obj.id} have {len(obj.nds)} node and cause time longer than {work_burden_report_large_data} s"
+                                f"[time] w{obj.id} ({round(time_this_way_end - time_this_way_start,3)}s) "
+                                f"have {len(obj.nds)} node and cause time "
+                                f"longer than {work_burden_report_large_data} s"
                             )
                 time_way_end = time.time()
                 print(
                     "[time] display **all** way use "
-                    + str(time_way_end - time_way_start)
+                    + str(round(time_way_end - time_way_start, 3))
                     + " s"
                 )
 
@@ -240,7 +242,7 @@ class VizFolium:
         time_save_html_end = time.time()
         print(
             "[time] save html use "
-            + str(time_save_html_end - time_save_html_start)
+            + str(round(time_save_html_end - time_save_html_start, 3))
             + " s"
         )
         # webbrowser.open(
