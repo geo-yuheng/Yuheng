@@ -185,13 +185,32 @@ class Carto:
         * child: 是否含子成员（int）。0或小于0为不包含。1时，对路径就是所有点，对关系就是所有成员。2时，对路径所有点，关系内路径的点和子关系的成员也下载。child=2时与官方API中的/full等价。3或更大时为无穷尽直到找出所有子子孙孙。
         """
 
-        def worker(work_url: str, allow_cache: bool) -> str:
+        def get_cache_filename(worl_url: str) -> str:
             import hashlib
 
+            url_hash = hashlib.new(
+                name="md5", data=work_url.encode("utf-8")
+            ).hexdigest()
+            url_safe = (
+                work_url.replace("https://", "")
+                .replace("http://", "")
+                .replace("/", "_")
+                .replace("-", "_")
+                .replace("#", "_")
+                .replace("$", "_")
+                .replace("%", "_")
+                .replace("&", "_")
+                .replace("?", "_")
+                .replace(",", "_")
+                .replace("=", "_")
+                .replace(".", "_")
+            )
+            return url_safe + "__" + url_hash + ".osm"
+
+        def worker(work_url: str, allow_cache: bool) -> str:
             import requests
 
-            print(allow_cache)
-            print(work_url)
+            print("allow_cache=", allow_cache)
 
             response = requests.get(
                 url=work_url,
@@ -199,21 +218,7 @@ class Carto:
             ).text
 
             if allow_cache:
-                url_hash = hashlib.new(
-                    name="md5", data=work_url.encode("utf-8")
-                ).hexdigest()
-                url_safe = (
-                    work_url.replace("https://", "")
-                    .replace("http://", "")
-                    .replace("/", "_")
-                    .replace("-", "_")
-                    .replace("#", "_")
-                    .replace("$", "_")
-                    .replace("%", "_")
-                    .replace("&", "_")
-                    .replace(".", "_")
-                )
-                url_cache_filename = url_safe + "__" + url_hash + ".osm"
+                url_cache_filename = get_cache_filename(work_url)
 
                 print("cache file: ", url_cache_filename)
 
@@ -278,10 +283,25 @@ class Carto:
             else:
                 return None
         # run worker
-        work_load = worker(
-            work_url=work_url, allow_cache=kwargs.get("allow_cache", True)
+        print(work_url)
+        work_load_cache_path = os.path.join(
+            get_yuheng_path(), "cache", get_cache_filename(work_url)
         )
-        self.read_memory(work_load)
+        if kwargs.get("allow_cache", False) == True and os.path.exists(
+            work_load_cache_path
+        ):
+            with open(
+                work_load_cache_path,
+                "r",
+                encoding="utf-8",
+            ) as f_work_load:
+                work_load = f_work_load.read()
+            self.read_memory(work_load)
+        else:
+            work_load = worker(
+                work_url=work_url, allow_cache=kwargs.get("allow_cache", True)
+            )
+            self.read_memory(work_load)
 
     def read_network_area(
         self, S, W, N, E, source="api", endpoint="osm"
