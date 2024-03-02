@@ -4,9 +4,11 @@ import os
 import pymysql
 
 database_profile_path = os.path.join(
-    os.environ["USERPROFILE"], "database_profile_mysql.yuheng"
+    YUHENG_PATH, "db_profiles", "mysql.db_profiles.yuheng"
 )
-database_profile = json.load(open(database_profile_path, "r"))
+database_profile = json.load(
+    open(database_profile_path, "r", encoding="utf-8")
+)
 
 connection = pymysql.connect(
     host=database_profile["host"],

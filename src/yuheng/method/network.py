@@ -80,7 +80,5 @@ def get_headers() -> dict:
     :return: A dictionary containing the custom headers.
     """
     return {
-        "User-Agent": YUHENG_CORE_NAME
-        + "/ "
-        + YUHENG_VERSION  # if possible and necessary, add latest git commit hash
+        "User-Agent": get_ua()  # if possible and necessary, add latest git commit hash
     }

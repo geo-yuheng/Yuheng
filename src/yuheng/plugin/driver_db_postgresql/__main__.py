@@ -14,6 +14,13 @@ sys.path.append(src_dir)
 from yuheng import Carto
 from yuheng.component import Node, Way
 
+database_profile_path = os.path.join(
+    YUHENG_PATH, "db_profiles", "postgresql.db_profiles.yuheng"
+)
+database_profile = json.load(
+    open(database_profile_path, "r", encoding="utf-8")
+)
+
 PROJ_TRANSFORMER = pyproj.Transformer.from_crs("epsg:3857", "epsg:4326")
 
 
