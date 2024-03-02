@@ -19,8 +19,8 @@ from .method.parse import (
     pre_parse_classify,
 )
 from .method.transform import prefix_normalization
-from .type.constraint import Bounds, Member
-from .type.element import Node, Relation, Way
+from .component.type_constraint import Bounds, Member
+from .component.type_element import Node, Relation, Way
 
 
 class Carto:
