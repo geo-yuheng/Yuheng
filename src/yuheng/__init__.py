@@ -27,8 +27,7 @@ from .method.parse import (
 )
 from .method.transform import prefix_normalization
 
-log.info("LOGURU inited")
-
+log.info("loguru enabled")
 
 class Carto:
     def __init__(self):
@@ -51,29 +50,17 @@ class Carto:
         for i in element_list:
             spec_dict[int(i.id)] = i
 
-    def meow(self):
+    def meow(self) -> None:
         log.info(
-            str(
-                "\n"
-                + "==============================\n"
-                + "Yuheng load successful!\n"
-                + "==============================\n"
-                + (
-                    "node    : "
-                    + str(len(self.node_dict))
-                    + "\n"
-                    + "way     : "
-                    + str(len(self.way_dict))
-                    + "\n"
-                    + "relation: "
-                    + str(len(self.relation_dict))
-                    + "\n"
-                    + "bounds  : "
-                    + str(len(self.bounds_list))
-                    + "\n"
-                )
-                + "=============================="
-            )
+            "\n"
+            + "==============================\n"
+            + "Yuheng load successful!\n"
+            + "==============================\n"
+            + f"node    : {str(len(self.node_dict))}\n"
+            + f"way     : {str(len(self.way_dict))}\n"
+            + f"relation: {str(len(self.relation_dict))}\n"
+            + f"bounds  : {str(len(self.bounds_list))}\n"
+            + "=============================="
         )
 
     def read(
@@ -88,12 +75,12 @@ class Carto:
         def pre_read_warn(mode: str, file_path: str, text: str, url: str):
             if url != "" and (mode != "network" and mode != "n"):
                 if ("http://" in url) or ("https://" in url):
-                    print(
-                        "WARN:You may intent to request from network, but you enter another mode."
+                    log.warning(
+                        "You may intent to request from network, but you enter another mode."
                     )
             if mode == "text" or mode == "t":
-                print(
-                    'WARN:"text" is not standard Yuheng read mode, it caughted by fallback system and recognized as "memory"'
+                log.warning(
+                    'You use "text" as "mode" and it isn\'t standard Yuheng read mode, it caughted by fallback system and recognized as "memory"'
                 )
 
         time_start = time.time()
@@ -106,8 +93,8 @@ class Carto:
         ):
             pre_read_warn(mode=mode, file_path=file_path, text=text, url=url)
             if file_path != "" and text != "":
-                print(
-                    "WARN:You add parameter for both file mode and memory mode! Yuheng will choose you designated **file** mode"
+                log.warning(
+                    "You add parameter for both file mode and memory mode! Yuheng will choose you designated **file** mode"
                 )
             self.read_file(file_path)
         elif (
@@ -115,8 +102,8 @@ class Carto:
         ) or ((mode == "file" or mode == "f") and file_path == ""):
             pre_read_warn(mode=mode, file_path=file_path, text=text, url=url)
             if file_path != "" and text != "":
-                print(
-                    "WARN:You add parameter for both file mode and memory mode! Yuheng will choose you designated **memory** mode"
+                log.warning(
+                    "You add parameter for both file mode and memory mode! Yuheng will choose you designated **memory** mode"
                 )
             self.read_memory(text)
         elif mode == "network" or mode == "n":
@@ -126,7 +113,7 @@ class Carto:
             raise TypeError(f"Unexpected read mode: {mode}")
 
         time_end = time.time()
-        print("[TIME]: " + str(round((time_end - time_start), 3)) + "s" + "\n")
+        log.info(f"[TIME]: Read cost {str(round((time_end - time_start), 3))}s")
         self.meow()
 
     def read_file(self, file_path: str):
@@ -141,13 +128,13 @@ class Carto:
                 root,
             )
         except FileNotFoundError:
-            print("Error: 文件不存在，请检查文件路径")
+            log.error("文件不存在，请检查文件路径")
         except PermissionError:
-            print("Error: 无权访问文件，请检查文件权限")
+            log.error("无权访问文件，请检查文件权限")
         except ET.ParseError:
-            print("Error: XML 解析失败，请检查文件内容是否为有效的 XML 格式")
+            log.error("XML 解析失败，请检查文件内容是否为有效的 XML 格式")
         except Exception as e:
-            print(f"Error: 发生未知错误 - {str(e)}")
+            log.error(f"发生未知错误 - {str(e)}")
 
     def read_memory(self, text: str):
         try:
@@ -160,9 +147,9 @@ class Carto:
                 root,
             )
         except ET.ParseError:
-            print("Error: XML 解析失败，请检查文本内容是否为有效的 XML 格式")
+            log.error("XML 解析失败，请检查文本内容是否为有效的 XML 格式")
         except Exception as e:
-            print(f"Error: 发生未知错误 - {str(e)}")
+            log.error(f"发生未知错误 - {str(e)}")
 
     def read_network(self, target="", source="api", endpoint="osm", **kwargs):
         """
@@ -208,7 +195,7 @@ class Carto:
         def worker(work_url: str, allow_cache: bool) -> str:
             import requests
 
-            print("allow_cache=", allow_cache)
+            log.info(f"allow_cache={allow_cache}")
 
             response = requests.get(
                 url=work_url,
@@ -218,7 +205,7 @@ class Carto:
             if allow_cache:
                 url_cache_filename = get_cache_filename(work_url)
 
-                print("cache file: ", url_cache_filename)
+                log.info(f"cache file: {url_cache_filename}")
 
                 with open(
                     os.path.join(
@@ -281,7 +268,7 @@ class Carto:
             else:
                 return None
         # run worker
-        print(work_url)
+        log.info(work_url)
         work_load_cache_path = os.path.join(
             get_yuheng_path(), "cache", get_cache_filename(work_url)
         )
@@ -349,7 +336,7 @@ class Carto:
             or prefix_normalization(element_type) == "relation"
         ):
             element_id = element_id_normalizer(element_id)
-            # print(element_id_normalizer(element_id)) # debug
+            # log.debug(element_id_normalizer(element_id))
             if len(element_id) == 1:
                 pure_id = (
                     element_id[0]
@@ -361,7 +348,7 @@ class Carto:
                     version = pure_id.split("v")[1]
                     pure_id = pure_id.split("v")[0]
 
-                print(endpoint)
+                log.info(endpoint)
                 work_url = (
                     get_endpoint_api(endpoint_name=endpoint)
                     + "/"
@@ -380,7 +367,7 @@ class Carto:
                     id.replace("n", "").replace("w", "").replace("r", "")
                     for id in element_id
                 ]
-                # print(pure_id_list) # debug
+                # log.debug(pure_id_list)
                 work_url = (
                     get_endpoint_api(endpoint_name=endpoint)
                     + "/"
@@ -479,7 +466,7 @@ class Carto:
                 i.action = "modify"
             relation = base_osm_model_to_xml("relation", i)
             for member in i.members:
-                print(member.type, member.ref, member.role, member.id)
+                log.info([member.type, member.ref, member.role, member.id])
                 e: Element = Element("member")
                 e.attrib["type"] = member.type
                 e.attrib["ref"] = str(member.ref)
