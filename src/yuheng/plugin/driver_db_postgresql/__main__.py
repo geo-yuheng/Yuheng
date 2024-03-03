@@ -13,7 +13,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from yuheng import Carto
-from yuheng.basic import get_yuheng_path
+from yuheng.basic import get_yuheng_path, logger
 from yuheng.component import Node, Way
 
 database_profile = json.load(
@@ -29,7 +29,7 @@ database_profile = json.load(
 
 def check_profile(database_profile: dict) -> None:
     if "_WARNING" in database_profile:
-        print("WARNING: this profile is invalid!")
+        logger.warning("This profile is invalid!")
 
 
 PROJ_TRANSFORMER = pyproj.Transformer.from_crs("epsg:3857", "epsg:4326")
@@ -73,7 +73,7 @@ def get_column(
     cursor.execute(sql_column)
     for record in cursor:
         column_list.append(record[0])
-    # print(column_list) # debug
+    # logger.debug(column_list)
     return column_list
 
 
@@ -122,7 +122,7 @@ def get_data(
                         schema=pg_schema,
                     )
                     columns.append(column)
-                    # print(columns) # debug
+                    # logger.debug(columns)
                     # table
                     sql_table = f"SELECT * FROM {pg_schema}.{pg_pre_fix}_{query_type[0]}"
                     cursor.execute(sql_table)
@@ -157,9 +157,9 @@ def get_data(
                     for record in cursor:
                         result.append((query_type[1], record))
                 else:
-                    print("要么是想查询line/point以外的表，要么是输入了太多项类型；故目前无法支持。")
+                    logger.error("要么是想查询line/point以外的表，要么是输入了太多项类型；故目前无法支持。")
                     return None
-    print("len(result)", "=", len(result))  # debug
+    logger.info("len(result)", "=", len(result))
 
     control_count = 0  # debug
     control_count_way = 0
@@ -173,7 +173,7 @@ def get_data(
     for element in result:
         element_type = element[0]
         element_data = list(element[1])
-        # print(element_data)  # debug
+        # logger.debug(element_data)
 
         if element_type == "line" or element_type == "way":
             control_count_way += 1
@@ -190,8 +190,8 @@ def get_data(
             prune_list=["osm_id", "z_order", "way_area", "way"],
             target_dict=tag_dict,
         )  # 第一项和后三项，不是tag内容而是osm2pgsql加的
-        # print(tag_dict)  # debug
-        # print(geom)  # debug
+        # logger.debug(tag_dict)
+        # logger.debug(geom)
         if isinstance(geom, shapely.geometry.Point):
             pos = geoproj(geom.x, geom.y)
             this_node = Node(
@@ -248,7 +248,7 @@ def get_data(
 
             end_time = time.time()
             duration = end_time - start_time
-            print("time:", duration, "s")
+            logger.info(f"time: {duration}s")
 
             if control_count_way >= 100:
                 break
@@ -259,7 +259,7 @@ def get_data(
 
 
 def main():
-    print("本数据驱动无法独立于Yuheng单独使用")
+    logger.error("本数据驱动无法独立于Yuheng单独使用")
 
 
 if __name__ == "__main__":

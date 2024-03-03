@@ -8,7 +8,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from yuheng import Carto
-from yuheng.basic import get_yuheng_path
+from yuheng.basic import get_yuheng_path, logger
 
 database_profile = json.load(
     open(
@@ -23,7 +23,7 @@ database_profile = json.load(
 
 def check_profile(database_profile: dict) -> None:
     if "_WARNING" in database_profile:
-        print("WARNING: this profile is invalid!")
+        logger.warning("This profile is invalid!")
 
 
 connection = pymysql.connect(

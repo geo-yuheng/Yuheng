@@ -1,4 +1,5 @@
 from typing import Dict, Optional
+from ..basic import logger
 
 
 class BaseOsmModel:
@@ -33,19 +34,19 @@ class BaseOsmModel:
         return self.tags != self.__tags_backup
 
     def print_diff(self):
-        print(self.tags["name"])
-        print("变更：")
+        logger.info(self.tags["name"])
+        logger.info("变更：")
         for key, value_new in self.tags.items():
             value_old = (
                 self.__tags_backup[key] if key in self.__tags_backup else ""
             )
             if value_new != value_old:
-                print(f"{key}=f{value_old} -> {key}={value_new}")
+                logger.info(f"{key}=f{value_old} -> {key}={value_new}")
         for keys_deleted in self.__tags_backup.keys() - self.tags.keys():
-            print(
+            logger.info(
                 f"{keys_deleted}={self.__tags_backup[keys_deleted]} > {keys_deleted}= "
             )
-        print("==========================================")
+        logger.info("==========================================")
 
 
 class Base:

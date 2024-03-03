@@ -3,7 +3,7 @@ import sys
 from typing import List, Optional, Union
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-from src.yuheng import Bounds
+from src.yuheng import Bounds, logger
 
 query_template = "<metadata_part>\n<condition_part>\n<output_part>"
 
@@ -84,8 +84,8 @@ def gen_metadata(**kwargs) -> Optional[str]:
                 "custom",
                 "popup",
             ]:
-                print(
-                    "This kind of output format will lead to a OSM3S Response, which currently not supported by Yuheng."
+                logger.warning(
+                    "This kind of output format will lead to a OSM3S Response, which currently not supported by Yuheng. "
                     + "See more about this format in https://github.com/drolbr/Overpass-API/"
                 )
                 buffer += wrap_metadata("out", "xml")

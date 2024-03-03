@@ -12,6 +12,7 @@ sys.path.append(src_dir)
 
 
 from yuheng import Carto
+from yuheng.basic import logger
 
 
 def read(
@@ -38,6 +39,7 @@ def read(
     elif output_target == "yuheng":
         # 真正的人上人——中间格式！
         pprint(dict(geojson_obj))
+        logger.info(dict(geojson_obj))
 
         def is_valid_geojson_element(element_dict):
             key_list = [key for key in element_dict]
@@ -53,8 +55,8 @@ def read(
         for key in geojson_obj:
             if key == "type" and geojson_obj[key] == "FeatureCollection":
                 features = list(geojson_obj["features"])
-                # print(type(features))
-                # print(features)
+                # logger.debug(type(features))
+                # logger.debug(features)
         pass
     else:
         return geojson_obj

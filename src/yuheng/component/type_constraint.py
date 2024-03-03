@@ -1,5 +1,7 @@
 from typing import Dict, Optional
 
+from ..basic import logger
+
 
 class Bounds:
     def __init__(self, attrib: Dict[str, str]):
@@ -60,10 +62,10 @@ class Member:
                 ref_value: int = id
                 id_value: int = id
             else:
-                print("Both 'ref' and 'id' isn't int.")
+                logger.warning("Both 'ref' and 'id' isn't int.")
         else:
-            print(
-                "WARNING: Both 'ref' and 'id' haven't been offer while initializing Member class."
+            logger.warning(
+                "Both 'ref' and 'id' haven't been offer while initializing Member class."
             )
         self.ref = ref_value
         self.id = id_value

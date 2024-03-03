@@ -1,6 +1,7 @@
 from ..component.type_constraint import Bounds, Member
 from ..component.type_data import OSC, OSH, OSM
 from ..component.type_element import Node, Relation, Way
+from ..basic import logger
 
 
 class Diff:
@@ -39,16 +40,16 @@ class Diff:
 
     def print_diff(data):
         # old BaseOsmModel's function
-        print(data.tags["name"])
-        print("变更：")
+        logger.info(data.tags["name"])
+        logger.info("变更：")
         for key, value_new in data.tags.items():
             value_old = (
                 data.__tags_backup[key] if key in data.__tags_backup else ""
             )
             if value_new != value_old:
-                print(f"{key}=f{value_old} -> {key}={value_new}")
+                logger.info(f"{key}=f{value_old} -> {key}={value_new}")
         for keys_deleted in data.__tags_backup.keys() - data.tags.keys():
-            print(
+            logger.info(
                 f"{keys_deleted}={data.__tags_backup[keys_deleted]} > {keys_deleted}= "
             )
-        print("==========================================")
+        logger.info("==========================================")

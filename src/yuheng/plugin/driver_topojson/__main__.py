@@ -1,4 +1,8 @@
 import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+from src.yuheng import logger
 
 
 def main(json_file_path: str, schema=None, order=None):
@@ -7,7 +11,7 @@ def main(json_file_path: str, schema=None, order=None):
     json_content = json_file.read()
     json_file.close()
 
-    print(json_content)
+    logger.debug(json_content)
 
 
 if __name__ == "__main__":
@@ -19,7 +23,8 @@ if __name__ == "__main__":
             "..",
             "..",
             "tests",
-            "testcase-round2",
-            "map.topojson",
+            "assets",
+            "topojson",
+            "geojsonio-ring2.topojson",
         )
     )

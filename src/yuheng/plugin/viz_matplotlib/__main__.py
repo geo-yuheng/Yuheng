@@ -1,6 +1,6 @@
 import os
 import sys
-from .basic.log import log
+
 
 import matplotlib.pyplot as plt
 
@@ -8,6 +8,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from yuheng import Carto
+from yuheng.basic.log import logger
 from yuheng.component import Node, Relation, Way
 
 

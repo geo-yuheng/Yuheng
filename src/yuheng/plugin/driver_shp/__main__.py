@@ -1,4 +1,8 @@
 import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+from src.yuheng import logger
 
 
 def main(shp_file_path: str, schema=None, order=None):
@@ -7,7 +11,7 @@ def main(shp_file_path: str, schema=None, order=None):
     shp_content = shp_file.read()
     shp_file.close()
 
-    print(shp_content)
+    logger.debug(shp_content)
 
 
 if __name__ == "__main__":
@@ -19,7 +23,8 @@ if __name__ == "__main__":
             "..",
             "..",
             "tests",
-            "testcase-round2",
-            "map.topojson",
+            "assets",
+            "topojson",
+            "geojsonio-ring2.topojson",
         )
     )
