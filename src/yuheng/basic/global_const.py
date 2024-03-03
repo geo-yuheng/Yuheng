@@ -20,7 +20,7 @@ def get_ua() -> str:
 
 def get_yuheng_path() -> str:
     def init_yuheng_path() -> None:
-        YUHENG_FOLDER = ["cache", "db_profiles"]
+        YUHENG_FOLDER = ["cache", "db_profiles", "log"]
         YUHENG_PROFILES = [
             "mysql.db_profiles.yuheng",
             "postgresql.db_profiles.yuheng",

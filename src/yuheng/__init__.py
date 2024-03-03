@@ -13,6 +13,7 @@ from .basic.global_const import (
     YUHENG_VERSION,
     get_yuheng_path,
 )
+from .basic.log import log
 from .basic.model import BaseOsmModel
 from .component.type_constraint import Bounds, Member
 from .component.type_element import Node, Relation, Way
@@ -25,8 +26,6 @@ from .method.parse import (
     pre_parse_classify,
 )
 from .method.transform import prefix_normalization
-
-from .basic.log import log
 
 log.info("LOGURU inited")
 
