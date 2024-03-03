@@ -1,7 +1,7 @@
+from ..basic import logger
 from ..component.type_constraint import Bounds, Member
 from ..component.type_data import OSC, OSH, OSM
 from ..component.type_element import Node, Relation, Way
-from ..basic import logger
 
 
 class Diff:

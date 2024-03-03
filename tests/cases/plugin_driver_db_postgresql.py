@@ -1,7 +1,7 @@
+import json
 import os
 import sys
 import unittest
-import json
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../../src")
