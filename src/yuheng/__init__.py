@@ -26,6 +26,10 @@ from .method.parse import (
 )
 from .method.transform import prefix_normalization
 
+from .basic.log import log
+
+log.info("LOGURU inited")
+
 
 class Carto:
     def __init__(self):
@@ -49,12 +53,7 @@ class Carto:
             spec_dict[int(i.id)] = i
 
     def meow(self):
-        import logging
-
-        # from loguru import logger
-
-        logging.basicConfig(level=logging.INFO)
-        logging.info(
+        log.info(
             str(
                 "\n"
                 + "==============================\n"
