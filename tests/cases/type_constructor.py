@@ -13,6 +13,7 @@ src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
 import yuheng
+from yuheng.basic import logger
 from yuheng.component import Member, Node, Relation, Way
 
 
@@ -174,9 +175,9 @@ class TestTypeConstructor(unittest.TestCase):
         world.insert_to_dict(world.way_dict, [way_1, way_2])
         world.insert_to_dict(world.relation_dict, [relation_1])
 
-        print("len(world.node_dict):", len(world.node_dict))
-        print("len(world.way_dict):", len(world.way_dict))
-        print("len(world.relation_dict):", len(world.relation_dict))
+        logger.info(f"len(world.node_dict):{len(world.node_dict)}")
+        logger.info(f"len(world.way_dict):{len(world.way_dict)}")
+        logger.info(f"len(world.relation_dict):{len(world.relation_dict)}")
         assert len(world.node_dict) == 7
         assert len(world.way_dict) == 2
         assert len(world.relation_dict) == 1
