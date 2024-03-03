@@ -13,7 +13,7 @@ from .basic.global_const import (
     YUHENG_VERSION,
     get_yuheng_path,
 )
-from .basic.log import log
+from .basic.log import logger
 from .basic.model import BaseOsmModel
 from .component.type_constraint import Bounds, Member
 from .component.type_element import Node, Relation, Way
@@ -27,7 +27,8 @@ from .method.parse import (
 )
 from .method.transform import prefix_normalization
 
-log.info("loguru enabled")
+logger.info("loguru enabled")
+
 
 class Carto:
     def __init__(self):
@@ -51,7 +52,7 @@ class Carto:
             spec_dict[int(i.id)] = i
 
     def meow(self) -> None:
-        log.info(
+        logger.info(
             "\n"
             + "==============================\n"
             + "Yuheng load successful!\n"
@@ -75,11 +76,11 @@ class Carto:
         def pre_read_warn(mode: str, file_path: str, text: str, url: str):
             if url != "" and (mode != "network" and mode != "n"):
                 if ("http://" in url) or ("https://" in url):
-                    log.warning(
+                    logger.warning(
                         "You may intent to request from network, but you enter another mode."
                     )
             if mode == "text" or mode == "t":
-                log.warning(
+                logger.warning(
                     'You use "text" as "mode" and it isn\'t standard Yuheng read mode, it caughted by fallback system and recognized as "memory"'
                 )
 
@@ -93,7 +94,7 @@ class Carto:
         ):
             pre_read_warn(mode=mode, file_path=file_path, text=text, url=url)
             if file_path != "" and text != "":
-                log.warning(
+                logger.warning(
                     "You add parameter for both file mode and memory mode! Yuheng will choose you designated **file** mode"
                 )
             self.read_file(file_path)
@@ -102,7 +103,7 @@ class Carto:
         ) or ((mode == "file" or mode == "f") and file_path == ""):
             pre_read_warn(mode=mode, file_path=file_path, text=text, url=url)
             if file_path != "" and text != "":
-                log.warning(
+                logger.warning(
                     "You add parameter for both file mode and memory mode! Yuheng will choose you designated **memory** mode"
                 )
             self.read_memory(text)
@@ -113,7 +114,9 @@ class Carto:
             raise TypeError(f"Unexpected read mode: {mode}")
 
         time_end = time.time()
-        log.info(f"[TIME]: Read cost {str(round((time_end - time_start), 3))}s")
+        logger.info(
+            f"[TIME]: Read cost {str(round((time_end - time_start), 3))}s"
+        )
         self.meow()
 
     def read_file(self, file_path: str):
@@ -128,13 +131,13 @@ class Carto:
                 root,
             )
         except FileNotFoundError:
-            log.error("文件不存在，请检查文件路径")
+            logger.error("文件不存在，请检查文件路径")
         except PermissionError:
-            log.error("无权访问文件，请检查文件权限")
+            logger.error("无权访问文件，请检查文件权限")
         except ET.ParseError:
-            log.error("XML 解析失败，请检查文件内容是否为有效的 XML 格式")
+            logger.error("XML 解析失败，请检查文件内容是否为有效的 XML 格式")
         except Exception as e:
-            log.error(f"发生未知错误 - {str(e)}")
+            logger.error(f"发生未知错误 - {str(e)}")
 
     def read_memory(self, text: str):
         try:
@@ -147,9 +150,9 @@ class Carto:
                 root,
             )
         except ET.ParseError:
-            log.error("XML 解析失败，请检查文本内容是否为有效的 XML 格式")
+            logger.error("XML 解析失败，请检查文本内容是否为有效的 XML 格式")
         except Exception as e:
-            log.error(f"发生未知错误 - {str(e)}")
+            logger.error(f"发生未知错误 - {str(e)}")
 
     def read_network(self, target="", source="api", endpoint="osm", **kwargs):
         """
@@ -195,7 +198,7 @@ class Carto:
         def worker(work_url: str, allow_cache: bool) -> str:
             import requests
 
-            log.info(f"allow_cache={allow_cache}")
+            logger.info(f"allow_cache={allow_cache}")
 
             response = requests.get(
                 url=work_url,
@@ -205,7 +208,7 @@ class Carto:
             if allow_cache:
                 url_cache_filename = get_cache_filename(work_url)
 
-                log.info(f"cache file: {url_cache_filename}")
+                logger.info(f"cache file: {url_cache_filename}")
 
                 with open(
                     os.path.join(
@@ -268,7 +271,7 @@ class Carto:
             else:
                 return None
         # run worker
-        log.info(work_url)
+        logger.info(work_url)
         work_load_cache_path = os.path.join(
             get_yuheng_path(), "cache", get_cache_filename(work_url)
         )
@@ -336,7 +339,7 @@ class Carto:
             or prefix_normalization(element_type) == "relation"
         ):
             element_id = element_id_normalizer(element_id)
-            # log.debug(element_id_normalizer(element_id))
+            # logger.debug(element_id_normalizer(element_id))
             if len(element_id) == 1:
                 pure_id = (
                     element_id[0]
@@ -348,7 +351,7 @@ class Carto:
                     version = pure_id.split("v")[1]
                     pure_id = pure_id.split("v")[0]
 
-                log.info(endpoint)
+                logger.info(endpoint)
                 work_url = (
                     get_endpoint_api(endpoint_name=endpoint)
                     + "/"
@@ -367,7 +370,7 @@ class Carto:
                     id.replace("n", "").replace("w", "").replace("r", "")
                     for id in element_id
                 ]
-                # log.debug(pure_id_list)
+                # logger.debug(pure_id_list)
                 work_url = (
                     get_endpoint_api(endpoint_name=endpoint)
                     + "/"
@@ -466,7 +469,7 @@ class Carto:
                 i.action = "modify"
             relation = base_osm_model_to_xml("relation", i)
             for member in i.members:
-                log.info([member.type, member.ref, member.role, member.id])
+                logger.info([member.type, member.ref, member.role, member.id])
                 e: Element = Element("member")
                 e.attrib["type"] = member.type
                 e.attrib["ref"] = str(member.ref)

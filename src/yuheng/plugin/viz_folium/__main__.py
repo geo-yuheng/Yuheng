@@ -4,10 +4,12 @@ from typing import List, Tuple, Union
 
 import folium
 
+
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from yuheng import Carto
+from yuheng.basic import log
 from yuheng.component import Member, Node, Relation, Way
 
 
@@ -93,13 +95,13 @@ class VizFolium:
                 kwargs.get(k, None) != None
                 and isinstance(kwargs.get(k), type(v)) != True
             ):
-                print(
-                    f"ERROR: You use preverse argument {k}, please check your usage!"
+                log.error(
+                    f"You use preverse argument {k}, please check your usage!"
                 )
                 return None
 
         if (len(kwargs)) > 0:
-            print(f"There are {len(kwargs)} object need to append")
+            log.info(f"There are {len(kwargs)} object need to append")
             for k, v in kwargs.items():
                 self.add(v)
 
@@ -123,7 +125,7 @@ class VizFolium:
 
         for element in self.element_list:
             if isinstance(element, type(self.sample_node)):
-                print("This is a Node")
+                log.debug("This is a Node")
 
                 if self.config_node_display_method == "marker":
                     folium.Marker(list(self.transform(self, element))).add_to(
@@ -140,17 +142,17 @@ class VizFolium:
                     pass
 
             if isinstance(element, type(self.sample_way)):
-                print("This is a Way")
+                log.debug("This is a Way")
                 folium.PolyLine(self.transform(self, element)).add_to(m)
             if isinstance(
                 element,
                 type(self.sample_relation),
             ):
-                print("This is a Relation")
+                log.debug("This is a Relation")
             if isinstance(element, type(self.sample_carto)):
                 import time
 
-                print("Wow a hole map!")
+                log.debug("Wow a hole map!")
                 # batch time control
                 work_burden = (
                     len(element.node_dict)
@@ -164,7 +166,7 @@ class VizFolium:
                 time_node_start = time.time()
                 work_burden_node_count = 0
                 for id, obj in element.node_dict.items():
-                    # print(f"world-node-{id}") # debug
+                    # logger.debug(f"world-node-{id}")
                     work_burden_node_count += 1
                     folium.ColorLine(
                         positions=[(obj.lat, obj.lon), (obj.lat, obj.lon)],
@@ -179,7 +181,7 @@ class VizFolium:
                         == 0
                     ):
                         time_node_this = time.time()
-                        print(
+                        log.info(
                             "[time] display "
                             + str(work_burden_node_count)
                             + " node use "
@@ -187,7 +189,7 @@ class VizFolium:
                             + " s"
                         )
                 time_node_end = time.time()
-                print(
+                log.info(
                     "[time] display **all** node use "
                     + str(round(time_node_end - time_node_start, 3))
                     + " s"
@@ -196,7 +198,7 @@ class VizFolium:
                 time_way_start = time.time()
                 work_burden_way_count = 0
                 for id, obj in element.way_dict.items():
-                    # print(f"world-way-{id}", len(obj.nds)) # debug
+                    # logger.debug(f"world-way-{id} length={len(obj.nds)}")
                     if len(obj.nds) >= 0:
                         work_burden_way_count += 1
                         time_this_way_start = time.time()
@@ -213,7 +215,7 @@ class VizFolium:
                             == 0
                         ):
                             time_way_this = time.time()
-                            print(
+                            log.info(
                                 "[time] display "
                                 + str(work_burden_way_count)
                                 + " way use "
@@ -224,13 +226,13 @@ class VizFolium:
                         if (
                             time_this_way_end - time_this_way_start
                         ) >= work_burden_report_large_data:
-                            print(
+                            log.warning(
                                 f"[time] w{obj.id} ({round(time_this_way_end - time_this_way_start,3)}s) "
                                 f"have {len(obj.nds)} node and cause time "
                                 f"longer than {work_burden_report_large_data} s"
                             )
                 time_way_end = time.time()
-                print(
+                log.info(
                     "[time] display **all** way use "
                     + str(round(time_way_end - time_way_start, 3))
                     + " s"
@@ -240,7 +242,7 @@ class VizFolium:
         time_save_html_start = time.time()
         m.save("index.html")
         time_save_html_end = time.time()
-        print(
+        log.info(
             "[time] save html use "
             + str(round(time_save_html_end - time_save_html_start, 3))
             + " s"
@@ -255,7 +257,7 @@ class VizFolium:
 
 
 def main() -> None:
-    print("This plugin can't be run as module.")
+    log.error("This plugin can't be run as module.")
 
 
 if __name__ == "__main__":

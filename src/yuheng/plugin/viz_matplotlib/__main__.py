@@ -1,5 +1,6 @@
 import os
 import sys
+from .basic.log import log
 
 import matplotlib.pyplot as plt
 
@@ -36,7 +37,7 @@ def init(
 
 
 def main() -> None:
-    print("This plugin can't be run as module.")
+    log.error("This plugin can't be run as module.")
 
 
 if __name__ == "__main__":
