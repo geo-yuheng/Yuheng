@@ -9,6 +9,7 @@ src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
 import yuheng
+from yuheng.basic import logger
 
 
 class TestIterator(unittest.TestCase):
@@ -28,9 +29,9 @@ class TestIterator(unittest.TestCase):
         m = self.world
         test_node_dict = m.node_dict
         for id in test_node_dict:
-            print(id)  # , test_node_dict[id])
+            logger.debug(id)  # , test_node_dict[id])
             for key in test_node_dict[id].tags:
-                print(key, "=", test_node_dict[id].tags[key])
+                logger.debug("{key} = {test_node_dict[id].tags[key]}")
 
     def test_iterator_way(self):
         pass

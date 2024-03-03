@@ -8,23 +8,24 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
+from yuheng.basic import logger
+from yuheng.plugin.overpass import gen_metadata
+
 
 class TestPluginOverpass(unittest.TestCase):
     def setUp(self) -> None:
         pass
 
     def test_plugin_overpass(self):
-        from yuheng.plugin.overpass import gen_metadata
-
-        print(
+        logger.info(
             gen_metadata(metadata_entry_data={"out": "xml", "maxsize": 65535})
         )
-        print(
+        logger.info(
             gen_metadata(
                 metadata_entry_data={"out": "popup", "maxsize": 65535}
             )
         )
-        print(
+        logger.info(
             gen_metadata(
                 metadata_entry_data={
                     "out": "json",
@@ -34,7 +35,7 @@ class TestPluginOverpass(unittest.TestCase):
                 bbox_info={"E": 20, "W": 10, "S": 30, "N": 40.5},
             )
         )
-        print(
+        logger.info(
             gen_metadata(
                 metadata_entry_data={
                     "out": "csv",

@@ -1,14 +1,14 @@
 import os
 import sys
 import unittest
-
+import json
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
 from yuheng import Carto
-from yuheng.basic import get_yuheng_path
+from yuheng.basic import get_yuheng_path, logger
 
 
 class TestPluginDriverDbPostgresql(unittest.TestCase):
@@ -41,11 +41,11 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
             query_mode="full",
             query_type=["point"],
         )
-        print("len(world.node_dict):", len(world.node_dict))
-        print("len(world.way_dict):", len(world.way_dict))
+        logger.info(f"len(world.node_dict): {len(world.node_dict)}")
+        logger.info(f"len(world.way_dict): {len(world.way_dict)}")
         end_time = time.time()
         duration = end_time - start_time
-        print("total time:", duration, "s")
+        logger.info(f"total time: {duration}s")
         assert isinstance(world, Carto)
 
     def test_plugin_driver_db_postgresql_full_type_way(self):
@@ -63,11 +63,11 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
             query_mode="full",
             query_type=["line"],
         )
-        print("len(world.node_dict):", len(world.node_dict))
-        print("len(world.way_dict):", len(world.way_dict))
+        logger.info(f"len(carto.node_dict): {len(carto.node_dict)}")
+        logger.info(f"len(carto.way_dict): {len(carto.way_dict)}")
         end_time = time.time()
         duration = end_time - start_time
-        print("total time:", duration, "s")
+        logger.info(f"total time: {duration}s")
         assert isinstance(world, Carto)
 
     def test_plugin_driver_db_postgresql_full_type_multi(self):
@@ -85,11 +85,11 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
             query_mode="full",
             query_type=["line", "point"],
         )
-        print("len(carto.node_dict):", len(carto.node_dict))
-        print("len(carto.way_dict):", len(carto.way_dict))
+        logger.info(f"len(carto.node_dict): {len(carto.node_dict)}")
+        logger.info(f"len(carto.way_dict): {len(carto.way_dict)}")
         end_time = time.time()
         duration = end_time - start_time
-        print("total time:", duration, "s")
+        logger.info(f"total time: {duration}s")
 
     def test_plugin_driver_db_postgresql_full_invalidtype(self):
         from yuheng.plugin.driver_db_postgresql.__main__ import get_data

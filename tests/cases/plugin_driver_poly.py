@@ -8,6 +8,8 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
+from yuheng.basic import logger
+
 
 class TestPluginDriverPoly(unittest.TestCase):
     def setUp(self) -> None:
@@ -25,7 +27,7 @@ class TestPluginDriverPoly(unittest.TestCase):
                 "Izaland-polyfile-20231213-laoshubabytest.poly",
             )
         )
-        print(ans)
+        logger.info(ans)
 
     def test_plugin_driver_poly_cli(self):
         args = (
