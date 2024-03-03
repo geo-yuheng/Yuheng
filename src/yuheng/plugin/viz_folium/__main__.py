@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 from typing import List, Tuple, Union
 
 import folium
@@ -150,8 +151,6 @@ class VizFolium:
             ):
                 logger.debug("This is a Relation")
             if isinstance(element, type(self.sample_carto)):
-                import time
-
                 logger.debug("Wow a hole map!")
                 # batch time control
                 work_burden = (
