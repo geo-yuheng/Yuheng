@@ -27,8 +27,6 @@ from .method.parse import (
 )
 from .method.transform import prefix_normalization
 
-logger.info("loguru enabled")
-
 
 class Carto:
     def __init__(self):
@@ -52,7 +50,7 @@ class Carto:
             spec_dict[int(i.id)] = i
 
     def meow(self) -> None:
-        logger.info(
+        logger.success(
             "\n"
             + "==============================\n"
             + "Yuheng load successful!\n"
