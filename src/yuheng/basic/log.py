@@ -1,4 +1,5 @@
 import os
+
 # import logging.config
 
 from loguru import logger as loguru_logger
@@ -50,8 +51,8 @@ logger.add(
 # logger.add(sink=logging_handler_sls, format=loguru_format, **loguru_config)
 # clickhouse
 # logger.add(sink=logging_handler_clickhouse)
-# openobserve
-# logger.add(sink=logging_handler_openobserve)
+# elasticsearch
+# logger.add(sink=logging_handler_elasticsearch)
 
 # logger.disable("yuheng")
 logger.info("loguru enabled")
