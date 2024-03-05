@@ -107,17 +107,24 @@ def main(**kwargs):
         logger.debug(metadata_frame[3000])
         logger.debug(len(metadata_frame))
 
-        clustering_uid = []
-        clustering_year = []
+        # clustering_uid = {}
+        clustering_year = {}
         for element in metadata_frame:
-            clustering_uid.append(element.get("uid"))
-            clustering_year.append(element.get("time_year"))
-        clustering_uid = set(clustering_uid)
-        clustering_year = set(clustering_year)
+            if clustering_year.get(element.get("time_year"), None) != None:
+                clustering_year[element.get("time_year")] += 1
+            else:
+                clustering_year[element.get("time_year")] = 1
 
-        logger.debug(clustering_uid)
+        # clustering_uid = set(clustering_uid)
+        # clustering_year = set(clustering_year)
+
+        from collections import OrderedDict
+
+        clustering_year = dict(OrderedDict(sorted(clustering_year.items())))
+        # logger.debug(clustering_uid)
+        # clustering_year = sorted(clustering_year)
         logger.debug(clustering_year)
-        logger.info(len(clustering_uid))
+        # logger.info(len(clustering_uid))
         logger.info(len(clustering_year))
 
 
