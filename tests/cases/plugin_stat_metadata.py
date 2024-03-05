@@ -53,7 +53,11 @@ class TestPluginStatMetadata(unittest.TestCase):
 
     def test_plugin_stat_metadata_import(self):
         world = Carto()
-        result = main(world)
+        result = main(world=world)
+
+    def test_plugin_stat_metadata_import_invalid(self):
+        world = {"type": "carto", "content": "map"}
+        result = main(world=world)
 
 
 if __name__ == "__main__":
