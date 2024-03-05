@@ -11,12 +11,39 @@ from yuheng.component import Node, Relation, Way
 from yuheng.plugin.stat_metadata_clustering.__main__ import main
 
 
-class TestPluginVisualizationFolium(unittest.TestCase):
+class TestPluginStatMetadata(unittest.TestCase):
     def setUp(self) -> None:
         pass
 
-    def test_plugin_viz_folium_display_invalid_argument(self):
-        pass
+    def test_plugin_stat_metadata_argument(self):
+        os.system(
+            " ".join(
+                [
+                    "python",
+                    os.path.join(
+                        os.path.realpath(__file__),
+                        "..",
+                        "..",
+                        "src",
+                        "yuheng",
+                        "plugin",
+                        "stat_metadata_clustering",
+                        "__main__.py",
+                    ),
+                    os.path.join(
+                        os.path.realpath(__file__),
+                        "..",
+                        "assets",
+                        "osm",
+                        "xtract_osmwebsite_bbox_buctcampus.osm",
+                    ),
+                ]
+            )
+        )
+
+    def test_plugin_stat_metadata_import(self):
+        world = Carto()
+        result = main(world)
 
 
 if __name__ == "__main__":
