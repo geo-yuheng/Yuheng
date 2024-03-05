@@ -76,10 +76,10 @@ def main(**kwargs):
             metadata_frame_raw: Tuple[str, int, int, int]
         ) -> Dict[str, str]:
             metadata_frame = []  # 因为暂时不引入pandas所以用字典做行，用了pandas就直接行数组插入了。
-            for item in metadata_frame_raw:
+            for element in metadata_frame_raw:
                 timezone_server = datetime.timezone.utc
                 timezone_user = zoneinfo.ZoneInfo(LOCAL_TIMEZONE)
-                time_utc_str = item[1]
+                time_utc_str = element[1]
                 time_utc = datetime.datetime.strptime(
                     time_utc_str, "%Y-%m-%dT%H:%M:%SZ"
                 )
@@ -88,9 +88,9 @@ def main(**kwargs):
 
                 metadata_frame.append(
                     {
-                        "id": item[0],
-                        "uid": str(item[2]),
-                        "changeset": str(item[3]),
+                        "id": element[0],
+                        "uid": str(element[2]),
+                        "changeset": str(element[3]),
                         "time_year": time_user.year,
                         "time_month": time_user.month,
                         "time_day": time_user.day,
@@ -103,11 +103,22 @@ def main(**kwargs):
 
         metadata_frame_raw = get_metadata_frame_raw(world)
         metadata_frame = get_metadata_frame(metadata_frame_raw)
+        del metadata_frame_raw
         logger.debug(metadata_frame[3000])
         logger.debug(len(metadata_frame))
 
-        for 
-        clustering_uid=
+        clustering_uid = []
+        clustering_year = []
+        for element in metadata_frame:
+            clustering_uid.append(element.get("uid"))
+            clustering_year.append(element.get("time_year"))
+        clustering_uid = set(clustering_uid)
+        clustering_year = set(clustering_year)
+
+        logger.debug(clustering_uid)
+        logger.debug(clustering_year)
+        logger.info(len(clustering_uid))
+        logger.info(len(clustering_year))
 
 
 if __name__ == "__main__":
