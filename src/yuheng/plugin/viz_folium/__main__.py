@@ -82,6 +82,7 @@ class VizFolium:
         * default_zoom:int
         * colour_original: bool
         """
+        logger.trace(__name__)
         import webbrowser
 
         preserve_argument = {
@@ -210,40 +211,30 @@ class VizFolium:
                                 target_way_id: Union[int, str],
                                 reference_carto: Carto,
                             ) -> Optional[str]:
-                                if type(target_way_id) == type(str):
+                                if isinstance(target_way_id, str):
                                     target_way_id = int(target_way_id)
-                                for (
-                                    way_id,
-                                    way_obj,
-                                ) in reference_carto.way_dict.items():
-                                    if (
-                                        way_obj.tags.get("colour", None)
-                                        != None
-                                    ):
-                                        return way_obj.tags["colour"]
-                                    else:
-                                        for (
-                                            relation_id,
-                                            relation_obj,
-                                        ) in (
-                                            reference_carto.relation_dict.items()
-                                        ):
-                                            for member in relation_obj.members:
-                                                if (
-                                                    member.type == "way"
-                                                    and member.ref
-                                                    == target_way_id
-                                                ):
-                                                    return (
-                                                        relation_obj.tags.get(
-                                                            "colour", None
-                                                        )
-                                                    )
-                                                else:
-                                                    # logger.debug(
-                                                    #     f"havent found any colour info for w{target_way_id}"
-                                                    # )
-                                                    return None
+
+                                way_obj = reference_carto.way_dict[
+                                    target_way_id
+                                ]
+                                if way_obj.tags.get("colour", None) != None:
+                                    # colour on way itself
+                                    return way_obj.tags["colour"]
+                                else:
+                                    # colour may defined on way's father relation
+                                    # mainly on route relation in public transport career.
+                                    for (
+                                        relation_id,
+                                        relation_obj,
+                                    ) in reference_carto.relation_dict.items():
+                                        for member in relation_obj.members:
+                                            if (
+                                                member.type == "way"
+                                                and member.ref == target_way_id
+                                            ):
+                                                return relation_obj.tags.get(
+                                                    "colour", None
+                                                )
 
                             if get_colour(id, element) != None:
                                 colour = get_colour(id, element)
@@ -328,11 +319,11 @@ class VizFolium:
     def meow(self):
         logger.info(
             "\n"
-            + "=========="
-            + "This folium viz object have such elements"
-            + "=========="
-            + str(len(self.element_list))
-            + "=========="
+            + "==========\n"
+            + "This folium viz object have such elements\n"
+            + "==========\n"
+            + (str(len(self.element_list)) + "\n")
+            + "==========\n"
         )
 
 

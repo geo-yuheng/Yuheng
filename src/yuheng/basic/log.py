@@ -44,7 +44,7 @@ logger = loguru_logger
 logger.add(
     sink=os.path.join(get_yuheng_path(), "log", "log_{time}.log"),
     format=loguru_format,
-    level="DEBUG",
+    level="TRACE",
     **loguru_config
 )
 # saas_aliyun_sls

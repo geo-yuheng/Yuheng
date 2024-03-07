@@ -95,6 +95,7 @@ class Carto:
                 logger.warning(
                     "You add parameter for both file mode and memory mode! Yuheng will choose you designated **file** mode"
                 )
+            logger.info(file_path)
             self.read_file(file_path)
         elif (
             mode == "memory" or mode == "m" or mode == "text" or mode == "t"
