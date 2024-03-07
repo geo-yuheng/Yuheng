@@ -36,7 +36,7 @@ logging_config = {
 logging.config.dictConfig(logging_config)
 logging_handler_aliyun = logging.getLogger("sls").handlers[0]
 
-loguru_config = {"level": "INFO"}
+loguru_config = {}
 loguru_format = "{time:YYYY-MM-DD HH:mm:ss.SSS} | {level: <8} | {name}:{function}:{line} - {message}"
 logger = loguru_logger
 
@@ -44,10 +44,16 @@ logger = loguru_logger
 logger.add(
     sink=os.path.join(get_yuheng_path(), "log", "log_{time}.log"),
     format=loguru_format,
+    level="DEBUG",
     **loguru_config
 )
 # saas_aliyun_sls
-logger.add(sink=logging_handler_aliyun, format=loguru_format, **loguru_config)
+logger.add(
+    sink=logging_handler_aliyun,
+    format=loguru_format,
+    level="INFO",
+    **loguru_config
+)
 # saas_aws_cloudwatch
 # logger.add(sink=logging_handler_aws) # WIP
 # clickhouse
