@@ -133,6 +133,17 @@ class TestPluginVisualizationFolium(unittest.TestCase):
             default_center_lon=116.3974,
             default_zoom=9,
             colour_original=True,
+            # # cartodb
+            # default_tiles="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+            # default_attribution=" ".join(
+            #     [
+            #         f'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            #         f'&copy; <a href="https://carto.com/attributions">CARTO</a>',
+            #     ]
+            # ),
+            # # ogf
+            default_tiles="https://tiles04.rent-a-planet.com/ogf-carto/{z}/{x}/{y}.png",
+            default_attribution=f'&copy; <a href="https://opengeofiction.net">OpenGeofiction</a> creators',
         )
         viz.meow()
 

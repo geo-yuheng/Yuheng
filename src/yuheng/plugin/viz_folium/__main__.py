@@ -108,23 +108,20 @@ class VizFolium:
             for k, v in kwargs.items():
                 self.add(v)
 
-        m = folium.Map(
-            location=[
+        default_config = {
+            "location": [
                 kwargs.get("default_center_lat", 0.0),
                 kwargs.get("default_center_lon", 0.0),
             ],
-            zoom_start=kwargs.get("default_zoom", 0),
-        )
-        # # You can replace with custom tiles
-        # m = folium.Map(
-        #     tiles="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-        #     attr=" ".join(
-        #         [
-        #             f'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        #             f'&copy; <a href="https://carto.com/attributions">CARTO</a>',
-        #         ]
-        #     ),
-        # )
+            "zoom_start": kwargs.get("default_zoom", 0),
+        }
+        # You can replace with custom tiles
+        if kwargs.get("default_tiles"):
+            default_config["tiles"] = kwargs.get("default_tiles")
+        if kwargs.get("default_attribution"):
+            default_config["attr"] = kwargs.get("default_attribution")
+
+        m = folium.Map(**default_config)
 
         for element in self.element_list:
             if isinstance(element, type(self.sample_node)):
@@ -319,8 +316,11 @@ class VizFolium:
                     f"work_burden_node_count={work_burden_node_count}"
                 )
                 logger.debug(f"work_burden_way_count={work_burden_way_count}")
-                logger.debug(f"count_way_coloured={count_way_coloured}")
-                logger.debug(f"count_way_uncoloured={count_way_uncoloured}")
+                if kwargs.get("colour_original", False) == True:
+                    logger.debug(f"count_way_coloured={count_way_coloured}")
+                    logger.debug(
+                        f"count_way_uncoloured={count_way_uncoloured}"
+                    )
 
         # gen html file or call webbrowser
         time_save_html_start = time.time()
