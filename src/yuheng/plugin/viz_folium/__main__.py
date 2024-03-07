@@ -92,16 +92,22 @@ class VizFolium:
             "default_tiles": "",
             "default_attribution": "",
             "colour_original": False,
+            "default_style_line_width": 0,
+            "default_style_line_width_uncoloured": 0,
+            "default_style_line_width_coloured": 0,
         }
         for k, v in preserve_argument.items():
             if (
                 kwargs.get(k, None) != None
                 and isinstance(kwargs.get(k), type(v)) != True
             ):
-                logger.error(
-                    f"You use preverse argument {k}, please check your usage!"
-                )
-                return None
+                if k != "default_tiles" and isinstance(
+                    kwargs.get(k), type(folium.TileLayer)
+                ):
+                    logger.error(
+                        f"You use preverse argument {k}, please check your usage!"
+                    )
+                    return None
 
         if (len(kwargs)) > 0:
             logger.info(f"There are {len(kwargs)} object need to append")
@@ -251,7 +257,9 @@ class VizFolium:
                                         for i in range(len(position_list))
                                     ],
                                     colormap=[colour, colour],
-                                    weight=4,
+                                    weight=kwargs.get(
+                                        "default_style_line_width_coloured", 2
+                                    ),
                                 ).add_to(m)
                                 logger.debug(
                                     [
@@ -271,7 +279,10 @@ class VizFolium:
                                         for i in range(len(position_list))
                                     ],
                                     colormap=["black", "black"],
-                                    weight=2,
+                                    weight=kwargs.get(
+                                        "default_style_line_width_uncoloured",
+                                        2,
+                                    ),
                                 ).add_to(m)
                                 count_way_uncoloured += 1
                         else:
@@ -279,7 +290,9 @@ class VizFolium:
                                 self.transform(
                                     self, obj, reference_carto=element
                                 ),
-                                weight=2,
+                                weight=kwargs.get(
+                                    "default_style_line_width", 2
+                                ),
                             ).add_to(m)
                         time_this_way_end = time.time()
 

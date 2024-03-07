@@ -2,6 +2,8 @@ import os
 import sys
 import unittest
 
+from folium import TileLayer
+
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
@@ -133,6 +135,11 @@ class TestPluginVisualizationFolium(unittest.TestCase):
             default_center_lon=116.3974,
             default_zoom=9,
             colour_original=True,
+            # OpenStreetMap
+            # default_tiles=TileLayer(
+            #     tiles="OpenStreetMap",
+            #     attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            # ),
             # # cartodb
             # default_tiles="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
             # default_attribution=" ".join(
@@ -142,8 +149,14 @@ class TestPluginVisualizationFolium(unittest.TestCase):
             #     ]
             # ),
             # # ogf
-            default_tiles="https://tiles04.rent-a-planet.com/ogf-carto/{z}/{x}/{y}.png",
-            default_attribution=f'&copy; <a href="https://opengeofiction.net">OpenGeofiction</a> creators',
+            # default_tiles=TileLayer(
+            #     tiles="https://tiles04.rent-a-planet.com/ogf-carto/{z}/{x}/{y}.png",
+            #     attr='&copy; <a href="https://opengeofiction.net">OpenGeofiction</a> creators',
+            #     opacity=0.5,
+            # ),
+            default_style_line_width=3,
+            default_style_line_width_uncoloured=2,
+            default_style_line_width_coloured=5,
         )
         viz.meow()
 
