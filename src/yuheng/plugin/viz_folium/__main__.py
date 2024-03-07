@@ -80,6 +80,7 @@ class VizFolium:
         * default_center_lat:float
         * default_center_lon:float
         * default_zoom:int
+        * colour_original: bool
         """
         import webbrowser
 
@@ -89,6 +90,7 @@ class VizFolium:
             "default_center_lon": 0.0,
             "default_tiles": "",
             "default_attribution": "",
+            "colour_original": False,
         }
         for k, v in preserve_argument.items():
             if (
@@ -197,13 +199,41 @@ class VizFolium:
                 work_burden_way_count = 0
                 for id, obj in element.way_dict.items():
                     # logger.debug(f"world-way-{id} length={len(obj.nds)}")
+                    # logger.debug(kwargs.get("colour_original", False))
+                    # logger.debug(obj.tags.get("colour", None))
                     if len(obj.nds) >= 0:
                         work_burden_way_count += 1
                         time_this_way_start = time.time()
-                        folium.PolyLine(
-                            self.transform(self, obj, reference_carto=element),
-                            weight=2,
-                        ).add_to(m)
+                        if kwargs.get("colour_original", False) == True:
+                            if obj.tags.get("colour", None) != None:
+                                colour = obj.tags.get("colour", None)
+                                logger.info(
+                                    f"Colour {colour} was detected in w{id}"
+                                )
+                                folium.ColorLine(
+                                    positions=self.transform(
+                                        self, obj, reference_carto=element
+                                    ),
+                                    colors=[0.114514, 0.1919810],
+                                    colormap=[colour, colour],
+                                    weight=2,
+                                ).add_to(m)
+                            else:
+                                folium.ColorLine(
+                                    positions=self.transform(
+                                        self, obj, reference_carto=element
+                                    ),
+                                    colors=[0.114514, 0.1919810],
+                                    colormap=["black", "black"],
+                                    weight=2,
+                                ).add_to(m)
+                        else:
+                            folium.PolyLine(
+                                self.transform(
+                                    self, obj, reference_carto=element
+                                ),
+                                weight=2,
+                            ).add_to(m)
                         time_this_way_end = time.time()
 
                         if (
@@ -235,6 +265,8 @@ class VizFolium:
                     + str(round(time_way_end - time_way_start, 3))
                     + " s"
                 )
+                logger.debug(work_burden_node_count)
+                logger.debug(work_burden_way_count)
 
         # gen html file or call webbrowser
         time_save_html_start = time.time()

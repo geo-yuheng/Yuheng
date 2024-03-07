@@ -102,7 +102,7 @@ class TestPluginVisualizationFolium(unittest.TestCase):
                 "..",
                 "assets",
                 "osm",
-                "extract_osmwebsite_bbox_daxingjichang.osm",
+                "extract_osmwebsite_bbox_buctcampus.osm",
             ),
         )
         world.meow()
@@ -132,7 +132,9 @@ class TestPluginVisualizationFolium(unittest.TestCase):
             default_center_lat=39.8571,
             default_center_lon=116.3974,
             default_zoom=9,
+            colour_original=True,
         )
+        viz.meow()
 
 
 if __name__ == "__main__":
