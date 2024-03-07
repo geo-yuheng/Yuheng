@@ -1,7 +1,7 @@
 import os
 import sys
 import time
-from typing import List, Tuple, Union
+from typing import List, Tuple, Union, Optional
 
 import folium
 
@@ -205,8 +205,48 @@ class VizFolium:
                         work_burden_way_count += 1
                         time_this_way_start = time.time()
                         if kwargs.get("colour_original", False) == True:
-                            if obj.tags.get("colour", None) != None:
-                                colour = obj.tags.get("colour", None)
+
+                            def get_colour(
+                                target_way_id: Union[int, str],
+                                reference_carto: Carto,
+                            ) -> Optional[str]:
+                                if type(target_way_id) == type(str):
+                                    target_way_id = int(target_way_id)
+                                for (
+                                    way_id,
+                                    way_obj,
+                                ) in reference_carto.way_dict.items():
+                                    if (
+                                        way_obj.tags.get("colour", None)
+                                        != None
+                                    ):
+                                        return way_obj.tags["colour"]
+                                    else:
+                                        for (
+                                            relation_id,
+                                            relation_obj,
+                                        ) in (
+                                            reference_carto.relation_dict.items()
+                                        ):
+                                            for member in relation_obj.members:
+                                                if (
+                                                    member.type == "way"
+                                                    and member.ref
+                                                    == target_way_id
+                                                ):
+                                                    return (
+                                                        relation_obj.tags.get(
+                                                            "colour", None
+                                                        )
+                                                    )
+                                                else:
+                                                    # logger.debug(
+                                                    #     f"havent found any colour info for w{target_way_id}"
+                                                    # )
+                                                    return None
+
+                            if get_colour(id, element) != None:
+                                colour = get_colour(id, element)
                                 logger.info(
                                     f"Colour {colour} was detected in w{id}"
                                 )
