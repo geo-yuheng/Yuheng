@@ -76,6 +76,9 @@ class Node(BaseOsmModel):
         # if len<API_LIMIT_MAX_ELEMENT_TAGS:
         return True
 
+    def meow(self):
+        self.__str__()
+
 
 class Way(BaseOsmModel):
     upstream_relation: list = [0]
@@ -127,6 +130,9 @@ class Way(BaseOsmModel):
         """
         pass
 
+    def meow(self):
+        self.__str__()
+
 
 class Relation(BaseOsmModel):
     upstream_relation: list = [0]
@@ -176,3 +182,6 @@ class Relation(BaseOsmModel):
     def is_limit_valid(self):
         # if len<API_LIMIT_MAX_RELATION_MEMBERS
         return True
+
+    def meow(self):
+        self.__str__()

@@ -253,6 +253,16 @@ class VizFolium:
         # )
         return None
 
+    def meow(self):
+        logger.info(
+            "\n"
+            + "=========="
+            + "This folium viz object have such elements"
+            + "=========="
+            + str(len(self.element_list))
+            + "=========="
+        )
+
 
 def main() -> None:
     logger.error("This plugin can't be run as module.")
