@@ -196,6 +196,9 @@ class VizFolium:
                     + " s"
                 )
                 # way
+                if kwargs.get("colour_original", False) == True:
+                    count_way_coloured = 0
+                    count_way_uncoloured = 0
                 time_way_start = time.time()
                 work_burden_way_count = 0
                 for id, obj in element.way_dict.items():
@@ -241,23 +244,39 @@ class VizFolium:
                                 logger.info(
                                     f"Colour {colour} was detected in w{id}"
                                 )
+                                position_list = self.transform(
+                                    self, obj, reference_carto=element
+                                )
                                 folium.ColorLine(
-                                    positions=self.transform(
-                                        self, obj, reference_carto=element
-                                    ),
-                                    colors=[0.114514, 0.1919810],
+                                    positions=position_list,
+                                    colors=[
+                                        float((i + 0.5) / len(position_list))
+                                        for i in range(len(position_list))
+                                    ],
                                     colormap=[colour, colour],
-                                    weight=2,
+                                    weight=4,
                                 ).add_to(m)
+                                logger.debug(
+                                    [
+                                        float((i + 0.5) / len(position_list))
+                                        for i in range(len(position_list))
+                                    ]
+                                )
+                                count_way_coloured += 1
                             else:
+                                position_list = self.transform(
+                                    self, obj, reference_carto=element
+                                )
                                 folium.ColorLine(
-                                    positions=self.transform(
-                                        self, obj, reference_carto=element
-                                    ),
-                                    colors=[0.114514, 0.1919810],
+                                    positions=position_list,
+                                    colors=[
+                                        float((i + 0.5) / len(position_list))
+                                        for i in range(len(position_list))
+                                    ],
                                     colormap=["black", "black"],
                                     weight=2,
                                 ).add_to(m)
+                                count_way_uncoloured += 1
                         else:
                             folium.PolyLine(
                                 self.transform(
@@ -296,8 +315,12 @@ class VizFolium:
                     + str(round(time_way_end - time_way_start, 3))
                     + " s"
                 )
-                logger.debug(work_burden_node_count)
-                logger.debug(work_burden_way_count)
+                logger.debug(
+                    f"work_burden_node_count={work_burden_node_count}"
+                )
+                logger.debug(f"work_burden_way_count={work_burden_way_count}")
+                logger.debug(f"count_way_coloured={count_way_coloured}")
+                logger.debug(f"count_way_uncoloured={count_way_uncoloured}")
 
         # gen html file or call webbrowser
         time_save_html_start = time.time()
