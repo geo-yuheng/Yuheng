@@ -170,9 +170,13 @@ class VizFolium:
                 # auto detect whether there are special relation schema
                 # expecially in public transport
                 for id, obj in element.relation_dict.items():
+                    flag_relation_eligible = True
                     if obj.tags.get("type", None) == "network":
-                        if obj.tags.get("network", None) == "subway":
-                            logger.success("found a subway network")
+                        flag_relation_eligible = False
+                    if obj.tags.get("network", None) == "subway":
+                        flag_relation_eligible = False
+                    if flag_relation_eligible == True:
+                        logger.success("found a subway network")
                 # node
                 import base64
 
@@ -191,30 +195,35 @@ class VizFolium:
                     # logger.debug(f"world-node-{id}")
                     work_burden_node_count += 1
                     ## detect whether this is special node
-                    if obj.tags.get("public_transport", None) == "station":
-                        if obj.tags.get("station", None) == "subway":
-                            if obj.tags.get("subway", None) == "yes":
-                                logger.success(f"n{id} is a subway station")
-                                icon = folium.CustomIcon(
-                                    svg_to_data_url(
-                                        os.path.join(
-                                            os.path.dirname(__file__),
-                                            "..",
-                                            "..",
-                                            "..",
-                                            "..",
-                                            "assets",
-                                            "绘图-1.svg",
-                                        )
-                                    ),
-                                    icon_size=(30, 30),
-                                )  # 调整适当的大小
-                                folium.Marker(
-                                    location=[obj.lat, obj.lon],
-                                    tooltip=obj.tags.get("name", ""),
-                                    popup=f'<a href="https://opengeofiction.net/node/{obj.tags.get("name", "")}<br/>{id}">Node {id}</a>',
-                                    icon=icon,
-                                ).add_to(m)
+                    flag_node_eligible = True
+                    if obj.tags.get("public_transport", None) != "station":
+                        flag_node_eligible = False
+                    if obj.tags.get("station", None) == "subway":
+                        flag_node_eligible = False
+                    if obj.tags.get("subway", None) == "yes":
+                        flag_node_eligible = False
+                    if flag_node_eligible == True:
+                        logger.success(f"n{id} is a subway station")
+                        icon = folium.CustomIcon(
+                            svg_to_data_url(
+                                os.path.join(
+                                    os.path.dirname(__file__),
+                                    "..",
+                                    "..",
+                                    "..",
+                                    "..",
+                                    "assets",
+                                    "render_relation_stylesheet_subway_station.svg",
+                                )
+                            ),
+                            icon_size=(30, 30),
+                        )  # 调整适当的大小
+                        folium.Marker(
+                            location=[obj.lat, obj.lon],
+                            tooltip=obj.tags.get("name", ""),
+                            popup=f'<a href="https://opengeofiction.net/node/{obj.tags.get("name", "")}<br/>{id}">Node {id}</a>',
+                            icon=icon,
+                        ).add_to(m)
 
                     ## normal
                     else:

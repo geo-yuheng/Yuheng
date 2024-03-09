@@ -8,13 +8,12 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
-   sodipodi:docname="绘图-1.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview7"
+     id="namedview"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -36,21 +35,21 @@
   <defs
      id="defs2" />
   <g
-     inkscape:label="图层 1"
+     inkscape:label="group"
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g3243"
+       id="g1234"
        transform="matrix(0.92642724,0,0,0.92642724,0.19466133,0.19466133)">
       <circle
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.514;stroke-dasharray:none"
-         id="path188"
+         id="path114"
          cx="2.6458333"
          cy="2.6458333"
          r="2.5989537" />
       <circle
          style="fill:#ff4f4f;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-dasharray:none"
-         id="path903"
+         id="path514"
          cx="2.6458333"
          cy="2.6458333"
          r="1.8706037" />
