@@ -44,7 +44,11 @@ class Carto:
         if value is not None:
             attrib[key] = str(value)
 
-    @staticmethod
+    # @staticmethod
+
+    import numba
+
+    @numba.jit(force_obj=False, loof_left=False, nopython=False)
     def insert_to_dict(spec_dict, element_list):
         for i in element_list:
             spec_dict[int(i.id)] = i
