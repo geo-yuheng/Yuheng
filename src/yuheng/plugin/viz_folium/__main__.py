@@ -166,12 +166,27 @@ class VizFolium:
                 work_burden_report_node_interval = 1000
                 work_burden_report_way_interval = 15
                 work_burden_report_large_data = 1.5
+                # relation
+                # auto detect whether there are special relation schema
+                # expecially in public transport
+                for id, obj in element.relation_dict.items():
+                    if obj.tags.get("type", None) == "network":
+                        if obj.tags.get("network", None) == "subway":
+                            logger.success("found a subway network")
                 # node
                 time_node_start = time.time()
                 work_burden_node_count = 0
                 for id, obj in element.node_dict.items():
                     # logger.debug(f"world-node-{id}")
                     work_burden_node_count += 1
+                    ## detect whether this is special node
+                    if obj.tags.get("public_transport", None) == "station":
+                        if obj.tags.get("station", None) == "subway":
+                            if obj.tags.get("subway", None) == "yes":
+                                logger.success(f"n{id} is a subway station")
+                                pass
+
+                    ## normal
                     folium.ColorLine(
                         positions=[(obj.lat, obj.lon), (obj.lat, obj.lon)],
                         colors=[0.114514, 0.1919810],
