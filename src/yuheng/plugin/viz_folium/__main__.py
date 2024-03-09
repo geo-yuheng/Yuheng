@@ -174,6 +174,17 @@ class VizFolium:
                         if obj.tags.get("network", None) == "subway":
                             logger.success("found a subway network")
                 # node
+                import base64
+
+                def svg_to_data_url(svg_path):
+                    with open(svg_path, "r") as svg_file:
+                        svg_data = svg_file.read()
+                    # 对SVG数据进行Base64编码
+                    encoded = base64.b64encode(
+                        svg_data.encode("utf-8")
+                    ).decode("utf-8")
+                    return f"data:image/svg+xml;base64,{encoded}"
+
                 time_node_start = time.time()
                 work_burden_node_count = 0
                 for id, obj in element.node_dict.items():
@@ -184,15 +195,35 @@ class VizFolium:
                         if obj.tags.get("station", None) == "subway":
                             if obj.tags.get("subway", None) == "yes":
                                 logger.success(f"n{id} is a subway station")
-                                pass
+                                icon = folium.CustomIcon(
+                                    svg_to_data_url(
+                                        os.path.join(
+                                            os.path.dirname(__file__),
+                                            "..",
+                                            "..",
+                                            "..",
+                                            "..",
+                                            "assets",
+                                            "绘图-1.svg",
+                                        )
+                                    ),
+                                    icon_size=(30, 30),
+                                )  # 调整适当的大小
+                                folium.Marker(
+                                    location=[obj.lat, obj.lon],
+                                    tooltip=obj.tags.get("name", ""),
+                                    popup=f'<a href="https://opengeofiction.net/node/{obj.tags.get("name", "")}<br/>{id}">Node {id}</a>',
+                                    icon=icon,
+                                ).add_to(m)
 
                     ## normal
-                    folium.ColorLine(
-                        positions=[(obj.lat, obj.lon), (obj.lat, obj.lon)],
-                        colors=[0.114514, 0.1919810],
-                        colormap=["black", "black"],
-                        weight=4,
-                    ).add_to(m)
+                    else:
+                        folium.ColorLine(
+                            positions=[(obj.lat, obj.lon), (obj.lat, obj.lon)],
+                            colors=[0.114514, 0.1919810],
+                            colormap=["black", "black"],
+                            weight=4,
+                        ).add_to(m)
                     if (
                         work_burden > work_burden_report_node_interval
                         and work_burden_node_count
