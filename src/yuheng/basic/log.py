@@ -60,6 +60,10 @@ logger.add(
 # logger.add(sink=logging_handler_clickhouse) # WIP
 # elasticsearch
 # logger.add(sink=logging_handler_elasticsearch) # WIP
+# syslog stream
+# # Read https://docs.render.com/log-streams#sumo-logic
+# webhook
+# # discord/slack/telegram_bot
 
 # logger.disable("yuheng")
 logger.info("loguru enabled")

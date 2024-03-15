@@ -4,6 +4,7 @@ import sys
 import datetime
 import zoneinfo
 from typing import Tuple, Dict
+from collections import Counter, OrderedDict
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
@@ -104,28 +105,36 @@ def main(**kwargs):
         metadata_frame_raw = get_metadata_frame_raw(world)
         metadata_frame = get_metadata_frame(metadata_frame_raw)
         del metadata_frame_raw
-        logger.debug(metadata_frame[3000])
-        logger.debug(len(metadata_frame))
+        logger.debug(metadata_frame[0])
+        logger.debug(f"len(metadata_frame)={len(metadata_frame)}")
 
         # clustering_uid = {}
-        clustering_year = {}
-        for element in metadata_frame:
-            if clustering_year.get(element.get("time_year"), None) != None:
-                clustering_year[element.get("time_year")] += 1
-            else:
-                clustering_year[element.get("time_year")] = 1
-
-        # clustering_uid = set(clustering_uid)
-        # clustering_year = set(clustering_year)
-
-        from collections import OrderedDict
-
+        clustering_year = Counter(
+            element.get("time_year") for element in metadata_frame
+        )
         clustering_year = dict(OrderedDict(sorted(clustering_year.items())))
-        # logger.debug(clustering_uid)
-        # clustering_year = sorted(clustering_year)
+
         logger.debug(clustering_year)
-        # logger.info(len(clustering_uid))
         logger.info(len(clustering_year))
+
+        import seaborn as sns
+        import matplotlib.pyplot as plt
+
+        # 将字典转换为适合绘图的数据结构
+        years = list(clustering_year.keys())
+        counts = list(clustering_year.values())
+
+        # 使用 seaborn 来创建一个条形图
+        sns.set(style="whitegrid")  # 设置 seaborn 的样式
+        plt.figure(figsize=(10, 8))  # 设置图形的大小
+        sns.barplot(x=years, y=counts, palette="viridis")  # 创建条形图并设置调色板
+
+        plt.title("Yearly Distribution of Elements")  # 设置图表标题
+        plt.xlabel("Year")  # 设置 x 轴标签
+        plt.ylabel("Count")  # 设置 y 轴标签
+        plt.xticks(rotation=45)  # 旋转 x 轴上的标签，使之更容易阅读
+
+        plt.show()  # 显示图表
 
 
 if __name__ == "__main__":
