@@ -15,29 +15,16 @@ class TestTransformFunction(unittest.TestCase):
     def setUp(self):
         # 创建一个Carto对象和一些元素用于测试
         self.carto = Carto()
-        self.carto.node_dict = {
-            "node1": Node(id="node1", tags={"type": "node", "name": "Node1"}),
-            "node2": Node(id="node2", tags={"type": "node", "name": "Node2"}),
-        }
-        self.carto.way_dict = {
-            "way1": Way(
-                id="way1",
-                tags={"type": "way", "name": "Way1"},
-                node_ids=["node1", "node2"],
-            )
-        }
-        self.carto.relation_dict = {
-            "relation1": Relation(
-                id="relation1",
-                tags={"type": "relation", "name": "Relation1"},
-                member_list=[
-                    Member(
-                        member_id="node1", member_type="node", role="start"
-                    ),
-                    Member(member_id="way1", member_type="way", role="member"),
-                ],
-            )
-        }
+        self.carto.read(
+            mode="file",
+            file_path=os.path.join(
+                os.path.dirname(os.path.realpath(__file__)),
+                "..",
+                "assets",
+                "osm",
+                "extract_osmwebsite_bbox_buctcampus.osm",
+            ),
+        )
 
     def test_transform(self):
         # 执行转换函数
