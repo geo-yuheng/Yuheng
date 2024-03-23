@@ -53,16 +53,17 @@ class Carto:
             spec_dict[int(i.id)] = i
 
     def meow(self) -> None:
+        fence_length = 30
         logger.success(
             "\n"
-            + "==============================\n"
-            + "Yuheng load successful!\n"
-            + "==============================\n"
+            + ("=" * fence_length + "\n")
+            + "[Yuheng] load successful!\n"
+            + ("=" * fence_length + "\n")
             + f"node    : {str(len(self.node_dict))}\n"
             + f"way     : {str(len(self.way_dict))}\n"
             + f"relation: {str(len(self.relation_dict))}\n"
             + f"bounds  : {str(len(self.bounds_list))}\n"
-            + "=============================="
+            + ("=" * fence_length + "\n")
         )
 
     def read(
