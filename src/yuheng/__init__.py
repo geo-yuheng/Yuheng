@@ -6,13 +6,12 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from .basic.global_const import (
+from .basic.const import (
     YUHENG_CORE_NAME,
-    YUHENG_PATH,
     YUHENG_START_ID,
     YUHENG_VERSION,
-    get_yuheng_path,
 )
+from .basic.environment import get_yuheng_path
 from .basic.log import logger
 from .basic.model import BaseOsmModel
 from .component.type_constraint import Bounds, Member

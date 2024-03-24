@@ -1,4 +1,4 @@
-from .global_const import get_yuheng_path
+from .environment import get_yuheng_path
 from hellologger import get_logger
 
 log_config_local = {"foo": "bar"}
