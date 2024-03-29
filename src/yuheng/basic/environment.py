@@ -37,7 +37,8 @@ def get_yuheng_path() -> str:
                     f_this_profile.write(
                         json.dumps(
                             {
-                                "_WARNING": "PLEASE DELETE THIS LINE AND FILL IT ACCORDING TO DOCS."
+                                "yuheng_doctype": "db_profile",
+                                "_WARNING": "PLEASE DELETE THIS LINE AND FILL IT ACCORDING TO DOCS.",
                             }
                         )
                     )

@@ -51,6 +51,11 @@ class Carto:
         for i in element_list:
             spec_dict[int(i.id)] = i
 
+    def load_plugin(self, plugin_list: List[str]):
+        import importlib
+
+        pass
+
     def meow(self) -> None:
         fence_length = 30
         logger.success(
