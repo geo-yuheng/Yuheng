@@ -1,3 +1,5 @@
+import os
+
 from .environment import get_yuheng_path
 from hellologger import get_logger
 
@@ -9,7 +11,8 @@ log_config_aliyun = {
 }
 
 logger = get_logger(
-    log_path=get_yuheng_path(),
+    log_path=os.path.join(get_yuheng_path(), "log"),
+    log_file="log_{time}.log",
     log_target={
         "local": True,
         "aliyun": False,
