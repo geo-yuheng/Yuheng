@@ -13,9 +13,6 @@ classifiers = [
 ]
 packages = [{ include = "yuheng", from = "src" }]
 
-[tool.poetry.scripts]
-clean = "tool.clean:clean_dist"
-
 [tool.poetry.dependencies]
 python = "^3.7"
 requests = "^2.20"
