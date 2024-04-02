@@ -1,5 +1,5 @@
 import os
-
+from .const import YUHENG_CORE_NAME, YUHENG_VERSION
 from .environment import get_yuheng_path
 from hellologger import get_logger
 
@@ -25,4 +25,14 @@ logger = get_logger(
     **{**log_config_local, **log_config_aliyun},
 )
 # logger.disable("yuheng")
+fence_length = 30
 logger.info("[Yuheng] Start logging!")
+logger.debug(
+    "\n"
+    + ("=" * fence_length + "\n")
+    + "[Yuheng] Environment Info!\n"
+    + ("=" * fence_length + "\n")
+    + f"YUHENG_CORE_NAME    : {YUHENG_CORE_NAME}\n"
+    + f"YUHENG_VERSION      : {YUHENG_VERSION}\n"
+    + ("=" * fence_length + "\n")
+)
