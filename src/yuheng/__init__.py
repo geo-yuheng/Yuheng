@@ -27,6 +27,26 @@ from .method.parse import (
 from .method.transform import prefix_normalization
 
 
+# 检查模块名称是否被更改
+print(globals().get("__name__", ""))
+
+
+def _check_alias():
+    import sys
+
+    # 检查所有已导入的模块，看是否有模块的名称不是 'yuheng' 但其实是这个包
+    for name, module in sys.modules.items():
+        if (
+            module is not None
+            and name != "yuheng"
+            and getattr(module, "__package__", "") == "yuheng"
+        ):
+            raise ImportError("请不要使用别名导入 yuheng 包。直接使用 import yuheng。")
+
+
+_check_alias()
+
+
 class Carto:
     def __init__(self):
         self.version: str = "0.6"
