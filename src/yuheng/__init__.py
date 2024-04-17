@@ -6,13 +6,12 @@ from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
 
-from .basic.global_const import (
+from .basic.const import (
     YUHENG_CORE_NAME,
-    YUHENG_PATH,
     YUHENG_START_ID,
     YUHENG_VERSION,
-    get_yuheng_path,
 )
+from .basic.environment import get_yuheng_path
 from .basic.log import logger
 from .basic.model import BaseOsmModel
 from .component.type_constraint import Bounds, Member
@@ -26,6 +25,26 @@ from .method.parse import (
     pre_parse_classify,
 )
 from .method.transform import prefix_normalization
+
+
+# 检查模块名称是否被更改
+print(globals().get("__name__", ""))
+
+
+def _check_alias():
+    import sys
+
+    # 检查所有已导入的模块，看是否有模块的名称不是 'yuheng' 但其实是这个包
+    for name, module in sys.modules.items():
+        if (
+            module is not None
+            and name != "yuheng"
+            and getattr(module, "__package__", "") == "yuheng"
+        ):
+            raise ImportError("请不要使用别名导入 yuheng 包。直接使用 import yuheng。")
+
+
+_check_alias()
 
 
 class Carto:
@@ -52,17 +71,23 @@ class Carto:
         for i in element_list:
             spec_dict[int(i.id)] = i
 
+    def load_plugin(self, plugin_list: List[str]):
+        import importlib
+
+        pass
+
     def meow(self) -> None:
+        fence_length = 30
         logger.success(
             "\n"
-            + "==============================\n"
-            + "Yuheng load successful!\n"
-            + "==============================\n"
+            + ("=" * fence_length + "\n")
+            + "[Yuheng] load successful!\n"
+            + ("=" * fence_length + "\n")
             + f"node    : {str(len(self.node_dict))}\n"
             + f"way     : {str(len(self.way_dict))}\n"
             + f"relation: {str(len(self.relation_dict))}\n"
             + f"bounds  : {str(len(self.bounds_list))}\n"
-            + "=============================="
+            + ("=" * fence_length + "\n")
         )
 
     def read(
