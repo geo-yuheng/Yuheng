@@ -3,7 +3,8 @@ network 模块并不负责从网上读取数据，它负责的是endpoint和各�
 """
 from typing import Optional
 
-from ..basic import YUHENG_CORE_NAME, YUHENG_VERSION, get_ua
+from ..basic import YUHENG_CORE_NAME, YUHENG_VERSION
+from ..basic.environment import get_ua
 
 
 def get_endpoint_api(endpoint_name="osm", property="url") -> Optional[str]:
