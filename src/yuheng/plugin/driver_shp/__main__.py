@@ -6,7 +6,11 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 from src.yuheng import logger
 
 
-def main(shp_file_path: str = "", schema=None, order=None, **kwargs):
+def write():
+    logger.error("暂不支持输出为shp文件")
+    pass
+
+def read(shp_file_path: str = "", schema=None, order=None, **kwargs):
     # 文件读取
     shp_file = open(shp_file_path, "r", encoding="utf-8")
     shp_content = shp_file.read()
@@ -20,4 +24,4 @@ if __name__ == "__main__":
     argument_parser.add_argument(
         "--shp_file_path", type=str, dest="shp_file_path"
     )
-    main(**argument_parser.parse_args().__dict__)
+    read(**argument_parser.parse_args().__dict__)

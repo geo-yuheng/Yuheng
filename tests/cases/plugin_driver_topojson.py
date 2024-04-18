@@ -14,9 +14,9 @@ class TestPluginDriverTopojson(unittest.TestCase):
         pass
 
     def test_plugin_driver_topojson(self):
-        from yuheng.plugin.driver_topojson.__main__ import main
+        from yuheng.plugin.driver_topojson.__main__ import read
 
-        main(
+        read(
         os.path.join(
             os.getcwd(),
             "..",

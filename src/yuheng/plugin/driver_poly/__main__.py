@@ -87,10 +87,23 @@ def load(
     return world
 
 
-# def load_2_poly
+def load_2_poly():
+    """
+    the ETL processing and target as poly, this can be treated as a part of write() 
+    """
+    pass
 
-# def read(): read poly file and specific a target
-# def write(): write to poly file (input maybe various)
+def read(): 
+    """
+    read poly file and specific a target
+    """
+    pass
+
+def write(): 
+    """
+    write to poly file (input maybe various)
+    """
+    pass
 
 
 def main(

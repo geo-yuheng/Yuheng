@@ -14,7 +14,7 @@ class TestPluginDriverShp(unittest.TestCase):
         pass
 
     def test_plugin_driver_shp(self):
-        from yuheng.plugin.driver_shp.__main__ import main
+        from yuheng.plugin.driver_shp.__main__ import read
 
         os.path.join(
             os.getcwd(),
