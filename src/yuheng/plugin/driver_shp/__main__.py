@@ -10,6 +10,7 @@ def write():
     logger.error("暂不支持输出为shp文件")
     pass
 
+
 def read(shp_file_path: str = "", schema=None, order=None, **kwargs):
     # 文件读取
     shp_file = open(shp_file_path, "r", encoding="utf-8")

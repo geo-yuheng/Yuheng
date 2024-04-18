@@ -14,13 +14,15 @@ def get_yuheng_path() -> str:
         ]
         # root check
         if os.path.exists(YUHENG_PATH) != True:
-            print(YUHENG_PATH, "isn't exist!")
+            print("[YUHENG ENVIRON INIT]", YUHENG_PATH, "isn't exist!")
             os.mkdir(YUHENG_PATH)
         # folder check
         for folder in YUHENG_FOLDER:
             this_folder_path = os.path.join(YUHENG_PATH, folder)
             if os.path.exists(this_folder_path) != True:
-                print(this_folder_path, "isn't exist!")
+                print(
+                    "[YUHENG ENVIRON INIT]", this_folder_path, "isn't exist!"
+                )
                 os.mkdir(this_folder_path)
         # profile files check
         for profile in YUHENG_PROFILES:
@@ -30,7 +32,9 @@ def get_yuheng_path() -> str:
             if os.path.exists(this_profile_path) != True:
                 import json
 
-                print(this_profile_path, "isn't exist!")
+                print(
+                    "[YUHENG ENVIRON INIT]", this_profile_path, "isn't exist!"
+                )
                 with open(
                     this_profile_path, "w", encoding="utf-8"
                 ) as f_this_profile:

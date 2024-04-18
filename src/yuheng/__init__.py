@@ -27,12 +27,11 @@ from .method.parse import (
 from .method.transform import prefix_normalization
 
 
-# 检查模块名称是否被更改
-print(globals().get("__name__", ""))
-
-
 def _check_alias():
     import sys
+
+    # 检查模块名称是否被更改
+    print(globals().get("__name__", ""))
 
     # 检查所有已导入的模块，看是否有模块的名称不是 'yuheng' 但其实是这个包
     for name, module in sys.modules.items():
@@ -347,7 +346,7 @@ class Carto:
             element_id_list = []
 
             def have_multi_elements(element_id_string: str) -> bool:
-                spliter=[",",";"," "]
+                spliter = [",", ";", " "]
                 for i in spliter:
                     if i in element_id:
                         # have comma or space between multi element

@@ -47,11 +47,14 @@ def transform(world: Carto) -> pd.DataFrame:
     )
     return df
 
+
 def read() -> Carto:
     pass
 
+
 def write() -> pd.DataFrame:
     pass
+
 
 def main() -> None:
     logger.error("This plugin can't be run as module.")

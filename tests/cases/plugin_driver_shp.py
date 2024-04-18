@@ -24,5 +24,6 @@ class TestPluginDriverShp(unittest.TestCase):
             "geojsonio-commute-bus.osm.zip",
         )
 
+
 if __name__ == "__main__":
     unittest.main()

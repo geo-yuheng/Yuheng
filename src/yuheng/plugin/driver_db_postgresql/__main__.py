@@ -257,8 +257,10 @@ def get_data(
     world.insert_to_dict(world.way_dict, way_list)
     return world
 
+
 def read() -> Carto:
     pass
+
 
 def write() -> None:
     logger.error("暂无法向PGSQL数据来源写入数据")

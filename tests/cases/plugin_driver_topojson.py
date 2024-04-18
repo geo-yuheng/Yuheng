@@ -17,14 +17,15 @@ class TestPluginDriverTopojson(unittest.TestCase):
         from yuheng.plugin.driver_topojson.__main__ import read
 
         read(
-        os.path.join(
-            os.getcwd(),
-            "..",
-            "assets",
-            "topojson",
-            "geojsonio-ring2.topojson",
+            os.path.join(
+                os.getcwd(),
+                "..",
+                "assets",
+                "topojson",
+                "geojsonio-ring2.topojson",
+            )
         )
-    )
+
 
 if __name__ == "__main__":
     unittest.main()

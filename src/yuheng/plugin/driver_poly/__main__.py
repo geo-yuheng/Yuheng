@@ -89,17 +89,19 @@ def load(
 
 def load_2_poly():
     """
-    the ETL processing and target as poly, this can be treated as a part of write() 
+    the ETL processing and target as poly, this can be treated as a part of write()
     """
     pass
 
-def read(): 
+
+def read():
     """
     read poly file and specific a target
     """
     pass
 
-def write(): 
+
+def write():
     """
     write to poly file (input maybe various)
     """

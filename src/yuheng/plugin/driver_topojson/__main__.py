@@ -9,6 +9,7 @@ from src.yuheng import logger
 def write():
     logger.error("暂未开发写入到topojson的功能，随后会提供支持")
 
+
 def read(json_file_path: str = "", schema=None, order=None, **kwargs):
     # 文件读取
     json_file = open(json_file_path, "r", encoding="utf-8")
