@@ -1,4 +1,5 @@
 import re
+from typing import List
 
 
 def remove_comment(query_content: str) -> str:
@@ -22,11 +23,30 @@ def remove_comment(query_content: str) -> str:
         pattern_line_comment, "\n", query_content, flags=re.MULTILINE
     )
 
-    print(query_content)
-    print("--" * 10)
-
     # 移除只包含空格或制表符的行和空行
     query_content = re.sub(r"^\s*$", "", query_content, flags=re.MULTILINE)
     query_content = "\n".join(list(filter(bool, query_content.split("\n"))))
 
     return query_content
+
+
+def remove_linebreak(query_content: str) -> str:
+    """
+    移除所有换行符号便于分析与法
+    """
+    return query_content.replace("\n", "")
+
+
+def split_semicolon(query_content: str) -> List[str]:
+    """
+    按照分号拆分不同部分，方便构建AST
+    """
+    query_parts = query_content.split(";")
+    return query_parts
+
+
+def parse(query_content: str) -> None:
+    query_parts = split_semicolon(
+        remove_linebreak(remove_comment(query_content))
+    )
+    print(query_parts)
