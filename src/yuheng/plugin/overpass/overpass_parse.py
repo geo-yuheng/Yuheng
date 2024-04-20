@@ -1,6 +1,15 @@
 import re
 from typing import List
 
+import os
+import sys
+
+current_dir = os.path.dirname(os.path.realpath(__file__))
+src_dir = os.path.join(current_dir, "..", "..", "..")
+sys.path.append(src_dir)
+
+from yuheng.basic import logger
+
 
 def remove_comment(query_content: str) -> str:
     """
@@ -74,7 +83,7 @@ def get_query_parts(query_content: str) -> List[str]:
     return query_parts
 
 
-# @logger.catch()
+@logger.catch()
 def parse(query_parts: List[str]) -> list:
     # 根据特征匹配来判断执行何种parse
     for i in range(len(query_parts)):
@@ -115,6 +124,9 @@ def parse(query_parts: List[str]) -> list:
                     for j in range(brackets_pos + 1, i + 1):
                         query_parts[j] = ""
                     break
+            query_parts[brackets_pos] = parse(
+                get_query_parts(query_parts[brackets_pos][1:-1])
+            )
     for i in range(len(query_parts)):
         if "geocodeArea" in query_parts[i] or "searchArea" in query_parts[i]:
             query_parts[i] = parse_geocode(query_parts[i])
