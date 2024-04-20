@@ -45,8 +45,21 @@ def split_semicolon(query_content: str) -> List[str]:
     return query_parts
 
 
-def parse(query_content: str) -> None:
-    query_parts = split_semicolon(
-        remove_linebreak(remove_comment(query_content))
+def parse_header(header: str) -> dict:
+    header_parameter = {}
+    condition_list = re.findall(r"\[.*?\]", header)
+    for condition in condition_list:
+        key, value = tuple(condition[1:-1].split(":"))
+        header_parameter[key] = value
+    return header_parameter
+
+
+def parse(query_content: str):
+    query_parts = list(
+        filter(
+            bool,
+            split_semicolon(remove_linebreak(remove_comment(query_content))),
+        )
     )
-    print(query_parts)
+    query_parts[0] = parse_header(query_parts[0])
+    return query_parts
