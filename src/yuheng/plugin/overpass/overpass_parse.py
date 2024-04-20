@@ -87,19 +87,35 @@ def parse(query_parts: List[str]) -> list:
             query_parts[i] = parse_arrow(query_parts[i])
         if query_parts[i] == ")":
             brackets_pos = i - 1
+            # print("[brackets_pos]", brackets_pos)
             while brackets_pos >= 0:
+                # print("[brackets_pos].inloop", brackets_pos)
+                # print("[brackets_pos].inloop.part", query_parts[brackets_pos])
+
                 if query_parts[brackets_pos][0] != "(":
                     brackets_pos -= 1
                     continue
                 else:
                     bracket_sub_query_parts = []
-                    for j in range(brackets_pos, i):
-                        bracket_sub_query_parts.append(query_parts[j])
+                    for j in range(brackets_pos, i + 1):
+                        if j == brackets_pos:
+                            bracket_sub_query_parts.append("(")
+                            bracket_sub_query_parts.append(
+                                query_parts[j].replace("(", "").strip() + ";"
+                            )
+                        elif j == i:
+                            bracket_sub_query_parts.append(")")
+                        else:
+                            bracket_sub_query_parts.append(
+                                query_parts[j].strip() + ";"
+                            )
                     query_parts[brackets_pos] = "".join(
                         bracket_sub_query_parts
                     )
-                    for j in range(brackets_pos + 1, i):
+                    for j in range(brackets_pos + 1, i + 1):
                         query_parts[j] = ""
+                    break
+    for i in range(len(query_parts)):
         if "geocodeArea" in query_parts[i] or "searchArea" in query_parts[i]:
             query_parts[i] = parse_geocode(query_parts[i])
     for i in range(len(query_parts)):
