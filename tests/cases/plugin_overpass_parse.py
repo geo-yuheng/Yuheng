@@ -24,7 +24,7 @@ class TestPluginOverpass(unittest.TestCase):
                 "..",
                 "assets",
                 "overpassql",
-                "wizard_generated_beijing_restaurant_comment.overpassql",
+                "wizard_generated_beijing_building.overpassql",
             ),
             "r",
             encoding="utf-8",
