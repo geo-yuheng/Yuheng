@@ -58,6 +58,12 @@ def parse_geocode(query_slice: str):
     return "★" + query_slice + "☆"
 
 
+def parse_arrow(query_slice: str) -> List[str]:
+    return [
+        sub_query_slice.strip() for sub_query_slice in query_slice.split("->")
+    ]
+
+
 def get_query_parts(query_content: str) -> List[str]:
     query_parts = list(
         filter(
@@ -71,9 +77,14 @@ def get_query_parts(query_content: str) -> List[str]:
 def parse(query_parts: List[str]) -> list:
     # 根据特征匹配来判断执行何种parse
     for i in range(len(query_parts)):
-        if i == 0:
+        if i == 0 and re.findall(r"\[.*\]", query_parts[0]) != []:
             query_parts[0] = parse_header(query_parts[0])
             continue
+        if "->" in query_parts[i]:
+            query_parts[i] = parse_arrow(query_parts[i])
         if "geocodeArea" in query_parts[i] or "searchArea" in query_parts[i]:
             query_parts[i] = parse_geocode(query_parts[i])
+    for i in range(len(query_parts)):
+        if isinstance(query_parts[i], list):
+            query_parts[i] = parse(query_parts[i])
     return query_parts
