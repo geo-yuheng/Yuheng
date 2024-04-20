@@ -54,12 +54,26 @@ def parse_header(header: str) -> dict:
     return header_parameter
 
 
-def parse(query_content: str):
+def parse_geocode(query_slice: str):
+    return "★" + query_slice + "☆"
+
+
+def get_query_parts(query_content: str) -> List[str]:
     query_parts = list(
         filter(
             bool,
             split_semicolon(remove_linebreak(remove_comment(query_content))),
         )
     )
-    query_parts[0] = parse_header(query_parts[0])
+    return query_parts
+
+
+def parse(query_parts: List[str]) -> list:
+    # 根据特征匹配来判断执行何种parse
+    for i in range(len(query_parts)):
+        if i == 0:
+            query_parts[0] = parse_header(query_parts[0])
+            continue
+        if "geocodeArea" in query_parts[i] or "searchArea" in query_parts[i]:
+            query_parts[i] = parse_geocode(query_parts[i])
     return query_parts

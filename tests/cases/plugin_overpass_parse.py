@@ -10,12 +10,7 @@ src_dir = os.path.join(current_dir, "../../src")
 sys.path.append(src_dir)
 
 from yuheng.basic import logger
-from yuheng.plugin.overpass import (
-    remove_comment,
-    split_semicolon,
-    remove_linebreak,
-    parse,
-)
+from yuheng.plugin.overpass import remove_comment, get_query_parts, parse
 
 
 class TestPluginOverpass(unittest.TestCase):
@@ -37,8 +32,10 @@ class TestPluginOverpass(unittest.TestCase):
             query_content = f.read()
         logger.debug(f"\n{query_content}")
         logger.info(f"\n{remove_comment(query_content)}")
-        query_parts = parse(query_content)
+        query_parts = get_query_parts(query_content)
         logger.info(f"\n{query_parts}")
+        parsed_query_parts = parse(query_parts)
+        logger.info(f"\n{parsed_query_parts}")
 
 
 if __name__ == "__main__":
