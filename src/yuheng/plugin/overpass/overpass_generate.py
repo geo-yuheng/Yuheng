@@ -3,7 +3,7 @@ import sys
 from typing import List, Optional, Union
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-from src.yuheng import Bounds, logger
+from yuheng import Bounds, logger
 
 query_template = "<metadata_part>\n<condition_part>\n<output_part>"
 
