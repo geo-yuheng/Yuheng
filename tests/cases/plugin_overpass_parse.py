@@ -20,7 +20,7 @@ class TestPluginOverpass(unittest.TestCase):
     def test_plugin_overpass_parse(self):
         with open(
             os.path.join(
-                os.getcwd(),
+                os.path.dirname(os.path.realpath(__file__)),
                 "..",
                 "assets",
                 "overpassql",

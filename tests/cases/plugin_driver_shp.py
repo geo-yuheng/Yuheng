@@ -17,7 +17,7 @@ class TestPluginDriverShp(unittest.TestCase):
         from yuheng.plugin.driver_shp.__main__ import read
 
         os.path.join(
-            os.getcwd(),
+            os.path.dirname(os.path.realpath(__file__)),
             "..",
             "assets",
             "others",

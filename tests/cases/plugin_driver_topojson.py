@@ -18,7 +18,7 @@ class TestPluginDriverTopojson(unittest.TestCase):
 
         read(
             os.path.join(
-                os.getcwd(),
+                os.path.dirname(os.path.realpath(__file__)),
                 "..",
                 "assets",
                 "topojson",
