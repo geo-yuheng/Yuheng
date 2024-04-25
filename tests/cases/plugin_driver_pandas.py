@@ -31,14 +31,11 @@ class TestTransformFunction(unittest.TestCase):
     def test_transform(self):
         result_df = transform(self.carto)
 
-        self.assertTrue(isinstance(result_df, pandas.DataFrame))
-        self.assertEqual(
-            len(result_df),
-            (
-                len(self.carto.node_dict)
-                + len(self.carto.way_dict)
-                + len(self.carto.relation_dict)
-            ),
+        assert isinstance(result_df, pandas.DataFrame)
+        assert len(result_df) == (
+            len(self.carto.node_dict)
+            + len(self.carto.way_dict)
+            + len(self.carto.relation_dict)
         )
 
         # result_df.to_csv(
