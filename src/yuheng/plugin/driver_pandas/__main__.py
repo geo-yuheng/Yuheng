@@ -1,21 +1,15 @@
-import pandas as pd
-
-# not geopandas
-
 import os
 import sys
+
+import pandas as pd
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from yuheng import Carto
 from yuheng.basic import logger
-from yuheng.component import Member, Node, Relation, Way
-
-import time
 
 
-@logger.catch()
 def transform(world: Carto) -> pd.DataFrame:
     all_elements = []
 
