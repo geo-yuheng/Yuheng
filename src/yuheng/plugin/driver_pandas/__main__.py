@@ -12,40 +12,28 @@ from yuheng import Carto
 from yuheng.basic import logger
 from yuheng.component import Member, Node, Relation, Way
 
+import time
 
+
+@logger.catch()
 def transform(world: Carto) -> pd.DataFrame:
-    """
-    读取world中所有element的tag，转换为一个DataFrame
-    """
-    # 初始化一个空 DataFrame，列名包括所有元素（node, way, relation）'tags' 字典的所有键
-    all_tags_keys = set.union(
-        *[set(e.tags.keys()) for e in world.node_dict.values()],
-        *[set(e.tags.keys()) for e in world.way_dict.values()],
-        *[set(e.tags.keys()) for e in world.relation_dict.values()]
-    )
-    # 将 all_tags_keys 转换为列表
-    all_tags_keys = list(all_tags_keys)
-    df = pd.DataFrame(columns=all_tags_keys)
+    all_elements = []
 
-    # 遍历并处理 node, way 和 relation 的 tags
-    for node_id, element in world.node_dict.items():
-        temp_series = pd.Series(element.tags, index=df.columns)
-        df = df.append(temp_series, ignore_index=True)
+    def collect_to_list(element_dict: dict, type: str):
+        for element_id, element_obj in element_dict.items():
+            element_data = {
+                "id": type[0] + str(element_id),
+                **element_obj.tags,
+            }
+            all_elements.append(element_data)
 
-    for way_id, element in world.way_dict.items():
-        temp_series = pd.Series(element.tags, index=df.columns)
-        df = df.append(temp_series, ignore_index=True)
-
-    for relation_id, element in world.relation_dict.items():
-        temp_series = pd.Series(element.tags, index=df.columns)
-        df = df.append(temp_series, ignore_index=True)
-    print(
-        len(df),
-        len(world.node_dict),
-        len(world.way_dict),
-        len(world.relation_dict),
-    )
-    return df
+    for e in [
+        (world.node_dict, "node"),
+        (world.way_dict, "way"),
+        (world.relation_dict, "relation"),
+    ]:
+        collect_to_list(e[0], e[1])
+    return pd.DataFrame(all_elements)
 
 
 def read() -> Carto:
