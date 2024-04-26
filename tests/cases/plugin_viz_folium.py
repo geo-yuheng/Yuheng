@@ -10,7 +10,7 @@ sys.path.append(src_dir)
 
 from yuheng import Carto
 from yuheng.component import Member, Node, Relation, Way
-from yuheng.plugin.viz_folium.__main__ import VizFolium
+from plugin.viz_folium.__main__ import VizFolium
 
 
 class TestPluginVisualizationFolium(unittest.TestCase):
