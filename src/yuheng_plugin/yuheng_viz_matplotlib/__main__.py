@@ -37,7 +37,7 @@ def init(
 
 
 def main() -> None:
-    log.error("This plugin can't be run as module.")
+    log.error("This yuheng_plugin can't be run as module.")
 
 
 if __name__ == "__main__":

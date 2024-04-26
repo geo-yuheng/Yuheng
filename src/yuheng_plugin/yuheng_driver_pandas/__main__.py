@@ -39,7 +39,7 @@ def write() -> pd.DataFrame:
 
 
 def main() -> None:
-    logger.error("This plugin can't be run as module.")
+    logger.error("This yuheng_plugin can't be run as module.")
 
 
 if __name__ == "__main__":
