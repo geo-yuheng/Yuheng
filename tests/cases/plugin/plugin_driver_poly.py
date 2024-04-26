@@ -51,7 +51,7 @@ class TestPluginDriverPoly(unittest.TestCase):
                 "src",
                 "yuheng",
                 "plugin",
-                "driver_poly",
+                "yuheng_driver_poly",
                 "__main__.py",
             )
             + " "

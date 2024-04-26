@@ -29,7 +29,7 @@ class TestPluginStatMetadata(unittest.TestCase):
                         "src",
                         "yuheng",
                         "plugin",
-                        "stat_metadata_clustering",
+                        "yuheng_stat_metadata_clustering",
                         "__main__.py",
                     )
                     + '"'
