@@ -5,7 +5,7 @@ import sys
 import unittest
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
-src_dir = os.path.join(current_dir, "../../src")
+src_dir = os.path.join(current_dir, "..", "..", "..", "src")
 sys.path.append(src_dir)
 
 from yuheng.basic import logger
@@ -16,11 +16,12 @@ class TestPluginDriverPoly(unittest.TestCase):
         pass
 
     def test_plugin_driver_poly_import(self):
-        from yuheng.plugin.driver_poly.__main__ import main
+        from yuheng_plugin.yuheng_driver_poly.__main__ import main
 
         ans = main(
             poly_file_path=os.path.join(
                 os.path.dirname(os.path.realpath(__file__)),
+                "..",
                 "..",
                 "assets",
                 "poly",
@@ -35,6 +36,7 @@ class TestPluginDriverPoly(unittest.TestCase):
             + os.path.join(
                 os.path.dirname(os.path.realpath(__file__)),
                 "..",
+                "..",
                 "assets",
                 "poly",
                 "Izaland-polyfile-20231213-laoshubabytest.poly",
@@ -48,8 +50,8 @@ class TestPluginDriverPoly(unittest.TestCase):
                 os.path.dirname(os.path.realpath(__file__)),
                 "..",
                 "..",
+                "..",
                 "src",
-                "yuheng",
                 "yuheng_plugin",
                 "yuheng_driver_poly",
                 "__main__.py",

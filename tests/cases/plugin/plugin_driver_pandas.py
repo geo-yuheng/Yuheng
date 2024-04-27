@@ -3,13 +3,13 @@ import sys
 import unittest
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
-src_dir = os.path.join(current_dir, "../../src")
+src_dir = os.path.join(current_dir, "..", "..", "..", "src")
 sys.path.append(src_dir)
 
 import pandas
 from yuheng import Carto
 from yuheng.component import Node, Relation, Way
-from yuheng.plugin.driver_pandas.__main__ import transform
+from yuheng_plugin.yuheng_driver_pandas.__main__ import transform
 
 
 class TestTransformFunction(unittest.TestCase):
@@ -21,6 +21,7 @@ class TestTransformFunction(unittest.TestCase):
             mode="file",
             file_path=os.path.join(
                 os.path.dirname(os.path.realpath(__file__)),
+                "..",
                 "..",
                 "assets",
                 "osm",

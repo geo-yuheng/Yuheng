@@ -3,13 +3,13 @@ import sys
 import unittest
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
-src_dir = os.path.join(current_dir, "../../src")
+src_dir = os.path.join(current_dir, "..", "..", "..", "src")
 sys.path.append(src_dir)
 
 from yuheng import Carto
 from yuheng.basic import logger
 from yuheng.component import Node, Relation, Way
-from yuheng.plugin.stat_metadata_clustering.__main__ import main
+from yuheng_plugin.yuheng_stat_metadata_clustering.__main__ import main
 
 
 class TestPluginStatMetadata(unittest.TestCase):
@@ -26,8 +26,8 @@ class TestPluginStatMetadata(unittest.TestCase):
                         os.path.dirname(__file__),
                         "..",
                         "..",
+                        "..",
                         "src",
-                        "yuheng",
                         "yuheng_plugin",
                         "yuheng_stat_metadata_clustering",
                         "__main__.py",
@@ -39,6 +39,7 @@ class TestPluginStatMetadata(unittest.TestCase):
                     '"'
                     + os.path.join(
                         os.path.dirname(__file__),
+                        "..",
                         "..",
                         "assets",
                         "osm",
