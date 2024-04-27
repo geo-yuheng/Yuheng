@@ -3,7 +3,7 @@ import sys
 import unittest
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
-src_dir = os.path.join(current_dir, "../../src")
+src_dir = os.path.join(current_dir, "..", "..", "..", "src")
 sys.path.append(src_dir)
 
 import yuheng
@@ -17,6 +17,7 @@ class TestLoadFile(unittest.TestCase):
         FILENAME = "extract_osmwebsite_bbox_weihaichengshantou.osm"
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
+            "..",
             "..",
             "assets",
             "osm",
@@ -34,6 +35,7 @@ class TestLoadFile(unittest.TestCase):
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
             "..",
+            "..",
             "assets",
             "osm",
             FILENAME,
@@ -49,6 +51,7 @@ class TestLoadFile(unittest.TestCase):
         FILENAME = "extract_level0_newdata.osm"
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
+            "..",
             "..",
             "assets",
             "osm",

@@ -8,7 +8,7 @@ import xml.sax
 from xml import sax
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
-src_dir = os.path.join(current_dir, "../../src")
+src_dir = os.path.join(current_dir, "..", "..", "..", "src")
 sys.path.append(src_dir)
 
 import yuheng
@@ -17,10 +17,11 @@ import yuheng
 class TestExport(unittest.TestCase):
     def setUp(self) -> None:
         self.world = yuheng.Carto()
-        self.FILENAME_TARGET = "extract_bbox_osm_daxingjichang.osm"
+        self.FILENAME_TARGET = "extract_osmwebsite_bbox_daxingjichang.osm"
         self.FILENAME_OUTPUT = "dump_selfsave_daxingjichang.osm"
         self.path_target = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
+            "..",
             "..",
             "assets",
             "osm",
@@ -28,6 +29,7 @@ class TestExport(unittest.TestCase):
         )
         self.path_output = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
+            "..",
             "..",
             "assets",
             "osm",

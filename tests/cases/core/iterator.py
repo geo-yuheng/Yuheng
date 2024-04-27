@@ -5,7 +5,7 @@ import sys
 import unittest
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
-src_dir = os.path.join(current_dir, "../../src")
+src_dir = os.path.join(current_dir, "..", "..", "..", "src")
 sys.path.append(src_dir)
 
 import yuheng
@@ -19,6 +19,7 @@ class TestIterator(unittest.TestCase):
         data_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
             "..",
+            "..",
             "assets",
             "osm",
             FILENAME,
@@ -31,7 +32,7 @@ class TestIterator(unittest.TestCase):
         for id in test_node_dict:
             logger.debug(id)  # , test_node_dict[id])
             for key in test_node_dict[id].tags:
-                logger.debug("{key} = {test_node_dict[id].tags[key]}")
+                logger.debug(f"{key} = {test_node_dict[id].tags[key]}")
 
     def test_iterator_way(self):
         pass
