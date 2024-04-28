@@ -7,8 +7,6 @@ license = "MIT"
 readme = "README.md"
 repository = "https://github.com/OSMChina/Yuheng"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 packages = [{ include = "yuheng", from = "src" },{ include = "yuheng_plugin", from = "src" }]
