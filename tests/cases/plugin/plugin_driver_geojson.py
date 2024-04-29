@@ -18,7 +18,7 @@ class TestPluginDriverPoly(unittest.TestCase):
     def test_plugin_driver_geojson_import(self):
         # from pprint import pprint
 
-        from yuheng_plugin.yuheng_driver_geojson.__main__ import read
+        from yuheng_plugin.yuheng_driver_geojson import read
 
         ans = read(
             os.path.join(

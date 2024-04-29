@@ -35,7 +35,7 @@ class TestPluginDriverDbPostgresql(unittest.TestCase):
         start_time = time.time()
         world = get_data(
             connection_dbname=database_profile["dbname"],
-            connection_user=database_profile["dbname"],
+            connection_user=database_profile["user"],
             connection_password=database_profile["password"],
             connection_host=database_profile["host"],
             connection_port=database_profile["port"],
