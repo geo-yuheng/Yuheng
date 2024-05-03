@@ -55,10 +55,12 @@ def split_semicolon(query_content: str) -> List[str]:
 
 
 def parse_header(header: str) -> dict:
+    condition_list = re.findall(
+        r"(?<![way|node|relation|nw|wr|nr|nwr])\[(.*?)\]", header
+    )
     header_parameter = {}
-    condition_list = re.findall(r"\[.*?\]", header)
     for condition in condition_list:
-        key, value = tuple(condition[1:-1].split(":"))
+        key, value = tuple(condition.split(":"))
         header_parameter[key] = value
     return header_parameter
 
@@ -89,7 +91,14 @@ def parse(query_parts: List[str]) -> list:
     for i in range(len(query_parts)):
         if query_parts[i] == "":
             continue
-        if i == 0 and re.findall(r"\[.*\]", query_parts[0]) != []:
+        if (
+            i == 0
+            and re.findall(
+                r"(?<![way|node|relation|nw|wr|nr|nwr])\[(.*?)\]",
+                query_parts[0],
+            )
+            != []
+        ):
             query_parts[0] = parse_header(query_parts[0])
             continue
         if "->" in query_parts[i]:
