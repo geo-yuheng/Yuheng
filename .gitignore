@@ -20,3 +20,7 @@ Styles*
 src/Keqing_Sword.egg-info/
 
 !*/test_data/*
+
+# Added by cargo
+
+/target
