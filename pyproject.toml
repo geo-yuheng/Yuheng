@@ -14,8 +14,9 @@ classifiers = [
 packages = [{ include = "yuheng", from = "src" }]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.11,<4.0"
 requests = "^2.20"
+hellologger = "^0.2.2.post1"
 
 [tool.poetry.extras]
 full = ["requests"]
