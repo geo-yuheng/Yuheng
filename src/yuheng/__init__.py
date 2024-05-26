@@ -570,9 +570,3 @@ class Carto:
         maybe we need to create a boundary Class and OSM bound Class inherit from it.
         """
         pass
-
-# Documentation on Plugin System
-# To create and install external plugins for dynamic loading, developers should:
-# - Ensure the plugin is structured with a proper __init__.py file for the plugin's main directory.
-# - Install the plugin into the site-package directory to make it accessible for dynamic loading.
-# - Use the 'from yuheng_plugin import plugin_name' syntax to dynamically load and use the plugin within the Yuheng project.
