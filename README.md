@@ -56,6 +56,12 @@ List alternatives that may be close and similar to this item, but have a differe
 
 4. Improve the Diff work in the initial stage
 
+## Plugin System
+
+Yuheng now supports a dynamic plugin system, allowing developers to create and install external plugins that can be dynamically loaded. This system enables the use of plugins by simply importing them using the syntax `from yuheng_plugin import plugin_name`.
+
+To create an external plugin, developers should structure their plugin with a proper `__init__.py` file in the plugin's main directory. The plugin can then be installed into the site-package directory, making it accessible for dynamic loading within the Yuheng project.
+
 ----------
 
 ###### 简体中文
@@ -99,6 +105,12 @@ world.read(mode="file", file_path="map.osm")
 2. 引入覆盖率测试
 3. 引入select语句，可以自定义查询（预计作为2.0发布）
 4. 初期完善Diff工作
+
+## 插件系统
+
+Yuheng现在支持动态插件系统，允许开发者创建和安装可以动态加载的外部插件。该系统通过简单的导入语法`from yuheng_plugin import plugin_name`来使用插件。
+
+为了创建一个外部插件，开发者应该在插件的主目录中用适当的`__init__.py`文件来构建他们的插件。然后可以将插件安装到site-package目录中，使其在Yuheng项目中可用于动态加载。
 
 ----------
 
