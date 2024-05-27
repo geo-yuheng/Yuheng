@@ -1,4 +1,5 @@
 import argparse
+import json
 import os
 import sys
 from typing import Dict, List, Tuple, Union
@@ -114,6 +115,10 @@ def main(
 ) -> List[Dict[str, float]]:
     # 暂时只处理单一环路的poly文件
 
+    logger.trace(f"[schema]: {schema}")
+    logger.trace(f"[order]: {order}")
+    logger.trace(f"[output_format]: {output_format}")
+
     poly_content: List[str] = (
         extractor(poly_file_path).split("END")[0].split("\n")[2:]
     )
@@ -124,6 +129,33 @@ def main(
 
     if output_format.lower() == "raw":
         return poly_object
+    elif output_format.lower() == "raw_pretty":
+        pretty_indent = 4
+        poly_object_serialized = (
+            "["
+            + "\n"
+            + "\n".join(
+                [
+                    " " * pretty_indent + line
+                    for line in ",\n".join(
+                        [
+                            str(obj)
+                            if schema.lower() != "dict"
+                            else json.dumps(
+                                obj=obj,
+                                ensure_ascii=False,
+                                indent=pretty_indent,
+                                sort_keys=False,
+                            )
+                            for obj in poly_object
+                        ]
+                    ).split("\n")
+                ]
+            )
+            + "\n"
+            + "]"
+        )
+        return poly_object_serialized
     elif output_format.lower() == "yuheng":
         return load(poly_object)
     else:

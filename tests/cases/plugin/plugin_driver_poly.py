@@ -15,6 +15,24 @@ class TestPluginDriverPoly(unittest.TestCase):
     def setUp(self) -> None:
         pass
 
+    def test_plugin_driver_poly_pretty(self):
+        from yuheng_plugin.yuheng_driver_poly.__main__ import main
+
+        ans = main(
+            poly_file_path=os.path.join(
+                os.path.dirname(os.path.realpath(__file__)),
+                "..",
+                "..",
+                "assets",
+                "poly",
+                "Izaland-polyfile-20231213-laoshubabytest.poly",
+            ),
+            schema="dict",
+            # schema="tuple",
+            output_format="raw_pretty",
+        )
+        logger.info(f"\n{ans}")
+
     def test_plugin_driver_poly_import(self):
         from yuheng_plugin.yuheng_driver_poly.__main__ import main
 
