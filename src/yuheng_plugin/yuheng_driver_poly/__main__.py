@@ -7,6 +7,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 src_dir = os.path.join(current_dir, "..", "..", "..")
 sys.path.append(src_dir)
 from yuheng import Carto
+from yuheng.basic import logger
 from yuheng.component import Node, Way
 
 
@@ -140,4 +141,8 @@ if __name__ == "__main__":
         "--output-format", type=str, default="raw", dest="output_format"
     )
 
-    main(**argument_parser.parse_args().__dict__)
+    result = main(**argument_parser.parse_args().__dict__)
+    try:
+        logger.success(result)
+    except Exception as e:
+        print(result)
