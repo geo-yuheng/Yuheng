@@ -9,7 +9,7 @@ sys.path.append(src_dir)
 import pandas
 from yuheng import Carto
 from yuheng.component import Node, Relation, Way
-from yuheng_plugin.yuheng_driver_pandas.__main__ import transform
+from yuheng_plugin.yuheng_driver_pandas import transform
 
 
 class TestTransformFunction(unittest.TestCase):
