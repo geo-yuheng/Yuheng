@@ -26,10 +26,16 @@ def transformer(
         kwargs.get("schema") == None
         or kwargs.get("schema", "").lower() == "dict"
     ):
+        # return ["经度", "纬度", "经度", "纬度"]
         return dict(
             zip(
-                ["longitude", "latitude"],  # ["经度", "纬度"]
-                [float(f) for f in line_str.split("   ")],
+                [
+                    "longitude",
+                    "latitude",
+                    "lon",
+                    "lat",
+                ],
+                [float(f) for f in line_str.split("   ")] * 2,
             )
         )
     elif kwargs.get("schema", "").lower() == "list":
