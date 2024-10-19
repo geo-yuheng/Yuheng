@@ -1,12 +1,12 @@
 import unittest
 
-from cases.export import TestExport
-from cases.iterator import TestIterator
-from cases.load_abbreviation import TestLoadAbbreviation
-from cases.load_file import TestLoadFile
-from cases.load_network import TestLoadNetwork
-from cases.plugin_driver_poly import TestPluginDriverPoly
-from cases.type_constructor import TestTypeConstructor
+from cases.core.export import TestExport
+from cases.core.iterator import TestIterator
+from cases.core.load_abbreviation import TestLoadAbbreviation
+from cases.core.load_file import TestLoadFile
+from cases.core.load_network import TestLoadNetwork
+from cases.plugin.plugin_driver_poly import TestPluginDriverPoly
+from cases.core.type_constructor import TestTypeConstructor
 
 if __name__ == "__main__":
     suite = unittest.TestSuite()

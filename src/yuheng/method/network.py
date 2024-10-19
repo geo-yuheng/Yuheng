@@ -1,6 +1,7 @@
 """
 network 模块并不负责从网上读取数据，它负责的是endpoint和各种网络相关环境的处理。而从网络上读取数据是作为read driver的一种（因为并不仅仅有一种来源的driver）
 """
+
 from typing import Optional
 
 from ..basic import YUHENG_CORE_NAME, YUHENG_VERSION
@@ -57,7 +58,7 @@ def get_endpoint_overpass(
         },
         "ogf": {
             "server": "ogf",
-            "url": "https//overpass.ogf.rent-a-planet.com/api/",
+            "url": "https://overpass.ogf.rent-a-planet.com/api/",
             "region": "global",
             "version": "unknown",
         },

@@ -9,7 +9,7 @@ from ..basic import logger
 
 def overpass_query(query_content: str) -> None:
     logger.warning("Currently only support basic ql")
-    # from src.yuheng.plugin.overpass.overpass_parse import remove_comment
+    # from src.yuheng.yuheng_plugin.overpass.overpass_parse import remove_comment
     # # 默认不调用overpass插件的方法，因为这就和lxml与regex一样，默认的xml和re也不是不能用，只是如果基本的检测能跑就行了，组合一下类型，只用yuheng默认的方法
     # lines = (
     #     remove_comment(
