@@ -40,7 +40,9 @@ def _check_alias():
             and name != "yuheng"
             and getattr(module, "__package__", "") == "yuheng"
         ):
-            raise ImportError("请不要使用别名导入 yuheng 包。直接使用 import yuheng。")
+            raise ImportError(
+                "请不要使用别名导入 yuheng 包。直接使用 import yuheng。"
+            )
 
 
 _check_alias()
@@ -252,20 +254,30 @@ class Carto:
 
             return endpoint + urllib.parse.quote(ql_content)
 
-        if kwargs.get("use_overpass_query"):
+        if kwargs.get("overpass_query_enable"):
             # 先分source是api还是overpass
             # 再看target是区域还是单个/多个元素
             # 因为从API下载和从Overpass的逻辑天差地别，但元素还是区域的差异基本就是模板填空
-            if kwargs.get("local_overpassql_path"):
+            # ----
+            # query(
+            #                     query_content=str(kwargs.get("overpassql_content")),
+            #                     query_language="Overpass",
+            #                 )
+            # 在method里面
+            # 这个是要执行QL返回一个Carto对象的时候
+            # 获取qlcontent直接读参数
+            if kwargs.get("overpassql_local_path"):
                 ql_file = open(
-                    kwargs.get("local_overpassql_path"),
+                    kwargs.get("overpassql_local_path"),
                     "r",
                     encoding="utf-8",
                 )
                 ql_content = ql_file.read()
                 ql_file.close()
+            elif kwargs.get("overpassql_content"):
+                ql_content = kwargs.get("overpassql_content")
             else:
-                ql_content = query("", "Overpass")
+                ql_content = "ql_content not found"
             work_url = url_of_overpass_quary(ql_content, "osmde")
 
         if target != "":
