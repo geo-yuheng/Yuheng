@@ -288,11 +288,10 @@ class Carto:
                 ql_content = kwargs.get("overpassql_content")
             else:
                 ql_content = "ql_content not found"
-            logger.warning(kwargs.get("endpoint", "osmde"))
-            work_url = url_of_overpass_quary(
-                ql_content, kwargs.get("endpoint", "osmde")
-            )
-            logger.debug(work_url)
+
+            work_url = url_of_overpass_quary(ql_content, endpoint)
+            logger.info("check after overpass judge")
+            logger.info("work_url = " + work_url)
 
         if target != "":
             logger.debug(target)
@@ -326,10 +325,13 @@ class Carto:
                 # download directly, then judge
                 logger.info("Erase work_url with blank")
                 work_url = ""
+                # logger.info("check after target judge")
+                # logger.info("work_url = " + work_url)
             else:
                 return None
         # run worker
-        logger.info(work_url)
+        logger.info("ready to run worker")
+        logger.info("work_url = " + work_url)
         work_load_cache_path = os.path.join(
             get_yuheng_path(), "cache", get_cache_filename(work_url)
         )
