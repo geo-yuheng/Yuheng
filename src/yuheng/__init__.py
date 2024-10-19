@@ -17,7 +17,11 @@ from .basic.model import BaseOsmModel
 from .component.type_constraint import Bounds, Member
 from .component.type_element import Node, Relation, Way
 from .method import query
-from .method.network import get_endpoint_api, get_headers
+from .method.network import (
+    get_endpoint_api,
+    get_headers,
+    get_endpoint_overpass,
+)
 from .method.parse import (
     parse_node,
     parse_relation,
@@ -252,7 +256,13 @@ class Carto:
         def url_of_overpass_quary(ql_content: str, endpoint="") -> str:
             import urllib.parse
 
-            return endpoint + urllib.parse.quote(ql_content)
+            logger.debug(urllib.parse.quote(ql_content))
+
+            return (
+                get_endpoint_overpass(endpoint)
+                + "interpreter?data="
+                + urllib.parse.quote(ql_content)
+            )
 
         if kwargs.get("overpass_query_enable"):
             # 先分source是api还是overpass
@@ -278,9 +288,14 @@ class Carto:
                 ql_content = kwargs.get("overpassql_content")
             else:
                 ql_content = "ql_content not found"
-            work_url = url_of_overpass_quary(ql_content, "osmde")
+            logger.warning(kwargs.get("endpoint", "osmde"))
+            work_url = url_of_overpass_quary(
+                ql_content, kwargs.get("endpoint", "osmde")
+            )
+            logger.debug(work_url)
 
         if target != "":
+            logger.debug(target)
             if target == "area":
                 # parse SWNE
                 S = kwargs.get("S") if kwargs.get("S") else 0.0
@@ -303,8 +318,13 @@ class Carto:
                     # parse Element
                     pass
         else:
-            if kwargs.get("url"):
+            logger.debug("target is blank")
+            if (
+                kwargs.get("url")
+                and kwargs.get("overpass_query_enable") == None
+            ):
                 # download directly, then judge
+                logger.info("Erase work_url with blank")
                 work_url = ""
             else:
                 return None
