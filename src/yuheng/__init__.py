@@ -213,6 +213,11 @@ class Carto:
 
             LIMIT_LENGTH_WINDOWS = 255
             LIMIT_LENGTH_LINUX = 255
+            LIMIT_LENGTH = (
+                LIMIT_LENGTH_WINDOWS
+                if (platform.system().lower() == "Windows".lower())
+                else LIMIT_LENGTH_LINUX
+            )
 
             replace_rules = [
                 {"type": "protocal", "src": "https://", "dst": ""},
@@ -233,28 +238,14 @@ class Carto:
                 name="md5", data=work_url.encode("utf-8")
             ).hexdigest()
             url_safe = work_url
+
             for rule in replace_rules:
                 url_safe = url_safe.replace(rule["src"], rule["dst"])
-            # url_safe = (
-            #     work_url.replace("https://", "")
-            #     .replace("http://", "")
-            #     .replace("/", "_")
-            #     .replace("-", "_")
-            #     .replace("#", "_")
-            #     .replace("$", "_")
-            #     .replace("%", "_")
-            #     .replace("&", "_")
-            #     .replace("?", "_")
-            #     .replace(",", "_")
-            #     .replace("=", "_")
-            #     .replace(".", "_")
-            # )
-            if len(url_safe + "__" + url_hash + ".osm") > (
-                LIMIT_LENGTH_WINDOWS
-                if (platform.system().lower() == Windows)
-                else LIMIT_LENGTH_LINUX
-            ):
-                pass
+
+            if len(url_safe + "__" + url_hash + ".osm") > LIMIT_LENGTH:
+                url_safe = url_safe[
+                    0 : (LIMIT_LENGTH - len("__" + url_hash + ".osm"))
+                ]
             return url_safe + "__" + url_hash + ".osm"
 
         def worker(work_url: str, allow_cache: bool) -> str:
