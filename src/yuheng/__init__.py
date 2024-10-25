@@ -1,10 +1,13 @@
 import os
+import platform
 import sys
 import time
 from typing import Dict, List, Union
 from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
+
+from pydantic_core.core_schema import url_schema
 
 from .basic.const import (
     YUHENG_CORE_NAME,
@@ -208,23 +211,50 @@ class Carto:
         def get_cache_filename(worl_url: str) -> str:
             import hashlib
 
+            LIMIT_LENGTH_WINDOWS = 255
+            LIMIT_LENGTH_LINUX = 255
+
+            replace_rules = [
+                {"type": "protocal", "src": "https://", "dst": ""},
+                {"type": "protocal", "src": "http://", "dst": ""},
+                {"type": "symbol", "src": "/", "dst": "_"},
+                {"type": "symbol", "src": "-", "dst": "_"},
+                {"type": "symbol", "src": "#", "dst": "_"},
+                {"type": "symbol", "src": "$", "dst": "_"},
+                {"type": "symbol", "src": "%", "dst": "_"},
+                {"type": "symbol", "src": "&", "dst": "_"},
+                {"type": "symbol", "src": "?", "dst": "_"},
+                {"type": "symbol", "src": ",", "dst": "_"},
+                {"type": "symbol", "src": "=", "dst": "_"},
+                {"type": "symbol", "src": ".", "dst": "_"},
+            ]
+
             url_hash = hashlib.new(
                 name="md5", data=work_url.encode("utf-8")
             ).hexdigest()
-            url_safe = (
-                work_url.replace("https://", "")
-                .replace("http://", "")
-                .replace("/", "_")
-                .replace("-", "_")
-                .replace("#", "_")
-                .replace("$", "_")
-                .replace("%", "_")
-                .replace("&", "_")
-                .replace("?", "_")
-                .replace(",", "_")
-                .replace("=", "_")
-                .replace(".", "_")
-            )
+            url_safe = work_url
+            for rule in replace_rules:
+                url_safe = url_safe.replace(rule["src"], rule["dst"])
+            # url_safe = (
+            #     work_url.replace("https://", "")
+            #     .replace("http://", "")
+            #     .replace("/", "_")
+            #     .replace("-", "_")
+            #     .replace("#", "_")
+            #     .replace("$", "_")
+            #     .replace("%", "_")
+            #     .replace("&", "_")
+            #     .replace("?", "_")
+            #     .replace(",", "_")
+            #     .replace("=", "_")
+            #     .replace(".", "_")
+            # )
+            if len(url_safe + "__" + url_hash + ".osm") > (
+                LIMIT_LENGTH_WINDOWS
+                if (platform.system().lower() == Windows)
+                else LIMIT_LENGTH_LINUX
+            ):
+                pass
             return url_safe + "__" + url_hash + ".osm"
 
         def worker(work_url: str, allow_cache: bool) -> str:
