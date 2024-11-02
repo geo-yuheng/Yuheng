@@ -1,10 +1,13 @@
 import os
+import platform
 import sys
 import time
 from typing import Dict, List, Union
 from xml.dom import minidom
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element, ElementTree
+
+from pydantic_core.core_schema import url_schema
 
 from .basic.const import (
     YUHENG_CORE_NAME,
@@ -17,7 +20,11 @@ from .basic.model import BaseOsmModel
 from .component.type_constraint import Bounds, Member
 from .component.type_element import Node, Relation, Way
 from .method import query
-from .method.network import get_endpoint_api, get_headers
+from .method.network import (
+    get_endpoint_api,
+    get_headers,
+    get_endpoint_overpass,
+)
 from .method.parse import (
     parse_node,
     parse_relation,
@@ -40,7 +47,9 @@ def _check_alias():
             and name != "yuheng"
             and getattr(module, "__package__", "") == "yuheng"
         ):
-            raise ImportError("请不要使用别名导入 yuheng 包。直接使用 import yuheng。")
+            raise ImportError(
+                "请不要使用别名导入 yuheng 包。直接使用 import yuheng。"
+            )
 
 
 _check_alias()
@@ -202,23 +211,41 @@ class Carto:
         def get_cache_filename(worl_url: str) -> str:
             import hashlib
 
+            LIMIT_LENGTH_WINDOWS = 255
+            LIMIT_LENGTH_LINUX = 255
+            LIMIT_LENGTH = (
+                LIMIT_LENGTH_WINDOWS
+                if (platform.system().lower() == "Windows".lower())
+                else LIMIT_LENGTH_LINUX
+            )
+
+            replace_rules = [
+                {"type": "protocal", "src": "https://", "dst": ""},
+                {"type": "protocal", "src": "http://", "dst": ""},
+                {"type": "symbol", "src": "/", "dst": "_"},
+                {"type": "symbol", "src": "-", "dst": "_"},
+                {"type": "symbol", "src": "#", "dst": "_"},
+                {"type": "symbol", "src": "$", "dst": "_"},
+                {"type": "symbol", "src": "%", "dst": "_"},
+                {"type": "symbol", "src": "&", "dst": "_"},
+                {"type": "symbol", "src": "?", "dst": "_"},
+                {"type": "symbol", "src": ",", "dst": "_"},
+                {"type": "symbol", "src": "=", "dst": "_"},
+                {"type": "symbol", "src": ".", "dst": "_"},
+            ]
+
             url_hash = hashlib.new(
                 name="md5", data=work_url.encode("utf-8")
             ).hexdigest()
-            url_safe = (
-                work_url.replace("https://", "")
-                .replace("http://", "")
-                .replace("/", "_")
-                .replace("-", "_")
-                .replace("#", "_")
-                .replace("$", "_")
-                .replace("%", "_")
-                .replace("&", "_")
-                .replace("?", "_")
-                .replace(",", "_")
-                .replace("=", "_")
-                .replace(".", "_")
-            )
+            url_safe = work_url
+
+            for rule in replace_rules:
+                url_safe = url_safe.replace(rule["src"], rule["dst"])
+
+            if len(url_safe + "__" + url_hash + ".osm") > LIMIT_LENGTH:
+                url_safe = url_safe[
+                    0 : (LIMIT_LENGTH - len("__" + url_hash + ".osm"))
+                ]
             return url_safe + "__" + url_hash + ".osm"
 
         def worker(work_url: str, allow_cache: bool) -> str:
@@ -250,25 +277,45 @@ class Carto:
         def url_of_overpass_quary(ql_content: str, endpoint="") -> str:
             import urllib.parse
 
-            return endpoint + urllib.parse.quote(ql_content)
+            logger.debug(urllib.parse.quote(ql_content))
 
-        if kwargs.get("use_overpass_query"):
+            return (
+                get_endpoint_overpass(endpoint)
+                + "interpreter?data="
+                + urllib.parse.quote(ql_content)
+            )
+
+        if kwargs.get("overpass_query_enable"):
             # 先分source是api还是overpass
             # 再看target是区域还是单个/多个元素
             # 因为从API下载和从Overpass的逻辑天差地别，但元素还是区域的差异基本就是模板填空
-            if kwargs.get("local_overpassql_path"):
+            # ----
+            # query(
+            #                     query_content=str(kwargs.get("overpassql_content")),
+            #                     query_language="Overpass",
+            #                 )
+            # 在method里面
+            # 这个是要执行QL返回一个Carto对象的时候
+            # 获取qlcontent直接读参数
+            if kwargs.get("overpassql_local_path"):
                 ql_file = open(
-                    kwargs.get("local_overpassql_path"),
+                    kwargs.get("overpassql_local_path"),
                     "r",
                     encoding="utf-8",
                 )
                 ql_content = ql_file.read()
                 ql_file.close()
+            elif kwargs.get("overpassql_content"):
+                ql_content = kwargs.get("overpassql_content")
             else:
-                ql_content = query("", "Overpass")
-            work_url = url_of_overpass_quary(ql_content, "osmde")
+                ql_content = "ql_content not found"
+
+            work_url = url_of_overpass_quary(ql_content, endpoint)
+            logger.info("check after overpass judge")
+            logger.info("work_url = " + work_url)
 
         if target != "":
+            logger.debug(target)
             if target == "area":
                 # parse SWNE
                 S = kwargs.get("S") if kwargs.get("S") else 0.0
@@ -291,13 +338,21 @@ class Carto:
                     # parse Element
                     pass
         else:
-            if kwargs.get("url"):
+            logger.debug("target is blank")
+            if (
+                kwargs.get("url")
+                and kwargs.get("overpass_query_enable") == None
+            ):
                 # download directly, then judge
+                logger.info("Erase work_url with blank")
                 work_url = ""
+                # logger.info("check after target judge")
+                # logger.info("work_url = " + work_url)
             else:
                 return None
         # run worker
-        logger.info(work_url)
+        logger.info("ready to run worker")
+        logger.info("work_url = " + work_url)
         work_load_cache_path = os.path.join(
             get_yuheng_path(), "cache", get_cache_filename(work_url)
         )
