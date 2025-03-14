@@ -1,3 +1,6 @@
+# note that there maybe another method to restrict workign area and use relation id directly.
+# https://wiki.openstreetmap.org/w/index.php?title=Key:default_language&diff=next&oldid=2446989
+
 def overpass_geocode_transform(id=None, keyword=None) -> int:
     return 3600 * 1000000 + 1
 
