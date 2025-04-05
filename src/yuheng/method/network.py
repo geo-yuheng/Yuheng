@@ -58,7 +58,7 @@ def get_endpoint_overpass(
         },
         "ogf": {
             "server": "ogf",
-            "url": "https://overpass.ogf.rent-a-planet.com/api/",
+            "url": "https://overpass.opengeofiction.net/api/",
             "region": "global",
             "version": "unknown",
         },
