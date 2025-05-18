@@ -14,6 +14,7 @@ It provides a fast and out-of-the-box tool for working with OpenStreetMap data.
    :caption: Getting Started:
 
    README
+   Guidebook/README.md
    Guidebook/1.Get_Started.md
    Guidebook/2.Traverse_Data.md
 
@@ -21,6 +22,7 @@ It provides a fast and out-of-the-box tool for working with OpenStreetMap data.
    :maxdepth: 1
    :caption: Reference:
 
+   Manual/README.md
    Manual/API_Reference.md
    Manual/NOT.md
    CHANGELOG.md
