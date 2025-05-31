@@ -25,7 +25,9 @@ def get_endpoint_api(endpoint_name="osm", property="url") -> Optional[str]:
             "version": 0.6,
         },
     }
-    return endpoint_api_list.get(endpoint_name.lower()).get(property)
+    return endpoint_api_list.get(
+        endpoint_name.lower().replace("-", "").replace("_", "")
+    ).get(property)
 
 
 def get_endpoint_overpass(
@@ -70,7 +72,9 @@ def get_endpoint_overpass(
         },
     }
 
-    return endpoint_overpass_list.get(endpoint_name.lower()).get(property)
+    return endpoint_overpass_list.get(
+        endpoint_name.lower().replace("-", "").replace("_", "")
+    ).get(property)
 
 
 def get_headers() -> dict:
