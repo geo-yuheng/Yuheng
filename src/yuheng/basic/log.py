@@ -1,4 +1,5 @@
 import os
+import time
 from .const import YUHENG_CORE_NAME, YUHENG_VERSION
 from .environment import get_yuheng_path
 from hellologger import get_logger
@@ -27,6 +28,7 @@ logger = get_logger(
 # logger.disable("yuheng")
 fence_length = 30
 logger.info("[Yuheng] Start logging!")
+logger.trace(f"Current Time: {int(time.time())}")
 logger.debug(
     "\n"
     + ("=" * fence_length + "\n")
