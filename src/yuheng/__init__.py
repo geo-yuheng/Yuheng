@@ -59,7 +59,7 @@ class Carto:
     def __init__(self):
         self.version: str = "0.6"
         self.generator: str = (
-            YUHENG_CORE_NAME.replace("_Sword", "") + "/" + YUHENG_VERSION
+            YUHENG_CORE_NAME + "/" + YUHENG_VERSION
         )
         self.bounds_list: List[Bounds] = []
         self.node_dict: Dict[int, Node] = {}
