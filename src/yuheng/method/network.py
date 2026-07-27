@@ -49,9 +49,15 @@ def get_endpoint_overpass(
             "region": "global",
             "version": "unknown",
         },
-        "osmfr": {
+        "privatecoffee": {
             "server": "osm",
-            "url": "https://overpass.openstreetmap.fr/api/",
+            "url": "https://overpass.private.coffee/api/",
+            "region": "global",
+            "version": "unknown",
+        },
+        "ohm": {
+            "server": "ohm",
+            "url": "https://overpass-api.openhistoricalmap.org/api/",
             "region": "global",
             "version": "unknown",
         },
